@@ -27,8 +27,12 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 
 **En camino:** plan de lealtad (compras acumuladas en el contacto → mensaje al llegar a X compras → recordatorio por inactividad). Comparte motor con Impulso y CelebrAcción.
 
-**Mercado objetivo:** negocios físicos locales que dependen de reputación/recompra (restaurantes, spas/salones, talleres, consultorios), micro/pequeña empresa, Villavicencio y el Meta.
-**Pendiente con Sergio:** ¿Colombia/COP reemplaza el ángulo EE. UU./USD de la web ($197/mes–$2.970/año) o conviven? Mientras no se confirme, no asumir EE. UU./USD como mercado activo.
+**Mercado objetivo:** negocios físicos locales que dependen de reputación/recompra, micro/pequeña empresa.
+- **Decidido (3 oct 2026):** sitio principal malldigital360.com en **español**, abierto a Latinoamérica + hispanos en EE. UU. **Colombia (COP) es el mercado activo**; páginas por país en subcarpetas (`/colombia`, luego `/mexico`, `/ecuador` según los viajes de Sergio). Inglés: no por ahora.
+- Nichos piloto: barberías/salones/spas + gimnasios; después restaurantes; después talleres.
+- Precio: Arranque COP 600–900 mil (pago único); Plan Impulso COP 250–350 mil/mes; Plan 360 COP 450–600 mil/mes (USD para el resto de LatAm/EE. UU. en el doc de estrategia). Calidad sobre volumen; quien no pueda pagar va a la ruta de capacitación.
+- WhatsApp: **línea del club** dedicada por negocio con coexistence (nunca el número principal para envíos salientes); número de MD360 solo para demos.
+- Metas: 10 clientes activos a 6 meses, 25 a 12 meses.
 
 ## 4. Reglas no negociables de plataforma (aplican a las 3 soluciones)
 - **Google — sin filtrado de reseñas ("review gating")**: no se puede pedir reseña solo a quien calificó bien en la encuesta ni desviar a los inconformes para que no publiquen. La encuesta puede servir para **atender** al inconforme primero (alerta al dueño), pero el enlace de reseña no se le niega a nadie.
@@ -66,7 +70,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 ## 9. Próximos pasos (orden vigente)
 1. **Fase actual:** formar y refinar la oferta completa (`docs/estrategia-3-soluciones.md`), incluidas las limitantes de GHL que Sergio enviará. No se pasa a construir hasta cerrarla.
    **Siguiente fase:** revamp del sitio oficial malldigital360.com, con la oferta ya cerrada.
-2. Mercado y precios en COP (estructura propuesta en el doc de estrategia).
+2. Cerrar las preguntas abiertas de la sección 14 del doc de estrategia (pilotos, precio de fundador, cobro, lealtad, garantía).
 3. Snapshot base: custom fields, tags, pipeline y workflows de las 3 soluciones.
 4. Demo de 2 minutos para Delfos (QR → WhatsApp → solicitud de reseña).
 5. Landing de Cliente 360 en COP (builder tradicional).

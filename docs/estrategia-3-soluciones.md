@@ -1,6 +1,6 @@
 # Cliente 360™ — Estrategia de las 3 soluciones (borrador para discutir)
 
-*3 oct 2026. Versión 0.1 — pendiente integrar las limitantes de GHL que Sergio envía aparte.*
+*3 oct 2026. Versión 0.2 — incorpora respuestas de Sergio (mercado, precio, pilotos, WhatsApp, metas, valor estimado). Pendiente: limitantes de GHL que Sergio envía aparte.*
 
 ## 0. La tesis en una frase
 Las tres soluciones no son tres productos sueltos: son **un solo motor con tres momentos del cliente**.
@@ -105,7 +105,12 @@ Ver sección 8 (reemplaza el borrador anterior).
 - **El tamaño define el plan**, no el producto: dueño solo (todo por WhatsApp/app) vs. negocio con empleados (usuarios para el equipo, un administrador con PC).
 - **La venta sí va por nicho**, y uno a la vez: textos, ejemplos, ofertas de CelebrAcción y casos de éxito específicos ("barberías de Villavicencio"). Razones: Villavicencio es una ciudad donde los dueños del mismo gremio se conocen y se refieren entre sí. Un caso de éxito de una barbería le vende a otra barbería, no a un taller. El discurso específico convierte más que el genérico ("para negocios locales").
 - **Riesgo de ir 100 % vertical:** se limita el mercado en una ciudad mediana y se termina con 10 versiones del producto. **Riesgo de ir 100 % horizontal:** mensaje genérico, nadie se siente identificado, y vuelve a sonar a "agencia que hace de todo".
-- **Orden sugerido:** el primer nicho en Modo Cita (salones/barberías/spas: la señal es limpia, la recompra es frecuente y el ticket es bueno). El segundo en Modo Visita (restaurantes). Modo Orden queda en tercer lugar.
+- **Orden sugerido (aprobado por Sergio):** primero salones, barberías y spas (Modo Cita), y **gimnasios** como opción paralela. Después restaurantes (Modo Visita). Modo Orden (talleres) queda en tercer lugar.
+- **Gimnasio: puede ser el piloto con el dinero más fácil de demostrar.** Entra en Modo Visita (QR de ingreso o registro en recepción) con un campo extra de membresía (`fecha_vencimiento_membresia`). Ahí el sistema rinde por tres lados:
+  - **Evita la deserción:** "No te vemos hace 10 días, ¿todo bien?". Un gimnasio pierde socios por inasistencia antes de que dejen de pagar. Cada socio retenido es dinero medido: la mensualidad.
+  - **Renovación:** recordatorio 5 días antes del vencimiento.
+  - **Reseña:** se pide a los 15–30 días del ingreso, cuando ya vio resultados, no el primer día.
+  - CelebrAcción encaja con fechas de alta demanda: enero (propósitos), antes de vacaciones de mitad de año y "trae a tu amigo".
 
 ## 7. Principio de uso: "el dueño no abre el computador"
 
@@ -144,7 +149,24 @@ Ver sección 8 (reemplaza el borrador anterior).
 - **Mensajes de WhatsApp:** cada plan incluye un tope de envíos. Lo que pase de ahí se cobra como recarga. Así el costo de Meta no se come el margen.
 - **Garantía para quitar el miedo:** por ejemplo, "si en 30 días no tienes al menos X reseñas nuevas, el siguiente mes no lo pagas". Ojo: depende de la base del cliente, así que X debe ser conservador.
 - **Arranque gratis o con descuento** al tomar el Plan 360 con 6 meses o más. Es la palanca de cierre.
-- **Pendiente:** confirmar el costo real por sub-cuenta (WhatsApp en GHL, IA de reseñas, envíos de correo) para fijar el margen.
+- **Costo por sub-cuenta, verificado:** WhatsApp en GHL cuesta USD 10/mes por sub-cuenta, más las plantillas que cobra Meta por mensaje entregado (según país y categoría) y un 5 % de procesamiento. Los mensajes entrantes y las respuestas dentro de la ventana de 24 h no tienen costo. Falta sumar la IA de reseñas y el correo, si se activan.
+- **Decisión de Sergio:** se aceptan los rangos. Se prefieren menos clientes y mejor servidos; nada de cliente barato.
+
+**Filtro de entrada (para no tomar clientes que van a salir mal)**
+- Tiene que ser un negocio físico con al menos ~6 meses operando y un flujo constante de clientes.
+- Tiene que tener un perfil de Google Business activo, o estar dispuesto a crearlo en la instalación.
+- El dueño tiene que poder dedicar 5 minutos a la semana a leer el reporte y responder inconformes.
+- Tiene que poder pagar el plan sin que le duela el mes. Si no puede, no se le vende software: va a la **ruta de capacitación** (charla o taller de Delfos, guía para pedir reseñas a mano). Queda en la base como prospecto para cuando crezca.
+
+**Precio fuera de Colombia (hipótesis)**
+
+| Mercado | Arranque | Impulso | 360 |
+|---|---|---|---|
+| Colombia (COP) | 600.000 – 900.000 | 250.000 – 350.000 | 450.000 – 600.000 |
+| Resto de Latinoamérica (USD; Ecuador ya usa dólar; México luego en MXN) | USD 199 – 299 | USD 79 – 99 | USD 149 – 179 |
+| Hispanos en EE. UU. (USD) | USD 497 | USD 197 | USD 297 – 397 |
+
+En EE. UU. se mantiene la referencia de la web actual (USD 197/mes), porque ese mercado paga más y el costo de operar es el mismo.
 
 ## 9. Que el dueño vea pesos, no notificaciones
 
@@ -162,8 +184,15 @@ Una notificación de "nueva reseña" no dice nada. El sistema le lleva al dueño
 > • Valor estimado de tu reputación este mes: **≈ COP 800.000** (cálculo abajo)
 > • 1 cliente inconforme atendido a tiempo ✅
 
+**La idea que guía el reporte (Sergio):** el dueño no busca reseñas. Busca **más clientes, que le compren más, más seguido y que lo refieran**. Por eso el valor estimado se presenta con esas **4 palancas**, no como "valor de una reseña":
+1. **Clientes nuevos** que llegan por mejor posición y calificación en Google.
+2. **Ticket**: clientes que compran más (ofertas de CelebrAcción, "lleva dos").
+3. **Frecuencia**: clientes que vuelven antes (reactivación, cumpleaños, lealtad).
+4. **Referidos**: clientes que traen a otros ("trae a un amigo"; reseñas que convencen al que todavía duda).
+
 **Cómo se calcula (configurable por negocio en la instalación)**
 - **Dinero medido:** reactivados que volvieron + redenciones de ofertas, multiplicado por el ticket promedio que nos da el dueño (o el valor real si lo registran). Esto es lo más fuerte porque es verificable.
+- **Datos que se piden en la instalación:** ticket promedio, visitas al año de un cliente típico y clientes nuevos al mes hoy. Son 3 preguntas por WhatsApp; no hace falta un formulario largo.
 - **Dinero estimado por reseñas:** clientes nuevos atribuibles × ticket promedio × visitas al año. Como referencia está el estudio de Michael Luca (Harvard Business School, 2011): una estrella más en Yelp se asoció con 5–9 % más ingresos en restaurantes. Lo usamos como supuesto conservador y visible, no como promesa.
 - **Fase 2:** traer métricas reales de Google Business Profile (llamadas, solicitudes de cómo llegar, clics al sitio) para pasar de "estimado" a "medido" también en reputación.
 - **En GHL:** el dueño es un contacto con campos numéricos (`total_resenas`, `resenas_mes`, `reactivados_mes`, `ventas_medidas_mes`). Los workflows suman con la acción de operación matemática. El reporte sale con un workflow programado que lee esos campos. *(Hay que verificar el disparador de "reseña recibida" en la cuenta.)*
@@ -177,23 +206,107 @@ Una notificación de "nueva reseña" no dice nada. El sistema le lleva al dueño
 5. **El hábito del reporte semanal:** el lunes el dueño espera su mensaje.
 
 <!-- fin secciones nuevas -->
-## 11. Preguntas para Sergio (respóndalas cuando vuelva)
+## 11. Mercado y estructura web (decidido: español, Latinoamérica + hispanos en EE. UU.)
 
-**Oferta y mercado**
-1. ¿Solo Colombia/COP, o también EE. UU./USD? Esto define el revamp de malldigital360.com.
-2. ¿Le cuadra "producto horizontal por modo de operación + venta por nicho, uno a la vez"? ¿Qué nicho primero? (Yo propongo salones/barberías/spas.)
-3. ¿Tiene ya clientes o conocidos que sirvan de piloto (2–3)? ¿De qué nicho?
-4. ¿Cuántos clientes quiere tener a 6 y a 12 meses? Con eso calculo si los rangos de precio dan para la meta.
-5. Los rangos de precio de la sección 8, ¿le parecen altos, bajos o razonables para Villavicencio? ¿Cuál es el tope que ha escuchado pagar a dueños por software o servicios mensuales?
-6. ¿Se anima con la garantía ("si no hay X reseñas en 30 días, el mes siguiente no se cobra")?
+**Decisión de Sergio:** malldigital360.com es el sitio principal, en español, abierto a todo el mundo hispanohablante (Latinoamérica + hispanos en EE. UU.). Colombia es el mercado activo hoy. México, Ecuador y otros se abren a medida que Sergio viaje con su marca personal.
 
-**Operación**
-7. WhatsApp: ¿cada negocio con su propio número (más confianza, más trámite en Meta) o un número de Mall Digital 360 para arrancar? ¿Ya conectó WhatsApp por GHL en alguna sub-cuenta? ¿Qué le costó por sub-cuenta?
-8. ¿Ha probado la app LeadConnector con un cliente? ¿Qué cosas no pudo hacer desde ahí?
-9. ¿Quién da soporte cuando haya 20 clientes? ¿Solo usted, o tiene en mente un asistente?
-10. ¿Cómo cobraría? (Transferencia/Nequi mensual, tarjeta con cobro automático, pagos de GHL…)
+**Recomendación: subcarpetas por país, no subdominios ni dominios por país.**
 
-**Producto**
-11. ¿El plan de lealtad (puntos/compras acumuladas) entra en el Plan 360 desde el inicio, o lo dejamos para después?
-12. Las limitantes de GHL que mencionó: envíelas y las cruzo contra todos los flujos.
-13. ¿Le sirve que el valor en pesos de las reseñas se muestre como "estimado", con el cálculo visible? ¿O prefiere solo lo medido?
+| Opción | Ejemplo | Veredicto |
+|---|---|---|
+| **Subcarpeta** | malldigital360.com/colombia | ✅ **Recomendada.** Toda la autoridad en Google se acumula en un solo dominio, hay una sola conexión de dominio en GHL y se abre un país nuevo en una tarde, duplicando la página. |
+| Subdominio | co.malldigital360.com | ⚠️ Google lo trata casi como un sitio aparte: hay que construir autoridad desde cero en cada país. Útil solo si un país tuviera operación y equipo propios. |
+| Dominio por país | malldigital360.com.co | ❌ Costo y mantenimiento multiplicados, y la autoridad dividida. |
+
+**Estructura propuesta**
+- `malldigital360.com` → sitio principal, español neutro: qué es Mall Digital 360, las soluciones y la historia de Sergio. Los precios aparecen como "desde USD…" o como "agenda tu diagnóstico", sin moneda local.
+- `malldigital360.com/colombia` → embudo Cliente 360 Colombia: precios en COP, casos de Villavicencio y el Meta, WhatsApp +57.
+- `malldigital360.com/mexico`, `/ecuador`… → se crean **solo cuando haya agenda de viaje o charla** en ese país (duplicando la de Colombia y cambiando moneda, casos y número).
+- Variantes por nicho dentro de cada país, cuando haga falta: `/colombia/barberias`, `/colombia/gimnasios`. *(Verificar si GHL acepta rutas de dos niveles. Si no, usar `/colombia-barberias`.)*
+- Más adelante, etiquetas `hreflang` (es-CO, es-MX, es-US, es) para que Google muestre a cada país su página.
+- Inglés: no por ahora. Queda abierta la ruta `/en` para cuando se decida.
+
+## 12. WhatsApp: qué número usar (análisis y recomendación)
+
+**Lo que hay que saber (verificado)**
+- **Coexistence** (la que Sergio usa hoy en MD360) permite usar el **mismo número** en la app WhatsApp Business del celular y en la API (GHL) a la vez. Limitaciones:
+  - Hay que abrir la app en el celular **al menos una vez cada 14 días**. Si no, se desconecta y toca reconectar.
+  - Tope de 20 mensajes por segundo (no nos afecta).
+  - Se desactivan los mensajes temporales, la opción "ver una vez" y la ubicación en tiempo real.
+- **Costo en GHL:** USD 10/mes por sub-cuenta + plantillas de Meta por mensaje entregado (según país y categoría) + 5 % de procesamiento. Los mensajes entrantes y las respuestas dentro de las 24 h son gratis.
+- **Lo que de verdad arriesga un número no es el volumen, es la calidad.** Bloqueos y reportes bajan la calificación del número, y Meta responde bajando límites o restringiendo. Lo que más bloqueos genera: mensajes en frío a gente que no reconoce al remitente, frecuencia alta y promociones sin pedir permiso. Usar la API oficial (y no difusiones masivas desde la app normal) ya es en sí la mayor protección.
+
+**Opciones**
+
+| Opción | Ventaja | Riesgo | Veredicto |
+|---|---|---|---|
+| A. Número principal del negocio en coexistence | El cliente lo reconoce, máxima respuesta | Si se restringe, el negocio pierde su línea principal de atención. **Inaceptable para Rescatada y CelebrAcción** | Solo si el negocio insiste y únicamente con flujos donde el cliente escribe primero |
+| B. **Número dedicado del negocio** ("línea del club"), conectado con coexistence | El riesgo queda aislado de la línea principal. El dueño o un empleado también puede contestar desde la app WhatsApp Business del celular (cumple "sin PC"). Se puede anunciar como "Club [Negocio]" | Al principio el cliente no tiene ese número guardado → hay que presentarlo bien | ✅ **Estándar recomendado** |
+| C. Número de Mall Digital 360 para todos los clientes | Arranque inmediato, sin trámites | Mezcla marcas (el cliente final ve "Mall Digital 360", no su barbería). Un negocio que se porte mal afecta a todos. Los datos y la relación no quedan del negocio. Va contra la idea de que cada mensaje se identifique con el negocio | ❌ Solo para **demos de Delfos** y pruebas internas |
+
+**Recomendación**
+1. Cada negocio tiene su **línea del club**: una SIM nueva del negocio, un celular viejo o de la recepción con WhatsApp Business, y coexistence a GHL. El número principal queda intacto.
+2. Para que la gente lo guarde, **todo nace del cliente**: el QR del local abre esa línea ("Únete al Club…"), y la factura o el letrero dicen "guarda este número: aquí llegan tus beneficios".
+3. **Rescatada se hace desde la línea del club, pero con escudo:**
+   - Primero por correo, a toda la base.
+   - Por WhatsApp, solo a los clientes de los últimos 6–12 meses, en lotes pequeños.
+   - El primer mensaje nombra claramente al negocio y trae botón de "No me interesa".
+   - Si la calidad del número baja, se pausa.
+   Si aun así se restringiera, el negocio no pierde su línea principal.
+4. **Monitoreo:** revisar cada semana la calidad del número (verde/amarillo/rojo en Meta) de todos los clientes. Es un punto del checklist interno de MD360.
+5. **Celular de la línea del club:** queda en el local (recepción o caja), con la app abierta. Así se cumple la regla de los 14 días sin depender de la memoria del dueño, y el personal atiende desde ahí.
+6. **Verificación del negocio en Meta** (Business Manager a nombre del negocio): se hace en la instalación. Es lo que más demora el arranque, así que hay que pedir los documentos desde el día de la venta.
+
+## 13. Metas a 6 y 12 meses (realistas, alcanzables, sostenibles)
+
+**Supuestos (para ajustar con Sergio)**
+- Sergio es la única persona y reparte el tiempo con 4 verticales más. Supuesto: ~10–12 horas semanales para Sardes.
+- La instalación de un cliente con snapshot listo toma ~4–6 horas de trabajo, repartidas en 1–2 semanas (la verificación de Meta es la que alarga el plazo).
+- El soporte de un cliente estable toma ~1–1,5 horas al mes, más el reporte automático.
+- Canales: charlas de Delfos (≈2 al mes), referidos de clientes y de Afiliado360, y más adelante los viajes con la marca Sergio Rey.
+- Embudo típico de venta consultiva local: de cada ~10 diagnósticos se cierran ~3. Para cerrar 3 clientes al mes hacen falta ~10 diagnósticos, es decir, unas 30–40 conversaciones iniciales.
+- Se pierde ~1 cliente cada 2–3 meses al principio (churn ≈ 4–5 % mensual).
+
+**Proyección**
+
+| Mes | Nuevos | Bajas | Activos | Comentario |
+|---|---|---|---|---|
+| 1 | 2 | 0 | 2 | Pilotos con precio de fundador (barbería/salón + gimnasio) |
+| 2 | 1 | 0 | 3 | Tercer piloto y casos medidos |
+| 3 | 2 | 0 | 5 | Primeras ventas a precio completo con casos reales |
+| 4 | 2 | 1 | 6 | |
+| 5 | 3 | 0 | 9 | |
+| 6 | 3 | 1 | **11** | **Meta 6 meses: 10 clientes activos** |
+| 7–12 | 3–4/mes | ~1 cada 2 meses | **~28** | **Meta 12 meses: 25 clientes activos** |
+
+**En dinero (Colombia, punto medio de los rangos, ticket mensual promedio ≈ COP 400.000)**
+- **Mes 6:** ~10 clientes ≈ **COP 4 millones/mes** recurrentes + arranques (~2 al mes × COP 750.000 ≈ COP 1,5 millones).
+- **Mes 12:** ~25 clientes ≈ **COP 10 millones/mes** recurrentes + arranques ≈ **COP 12–13 millones/mes** en total.
+- **Costo directo por cliente:** ~USD 10 de WhatsApp + mensajes ≈ COP 60.000–100.000/mes. Margen bruto ≈ 75–85 %.
+
+**Límite de capacidad**
+- Con ~25–30 clientes, Sergio solo llega a ~30–40 horas al mes de soporte e instalación. Ese es el techo.
+- Antes de pasarlo hay que tener un asistente operativo, aunque sea medio tiempo. Lo pagan los clientes 20 a 25.
+- Los clientes de otros países (por los viajes) se suman a esta cuenta. No hay techo aparte.
+
+**Meta optimista** (si Delfos y los viajes rinden): 15 clientes a los 6 meses y 35 a los 12. No la recomiendo como compromiso: crecer más rápido de lo que se puede atender es justo el "cliente mal servido" que Sergio quiere evitar.
+
+## 14. Decisiones tomadas y preguntas abiertas
+
+**Decidido (3 oct 2026)**
+- Mercado: español para Latinoamérica + hispanos en EE. UU. Colombia es el mercado activo. Estructura con subcarpetas por país (sección 11).
+- Precios: se aceptan los rangos. Se prefieren calidad y menos clientes; quien no pueda pagar va a la ruta de capacitación.
+- Pilotos: barbería/salón/spa + gimnasio. Aún no hay negocios concretos.
+- WhatsApp: línea del club dedicada por negocio, con coexistence; número de MD360 solo para demos (sección 12).
+- Metas: 10 clientes a 6 meses y 25 a 12 meses (sección 13).
+- Valor de las reseñas: se muestra como estimado y se traduce a dinero con 4 palancas (sección 9).
+
+**Abiertas**
+1. ¿Cuántas horas semanales reales le puede dar a Sardes? Ajusta las metas de la sección 13.
+2. ¿Conoce a alguien con barbería, salón, spa o gimnasio que acepte ser piloto con precio de fundador a cambio de permitir publicar sus resultados? Si no, ¿se buscan en la próxima charla de Delfos?
+3. ¿Precio de fundador para los pilotos? Propuesta: 50 % de descuento por 3 meses a cambio de testimonio en video y datos de antes/después.
+4. Cobro: ¿transferencia/Nequi mensual, tarjeta con cobro automático, o pagos de GHL?
+5. ¿El plan de lealtad (compras acumuladas) entra en el Plan 360 desde el inicio, o lo dejamos para después?
+6. ¿Le parece la garantía ("si no hay X reseñas en 30 días, el mes siguiente no se cobra")?
+7. ¿Ha probado la app LeadConnector con un cliente? ¿Qué no pudo hacer desde ahí?
+8. Las limitantes de GHL que mencionó en el primer mensaje: siguen pendientes de recibir.
