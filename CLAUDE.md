@@ -76,7 +76,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 ## 9. Próximos pasos (orden vigente)
 1. **Fase actual:** formar y refinar la oferta completa (`docs/estrategia-3-soluciones.md`), incluidas las limitantes de GHL que Sergio enviará. No se pasa a construir hasta cerrarla.
    **Siguiente fase:** revamp del sitio oficial malldigital360.com, con la oferta ya cerrada.
-2. Cerrar las preguntas abiertas de la sección 19 del doc de estrategia (pilotos, precio de fundador, cobro, lealtad, garantía).
+2. Cerrar las preguntas abiertas de la sección 19 del doc de estrategia (garantía en pilotos, facturación/contador, fecha de charla, cuentas de prospección).
 3. Snapshot base: custom fields, tags, pipeline y workflows de las 3 soluciones.
 4. Demo de 2 minutos para Delfos (QR → WhatsApp → solicitud de reseña).
 5. Landing de Cliente 360 en COP (builder tradicional).
