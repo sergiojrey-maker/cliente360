@@ -1,6 +1,6 @@
 # Cliente 360™ — Estrategia de las 3 soluciones (borrador para discutir)
 
-*3 oct 2026. Versión 0.2 — incorpora respuestas de Sergio (mercado, precio, pilotos, WhatsApp, metas, valor estimado). Pendiente: limitantes de GHL que Sergio envía aparte.*
+*3 oct 2026. Versión 0.3 — incorpora 2.ª ronda de respuestas de Sergio: 10 h/semana, precio fundador, prospección, cobro, lealtad aplazada, garantía y control del sistema sin entrenamiento.*
 
 ## 0. La tesis en una frase
 Las tres soluciones no son tres productos sueltos: son **un solo motor con tres momentos del cliente**.
@@ -257,56 +257,150 @@ Una notificación de "nueva reseña" no dice nada. El sistema le lleva al dueño
 5. **Celular de la línea del club:** queda en el local (recepción o caja), con la app abierta. Así se cumple la regla de los 14 días sin depender de la memoria del dueño, y el personal atiende desde ahí.
 6. **Verificación del negocio en Meta** (Business Manager a nombre del negocio): se hace en la instalación. Es lo que más demora el arranque, así que hay que pedir los documentos desde el día de la venta.
 
-## 13. Metas a 6 y 12 meses (realistas, alcanzables, sostenibles)
+## 13. Metas a 6 y 12 meses (ajustadas a 10 h/semana)
 
-**Supuestos (para ajustar con Sergio)**
-- Sergio es la única persona y reparte el tiempo con 4 verticales más. Supuesto: ~10–12 horas semanales para Sardes.
-- La instalación de un cliente con snapshot listo toma ~4–6 horas de trabajo, repartidas en 1–2 semanas (la verificación de Meta es la que alarga el plazo).
-- El soporte de un cliente estable toma ~1–1,5 horas al mes, más el reporte automático.
-- Canales: charlas de Delfos (≈2 al mes), referidos de clientes y de Afiliado360, y más adelante los viajes con la marca Sergio Rey.
-- Embudo típico de venta consultiva local: de cada ~10 diagnósticos se cierran ~3. Para cerrar 3 clientes al mes hacen falta ~10 diagnósticos, es decir, unas 30–40 conversaciones iniciales.
-- Se pierde ~1 cliente cada 2–3 meses al principio (churn ≈ 4–5 % mensual).
+**Supuestos**
+- **10 horas semanales para Sardes** (decidido), es decir, ~43 horas al mes.
+- Instalar un cliente con el snapshot listo toma ~4–6 horas.
+- Mantener un cliente estable toma ~1–1,5 horas al mes.
+- Prospectar y vender toma ~12–15 horas al mes. La preparación de las charlas cuenta como tiempo de Delfos.
+- De cada ~10 diagnósticos se cierran ~3. Al principio se pierde ~1 cliente cada 2–3 meses.
+- Los 3 primeros clientes pagan precio de fundador: **50 % por 3 meses**, a cambio de testimonio en video y datos de antes/después.
 
-**Proyección**
+**Cuánto alcanzan 43 horas al mes**
+
+| Clientes activos | Soporte | Instalaciones (2–3/mes) | Ventas | Total | ¿Cabe? |
+|---|---|---|---|---|---|
+| 10 | ~12 h | ~12 h | ~14 h | ~38 h | ✅ |
+| 15 | ~19 h | ~12 h | ~12 h | ~43 h | ⚠️ Al límite |
+| 20 | ~25 h | ~12 h | ~12 h | ~49 h | ❌ Necesita asistente |
+
+**Meta**
 
 | Mes | Nuevos | Bajas | Activos | Comentario |
 |---|---|---|---|---|
-| 1 | 2 | 0 | 2 | Pilotos con precio de fundador (barbería/salón + gimnasio) |
-| 2 | 1 | 0 | 3 | Tercer piloto y casos medidos |
-| 3 | 2 | 0 | 5 | Primeras ventas a precio completo con casos reales |
-| 4 | 2 | 1 | 6 | |
-| 5 | 3 | 0 | 9 | |
-| 6 | 3 | 1 | **11** | **Meta 6 meses: 10 clientes activos** |
-| 7–12 | 3–4/mes | ~1 cada 2 meses | **~28** | **Meta 12 meses: 25 clientes activos** |
+| 1 | 2 | 0 | 2 | Pilotos fundadores (gimnasio + barbería/salón), salen de la charla y del networking propio |
+| 2 | 1 | 0 | 3 | Tercer piloto |
+| 3 | 1 | 0 | 4 | Primera venta a precio completo |
+| 4 | 2 | 0 | 6 | Ya con casos medidos |
+| 5 | 2 | 1 | 7 | |
+| 6 | 2 | 0 | **9** | **Meta 6 meses: 8–10 clientes** |
+| 7–12 | ~2/mes | ~1 cada 2–3 meses | **~20** | **Meta 12 meses: 20 clientes**, con asistente medio tiempo desde el cliente 12–15 (≈ mes 8) |
 
-**En dinero (Colombia, punto medio de los rangos, ticket mensual promedio ≈ COP 400.000)**
-- **Mes 6:** ~10 clientes ≈ **COP 4 millones/mes** recurrentes + arranques (~2 al mes × COP 750.000 ≈ COP 1,5 millones).
-- **Mes 12:** ~25 clientes ≈ **COP 10 millones/mes** recurrentes + arranques ≈ **COP 12–13 millones/mes** en total.
-- **Costo directo por cliente:** ~USD 10 de WhatsApp + mensajes ≈ COP 60.000–100.000/mes. Margen bruto ≈ 75–85 %.
+**En dinero (ticket mensual promedio ≈ COP 400.000)**
+- **Mes 6:** ~9 clientes ≈ **COP 3,6 millones/mes** recurrentes + arranques.
+- **Mes 12:** ~20 clientes ≈ **COP 8 millones/mes** recurrentes + ~2 arranques al mes (≈ COP 1,5 millones) ≈ **COP 9,5 millones/mes**.
+- Menos el asistente (medio tiempo) y ~COP 80.000/mes por cliente en WhatsApp y mensajes, el margen sigue cerca del 60–70 %.
+- Si no se contrata asistente, el techo realista es **~15 clientes**. Eso también es válido si se suben los precios hacia la parte alta del rango.
 
-**Límite de capacidad**
-- Con ~25–30 clientes, Sergio solo llega a ~30–40 horas al mes de soporte e instalación. Ese es el techo.
-- Antes de pasarlo hay que tener un asistente operativo, aunque sea medio tiempo. Lo pagan los clientes 20 a 25.
-- Los clientes de otros países (por los viajes) se suman a esta cuenta. No hay techo aparte.
+## 15. Garantía de reseñas (decidido: importantísima)
 
-**Meta optimista** (si Delfos y los viajes rinden): 15 clientes a los 6 meses y 35 a los 12. No la recomiendo como compromiso: crecer más rápido de lo que se puede atender es justo el "cliente mal servido" que Sergio quiere evitar.
+**Nombre y promesa (simple):** *"Garantía 10 Reseñas: si en tus primeros 30 días con el sistema activo no recibes al menos 10 reseñas nuevas en Google, el mes siguiente no lo pagas, y seguimos trabajando hasta lograrlo."*
 
-## 14. Decisiones tomadas y preguntas abiertas
+**Reglas (en el contrato, en lenguaje sencillo)**
+- Los 30 días cuentan desde que la línea del club y el QR quedan activos, no desde la firma.
+- **Lo que pone el negocio:**
+  - QR o NFC visible en al menos 2 puntos (caja y mesa/recepción).
+  - Entregar la base de clientes (para Rescatada).
+  - Marcar los atendidos cuando aplique (Modo Cita/Orden), por el método de un toque de la sección 16.
+  Si el negocio no cumple su parte, la garantía no aplica. El reporte semanal se lo va mostrando, para que no haya sorpresas.
+- **Solo cuentan reseñas reales** de clientes reales. Nunca se compran reseñas, nunca se pide a familiares que reseñen y nunca se dan regalos a cambio.
+- **El filtro de entrada protege la garantía:** solo se vende a negocios con suficiente flujo de clientes (orientación: ≥ 150–200 clientes atendidos al mes, o una base de ≥ 300 contactos). Si el negocio es pequeño, se ajusta la cifra en el diagnóstico (por ejemplo, "6 reseñas") **antes** de firmar, nunca después.
+- **Cálculo de riesgo:** con una tasa normal de 5–10 % de quienes reciben la solicitud, 150 clientes al mes dan 8–15 reseñas, más las de Rescatada. La garantía es alcanzable si el sistema está bien instalado.
+
+## 16. Control sin entrenamiento: el dueño maneja todo con botones, enlaces y respuestas
+
+**Principio (Sergio):** al dueño no se le enseña a poner tags, mover etapas ni entrar a la plataforma. Todo lo que necesite hacer debe caber en *"te llega un mensaje, tocas un botón (o respondes un número) y listo"*. Cada botón, enlace o respuesta dispara un workflow por debajo.
+
+**Las 5 herramientas de GHL para lograrlo**
+
+| Herramienta | Cómo la vive el dueño | Qué pasa por debajo | Dónde sirve |
+|---|---|---|---|
+| **Respuesta con botón / número en WhatsApp** | "Responde 1, 2 o 3" o toca un botón del mensaje | Trigger *Customer Replied* con filtro por palabra → workflow | Aprobar ofertas, pausar, pedir reporte |
+| **Trigger link** en correo o WhatsApp | "Toca aquí para activar" | Trigger *Trigger Link Clicked*. GHL sabe quién tocó porque el enlace sale personalizado desde el sistema | Botonera del reporte semanal |
+| **Formulario de un paso** guardado como ícono en el celular | Abre "✅ Atendido", escribe el celular del cliente y envía | *Form Submitted* → crea/actualiza contacto → secuencia de reseña | Empleados en Modo Cita/Orden, sin app ni contraseña |
+| **Encuesta** | 3 preguntas en el celular | *Survey Submitted* → llena custom values | Instalación (ticket promedio, visitas/año, clientes nuevos/mes) y elección de ofertas |
+| **Chat widget / QR** | El cliente final escribe | Crea contacto y conversación | Registro al club |
+
+**Botonera del dueño (lo que puede hacer sin abrir nada)**
+- **Lunes, reporte semanal** (WhatsApp + correo) con 3 botones:
+  1. 🎁 *"Activar la oferta del mes"* → muestra las 3 opciones de la fecha → responde 1/2/3.
+  2. ⭐ *"Pedir reseñas a los clientes de esta semana"* → dispara la solicitud a quienes aún no la recibieron.
+  3. 🙋 *"Necesito ayuda"* → crea tarea para Mall Digital 360 y avisa a Sergio.
+- **Alerta de inconforme** con 2 botones: *"Ya lo llamé ✅"* (cierra el caso) y *"Que lo llame Mall Digital 360"*.
+- **Palabras clave** que puede escribir a la línea del club cuando quiera: `REPORTE` (resultados al instante), `PAUSA` / `ACTIVAR` (detener o reanudar todos los envíos, por ejemplo en vacaciones o cierre), `AYUDA`.
+- **Tarjeta "Cómo manejar tu sistema"**: una sola imagen fijada en el chat con los botones y palabras de arriba. Ese es todo el "entrenamiento".
+
+**Empleados:** solo un ícono en el celular ("✅ Atendido"), que es un formulario de un campo. Para evitar abusos, el formulario pide un PIN de 4 dígitos del negocio. La app LeadConnector queda para quien responda chats.
+
+**Cuidados técnicos (a verificar en la cuenta antes de construir)**
+- Los trigger links identifican al contacto solo si el enlace sale **desde GHL hacia ese contacto**. Por eso el dueño se registra como contacto (tag `dueno`) en la sub-cuenta del negocio. Hay que confirmar que el rastreo funcione en mensajes de WhatsApp y no solo en correo/SMS. Si no funciona, en WhatsApp se usan botones de respuesta rápida o números, que sí son confiables.
+- Si alguien reenvía un trigger link, el clic queda a nombre del dueño. Para acciones sensibles (enviar a toda la base) siempre hay un segundo paso: "¿Confirmas? Responde SÍ".
+- Ninguna acción del dueño dispara un envío masivo sin pasar por los topes del envío escalonado y el monitoreo de calidad del número.
+
+## 17. Prospección (canales de Sergio)
+
+**1. Red propia: canal número 1.**
+- Charlas de Delfos.
+- Networking diario: el **gimnasio donde entrena** es candidato natural a primer piloto, y las **clases de tenis** (academias y clubes entran en Modo Cita).
+- Referidos de pilotos y de Afiliado360.
+
+**2. Gancho para cualquier canal: "Diagnóstico de reputación gratis".** Una hoja de 1 página con la calificación y el número de reseñas del negocio frente a 3 competidores cercanos en Google Maps, y lo que eso le cuesta en pesos (con el modelo de la sección 9). Se entrega en persona, por WhatsApp o por correo. Es concreto, no suena a agencia y abre la conversación de venta.
+
+**3. Smartlead (correo en frío) y Closely (LinkedIn + correo).**
+- **Para qué sí sirven:**
+  - Negocios con más estructura que sí viven en LinkedIn o leen correo: cadenas de gimnasios, clínicas y consultorios con varias sedes, franquicias.
+  - **Calentar ciudades antes de los viajes** de Sergio a México, Ecuador, etc.
+  - Además le sirven a Cartago.
+- **Para qué no:** la barbería o el restaurante pequeño de Villavicencio casi no está en LinkedIn ni lee correo en frío. Ahí funciona la red propia y el diagnóstico en persona.
+- **Cuidados:**
+  - El correo en frío sale desde un **dominio secundario** (no desde malldigital360.com), para no dañar la entrega de los correos de clientes.
+  - Volúmenes bajos y personalizados.
+  - Siempre con opción de no recibir más.
+  - Vocabulario de la casa: nada de "campaña" ni "marketing".
+- **Flujo:** las respuestas positivas de Smartlead/Closely entran a GHL (por integración o webhook) a un pipeline de prospectos de Cliente 360, separado de `Afiliado360`, con la cita de diagnóstico agendada desde el calendario.
+
+## 18. Cobro a los clientes
+
+**Lo que hay en Colombia (verificado, oct 2026)**
+
+| Opción | ¿Cobro automático recurrente? | ¿Integración con GHL? | Comentario |
+|---|---|---|---|
+| **Stripe** (cuenta de Rey Enterprises USA LLC) | ✅ Suscripciones nativas | ✅ Nativa | Puede cobrar **en COP** a tarjetas colombianas y liquida en USD (Stripe convierte con ~1 % adicional). Es la vía más simple. Contras: varias tarjetas débito colombianas rechazan cobros internacionales o recurrentes, y hay comisión internacional. |
+| **Mercado Pago** | ✅ Suscripciones nativas | ⚠️ No oficial: app de terceros del Marketplace (mpghl.com), Albato o API | Buena opción para quien no tiene tarjeta de crédito. Hay que probar la app de terceros antes de depender de ella. |
+| **Wompi** (Bancolombia) | ⚠️ Solo tokenizando la tarjeta; sin suscripciones listas | ❌ Por webhook | Viable combinado con **Treli**, que maneja suscripciones, reintentos y conciliación sobre Wompi, ePayco, PayU o Stripe, y avisa por webhook. Tiene sentido con más de ~15–20 clientes colombianos. |
+| **Bold** | ❌ Todavía no: Bold dice que está desarrollando API de pagos recurrentes | ❌ | Sirve para **links de pago** mensuales; no para cobro automático. |
+| **Nequi / transferencia** | ❌ Manual | — | Se automatiza el recordatorio, no el cobro. |
+
+**Recomendación: dos carriles, sin complicar**
+1. **Carril automático (preferido): Stripe en COP** con suscripción mensual desde GHL. Incentivo: **5 % de descuento por cobro automático o pago anual**.
+2. **Carril manual con recordatorio automático:** para quien no tenga tarjeta que funcione. GHL envía el día 1 el link de pago (Bold o Mercado Pago) o los datos de Nequi. A Sergio le llega *"¿Pagó Barbería X? [Sí ✅] [No]"*. Si toca "No", sigue una secuencia amable de recordatorio y luego pausa del servicio.
+3. **Probar Mercado Pago (app de terceros) con el primer cliente que lo necesite.** Si funciona bien, se vuelve el carril automático para quien no usa Stripe.
+4. **Revisar con el contador** (antes del primer cobro):
+   - si se factura desde la LLC de EE. UU. o desde el RUT colombiano;
+   - qué implica la factura electrónica DIAN para que el negocio pueda deducir el gasto;
+   - retenciones al pagar a una empresa del exterior.
+   Esto puede inclinar la balanza hacia una pasarela local.
+
+## 19. Decisiones tomadas y preguntas abiertas
 
 **Decidido (3 oct 2026)**
-- Mercado: español para Latinoamérica + hispanos en EE. UU. Colombia es el mercado activo. Estructura con subcarpetas por país (sección 11).
-- Precios: se aceptan los rangos. Se prefieren calidad y menos clientes; quien no pueda pagar va a la ruta de capacitación.
-- Pilotos: barbería/salón/spa + gimnasio. Aún no hay negocios concretos.
+- Mercado: español para Latinoamérica + hispanos en EE. UU. Colombia es el mercado activo, con subcarpetas por país (sección 11).
+- Precios: se aceptan los rangos; calidad sobre volumen; quien no pueda pagar va a la ruta de capacitación (sección 8).
+- **Precio fundador:** 50 % por 3 meses para 3 pilotos, a cambio de testimonio en video y datos de antes/después.
+- Pilotos: gimnasio + barbería/salón/spa. Se buscan en la próxima charla de Delfos y en el networking propio (gimnasio, tenis).
 - WhatsApp: línea del club dedicada por negocio, con coexistence; número de MD360 solo para demos (sección 12).
-- Metas: 10 clientes a 6 meses y 25 a 12 meses (sección 13).
-- Valor de las reseñas: se muestra como estimado y se traduce a dinero con 4 palancas (sección 9).
+- **Tiempo:** 10 h/semana. Metas: 8–10 clientes a 6 meses y 20 a 12 meses, con asistente desde el cliente 12–15 (sección 13).
+- **Garantía 10 Reseñas** en 30 días (sección 15).
+- **Control sin entrenamiento:** botones, trigger links, palabras clave y un formulario de un toque (sección 16).
+- Prospección: red propia + Delfos, más Smartlead y Closely para cuentas con estructura y para otros países (sección 17).
+- Cobro: Stripe en COP automático + carril manual con recordatorio; probar Mercado Pago (sección 18).
+- **Plan de lealtad: aplazado.** Quedó como idea en Blue (workspace Mall Digital 360 → lista 💡Ideas).
+- Valor de las reseñas: estimado, traducido a dinero con 4 palancas (sección 9).
 
 **Abiertas**
-1. ¿Cuántas horas semanales reales le puede dar a Sardes? Ajusta las metas de la sección 13.
-2. ¿Conoce a alguien con barbería, salón, spa o gimnasio que acepte ser piloto con precio de fundador a cambio de permitir publicar sus resultados? Si no, ¿se buscan en la próxima charla de Delfos?
-3. ¿Precio de fundador para los pilotos? Propuesta: 50 % de descuento por 3 meses a cambio de testimonio en video y datos de antes/después.
-4. Cobro: ¿transferencia/Nequi mensual, tarjeta con cobro automático, o pagos de GHL?
-5. ¿El plan de lealtad (compras acumuladas) entra en el Plan 360 desde el inicio, o lo dejamos para después?
-6. ¿Le parece la garantía ("si no hay X reseñas en 30 días, el mes siguiente no se cobra")?
-7. ¿Ha probado la app LeadConnector con un cliente? ¿Qué no pudo hacer desde ahí?
-8. Las limitantes de GHL que mencionó en el primer mensaje: siguen pendientes de recibir.
+1. ¿La Garantía 10 Reseñas aplica igual a los 3 pilotos fundadores, o ellos quedan por fuera porque ya tienen descuento?
+2. ¿Factura desde la LLC de EE. UU. (Stripe) o desde el RUT colombiano? (Revisar con el contador.)
+3. ¿Fecha de la próxima charla de Delfos? Para tener lista la demo de 2 minutos y el diagnóstico de reputación.
+4. ¿Ya tiene cuentas activas de Smartlead y Closely (¿AppSumo?) y algún dominio secundario para correo en frío?
+5. ¿Ha probado la app LeadConnector con un cliente? ¿Qué no pudo hacer desde ahí?

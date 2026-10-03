@@ -32,7 +32,12 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - Nichos piloto: barberías/salones/spas + gimnasios; después restaurantes; después talleres.
 - Precio: Arranque COP 600–900 mil (pago único); Plan Impulso COP 250–350 mil/mes; Plan 360 COP 450–600 mil/mes (USD para el resto de LatAm/EE. UU. en el doc de estrategia). Calidad sobre volumen; quien no pueda pagar va a la ruta de capacitación.
 - WhatsApp: **línea del club** dedicada por negocio con coexistence (nunca el número principal para envíos salientes); número de MD360 solo para demos.
-- Metas: 10 clientes activos a 6 meses, 25 a 12 meses.
+- Tiempo de Sergio para Sardes: 10 h/semana. Metas: 8–10 clientes activos a 6 meses, 20 a 12 meses (con asistente desde el cliente 12–15).
+- Precio fundador: 50 % por 3 meses para 3 pilotos, a cambio de testimonio en video + datos antes/después.
+- **Garantía 10 Reseñas** en 30 días (o el mes siguiente no se cobra). Condiciones en el doc de estrategia, sección 15.
+- Cobro: Stripe en COP automático (cuenta Rey Enterprises USA LLC) + carril manual con recordatorio. Probar Mercado Pago.
+- Prospección: red propia + Delfos; Smartlead (correo en frío) y Closely (LinkedIn) para cuentas con estructura y otros países.
+- Plan de lealtad: aplazado. Está como idea en Blue (org Rey Enterprises USA LLC → workspace Mall Digital 360 → lista 💡Ideas).
 
 ## 4. Reglas no negociables de plataforma (aplican a las 3 soluciones)
 - **Google — sin filtrado de reseñas ("review gating")**: no se puede pedir reseña solo a quien calificó bien en la encuesta ni desviar a los inconformes para que no publiquen. La encuesta puede servir para **atender** al inconforme primero (alerta al dueño), pero el enlace de reseña no se le niega a nadie.
@@ -59,6 +64,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 ## 7. Principios de diseño de la oferta (definidos por Sergio, 3 oct 2026)
 - Simple, poderosa, duplicable, eficiente. Se vende una **solución**, no "algo más de qué preocuparse".
 - **El dueño no usa el computador en el día a día.** Solo en la instalación (la hace MD360) o en una reconexión. El día a día va por **WhatsApp** (reportes, alertas, aprobaciones) y por la **app LeadConnector** (chats, marcar atendido). Un negocio con empleados puede tener un administrador con PC.
+- **Control sin entrenamiento:** el dueño no pone tags ni mueve etapas. Todo lo hace con botones o respuestas en WhatsApp, trigger links en correo/WhatsApp, palabras clave (`REPORTE`, `PAUSA`, `ACTIVAR`, `AYUDA`) y, para empleados, un formulario "✅ Atendido" de un campo. Cada acción dispara un workflow. Diseñar así **todo** flujo nuevo.
 - Máxima automatización. **Sticky** por resultados: reactivación de clientes inactivos (WhatsApp/correo), reseñas constantes y ventas en fechas.
 - **Las reseñas se reportan en valor, no como notificación:** número acumulado, calificación, posicionamiento y su equivalente en pesos. Siempre se separa **dinero medido** (reactivados, redenciones) de **dinero estimado** (reputación).
 - Estructura en análisis: producto horizontal (un snapshot, 3 modos de operación: Visita / Cita / Orden) y venta vertical por nicho, uno a la vez. El tamaño define el plan.
@@ -70,7 +76,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 ## 9. Próximos pasos (orden vigente)
 1. **Fase actual:** formar y refinar la oferta completa (`docs/estrategia-3-soluciones.md`), incluidas las limitantes de GHL que Sergio enviará. No se pasa a construir hasta cerrarla.
    **Siguiente fase:** revamp del sitio oficial malldigital360.com, con la oferta ya cerrada.
-2. Cerrar las preguntas abiertas de la sección 14 del doc de estrategia (pilotos, precio de fundador, cobro, lealtad, garantía).
+2. Cerrar las preguntas abiertas de la sección 19 del doc de estrategia (pilotos, precio de fundador, cobro, lealtad, garantía).
 3. Snapshot base: custom fields, tags, pipeline y workflows de las 3 soluciones.
 4. Demo de 2 minutos para Delfos (QR → WhatsApp → solicitud de reseña).
 5. Landing de Cliente 360 en COP (builder tradicional).
