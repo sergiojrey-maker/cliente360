@@ -69,6 +69,17 @@
 4. **RES-02b quedó huérfano** (se quitó el trigger link). O se rediseña (el dueño responde `ATENDIDO` + celular por la app) o se borra antes de crear el snapshot, para no llevar basura a los clientes.
 5. **CLUB-01 se dispara con mensajes que "contienen CLUB".** Está bien porque el "ya eres miembro" lo ataja, pero conviene que la condición sea "es exactamente" o "empieza por" CLUB, para no reaccionar a frases como "me salgo del club".
 
+**Aplicado por [Claude local] (4 oct 2026, 0 errores en todos):**
+1. ✅ **GEN-01:** las palabras de baja ahora son solo BAJA y STOP (también Baja/baja/Stop/stop, porque "Exactly matches" podría distinguir mayúsculas). Se quitó "NO".
+2. ✅ **CLUB-02:** la rama "Activo" exige además que el contacto **no** tenga `club-premio-pendiente`. Hay una rama nueva **"Premio pendiente"** (activo + tiene `club-premio-pendiente` + no tiene `club-premio-recordado`): envía **un solo** recordatorio ("recuerda que tienes {{club_premio}} esperándote…", plantilla `c360_recordar_premio`) y pone el tag `club-premio-recordado` (creado por API). Si ya se le recordó, cae en None y no hace nada. Mientras haya premio pendiente no suma sellos.
+   - **CLUB-03** ahora quita `club-premio-pendiente` **y** `club-premio-recordado` al canjear.
+3. ✅ **RES-02 y CLUB-03:** el aviso al dueño pasó a "Send internal notification" → **WhatsApp**.
+   - GHL exige elegir un usuario y la plantilla maestra no tiene ninguno. Quedó en **"Assigned owners" (Contact owner)** como valor provisional, que sí guarda.
+   - **Paso de instalación (obligatorio):** abrir cada acción con "INSTALACIÓN: elegir usuario dueño" en el nombre y cambiarla a "Particular User" = el dueño. Hoy son 2: RES-02 y CLUB-03.
+   - **Por probar en la demo:** si el WhatsApp interno a usuarios exige plantilla aprobada fuera de la ventana de 24 h.
+4. ✅ **RES-02b borrado** (pestaña "Deleted"; GHL lo elimina del todo a los 30 días). El trigger link "Inconforme atendido" sigue existiendo sin uso: borrarlo o reutilizarlo al rediseñar el "ya lo atendí".
+5. ✅ **CLUB-01:** el disparador es "Exactly matches" CLUB / Club / club. GHL no ofrece "empieza por". **Consecuencia para la instalación:** el texto prellenado del QR (wa.me) debe ser exactamente la palabra, sin saludo.
+
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
 - ✅ **F2 Canjear**: título "🎁 Canjear premio — {{custom_values.club_nombre_completo}}", Celular + PIN, botón "Canjear", mensaje "Premio registrado 🎁".
