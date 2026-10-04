@@ -1,0 +1,252 @@
+<!-- Página malldigital360.com/club — Cliente 360™ (v1, 4 oct 2026)
+     Fuente del texto: docs/pagina-club.md. Se pega completa en un elemento "Code / Custom HTML"
+     del builder tradicional de GHL (funnel "Club de Clientes — Cliente 360", ruta /club).
+     Todo el CSS va dentro de .c360 para no chocar con los estilos de GHL. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  .c360{--azul:#14315A;--azul-oscuro:#0B1F3A;--verde:#16B364;--texto:#1A2432;--gris:#4E5D70;--verde-claro:#E7F7EF;--gris-claro:#EEF2F7;--blanco:#FFFFFF;
+    font-family:'Source Sans 3',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--texto);background:var(--blanco);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+  .c360 *{box-sizing:border-box;margin:0;padding:0}
+  .c360 h1,.c360 h2,.c360 h3{font-family:'Archivo',sans-serif;font-weight:800;line-height:1.15;color:var(--azul)}
+  .c360 h1{font-size:clamp(32px,6vw,52px);font-weight:900;letter-spacing:-.01em}
+  .c360 h2{font-size:clamp(26px,4.2vw,38px);margin-bottom:12px}
+  .c360 h3{font-size:20px;margin-bottom:6px}
+  .c360 p{margin-bottom:12px}
+  .c360 a{color:inherit}
+  .c360 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .c360 section{padding:64px 0}
+  .c360 .center{text-align:center}
+  .c360 .lead{font-size:19px;color:var(--gris);max-width:720px}
+  .c360 .center .lead{margin-left:auto;margin-right:auto}
+  .c360 .btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:18px;text-decoration:none;border-radius:12px;padding:16px 26px;transition:transform .15s ease,box-shadow .15s ease;text-align:center}
+  .c360 .btn:hover{transform:translateY(-1px)}
+  .c360 .btn-verde{background:var(--verde);color:#fff;box-shadow:0 6px 18px rgba(22,179,100,.35)}
+  .c360 .btn-borde{border:2px solid var(--azul);color:var(--azul);background:transparent}
+  .c360 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+
+  /* 1. Hero */
+  .c360 .hero{background:linear-gradient(180deg,var(--gris-claro),var(--blanco));padding-top:48px}
+  .c360 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+  .c360 .tag{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--azul);background:var(--verde-claro);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+  .c360 .hero .lead{margin-top:18px}
+  .c360 .phone{background:var(--azul-oscuro);border-radius:34px;padding:14px;max-width:320px;margin:0 auto;box-shadow:0 24px 50px rgba(11,31,58,.28)}
+  .c360 .screen{background:#E9F2EC;border-radius:24px;padding:16px 12px 20px;min-height:400px;display:flex;flex-direction:column;gap:10px}
+  .c360 .chat-head{display:flex;align-items:center;gap:10px;padding:4px 4px 10px;border-bottom:1px solid rgba(0,0,0,.06)}
+  .c360 .avatar{width:34px;height:34px;border-radius:50%;background:var(--azul);color:#fff;font-family:'Archivo';font-weight:900;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .c360 .chat-head b{font-size:15px;color:var(--texto)}
+  .c360 .chat-head small{display:block;font-size:12px;color:var(--gris)}
+  .c360 .bubble{background:#fff;border-radius:14px 14px 14px 4px;padding:10px 12px;font-size:14.5px;line-height:1.4;max-width:88%;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .c360 .bubble.me{background:#D3F5DE;align-self:flex-end;border-radius:14px 14px 4px 14px}
+  .c360 .stamps{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap}
+  .c360 .stamp{width:20px;height:20px;border-radius:50%;border:2px solid var(--verde)}
+  .c360 .stamp.on{background:var(--verde)}
+
+  /* 2. Problema */
+  .c360 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+  .c360 .card{background:var(--blanco);border:1px solid #DCE3EC;border-radius:16px;padding:24px}
+  .c360 .card p{color:var(--gris);margin:0}
+
+  /* 3. Cómo funciona */
+  .c360 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;counter-reset:paso}
+  .c360 .step{background:var(--gris-claro);border-radius:16px;padding:26px 22px}
+  .c360 .step .num{width:42px;height:42px;border-radius:50%;background:var(--verde);color:#fff;font-family:'Archivo';font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .c360 .step p{color:var(--gris);margin:0}
+
+  /* 4. Beneficios */
+  .c360 .bg-gris{background:var(--gris-claro)}
+  .c360 .benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px}
+  .c360 .benefit{background:var(--blanco);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+  .c360 .benefit .ico{flex:0 0 48px;height:48px;border-radius:12px;background:var(--verde-claro);display:flex;align-items:center;justify-content:center;font-size:24px}
+  .c360 .benefit p{color:var(--gris);margin:0}
+
+  /* 5. Sin complicaciones */
+  .c360 .band{background:var(--azul);color:#fff}
+  .c360 .band h2{color:#fff}
+  .c360 .checks{list-style:none;display:grid;gap:14px;margin-top:22px;max-width:680px}
+  .c360 .checks li{display:flex;gap:12px;font-size:18px}
+  .c360 .checks li:before{content:"✓";flex:0 0 28px;height:28px;border-radius:50%;background:var(--verde);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+
+  /* 6. Garantía */
+  .c360 .guarantee{background:var(--verde-claro);border:2px solid var(--verde);border-radius:20px;padding:36px 28px;max-width:780px;margin:0 auto;text-align:center}
+  .c360 .guarantee .seal{font-size:40px;margin-bottom:8px}
+  .c360 .guarantee p{font-size:19px}
+  .c360 .small{font-size:14px!important;color:var(--gris)}
+
+  /* 7. Para quién */
+  .c360 .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px 0 18px}
+  .c360 .chip{background:var(--gris-claro);color:var(--azul);font-weight:700;border-radius:999px;padding:10px 18px;font-size:16px}
+  .c360 .quote{font-style:italic;color:var(--gris);font-size:19px}
+
+  /* 8. CTA final */
+  .c360 .cta{background:linear-gradient(135deg,var(--azul),var(--azul-oscuro));color:#fff;border-radius:24px;padding:48px 28px;text-align:center}
+  .c360 .cta h2{color:#fff;max-width:760px;margin:0 auto 14px}
+  .c360 .cta p{color:#D6DEEA;max-width:640px;margin:0 auto 24px;font-size:18px}
+
+  /* 9. Preguntas */
+  .c360 .faq{max-width:780px;margin:28px auto 0}
+  .c360 details{border-bottom:1px solid #DCE3EC;padding:18px 4px}
+  .c360 summary{cursor:pointer;font-weight:700;font-size:18px;color:var(--azul);list-style:none;display:flex;justify-content:space-between;gap:16px}
+  .c360 summary::-webkit-details-marker{display:none}
+  .c360 summary:after{content:"+";font-family:'Archivo';font-size:24px;line-height:1;color:var(--verde)}
+  .c360 details[open] summary:after{content:"–"}
+  .c360 details p{color:var(--gris);margin:10px 0 0}
+
+  /* Footer */
+  .c360 footer{background:var(--azul-oscuro);color:#C9D3E0;padding:36px 0;font-size:15px;text-align:center}
+  .c360 footer b{color:#fff;font-family:'Archivo';font-weight:800}
+  .c360 footer a{color:#fff;text-decoration:none}
+  .c360 footer .links{margin-top:10px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px}
+
+  @media (max-width:820px){
+    .c360 section{padding:48px 0}
+    .c360 .hero-grid,.c360 .cards,.c360 .steps,.c360 .benefits{grid-template-columns:1fr}
+    .c360 .hero-grid{gap:32px}
+    .c360 .btns .btn{width:100%}
+    .c360 .phone{max-width:290px}
+  }
+</style>
+
+<div class="c360">
+
+  <!-- Sección 1 — Encabezado -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag">Cliente 360™ · Mall Digital 360</span>
+        <h1>Le instalamos el club de clientes de su negocio.</h1>
+        <p class="lead">Sus clientes se unen con un QR y ganan premios por volver. Mientras tanto, el sistema le consigue reseñas en Google, trae de vuelta a quienes dejaron de venir y cada lunes le muestra en su WhatsApp cuánto dinero generó. Usted no toca un computador.</p>
+        <div class="btns">
+          <a class="btn btn-verde" href="https://wa.me/573204055485?text=Hola,%20quiero%20el%20diagn%C3%B3stico%20gratis%20del%20club%20de%20clientes" target="_blank" rel="noopener">Quiero mi diagnóstico gratis</a>
+          <a class="btn btn-borde" href="#como-funciona">Ver cómo funciona ↓</a>
+        </div>
+      </div>
+      <div aria-hidden="true">
+        <div class="phone">
+          <div class="screen">
+            <div class="chat-head"><div class="avatar">C</div><div><b>Club Barbería El Llano</b><small>en línea</small></div></div>
+            <div class="bubble me">CLUB</div>
+            <div class="bubble">¡Hola Andrés 💈, bienvenido al Club El Llano! Cada corte suma un sello; al completar 10 te espera un corte gratis.
+              <div class="stamps"><span class="stamp on"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span></div>
+            </div>
+            <div class="bubble">Sello 1 de 10 ✅ ¡Gracias por venir!</div>
+            <div class="bubble">¿Cuándo es tu cumpleaños? Escríbelo así: DD/MM 🎂</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2 — El problema -->
+  <section>
+    <div class="wrap center">
+      <h2>Lo que le está costando clientes hoy</h2>
+      <div class="cards" style="text-align:left">
+        <div class="card"><h3>Clientes que no vuelven</h3><p>Vinieron una vez, quedaron contentos… y nunca más se supo de ellos.</p></div>
+        <div class="card"><h3>Reseñas que no llegan</h3><p>Sus clientes felices no dejan reseña porque nadie se la pide en el momento justo.</p></div>
+        <div class="card"><h3>Fechas que se pasan</h3><p>Día de la Madre, Amor y Amistad, Navidad… y su base de clientes sin usar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3 — Cómo funciona -->
+  <section id="como-funciona" class="bg-gris">
+    <div class="wrap center">
+      <h2>Cómo funciona</h2>
+      <div class="steps" style="text-align:left">
+        <div class="step"><div class="num">1</div><h3>Sus clientes se unen al club</h3><p>Escanean un QR en su negocio y quedan inscritos por WhatsApp. Sin aplicaciones, sin formularios largos.</p></div>
+        <div class="step"><div class="num">2</div><h3>El club trabaja solo</h3><p>Suma sus visitas, les avisa cuando están cerca del premio, les pide la reseña en el momento justo, los saluda en su cumpleaños y los invita a volver si dejan de venir.</p></div>
+        <div class="step"><div class="num">3</div><h3>Usted ve los resultados</h3><p>Cada lunes recibe en su WhatsApp las reseñas nuevas, las visitas del club y las ventas medidas, en pesos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4 — Lo que el club hace por usted -->
+  <section>
+    <div class="wrap center">
+      <h2>Lo que el club hace por usted</h2>
+      <div class="benefits" style="text-align:left">
+        <div class="benefit"><div class="ico">⭐</div><div><h3>Más reseñas en Google</h3><p>De forma constante y siguiendo las reglas de Google. Si un cliente quedó inconforme, usted se entera primero para atenderlo.</p></div></div>
+        <div class="benefit"><div class="ico">🔁</div><div><h3>Clientes que vuelven</h3><p>Tarjeta de sellos digital, premios y mensajes automáticos a quien lleva tiempo sin venir.</p></div></div>
+        <div class="benefit"><div class="ico">🎉</div><div><h3>Ventas en fechas especiales</h3><p>El sistema le propone la oferta, usted responde con un número y él se encarga del resto.</p></div></div>
+        <div class="benefit"><div class="ico">📊</div><div><h3>Reporte en pesos cada lunes</h3><p>No solo "tiene una reseña nueva", sino cuántos clientes volvieron y cuánto vendió gracias al club.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5 — Sin complicaciones -->
+  <section class="band">
+    <div class="wrap">
+      <h2>Usted no tiene que aprender nada.</h2>
+      <ul class="checks">
+        <li>Todo se maneja desde su WhatsApp: le llega un mensaje, toca un botón y listo.</li>
+        <li>Su equipo solo tiene un ícono en el celular: "✅ Atendido".</li>
+        <li>Nosotros instalamos, configuramos y mantenemos todo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sección 6 — Garantía -->
+  <section>
+    <div class="wrap">
+      <div class="guarantee">
+        <div class="seal">🛡️</div>
+        <h2>Garantía 10 Reseñas</h2>
+        <p>Si en sus primeros 30 días con el sistema activo no recibe al menos 10 reseñas nuevas en Google, el mes siguiente no lo paga, y seguimos trabajando hasta lograrlo.</p>
+        <p class="small">Aplican condiciones que se explican en el diagnóstico.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 7 — Para quién es -->
+  <section class="bg-gris">
+    <div class="wrap center">
+      <h2>¿Para quién es?</h2>
+      <div class="chips">
+        <span class="chip">Barberías</span><span class="chip">Salones de belleza</span><span class="chip">Spas</span><span class="chip">Gimnasios</span><span class="chip">Academias</span><span class="chip">Restaurantes y cafés</span><span class="chip">Talleres</span>
+      </div>
+      <p class="quote">"Si su negocio vive de que los clientes vuelvan, el club es para usted."</p>
+    </div>
+  </section>
+
+  <!-- Sección 8 — Diagnóstico gratis -->
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>Descubra en 20 minutos cuánto le están costando las reseñas que no tiene.</h2>
+        <p>Le mostramos su calificación y sus reseñas frente a 3 competidores cercanos, y cuánto representa eso en pesos. Sin compromiso.</p>
+        <a class="btn btn-verde" href="https://wa.me/573204055485?text=Hola,%20quiero%20el%20diagn%C3%B3stico%20gratis%20del%20club%20de%20clientes" target="_blank" rel="noopener">Agendar mi diagnóstico por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 9 — Preguntas frecuentes -->
+  <section>
+    <div class="wrap">
+      <h2 class="center">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details><summary>¿Tengo que usar computador?</summary><p>No. Todo se maneja desde WhatsApp. Nosotros hacemos la instalación.</p></details>
+        <details><summary>¿Mis clientes tienen que descargar una aplicación?</summary><p>No. Todo pasa en WhatsApp, que ya tienen.</p></details>
+        <details><summary>¿Esto es para redes sociales?</summary><p>No. Es un sistema que trabaja con los clientes que ya tiene y con los que lleguen a su negocio.</p></details>
+        <details><summary>¿Las reseñas son reales?</summary><p>Sí, siempre. Solo se las pedimos a clientes reales, nunca se compran ni se regalan cosas a cambio. Así lo exige Google y así lo hacemos.</p></details>
+        <details><summary>¿Y si un cliente quedó molesto?</summary><p>Usted recibe una alerta inmediata para atenderlo antes de que el problema crezca.</p></details>
+        <details><summary>¿Cuánto cuesta?</summary><p>Depende del tamaño de su negocio. Se lo explicamos en el diagnóstico, junto con lo que puede esperar en pesos.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <p><b>Mall Digital 360</b> · Empresa de tecnología y automatización con IA para negocios · Villavicencio, Meta</p>
+      <div class="links">
+        <a href="https://wa.me/573204055485" target="_blank" rel="noopener">WhatsApp +57 320 405 5485</a>
+        <a href="mailto:info@malldigital360.com">info@malldigital360.com</a>
+        <a href="/politica-de-privacidad">Política de privacidad</a>
+        <a href="/terminos-y-condiciones">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
