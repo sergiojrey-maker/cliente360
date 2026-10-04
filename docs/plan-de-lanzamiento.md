@@ -1,6 +1,18 @@
 # Cliente 360™ — Plan de lanzamiento v1
 
-*4 oct 2026. Ritmo: 10 h/semana de Sergio. Meta del plan: **demo lista para la próxima charla de Delfos y 2–3 pilotos fundadores instalados en ~6 semanas**.*
+*4 oct 2026 — **actualizado a 40 h/semana** (Sergio dedica la mayor parte de su tiempo a Mall Digital 360 / Cliente 360). Meta del plan: **snapshot y demo listos en ~2 semanas, página `/club` publicada en la semana 1 y 3 pilotos fundadores instalados en ~4 semanas**.*
+
+**Calendario a 40 h/semana**
+
+| Semana | Foco |
+|---|---|
+| 1 (5–11 oct) | Fase 0 + Fase 1A (estructura por API) + 1B (formularios) + plantillas de WhatsApp a Meta + página `/club` + parche al sitio actual |
+| 2 (12–18 oct) | Fase 1C (workflows) + 1E (pruebas) + demo de 2 minutos + kit de venta + Stripe |
+| 3 (19–25 oct) | Charla/diagnósticos + red propia (gimnasio, tenis) → cerrar fundadores + primeras instalaciones |
+| 4–6 (26 oct–15 nov) | Pilotos corriendo, medir, ajustar. Prospección diaria para los primeros clientes a precio completo |
+| 7–10 | Fase 4: testimonios + **revamp de malldigital360.com** (sobre el sitio "MD360 Corporativo" que ya está empezado en GHL) |
+
+Especificación técnica del snapshot: `snapshot-c360-spec.md`. Texto de la página del club: `pagina-club.md`.
 
 Leyenda: **[API]** se puede hacer por API o conector de GHL (Claude lo puede ejecutar) · **[UI]** se arma a mano en GHL · **[S]** lo hace Sergio · **[C]** lo prepara Claude.
 
@@ -13,7 +25,7 @@ Leyenda: **[API]** se puede hacer por API o conector de GHL (Claude lo puede eje
 - [ ] [C] Verificar la tarifa de Meta para plantillas en Colombia y ajustar el precio de la recarga de mensajes.
 
 ## Fase 1 — Snapshot base (semanas 1–3)
-Se construye en una **sub-cuenta plantilla nueva ("C360 Plantilla")**, no en la sub-cuenta Mall Digital 360, para que el snapshot salga limpio.
+Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maestro")**, no en la sub-cuenta Mall Digital 360, para que el snapshot salga limpio.
 
 **1A. Estructura [API] — Claude lo puede crear en cuanto exista la sub-cuenta**
 - [ ] Custom fields de contacto:
@@ -85,7 +97,31 @@ Se construye en una **sub-cuenta plantilla nueva ("C360 Plantilla")**, no en la 
   - Botón a WhatsApp para agendar el diagnóstico.
   - Sin precios por ahora (se dan en el diagnóstico).
   Es a donde se manda a la gente después de la charla y del diagnóstico. **No es el revamp.**
-- [ ] [S] Ocultar o retirar de malldigital360.com lo que hoy contradice la oferta: precios en USD para EE. UU. y cualquier texto de "agencia". Es un parche de 1 hora, no un rediseño.
+- [ ] [S] **Parche al sitio actual** (revisión del 4 oct, ver más abajo). Es 1 hora, no un rediseño.
+
+**Revisión del sitio actual (4 oct 2026, vía API de GHL + buscadores; el proxy de esta sesión no deja abrir la página directamente)**
+
+- **Raíz de malldigital360.com:** la sirve el website **"Cliente360™ | Sistema de Crecimiento Local Automatizado"** (20 páginas, actualizado por última vez el 5 jun 2026).
+  - Google lo describe como un sistema *"para negocios latinos con ubicación física en Estados Unidos"*, con dirección en Lakeland, FL y teléfono (321).
+  - Tiene páginas de **Precios** y **Checkout Plan Starter / Plan Pro** con pagos **en vivo** (planes en USD que ya no existen en la oferta v1).
+- **Otros elementos del dominio:**
+  - El **blog** se llama *"Crecimiento Local y **Marketing** Automatizado para Negocios Latinos"* (vocabulario prohibido).
+  - Existe el funnel **"Cliente360™ | MedSpa USA"** (`/home-medspa`), también para EE. UU., con pago en vivo.
+  - Hay páginas marcadas "OUT OF SERVICE" (`/video`, `/auditwidget`).
+- **Lo que sí sirve y se conserva:**
+  - Afiliados360 (`/afiliados360`, registro y términos).
+  - Hub (`/hub`).
+  - Política de privacidad y términos.
+  - Los funnels de Tiro (GoHighLevel en español, webinar, expertos).
+  - El taller de Cumaral (Delfos).
+- **Ya empezado:** el website **"MD360 Corporativo"** (creado el 1 oct, sin dominio aún). Es la base natural del revamp.
+
+**Veredicto: no se deja intacto, pero tampoco se rediseña todavía.** Parche de 1 hora:
+1. Quitar del menú y despublicar **Precios**, **Checkout Starter / Pro** y el funnel **MedSpa USA**. En particular: que ningún checkout en vivo cobre los planes viejos.
+2. Cambiar el nombre y la descripción del blog: quitar "Marketing" y "negocios latinos". Propuesta: *"Blog de Mall Digital 360: sistemas y automatización para negocios locales"*.
+3. En inicio, cambiar la frase principal y el botón a la idea del club, y enlazar a `/club` (sin rehacer la página).
+4. Revisar dirección y teléfono de EE. UU. en el footer: ¿se mantienen (la LLC existe) o se pone Villavicencio + WhatsApp +57? Decisión de Sergio.
+5. Retirar las páginas "OUT OF SERVICE".
 
 ## Fase 3 — Pilotos fundadores (semanas 3–6)
 - [ ] [S] Charla de Delfos con demo en vivo → diagnósticos agendados.

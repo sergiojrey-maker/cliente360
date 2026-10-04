@@ -34,7 +34,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - Nichos piloto: barberías/salones/spas + gimnasios; después restaurantes; después talleres.
 - Precio: Arranque COP 600–900 mil (pago único); Plan Impulso COP 250–350 mil/mes; Plan 360 COP 450–600 mil/mes (USD para el resto de LatAm/EE. UU. en el doc de estrategia). Calidad sobre volumen; quien no pueda pagar va a la ruta de capacitación.
 - WhatsApp: **línea del club** dedicada por negocio con coexistence (nunca el número principal para envíos salientes); número de MD360 solo para demos.
-- Tiempo de Sergio para Sardes: 10 h/semana. Metas: 8–10 clientes activos a 6 meses, 20 a 12 meses (con asistente desde el cliente 12–15).
+- **Tiempo de Sergio: 40 h/semana** (desde el 4 oct; antes 10). Metas: 18 clientes activos a 6 meses, 40 a 12 meses (asistente desde ~25–30 clientes). El cuello de botella son las ventas: ~4 diagnósticos por semana.
 - Precio fundador: 50 % por 3 meses + Arranque a 50 % para 3 pilotos, a cambio de testimonio en video + datos antes/después. La Garantía 10 Reseñas también aplica a fundadores (confirmado 4 oct).
 - **Garantía 10 Reseñas** en 30 días (o el mes siguiente no se cobra). Condiciones en el doc de estrategia, sección 15.
 - Cobro: Stripe en COP automático (cuenta Rey Enterprises USA LLC) + carril manual con recordatorio. Probar Mercado Pago.
@@ -76,10 +76,13 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - Proceder con criterio propio y entregar reporte al final; él pide cambios después.
 - Confrontar las ideas con argumentos (él lo pide explícitamente), no solo ejecutar.
 
-## 9. Próximos pasos (orden vigente)
+## 9. Snapshot "evergreen"
+Especificación: `docs/snapshot-c360-spec.md`. Regla: **cero texto fijo**. Todo nombre, palabra ("club", "sello", "visita", "premio"), plazo, enlace y oferta vive en custom values con prefijos (`negocio_`, `club_`, `resena_`, `rea_`, `ca_`, `rep_`, `sis_`). Los módulos se apagan con interruptores (`sis_modulo_*`), así el mismo snapshot sirve para los dos planes. Página del club: `docs/pagina-club.md`.
+
+## 10. Próximos pasos (orden vigente)
 - **Oferta v1 cerrada** (`docs/oferta-cliente360-v1.md`). Ahora se ejecuta `docs/plan-de-lanzamiento.md`:
   - Fase 0: pendientes.
-  - Fase 1: snapshot en la sub-cuenta "C360 Plantilla".
+  - Fase 1: snapshot en la sub-cuenta "Cliente 360 — Snapshot Maestro".
   - Fase 2: demo + kit de venta.
   - Fase 3: pilotos fundadores.
   - Fase 4: ajuste y prueba social.

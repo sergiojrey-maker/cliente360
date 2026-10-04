@@ -257,7 +257,17 @@ Una notificación de "nueva reseña" no dice nada. El sistema le lleva al dueño
 5. **Celular de la línea del club:** queda en el local (recepción o caja), con la app abierta. Así se cumple la regla de los 14 días sin depender de la memoria del dueño, y el personal atiende desde ahí.
 6. **Verificación del negocio en Meta** (Business Manager a nombre del negocio): se hace en la instalación. Es lo que más demora el arranque, así que hay que pedir los documentos desde el día de la venta.
 
-## 13. Metas a 6 y 12 meses (ajustadas a 10 h/semana)
+## 13. Metas a 6 y 12 meses
+
+> **Actualización 4 oct (tarde): Sergio pasa a 40 h/semana.** Metas nuevas:
+> - **6 meses:** 18 clientes activos (~COP 7 millones/mes recurrentes + arranques ≈ COP 10–11 millones/mes).
+> - **12 meses:** 40 clientes activos (~COP 16–17 millones/mes recurrentes + arranques ≈ COP 20 millones/mes). Con asistente operativo desde ~25–30 clientes (≈ mes 6–7).
+>
+> **Con 40 h, el cuello de botella ya no es el tiempo sino las ventas.** Para cerrar ~4–5 clientes al mes hacen falta ~15 diagnósticos al mes (≈ 4 por semana).
+>
+> La tabla de abajo (escenario de 10 h) queda como referencia del piso.
+
+### Escenario anterior (10 h/semana)
 
 **Supuestos**
 - **10 horas semanales para Sardes** (decidido), es decir, ~43 horas al mes.
