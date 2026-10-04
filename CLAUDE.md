@@ -81,6 +81,8 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - Confrontar las ideas con argumentos (él lo pide explícitamente), no solo ejecutar.
 
 ## 9. Snapshot "evergreen"
+Sub-cuenta plantilla: **Cliente 360 — Snapshot Maestro**, Location ID `PF7DK8r0SiEtcVhO4Trt`. Avance de la construcción: `docs/estado-snapshot.md`.
+
 Especificación: `docs/snapshot-c360-spec.md`. Regla: **cero texto fijo**. Todo nombre, palabra ("club", "sello", "visita", "premio"), plazo, enlace y oferta vive en custom values con prefijos (`negocio_`, `club_`, `resena_`, `rea_`, `ca_`, `rep_`, `sis_`). Los módulos se apagan con interruptores (`sis_modulo_*`), así el mismo snapshot sirve para los dos planes. Página del club: `docs/pagina-club.md`.
 
 **Cómo se construye:** `docs/orquesta-ask-ai.md`. Claude crea por API los custom values, campos, tags, pipelines, calendarios y contactos. Ask AI (dentro de GHL, con prompts que redacta Claude y Sergio pega) crea workflows, formularios y páginas. Sergio solo hace lo que pide login o identidad: crear sub-cuenta y snapshot, conectar Meta/Google/Stripe/dominio, probar con el celular. Esta sesión de Claude no tiene acceso de red a app.gohighlevel.com ni a malldigital360.com.

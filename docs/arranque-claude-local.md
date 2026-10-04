@@ -24,7 +24,7 @@
 > Lee CLAUDE.md y docs/orquesta-ask-ai.md, docs/snapshot-c360-spec.md y docs/pagina-club.md. Vas a dirigir la construcción de Cliente 360 en GoHighLevel usando Chrome (ya tengo la sesión iniciada).
 >
 > **Orden de trabajo:**
-> 1. En la sub-cuenta "Cliente 360 — Snapshot Maestro", crea por API (conector de GoHighLevel) o por pantalla todos los custom values, campos, tags, el pipeline "Órdenes", un calendario de ejemplo y los contactos de prueba de la spec.
+> 1. Lee docs/estado-snapshot.md: los custom values, campos y tags ya están creados en la sub-cuenta "Cliente 360 — Snapshot Maestro" (ID PF7DK8r0SiEtcVhO4Trt); no los dupliques. Crea lo pendiente: pipeline "Órdenes", calendario de ejemplo y contactos de prueba.
 > 2. Abre Ask AI en esa sub-cuenta y pégale la instrucción general y luego los prompts F1–F5 y W1–W8, uno por uno. Después de cada uno, revisa en pantalla lo que construyó y corrige con Ask AI o a mano hasta que coincida con la spec. Todo en borrador.
 > 3. En la sub-cuenta "Mall Digital 360": prompt P1 (página /club, sin publicar) y prompt P2 (parche al sitio). Antes de despublicar o borrar cualquier página en vivo, muéstrame la lista y espera mi OK.
 > 4. Solo interrúmpeme para: iniciar sesión, códigos de verificación, conectar Meta/WhatsApp, Google Business Profile, Stripe o dominio, publicar algo en vivo, o probar con mi celular.
