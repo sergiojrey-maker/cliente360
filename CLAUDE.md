@@ -18,6 +18,8 @@ Cinco verticales ("coworks"): **Mecenas** (dirección), **Sardes — Cliente 360
 Marcas: **Mall Digital 360** (comercial, bajo la que opera Cliente 360) y **Sergio Rey** (personal).
 
 ## 3. Qué es Cliente 360™
+**Frase central de venta (aprobada 4 oct 2026): "Le instalo el club de clientes de su negocio."** Toda conversación, página y material abre con el club. Reseñas, reactivación y fechas son "lo que el club hace por usted". Oferta cerrada: `docs/oferta-cliente360-v1.md`. Plan de trabajo: `docs/plan-de-lanzamiento.md`.
+
 Sistema instalado (nunca "servicio de reseñas") para negocios locales: más reseñas en Google, más clientes que vuelven y más ventas sobre la base de datos propia del negocio — sin pauta, sin redes sociales, sin carga técnica para el dueño.
 
 **Tres soluciones (nombres vigentes):**
@@ -25,7 +27,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 2. **Impulso 5 Estrellas** — mira al **presente y futuro**. Cada cliente nuevo queda registrado en el sistema (QR → WhatsApp, recepción, agenda, app del negocio…) y, cuando ya recibió el servicio/producto, el sistema le pide la reseña de forma automática.
 3. **CelebrAcción** — una sola palabra (celebración + acción). Aprovecha fechas nacionales, internacionales, locales y personales (cumpleaños) para activar ventas con promociones (2x1, descuentos, lleva dos, regalo) sobre la base de datos del negocio.
 
-**En camino:** plan de lealtad (compras acumuladas en el contacto → mensaje al llegar a X compras → recordatorio por inactividad). Comparte motor con Impulso y CelebrAcción.
+4. **Club [Negocio]** (lealtad v1, **aprobado para el lanzamiento**): sellos por visita, premio, "te faltan 2", reactivación con sellos guardados, cumpleaños. Usa la misma señal de visita que Impulso. Puntos por monto, niveles y POS quedan para v2.
 
 **Mercado objetivo:** negocios físicos locales que dependen de reputación/recompra, micro/pequeña empresa.
 - **Decidido (3 oct 2026):** sitio principal malldigital360.com en **español**, abierto a Latinoamérica + hispanos en EE. UU. **Colombia (COP) es el mercado activo**; páginas por país en subcarpetas (`/colombia`, luego `/mexico`, `/ecuador` según los viajes de Sergio). Inglés: no por ahora.
@@ -37,7 +39,8 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - **Garantía 10 Reseñas** en 30 días (o el mes siguiente no se cobra). Condiciones en el doc de estrategia, sección 15.
 - Cobro: Stripe en COP automático (cuenta Rey Enterprises USA LLC) + carril manual con recordatorio. Probar Mercado Pago.
 - Prospección: red propia + Delfos; Smartlead (correo en frío) y Closely (LinkedIn) para cuentas con estructura y otros países.
-- Plan de lealtad: estaba aplazado (idea en Blue: org Rey Enterprises USA LLC → workspace Mall Digital 360 → lista 💡Ideas). **4 oct: propuesta de Club de Lealtad v1 con sellos por visita desde el lanzamiento** (doc de estrategia, sección 20), pendiente de aprobación. Puntos por monto, niveles y catálogo quedan para v2.
+- Club de Lealtad v1 con sellos: **aprobado para el lanzamiento** (4 oct). Detalle en el doc de estrategia, sección 20. En Blue: org Rey Enterprises USA LLC → workspace Mall Digital 360.
+- Precios publicados v1: Arranque COP 790.000 · Plan Impulso COP 290.000/mes · Plan 360 COP 490.000/mes (detalle y reglas en `docs/oferta-cliente360-v1.md`).
 
 ## 4. Reglas no negociables de plataforma (aplican a las 3 soluciones)
 - **Google — sin filtrado de reseñas ("review gating")**: no se puede pedir reseña solo a quien calificó bien en la encuesta ni desviar a los inconformes para que no publiquen. La encuesta puede servir para **atender** al inconforme primero (alerta al dueño), pero el enlace de reseña no se le niega a nadie.
@@ -74,10 +77,10 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - Confrontar las ideas con argumentos (él lo pide explícitamente), no solo ejecutar.
 
 ## 9. Próximos pasos (orden vigente)
-1. **Fase actual:** formar y refinar la oferta completa (`docs/estrategia-3-soluciones.md`), incluidas las limitantes de GHL que Sergio enviará. No se pasa a construir hasta cerrarla.
-   **Siguiente fase:** revamp del sitio oficial malldigital360.com, con la oferta ya cerrada.
-2. Cerrar las preguntas abiertas de la sección 19 del doc de estrategia (garantía en pilotos, facturación/contador, fecha de charla, cuentas de prospección).
-3. Snapshot base: custom fields, tags, pipeline y workflows de las 3 soluciones.
-4. Demo de 2 minutos para Delfos (QR → WhatsApp → solicitud de reseña).
-5. Landing de Cliente 360 en COP (builder tradicional).
-6. Primeros 2–3 clientes: medir reseñas y calificación antes/después como prueba social.
+- **Oferta v1 cerrada** (`docs/oferta-cliente360-v1.md`). Ahora se ejecuta `docs/plan-de-lanzamiento.md`:
+  - Fase 0: pendientes.
+  - Fase 1: snapshot en la sub-cuenta "C360 Plantilla".
+  - Fase 2: demo + kit de venta.
+  - Fase 3: pilotos fundadores.
+  - Fase 4: ajuste y prueba social.
+- **Siguiente fase después de los pilotos:** revamp de malldigital360.com + página `/colombia`.

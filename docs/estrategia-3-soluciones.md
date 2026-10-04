@@ -464,7 +464,9 @@ Principio para el premio: **alto valor percibido, bajo costo real** para el nego
 - **Control sin entrenamiento:** botones, trigger links, palabras clave y un formulario de un toque (sección 16).
 - Prospección: red propia + Delfos, más Smartlead y Closely para cuentas con estructura y para otros países (sección 17).
 - Cobro: Stripe en COP automático + carril manual con recordatorio; probar Mercado Pago (sección 18).
-- ~~Plan de lealtad: aplazado~~ → **reabierto el 4 oct:** propuesta de Club de Lealtad v1 con sellos desde el lanzamiento (sección 20), **pendiente de aprobación de Sergio**.
+- **Club de Lealtad v1 con sellos: aprobado para el lanzamiento (4 oct)** (sección 20).
+- **Frase central de venta: "Le instalo el club de clientes de su negocio"** (aprobada 4 oct).
+- **Oferta cerrada** en `oferta-cliente360-v1.md`; plan de trabajo en `plan-de-lanzamiento.md`.
 - Valor de las reseñas: estimado, traducido a dinero con 4 palancas (sección 9).
 
 **Abiertas**
@@ -473,4 +475,3 @@ Principio para el premio: **alto valor percibido, bajo costo real** para el nego
 3. ¿Fecha de la próxima charla de Delfos? Para tener lista la demo de 2 minutos y el diagnóstico de reputación.
 4. ¿Ya tiene cuentas activas de Smartlead y Closely (¿AppSumo?) y algún dominio secundario para correo en frío?
 5. ¿Ha probado la app LeadConnector con un cliente? ¿Qué no pudo hacer desde ahí?
-6. ¿Aprueba el Club de Lealtad v1 con sellos desde el lanzamiento (sección 20)? ¿El nombre visible para el cliente final es "Club [Negocio]"?
