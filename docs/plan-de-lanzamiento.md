@@ -78,6 +78,14 @@ Se construye en una **sub-cuenta plantilla nueva ("C360 Plantilla")**, no en la 
 - [ ] [C] Acuerdo de servicio de 1 página + términos del club + texto de autorización de datos *(para revisión del contador/abogado)*.
 - [ ] [C] Tarjeta "Cómo manejar su sistema" y diseño del QR/NFC del club, con la marca MD360 (Canva).
 - [ ] [S] Productos y precios en Stripe (COP, suscripciones) + link de pago manual (Bold o Mercado Pago).
+- [ ] [C+UI] **Página mínima del club** (1 sola página en GHL, builder tradicional, p. ej. `malldigital360.com/club`):
+  - "Le instalo el club de clientes de su negocio" + cómo funciona en 3 pasos.
+  - Video o capturas de la demo.
+  - Garantía 10 Reseñas.
+  - Botón a WhatsApp para agendar el diagnóstico.
+  - Sin precios por ahora (se dan en el diagnóstico).
+  Es a donde se manda a la gente después de la charla y del diagnóstico. **No es el revamp.**
+- [ ] [S] Ocultar o retirar de malldigital360.com lo que hoy contradice la oferta: precios en USD para EE. UU. y cualquier texto de "agencia". Es un parche de 1 hora, no un rediseño.
 
 ## Fase 3 — Pilotos fundadores (semanas 3–6)
 - [ ] [S] Charla de Delfos con demo en vivo → diagnósticos agendados.
@@ -90,7 +98,7 @@ Se construye en una **sub-cuenta plantilla nueva ("C360 Plantilla")**, no en la 
 - [ ] Revisar con los datos de los pilotos qué se usa y qué no, y simplificar.
 - [ ] Testimonios en video + casos de antes/después.
 - [ ] Ajustar precios dentro del rango si hace falta.
-- [ ] **Siguiente fase:** revamp de malldigital360.com + página `/colombia` de Cliente 360 con los casos reales.
+- [ ] **Revamp de malldigital360.com:** arranca en esta fase (no después), con la oferta ya probada y los casos reales de los pilotos. Incluye la página `/colombia`.
 
 ## Lo que necesito de Sergio para arrancar la Fase 1
 1. Crear la sub-cuenta "C360 Plantilla" en GHL (o autorizarme a crearla, si el conector lo permite) y darme su Location ID.

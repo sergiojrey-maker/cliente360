@@ -83,4 +83,4 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
   - Fase 2: demo + kit de venta.
   - Fase 3: pilotos fundadores.
   - Fase 4: ajuste y prueba social.
-- **Siguiente fase después de los pilotos:** revamp de malldigital360.com + página `/colombia`.
+- **Web:** ahora solo la página mínima del club (`/club`) y un parche al sitio actual (quitar precios USD y textos de agencia). El revamp completo de malldigital360.com arranca en la Fase 4, con los casos reales de los pilotos.
