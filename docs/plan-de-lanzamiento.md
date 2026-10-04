@@ -156,3 +156,12 @@ Reglas para que la demo no toque la operación real de MD360:
 6. Las alertas de inconforme y el reporte del dueño de la demo llegan al WhatsApp de Sergio.
 
 La plantilla maestra queda limpia y los clientes reales siguen saliendo del snapshot completo.
+
+## Orden de ejecución acordado (4 oct, noche) — Claude local
+1. **Maestra, lote 1:** aplicar los 5 ajustes de la revisión [Claude nube] (`estado-snapshot.md`).
+2. **Snapshot "Cliente 360 v0.1 (demo)"** desde la maestra (nivel agencia; lo puede hacer Claude con Chrome).
+3. **Demo en Mall Digital 360:** importar **solo** los activos de demo con las reglas de "Dónde vive la demo" (prefijo DEMO —, palabra `DEMO`, tag `demo-c360`, sin GEN-01). **Mostrar a Sergio la lista de lo que se va a importar y esperar su OK**, porque es su cuenta en vivo.
+4. **Plantillas de WhatsApp de la demo** enviadas a aprobación de Meta en el número 320. Meta tarda: por eso van temprano.
+5. **Mientras Meta aprueba:** lote 2 en la maestra (REA-01, CTRL-01, REP-01, RES-03, CA-01 a CA-04, RR-01, GEN-02) + página `/club` (sin publicar).
+6. **Con las plantillas aprobadas:** cambiar los "SMS provisional" por WhatsApp en la demo → prueba completa con el celular de Sergio.
+7. **Maestra terminada** → snapshot "Cliente 360 v1" para clientes.
