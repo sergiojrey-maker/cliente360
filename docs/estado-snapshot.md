@@ -3,6 +3,13 @@
 **Sub-cuenta:** Cliente 360 — Snapshot Maestro · Location ID `PF7DK8r0SiEtcVhO4Trt`
 **Valores de demo:** Barbería Demo, meta 10 sellos, PIN de equipo `3600`, WhatsApp de MD360 (solo demo).
 
+## ⚠️ Arquitectura confirmada por Sergio (4 oct 2026) — leer antes de construir
+| Sub-cuenta | Para qué | WhatsApp |
+|---|---|---|
+| **Cliente 360 — Snapshot Maestro** (`PF7DK8r0SiEtcVhO4Trt`) | **Plantilla maestra.** De aquí sale el snapshot que se duplica a cada negocio cliente. Se construye completa y limpia. | SIM prepago nueva **solo para probar** las plantillas y los flujos (simula la "línea del club" de un cliente) |
+| **Mall Digital 360** (`WZYaJ8M4dqpvhdM2gpip`) | **Aquí vive la DEMO** que prueban los dueños en charlas y diagnósticos, **y el CRM comercial** de MD360 (prospectos → diagnóstico → cliente). Solo se importan los activos de demo, aislados (prefijo "DEMO —", palabra `DEMO`, tag `demo-c360`, **sin** GEN-01). | El **320 405 5485**, que ya está conectado |
+| Sub-cuenta de cada cliente | Copia del snapshot, con sus custom values reales | La línea del club del negocio |
+
 ## Hecho por API (4 oct 2026, sesión en la nube)
 - ✅ **47 custom values** (todos los de la spec, sección 2). Formato de uso: `{{ custom_values.nombre }}`.
   - `resena_link_google` está en `https://g.page/r/REEMPLAZAR/review`: hay que poner el enlace real.
@@ -53,6 +60,8 @@
   - Ojo: la verificación del negocio en Meta figura **"Not Verified"**. Sin verificar, los límites de conversaciones iniciadas por el negocio son bajos. Conviene iniciarla ya.
 
 ## Pendiente (Claude local con Chrome)
-- [ ] Ask AI: instrucción general + F1–F5 + W1–W8 (`orquesta-ask-ai.md`)
+- [x] F1–F5 (formularios y encuestas)
+- [ ] Workflows W1–W8 y lote 2, construidos directamente en el builder (Ask AI descartado para workflows)
+- [ ] Iniciar la verificación del negocio en Meta (hoy "Not Verified")
 - [ ] Pruebas de la sección 8 de la spec
 - [ ] P1 (`/club`) y P2 (parche) en la sub-cuenta Mall Digital 360
