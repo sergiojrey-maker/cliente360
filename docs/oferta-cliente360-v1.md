@@ -69,6 +69,7 @@ Los nombres internos (Impulso, Rescatada, CelebrAcción) se usan en los planes y
 - **Permanencia mínima:** 3 meses.
 - **Mensajes extra:** recarga de 500 mensajes por COP 60.000 *(ajustar con la tarifa real de Meta para Colombia antes de publicar)*.
 - **Cobro:** suscripción automática con tarjeta (Stripe, en COP) o carril manual (link de pago/Nequi) con recordatorio. Mismo precio en los dos carriles.
+- **Facturación (decidido 4 oct):** separada del cobro. Al cliente colombiano se le emite factura electrónica DIAN desde un sistema nacional (por ejemplo, Alegra o Siigo). Idea para automatizar: pago exitoso en Stripe → GHL → API del sistema de facturación → la factura sale sola.
 - **Precio fundador (3 pilotos):** 50 % del plan mensual los 3 primeros meses + Arranque a 50 %. A cambio: testimonio en video y permiso para publicar los datos de antes y después. *(Confirmado por Sergio, 4 oct 2026.)*
 
 **Fuera de Colombia**
