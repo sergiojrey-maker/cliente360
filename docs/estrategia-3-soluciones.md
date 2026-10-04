@@ -1,6 +1,6 @@
 # Cliente 360™ — Estrategia de las 3 soluciones (borrador para discutir)
 
-*3 oct 2026. Versión 0.3 — incorpora 2.ª ronda de respuestas de Sergio: 10 h/semana, precio fundador, prospección, cobro, lealtad aplazada, garantía y control del sistema sin entrenamiento.*
+*4 oct 2026. Versión 0.4 — agrega propuesta de Club de Lealtad v1 (sección 20). Antes, v0.3: incorpora 2.ª ronda de respuestas de Sergio: 10 h/semana, precio fundador, prospección, cobro, lealtad aplazada, garantía y control del sistema sin entrenamiento.*
 
 ## 0. La tesis en una frase
 Las tres soluciones no son tres productos sueltos: son **un solo motor con tres momentos del cliente**.
@@ -382,6 +382,75 @@ Una notificación de "nueva reseña" no dice nada. El sistema le lleva al dueño
    - retenciones al pagar a una empresa del exterior.
    Esto puede inclinar la balanza hacia una pasarela local.
 
+## 20. Club de Lealtad v1 — propuesta: sí desde el lanzamiento, pero en versión "sellos", no "puntos"
+
+**Opinión corta:** sí lanzarlo desde el día 1, pero **no** como programa de puntos completo. Lo que se lanza es un **"Club [Nombre del negocio]" con sellos por visita**. Los puntos por monto, el catálogo de premios y los niveles quedan para v2.
+
+**Por qué sí desde el principio**
+1. **Impulso lo necesita.** Nadie escanea un QR "para dejar una reseña". El motivo para escanear es *"únete al club y gana un premio en tu 10.ª visita"*. Sin club, el QR de Impulso no tiene gancho.
+2. **No pide ninguna acción nueva.** La misma señal que ya existe para pedir la reseña ("✅ Atendido", cita "asistió", orden "entregado" o escaneo del QR) también suma el sello. **Una señal, cuatro resultados:** reseña (solo la primera vez) + sello + `fecha_ultima_visita` (base de la reactivación) + dato para el reporte en pesos.
+3. **Es lo que más fideliza al negocio con nosotros.** Los clientes del negocio tienen sellos acumulados que el negocio les debe. Cancelar el sistema es quitarle el club a sus clientes.
+4. **Encaja con los pilotos.** Barberías y gimnasios viven de la frecuencia: ahí la tarjeta de sellos funciona mejor que en cualquier otro nicho.
+5. **Cambia la conversación de venta.** Ya no es "le ayudo con reseñas" sino "le instalo el club de clientes de su negocio". Eso suena a sistema y no a agencia.
+
+**Por qué NO puntos completos en v1**
+- **Puntos por monto** obligan a que alguien digite cuánto compró cada cliente. Eso es entrenamiento y errores, justo lo que Sergio quiere evitar. Solo funciona bien con integración al POS o a la facturación (v2).
+- **Catálogo de premios, niveles (plata/oro) y vencimiento de puntos** traen más reglas que explicar, más soporte y más riesgo de reclamos.
+- **GHL no tiene programa de lealtad nativo** (está como solicitud en su portal de ideas). Todo se arma con campos, operaciones matemáticas y workflows. Mientras más simple, menos se rompe.
+- **Retrasaría el lanzamiento.** Los sellos agregan ~1 día de construcción al snapshot. Los puntos completos, semanas.
+
+**Cómo lo vive el cliente final**
+1. Escanea el QR → WhatsApp → *"Bienvenido al Club Barbería X 💈. Ya tienes tu primer sello (1/10). En tu 10.ª visita, el corte va por nuestra cuenta."* (+ casilla de autorización de datos).
+2. En cada visita le llega: *"Sello 4/10 ✅. Te faltan 6."*
+3. Cuando le falten 2: *"¡Ya casi! Te faltan 2 visitas para tu premio."* Este mensaje genera visitas por sí solo.
+4. Al completar: *"🎉 Ganaste tu corte gratis. Muestra este mensaje en caja. Código: X."*
+5. Si deja de venir: reactivación (*"Te extrañamos. Tienes 7/10 sellos, no los pierdas."*). Los sellos guardados convierten mucho más que un descuento genérico.
+6. Cumpleaños: regalo del club (viene de CelebrAcción).
+7. Puede escribir `MIS SELLOS` cuando quiera y recibe su cuenta.
+
+**Cómo lo vive el negocio (cero entrenamiento nuevo)**
+- **Empleados:** el mismo ícono "✅ Atendido" que ya tienen (en Modo Cita y Orden suma solo). Para el premio, un segundo ícono, "🎁 Canjear": escriben el celular del cliente y el sistema reinicia la tarjeta y lo registra.
+- **Dueño:** en el reporte semanal ve miembros del club, sellos de la semana, premios canjeados y "clientes a 1–2 visitas del premio". No configura nada.
+
+**Reglas por nicho (precargadas en el snapshot; el dueño elige con 1, 2 o 3 en la instalación)**
+
+| Nicho | Regla sugerida | Premio |
+|---|---|---|
+| Barbería / salón | 10 visitas | Corte o servicio básico gratis |
+| Spa | 6 visitas | Upgrade o servicio corto gratis |
+| Gimnasio | Asistencia: 12 visitas en un mes, o 6 meses seguidos renovando | Clase/sesión especial, o 1 semana gratis para un amigo (eso además trae un referido) |
+| Restaurante / café | 8 visitas | Postre, bebida o plato del día |
+
+Principio para el premio: **alto valor percibido, bajo costo real** para el negocio, y siempre un producto o servicio propio, nunca dinero.
+
+**Reglas que protegen al negocio**
+- **Máximo 1 sello por día** por cliente, para que nadie escanee 10 veces la foto del QR. *(Verificar en GHL la comparación de fecha "es hoy". Si no se puede, el escaneo del QR solo registra al cliente y el sello lo da "✅ Atendido".)*
+- **En Modo Visita**, el QR que suma sellos está en caja o lo muestra el empleado. El QR de mesa solo inscribe al club.
+- **Términos simples** en un enlace (premio, vigencia, 1 sello por día, sin valor en dinero). El Estatuto del Consumidor (Ley 1480 de 2011) exige informar las condiciones de las promociones.
+- **Los sellos nunca dependen de dejar una reseña** (política de Google). El club y la solicitud de reseña van en mensajes distintos.
+
+**En GHL (agregado al snapshot)**
+- **Campos:** `club_sellos` (número), `club_sellos_meta`, `club_premios_canjeados`, `club_codigo_premio`, `club_fecha_ingreso`. Ya existían `fecha_ultima_visita` y `autorizacion_datos`.
+- **Custom values:** nombre del club, regla (número de visitas), premio, enlace de términos.
+- **Workflows:**
+  - CLUB-01 Ingreso al club
+  - CLUB-02 Sello (+1 con operación matemática; aviso "te faltan 2"; premio al llegar a la meta)
+  - CLUB-03 Canje (formulario 🎁 → reinicia sellos, suma `club_premios_canjeados`)
+  - CLUB-04 Consulta `MIS SELLOS`
+  - La reactivación ya existente se ajusta para mencionar los sellos acumulados.
+- **Tags:** `club-miembro`, `club-premio-pendiente`, `club-premio-canjeado`.
+
+**Dónde va en la oferta**
+- **Plan Impulso:** incluye el ingreso al club (bienvenida + cumpleaños). Eso le da el gancho al QR.
+- **Plan 360:** incluye la **tarjeta de sellos completa**: premios, canjes, "te faltan 2" y reactivación con sellos. Es la razón más clara para subir de plan.
+- **En el reporte en pesos,** lealtad suma a la palanca de **frecuencia**: visitas extra de miembros del club comparadas con antes de la instalación, por el ticket promedio = dinero medido.
+
+**v2 (cuando haya clientes estables y se pida)**
+- Puntos por monto, con integración a POS o facturación electrónica (Alegra, Siigo…).
+- Niveles (VIP).
+- Premios por referidos dentro del club.
+- Tarjeta en Apple/Google Wallet.
+
 ## 19. Decisiones tomadas y preguntas abiertas
 
 **Decidido (3 oct 2026)**
@@ -395,7 +464,7 @@ Una notificación de "nueva reseña" no dice nada. El sistema le lleva al dueño
 - **Control sin entrenamiento:** botones, trigger links, palabras clave y un formulario de un toque (sección 16).
 - Prospección: red propia + Delfos, más Smartlead y Closely para cuentas con estructura y para otros países (sección 17).
 - Cobro: Stripe en COP automático + carril manual con recordatorio; probar Mercado Pago (sección 18).
-- **Plan de lealtad: aplazado.** Quedó como idea en Blue (workspace Mall Digital 360 → lista 💡Ideas).
+- ~~Plan de lealtad: aplazado~~ → **reabierto el 4 oct:** propuesta de Club de Lealtad v1 con sellos desde el lanzamiento (sección 20), **pendiente de aprobación de Sergio**.
 - Valor de las reseñas: estimado, traducido a dinero con 4 palancas (sección 9).
 
 **Abiertas**
@@ -404,3 +473,4 @@ Una notificación de "nueva reseña" no dice nada. El sistema le lleva al dueño
 3. ¿Fecha de la próxima charla de Delfos? Para tener lista la demo de 2 minutos y el diagnóstico de reputación.
 4. ¿Ya tiene cuentas activas de Smartlead y Closely (¿AppSumo?) y algún dominio secundario para correo en frío?
 5. ¿Ha probado la app LeadConnector con un cliente? ¿Qué no pudo hacer desde ahí?
+6. ¿Aprueba el Club de Lealtad v1 con sellos desde el lanzamiento (sección 20)? ¿El nombre visible para el cliente final es "Club [Negocio]"?

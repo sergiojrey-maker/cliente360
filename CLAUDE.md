@@ -37,7 +37,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - **Garantía 10 Reseñas** en 30 días (o el mes siguiente no se cobra). Condiciones en el doc de estrategia, sección 15.
 - Cobro: Stripe en COP automático (cuenta Rey Enterprises USA LLC) + carril manual con recordatorio. Probar Mercado Pago.
 - Prospección: red propia + Delfos; Smartlead (correo en frío) y Closely (LinkedIn) para cuentas con estructura y otros países.
-- Plan de lealtad: aplazado. Está como idea en Blue (org Rey Enterprises USA LLC → workspace Mall Digital 360 → lista 💡Ideas).
+- Plan de lealtad: estaba aplazado (idea en Blue: org Rey Enterprises USA LLC → workspace Mall Digital 360 → lista 💡Ideas). **4 oct: propuesta de Club de Lealtad v1 con sellos por visita desde el lanzamiento** (doc de estrategia, sección 20), pendiente de aprobación. Puntos por monto, niveles y catálogo quedan para v2.
 
 ## 4. Reglas no negociables de plataforma (aplican a las 3 soluciones)
 - **Google — sin filtrado de reseñas ("review gating")**: no se puede pedir reseña solo a quien calificó bien en la encuesta ni desviar a los inconformes para que no publiquen. La encuesta puede servir para **atender** al inconforme primero (alerta al dueño), pero el enlace de reseña no se le niega a nadie.
