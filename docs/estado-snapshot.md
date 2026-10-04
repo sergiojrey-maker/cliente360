@@ -40,6 +40,12 @@
   - **≤ 0:** tag `club-premio-pendiente` + mensaje de premio (`c360_premio`).
   - **= 2:** "¡Ya casi!" (`c360_faltan_2`).
   - **Otro valor:** "sello X de N" (`c360_sello`).
+- ✅ **VIS-01 Visita** (construido a mano): 3 disparadores (formulario "Atendido"; cita con estado "Showed" en cualquier calendario; oportunidad de "Órdenes" movida a "Entregado") + se puede llamar con "Add to workflow".
+  - If/Else **"Inválida"** si (`pin_equipo` no está vacío **y** ≠ `{{custom_values.sis_pin_equipo}}`) **o** (`fecha_ultima_visita` es hoy) → borra `pin_equipo` y termina.
+  - Si la visita es válida: borra `pin_equipo` → `fecha_ultima_visita` = hoy → `visitas_total` +1 → llama CLUB-02 → llama RES-01.
+  - Los filtros quedaron dentro de cada workflow llamado, porque GHL no vuelve a unir ramas: CLUB-02 exige `sis_modulo_sellos = si` y RES-01 exige "sin tag `resena-solicitada`".
+  - `fecha_reactivacion` no se calcula aquí: se resuelve en REA-01 (lote 2), a partir de `fecha_ultima_visita`.
+  - "Allow re-entry" viene activado por defecto.
 - ✅ **RES-02b Inconforme atendido**: trigger link "Inconforme atendido" → tag `resena-inconforme-atendido`. Trigger link creado, redirige provisionalmente a malldigital360.com.
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
