@@ -10,7 +10,7 @@
 | 2 (12–18 oct) | Fase 1C (workflows) + 1E (pruebas) + demo de 2 minutos + kit de venta + Stripe |
 | 3 (19–25 oct) | Charla/diagnósticos + red propia (gimnasio, tenis) → cerrar fundadores + primeras instalaciones |
 | 4–6 (26 oct–15 nov) | Pilotos corriendo, medir, ajustar. Prospección diaria para los primeros clientes a precio completo |
-| 7–10 | Fase 4: testimonios + **revamp de malldigital360.com** (sobre el sitio "MD360 Corporativo" que ya está empezado en GHL) |
+| 7–10 (16 nov–13 dic) | Fase 4: testimonios + **revamp de malldigital360.com** (tarea Blue T-701: todas las soluciones de MD360, con Cliente 360 como insignia, sobre el sitio "MD360 Corporativo") |
 
 Especificación técnica del snapshot: `snapshot-c360-spec.md`. Texto de la página del club: `pagina-club.md`.
 
@@ -87,7 +87,9 @@ Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maes
 - [ ] [C] **Diagnóstico de reputación gratis**: plantilla de 1 página (calificación y reseñas del negocio vs. 3 competidores + costo estimado en pesos).
 - [ ] [C] Guion de la cita de diagnóstico (20 min) y manejo de objeciones.
 - [ ] [C] One-pager de la oferta (de `oferta-cliente360-v1.md`).
-- [ ] [C] Acuerdo de servicio de 1 página + términos del club + texto de autorización de datos *(para revisión del contador/abogado)*.
+- [x] [C] Borrador del contrato estandarizado → `contrato-cliente360.md` (permanencia mínima de 3 meses).
+- [ ] [S] Revisión de abogado del contrato + plantilla en GHL Documents & Contracts.
+- [ ] [C] Términos del club + texto de autorización de datos.
 - [ ] [C] Tarjeta "Cómo manejar su sistema" y diseño del QR/NFC del club, con la marca MD360 (Canva).
 - [ ] [S] Productos y precios en Stripe (COP, suscripciones) + link de pago manual (Bold o Mercado Pago).
 - [ ] [C+UI] **Página mínima del club** (1 sola página en GHL, builder tradicional, p. ej. `malldigital360.com/club`):

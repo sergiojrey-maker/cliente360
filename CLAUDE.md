@@ -94,4 +94,6 @@ Especificación: `docs/snapshot-c360-spec.md`. Regla: **cero texto fijo**. Todo 
   - Fase 2: demo + kit de venta.
   - Fase 3: pilotos fundadores.
   - Fase 4: ajuste y prueba social.
-- **Web:** ahora solo la página mínima del club (`/club`) y un parche al sitio actual (quitar precios USD y textos de agencia). El revamp completo de malldigital360.com arranca en la Fase 4, con los casos reales de los pilotos.
+- **Web:** ahora solo la página mínima del club (`/club`) y un parche al sitio actual (quitar precios USD y textos de agencia).
+- **Revamp completo de malldigital360.com:** tarea Blue T-701, **del 16 nov al 13 dic 2026**. Muestra todas las soluciones de MD360 (microapps, revamp de sitios web profesionales, etc.) con **Cliente 360™ como producto insignia**. Arranca después del lanzamiento y de 2 semanas de pilotos, para salir con casos reales.
+- **Contrato:** borrador en `docs/contrato-cliente360.md` (permanencia mínima de 3 meses: se prioriza la calidad del cliente sobre la cantidad). Pendiente de revisión de abogado y de pasarlo a la plantilla de GHL Documents & Contracts.
