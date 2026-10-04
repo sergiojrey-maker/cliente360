@@ -59,6 +59,16 @@
 - ⚠️ **Detalle a revisar en CLUB-02:** con `club_sellos_faltan ≤ 0`, cada visita nueva antes del canje vuelve a enviar el mensaje de premio. Puede servir de recordatorio, pero cuesta una plantilla por visita.
 - ✅ **RES-02b Inconforme atendido**: trigger link "Inconforme atendido" → tag `resena-inconforme-atendido`. Trigger link creado, redirige provisionalmente a malldigital360.com.
 
+## Revisión [Claude nube] del lote 1 (4 oct 2026, por API + notas)
+**Por API:** 9 workflows en la plantilla maestra, **todos en borrador**: CLUB-01, CLUB-02, CLUB-03, CLUB-04, VIS-01, RES-01, RES-02, RES-02b y GEN-01. En Mall Digital 360 no se creó nada. ✅
+
+**Ajustes recomendados al Claude local (en orden de importancia):**
+1. **GEN-01: quitar "NO" de las palabras de baja; dejar BAJA y STOP.** Un cliente real que conteste "no" a cualquier mensaje, por ejemplo "¿algo que podamos mejorar?" o una oferta, quedaría en DND para siempre y el negocio lo pierde. En los textos se avisa "responde BAJA".
+2. **CLUB-02 con premio pendiente:** si `club_sellos_faltan` ≤ 0 y ya tiene `club-premio-pendiente`, no seguir restando ni repetir el mensaje de premio en cada visita (cuesta una plantilla por visita y cansa). Mandar un recordatorio corto **una sola vez** ("recuerda pedir tu premio en caja") o nada.
+3. **RES-02 y CLUB-03 avisan al dueño por SMS interno.** Cambiarlos a "Send internal notification" → WhatsApp/push al **usuario** dueño, como decidió Sergio. Así no hace falta un número SMS (LC Phone) en Colombia.
+4. **RES-02b quedó huérfano** (se quitó el trigger link). O se rediseña (el dueño responde `ATENDIDO` + celular por la app) o se borra antes de crear el snapshot, para no llevar basura a los clientes.
+5. **CLUB-01 se dispara con mensajes que "contienen CLUB".** Está bien porque el "ya eres miembro" lo ataja, pero conviene que la condición sea "es exactamente" o "empieza por" CLUB, para no reaccionar a frases como "me salgo del club".
+
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
 - ✅ **F2 Canjear**: título "🎁 Canjear premio — {{custom_values.club_nombre_completo}}", Celular + PIN, botón "Canjear", mensaje "Premio registrado 🎁".
