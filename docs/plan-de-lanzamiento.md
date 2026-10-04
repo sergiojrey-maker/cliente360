@@ -54,9 +54,10 @@ Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maes
 - [x] Calendario de ejemplo para Modo Cita ("Cita — Demo", 4 oct).
 
 **1C. Workflows [UI]** (orden de construcción = orden de la demo)
-1. [ ] I5-01 Ingreso por QR → WhatsApp (palabra clave) + CLUB-01 bienvenida y sello 1.
-2. [ ] I5-02 Solicitud de reseña tras visita (3 variantes de señal: QR, cita "asistió", etapa "Entregado") + RR-02 alerta de inconforme con botones.
-3. [ ] CLUB-02 Sello (+1, máximo 1 por día, aviso "te faltan 2", premio) · CLUB-03 Canje · CLUB-04 `MIS SELLOS`.
+1. [x] I5-01 Ingreso por QR → WhatsApp (palabra clave) + CLUB-01 bienvenida y sello 1.
+2. [x] I5-02 Solicitud de reseña tras visita (3 variantes de señal: QR, cita "asistió", etapa "Entregado") + RR-02 alerta de inconforme con botones.
+3. [x] CLUB-02 Sello (+1, máximo 1 por día, aviso "te faltan 2", premio) · CLUB-03 Canje · CLUB-04 `MIS SELLOS`.
+   - *(4 oct, Claude local)* Lote 1 construido a mano en borrador, sin prueba con celular. Mensajes en "SMS provisional"; los botones de la alerta de inconforme quedan pendientes (el trigger link no identifica al cliente). Detalle en `docs/estado-snapshot.md`.
 4. [ ] REA-01 Reactivación por inactividad (con sellos guardados).
 5. [ ] RR-01 Secuencia escalonada de Reputación Rescatada (Drip Mode).
 6. [ ] REP-01 Contadores del dueño (operaciones matemáticas) + REP-02 reporte del lunes con 3 botones.
