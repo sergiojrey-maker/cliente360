@@ -46,10 +46,11 @@ Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maes
 - [ ] Pipeline de ventas propio de MD360 "Prospectos Cliente 360" (en la sub-cuenta Mall Digital 360, separado de `Afiliado360`): Contacto → Diagnóstico agendado → Diagnóstico hecho → Propuesta → Cliente / No por ahora.
 
 **1B. Formularios, encuesta y calendario [UI]**
-- [ ] Formulario "✅ Atendido" (celular + PIN).
-- [ ] Formulario "🎁 Canjear" (celular + PIN).
-- [ ] Encuesta de instalación (3 preguntas + regla/premio del club).
-- [ ] Página de términos del club + autorización de datos.
+- [x] Formulario "✅ Atendido" (celular + PIN). *(4 oct)*
+- [x] Formulario "🎁 Canjear" (celular + PIN). *(4 oct)*
+- [x] Formulario "Ingreso al club" con autorización de datos + encuesta "Satisfacción". *(4 oct)*
+- [x] Encuesta de instalación (3 preguntas + regla/premio del club). *(4 oct)*
+- [ ] Página de términos del club (el formulario ya enlaza a `club_link_terminos`, provisional).
 - [x] Calendario de ejemplo para Modo Cita ("Cita — Demo", 4 oct).
 
 **1C. Workflows [UI]** (orden de construcción = orden de la demo)
