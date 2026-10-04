@@ -69,7 +69,7 @@ Los nombres internos (Impulso, Rescatada, CelebrAcción) se usan en los planes y
 - **Permanencia mínima:** 3 meses.
 - **Mensajes extra:** recarga de 500 mensajes por COP 60.000 *(ajustar con la tarifa real de Meta para Colombia antes de publicar)*.
 - **Cobro:** suscripción automática con tarjeta (Stripe, en COP) o carril manual (link de pago/Nequi) con recordatorio. Mismo precio en los dos carriles.
-- **Precio fundador (3 pilotos):** 50 % del plan mensual los 3 primeros meses + Arranque a 50 %. A cambio: testimonio en video y permiso para publicar los datos de antes y después. *(El Arranque a 50 % para fundadores es una decisión mía para facilitar el sí del piloto. Confirmar.)*
+- **Precio fundador (3 pilotos):** 50 % del plan mensual los 3 primeros meses + Arranque a 50 %. A cambio: testimonio en video y permiso para publicar los datos de antes y después. *(Confirmado por Sergio, 4 oct 2026.)*
 
 **Fuera de Colombia**
 
@@ -89,7 +89,7 @@ Los nombres internos (Impulso, Rescatada, CelebrAcción) se usan en los planes y
   - Usar "✅ Atendido" cuando aplique.
 - Solo cuentan reseñas reales; nunca se compran ni se dan regalos por reseñar.
 - Si el negocio atiende menos de ~150 clientes al mes, la cifra se ajusta en el diagnóstico, antes de firmar.
-- **Aplica también a los fundadores.** *(Mi recomendación: la garantía es parte de la prueba que estamos validando. Confirmar.)*
+- **Aplica también a los fundadores.** *(Confirmado por Sergio, 4 oct 2026.)*
 
 ## 5. A quién se le vende (filtro de entrada)
 

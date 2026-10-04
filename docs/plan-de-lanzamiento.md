@@ -7,7 +7,7 @@ Leyenda: **[API]** se puede hacer por API o conector de GHL (Claude lo puede eje
 ---
 
 ## Fase 0 — Cerrar pendientes (semana 1)
-- [ ] [S] Confirmar las 2 decisiones abiertas de la oferta: Arranque a 50 % para fundadores y garantía para fundadores.
+- [x] [S] Confirmar las 2 decisiones abiertas de la oferta: Arranque a 50 % para fundadores y garantía para fundadores. *(Confirmado el 4 oct.)*
 - [ ] [S] Contador: ¿se factura desde Rey Enterprises USA LLC (Stripe) o desde el RUT colombiano? ¿Qué pasa con la factura electrónica DIAN y las retenciones?
 - [ ] [S] Fecha de la próxima charla de Delfos (es el deadline de la demo).
 - [ ] [C] Verificar la tarifa de Meta para plantillas en Colombia y ajustar el precio de la recarga de mensajes.

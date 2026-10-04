@@ -35,7 +35,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - Precio: Arranque COP 600–900 mil (pago único); Plan Impulso COP 250–350 mil/mes; Plan 360 COP 450–600 mil/mes (USD para el resto de LatAm/EE. UU. en el doc de estrategia). Calidad sobre volumen; quien no pueda pagar va a la ruta de capacitación.
 - WhatsApp: **línea del club** dedicada por negocio con coexistence (nunca el número principal para envíos salientes); número de MD360 solo para demos.
 - Tiempo de Sergio para Sardes: 10 h/semana. Metas: 8–10 clientes activos a 6 meses, 20 a 12 meses (con asistente desde el cliente 12–15).
-- Precio fundador: 50 % por 3 meses para 3 pilotos, a cambio de testimonio en video + datos antes/después.
+- Precio fundador: 50 % por 3 meses + Arranque a 50 % para 3 pilotos, a cambio de testimonio en video + datos antes/después. La Garantía 10 Reseñas también aplica a fundadores (confirmado 4 oct).
 - **Garantía 10 Reseñas** en 30 días (o el mes siguiente no se cobra). Condiciones en el doc de estrategia, sección 15.
 - Cobro: Stripe en COP automático (cuenta Rey Enterprises USA LLC) + carril manual con recordatorio. Probar Mercado Pago.
 - Prospección: red propia + Delfos; Smartlead (correo en frío) y Closely (LinkedIn) para cuentas con estructura y otros países.
