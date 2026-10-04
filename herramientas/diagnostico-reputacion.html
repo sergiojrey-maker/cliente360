@@ -1,0 +1,232 @@
+<title>Diagnóstico de Reputación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: herramienta de una columna para celular; formulario arriba, diagnóstico (lo que se le muestra al dueño) abajo. Marca MD360. */
+:root{
+  --navy:#14315A; --green:#16B364; --deep:#0B1F3A; --ink:#1A2432; --slate:#4E5D70;
+  --mint:#E7F7EF; --mist:#EEF2F7; --white:#FFFFFF;
+  --bg:#F4F6FA; --surface:var(--white); --fg:var(--ink); --muted:var(--slate);
+  --line:#D9E0EA; --accent:var(--green); --brand:var(--navy); --soft:var(--mint); --field:var(--white);
+  --warn:#B4541A; --warn-bg:#FBEDE3; --good:#11804A;
+  --display:"Archivo", "Arial Black", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#08172B; --surface:#0E2340; --fg:#E8EEF6; --muted:#9FB0C6; --line:#22406A;
+  --brand:#9CC1F0; --soft:#0F3A2A; --field:#0B1D35; --accent:#2FCB7C; --warn:#F2A06B; --warn-bg:#3A2213; --good:#4ADE96;
+  color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#08172B; --surface:#0E2340; --fg:#E8EEF6; --muted:#9FB0C6; --line:#22406A;
+  --brand:#9CC1F0; --soft:#0F3A2A; --field:#0B1D35; --accent:#2FCB7C; --warn:#F2A06B; --warn-bg:#3A2213; --good:#4ADE96;
+  color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:20px 48px;display:grid;gap:20px}
+header{display:grid;gap:4px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(26px,6vw,36px);line-height:1.05;margin:0;color:var(--brand);text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-size:20px;margin:0;color:var(--brand)}
+p{margin:0}
+.lead{color:var(--muted);max-width:60ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+label{display:grid;gap:4px;font-size:14px;font-weight:600;color:var(--muted);min-width:0}
+input,select{font:inherit;color:var(--fg);background:var(--field);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;min-width:0}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.rowcomp{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:end}
+.rowcomp .head{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.hint{font-size:13px;color:var(--muted)}
+.example{display:inline-block;font-size:12px;font-weight:700;background:var(--soft);color:var(--good);padding:2px 8px;border-radius:999px}
+button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:12px 16px;cursor:pointer}
+.primary{background:var(--accent);color:#06281A}
+.ghost{background:transparent;color:var(--brand);border:1px solid var(--line)}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* Diagnóstico */
+.report{background:var(--surface);border:2px solid var(--brand);border-radius:16px;overflow:hidden}
+.report-top{background:var(--navy);color:#fff;padding:18px;display:grid;gap:4px}
+.report-top .eyebrow{color:#BFD3EE}
+.report-top h2{color:#fff;font-size:22px}
+.report-body{padding:18px;display:grid;gap:18px}
+.rank{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center}
+.bar .name{font-weight:700;overflow-wrap:anywhere}
+.bar .stat{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;white-space:nowrap}
+.track{grid-column:1/-1;height:10px;border-radius:999px;background:var(--mist)}
+:root[data-theme="dark"] .track{background:#1A3357}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .track{background:#1A3357}}
+.fill{height:100%;border-radius:999px;background:var(--line)}
+.bar.me .name{color:var(--brand)}
+.bar.me .fill{background:var(--accent)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}
+.kpi .v{font-family:var(--display);font-weight:900;font-size:26px;font-variant-numeric:tabular-nums;color:var(--brand)}
+.kpi .l{font-size:14px;color:var(--muted)}
+.kpi.money{background:var(--warn-bg);border-color:transparent}
+.kpi.money .v{color:var(--warn)}
+.callout{background:var(--soft);border-radius:12px;padding:14px;display:grid;gap:6px}
+.callout strong{color:var(--good)}
+.fine{font-size:12px;color:var(--muted)}
+.copied{font-size:14px;color:var(--good);font-weight:700}
+textarea{position:absolute;left:-9999px}
+@media (prefers-reduced-motion:no-preference){.fill{transition:width .4s ease}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Mall Digital 360 · Cliente 360™</span>
+    <h1>Diagnóstico de Reputación</h1>
+    <p class="lead">Busque el negocio y 3 competidores cercanos en Google Maps, copie la calificación y el número de reseñas, y muéstrele al dueño dónde está parado y cuánto le cuesta.</p>
+  </header>
+
+  <form class="panel" id="f" autocomplete="off">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+      <h2>Datos</h2><span class="example" id="exampleTag">Datos de ejemplo</span>
+    </div>
+
+    <div class="grid2">
+      <label for="negocio">Negocio
+        <input id="negocio" value="Barbería El Llano"></label>
+      <label for="nicho">Tipo de negocio
+        <select id="nicho">
+          <option>Barbería</option><option>Salón de belleza</option><option>Spa</option><option>Gimnasio</option>
+          <option>Academia</option><option>Restaurante</option><option>Café</option><option>Taller</option><option>Consultorio</option><option>Otro</option>
+        </select></label>
+    </div>
+
+    <div class="rowcomp">
+      <span class="head">Negocio / competidor</span><span class="head">Estrellas</span><span class="head">Reseñas</span>
+      <input id="n0" value="Barbería El Llano" aria-label="Nombre del negocio" readonly>
+      <input id="r0" type="number" step="0.1" min="1" max="5" value="4.2" aria-label="Estrellas del negocio">
+      <input id="c0" type="number" min="0" value="38" aria-label="Reseñas del negocio">
+      <input id="n1" value="Barber Kings" aria-label="Competidor 1">
+      <input id="r1" type="number" step="0.1" min="1" max="5" value="4.8" aria-label="Estrellas competidor 1">
+      <input id="c1" type="number" min="0" value="214" aria-label="Reseñas competidor 1">
+      <input id="n2" value="Estilo Llanero" aria-label="Competidor 2">
+      <input id="r2" type="number" step="0.1" min="1" max="5" value="4.6" aria-label="Estrellas competidor 2">
+      <input id="c2" type="number" min="0" value="127" aria-label="Reseñas competidor 2">
+      <input id="n3" value="La Barbería 33" aria-label="Competidor 3">
+      <input id="r3" type="number" step="0.1" min="1" max="5" value="4.4" aria-label="Estrellas competidor 3">
+      <input id="c3" type="number" min="0" value="61" aria-label="Reseñas competidor 3">
+    </div>
+
+    <div class="grid2">
+      <label for="ticket">Ticket promedio (COP)
+        <input id="ticket" type="number" min="0" step="1000" value="35000"></label>
+      <label for="clientes">Clientes atendidos al mes
+        <input id="clientes" type="number" min="0" value="400"></label>
+    </div>
+    <p class="hint">Pregúntele al dueño el ticket y los clientes al mes. Si no los sabe, use un estimado conservador.</p>
+
+    <div class="actions">
+      <button type="submit" class="primary">Generar diagnóstico</button>
+      <button type="button" class="ghost" id="clear">Empezar uno nuevo</button>
+    </div>
+  </form>
+
+  <section class="report" id="report" aria-live="polite">
+    <div class="report-top">
+      <span class="eyebrow">Diagnóstico de reputación en Google</span>
+      <h2 id="rTitle">—</h2>
+    </div>
+    <div class="report-body">
+      <div class="rank" id="rank"></div>
+      <div class="kpis" id="kpis"></div>
+      <div class="callout" id="callout"></div>
+      <p class="fine">Cálculo estimado y conservador, para conversar. Referencia: estudio de Michael Luca (Harvard Business School, 2011), donde una estrella más en la calificación se asoció con 5 % a 9 % más ingresos; aquí se usa el 5 %. No es una promesa de resultados.</p>
+      <div class="actions">
+        <button type="button" class="primary" id="copy">Copiar para WhatsApp</button>
+        <span class="copied" id="copied" hidden>Copiado ✅</span>
+      </div>
+    </div>
+  </section>
+  <textarea id="buf" aria-hidden="true" tabindex="-1"></textarea>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const fmt = n => "COP " + Math.round(n).toLocaleString("es-CO");
+const num = (id, d=0) => { const v = parseFloat($(id).value); return isNaN(v) ? d : v; };
+
+function reviewsToReach(r, n, target){
+  if (r >= target) return 0;
+  if (target >= 5) return Infinity;
+  return Math.ceil(n * (target - r) / (5 - target)); // reseñas nuevas de 5★ necesarias
+}
+
+let lastText = "";
+function render(){
+  const negocio = $("negocio").value.trim() || "Su negocio";
+  $("n0").value = negocio;
+  const rows = [0,1,2,3].map(i => ({
+    name: (i===0 ? negocio : $("n"+i).value.trim()) || ("Competidor "+i),
+    r: Math.min(5, Math.max(0, num("r"+i))), c: Math.max(0, Math.round(num("c"+i))), me: i===0
+  })).filter(x => x.me || x.c > 0 || x.r > 0);
+
+  const me = rows[0];
+  const sorted = [...rows].sort((a,b)=> (b.r - a.r) || (b.c - a.c));
+  const pos = sorted.indexOf(me) + 1;
+  const leader = sorted[0] === me ? (sorted[1] || me) : sorted[0];
+  const maxC = Math.max(...rows.map(x=>x.c), 1);
+
+  $("rTitle").textContent = negocio;
+  $("rank").innerHTML = sorted.map(x => `
+    <div class="bar ${x.me?'me':''}">
+      <span class="name">${x.me?'▶ ':''}${escapeHtml(x.name)}</span>
+      <span class="stat">${x.r.toFixed(1)} ★ · ${x.c} reseñas</span>
+      <div class="track"><div class="fill" style="width:${Math.max(4, x.c/maxC*100)}%"></div></div>
+    </div>`).join("");
+
+  const ticket = num("ticket"), clientes = num("clientes");
+  const ingresos = ticket * clientes;
+  const gapStars = Math.max(0, leader.r - me.r);
+  const perdida = ingresos * gapStars * 0.05; // 5% por estrella, conservador
+  const target = me.r < 4.6 ? 4.6 : Math.min(4.9, Math.max(me.r + 0.1, leader.r));
+  const need = reviewsToReach(me.r, me.c, target);
+  const gapCount = Math.max(0, leader.c - me.c);
+  const mesesGarantia = need === Infinity ? null : Math.max(1, Math.ceil(need / 10));
+
+  const kp = [];
+  kp.push(`<div class="kpi"><span class="v">#${pos} de ${rows.length}</span><span class="l">Su posición frente a los ${rows.length-1} competidores</span></div>`);
+  if (gapCount > 0) kp.push(`<div class="kpi"><span class="v">${gapCount}</span><span class="l">Reseñas por debajo de ${escapeHtml(leader.name)}</span></div>`);
+  if (gapStars > 0) kp.push(`<div class="kpi money"><span class="v">≈ ${fmt(perdida)}</span><span class="l">Ventas al mes que se le estarían yendo por tener ${gapStars.toFixed(1)} ★ menos que el líder</span></div>`);
+  kp.push(`<div class="kpi"><span class="v">${need===Infinity?'—':need}</span><span class="l">Reseñas de 5 ★ que necesita para llegar a ${target.toFixed(1)} ★</span></div>`);
+  $("kpis").innerHTML = kp.join("");
+
+  const meses = mesesGarantia ? `${mesesGarantia} ${mesesGarantia===1?'mes':'meses'}` : "pocos meses";
+  $("callout").innerHTML = need === 0 && gapCount === 0
+    ? `<strong>Usted ya lidera su zona.</strong><p>El club de clientes le ayuda a mantener esa ventaja y a que sus clientes vuelvan más seguido.</p>`
+    : `<strong>Lo que haría el club de clientes en su negocio</strong>
+       <p>Con el club instalado, el sistema le pide la reseña a cada cliente en el momento justo. Con nuestra garantía de 10 reseñas nuevas en 30 días, llegaría a ${target.toFixed(1)} ★ en unos <b>${meses}</b>, y además trae de vuelta a los clientes que dejaron de venir.</p>`;
+
+  lastText =
+`📊 *Diagnóstico de reputación — ${negocio}*
+
+${sorted.map((x,i)=>`${i+1}. ${x.me?'▶ ':''}${x.name}: ${x.r.toFixed(1)}★ (${x.c} reseñas)`).join("\n")}
+
+• Posición: #${pos} de ${rows.length}
+${gapCount>0?`• Le faltan ${gapCount} reseñas para alcanzar a ${leader.name}\n`:''}${gapStars>0?`• Estimado: ≈ ${fmt(perdida)} al mes en ventas que se estarían yendo con la competencia\n`:''}• Necesita ${need===Infinity?'—':need} reseñas de 5★ para llegar a ${target.toFixed(1)}★
+
+Con el club de clientes instalado, lo lograría en unos ${meses}, con garantía de 10 reseñas nuevas en 30 días.
+— Mall Digital 360 · Cliente 360™`;
+}
+
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+$("f").addEventListener("submit", e => { e.preventDefault(); $("exampleTag").hidden = true; render(); $("report").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); });
+$("f").addEventListener("input", () => { $("exampleTag").hidden = true; render(); });
+$("clear").addEventListener("click", () => {
+  ["negocio","n1","n2","n3","r0","c0","r1","c1","r2","c2","r3","c3","ticket","clientes"].forEach(id => $(id).value = "");
+  $("exampleTag").hidden = true; render(); $("negocio").focus();
+});
+$("copy").addEventListener("click", () => {
+  const done = () => { $("copied").hidden = false; setTimeout(()=> $("copied").hidden = true, 2500); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(lastText).then(done).catch(fallback);
+  } else fallback();
+  function fallback(){ const t=$("buf"); t.value=lastText; t.select(); try{ document.execCommand("copy"); done(); }catch(_){} }
+});
+render();
+</script>
