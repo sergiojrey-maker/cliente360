@@ -142,3 +142,16 @@ Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maes
 ## Lo que necesito de Sergio para arrancar la Fase 1
 1. Crear la sub-cuenta "C360 Plantilla" en GHL (o autorizarme a crearla, si el conector lo permite) y darme su Location ID.
 2. Confirmar si el conector de Go High Level de esta sesión tiene acceso a esa sub-cuenta, para crear por API los campos, valores y tags de 1A.
+
+## Dónde vive la demo (decidido 4 oct)
+**En la sub-cuenta Mall Digital 360, aprovechando su WhatsApp ya conectado.** Un número de WhatsApp solo puede estar conectado a una sub-cuenta a la vez, así que esto evita conseguir otra línea. Además, cada asistente que prueba la demo queda como **prospecto en el CRM de MD360**.
+
+Reglas para que la demo no toque la operación real de MD360:
+1. **No se carga el snapshot completo** en Mall Digital 360. Al cargarlo se eligen **solo los activos de la demo**: CLUB-01, VIS-01, CLUB-02, RES-01, RES-02, el formulario "Atendido" y los custom values que usan.
+2. Workflows con prefijo **"DEMO —"**. Se disparan solo con la palabra **`DEMO`** (no `CLUB`) y solo actúan sobre contactos con el tag **`demo-c360`**.
+3. **La baja general (GEN-01) NO se importa.** En la cuenta real, un prospecto que escriba "no" quedaría bloqueado. Se usa una baja propia de la demo, que solo aplica a `demo-c360`.
+4. **No se tocan** el pipeline `Afiliado360` ni los custom values propios de MD360. Antes de importar se revisa que no haya nombres repetidos.
+5. Después de la demo, el contacto pasa al pipeline "Prospectos Cliente 360" con el tag `lead-charla`.
+6. Las alertas de inconforme y el reporte del dueño de la demo llegan al WhatsApp de Sergio.
+
+La plantilla maestra queda limpia y los clientes reales siguen saliendo del snapshot completo.
