@@ -27,22 +27,22 @@ Leyenda: **[API]** se puede hacer por API o conector de GHL (Claude lo puede eje
 ## Fase 1 — Snapshot base (semanas 1–3)
 Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maestro")**, no en la sub-cuenta Mall Digital 360, para que el snapshot salga limpio.
 
-**1A. Estructura [API] — Claude lo puede crear en cuanto exista la sub-cuenta**
-- [ ] Custom fields de contacto:
+**1A. Estructura [API] — ✅ completa el 4 oct 2026** (nombres finales en `snapshot-c360-spec.md` y `estado-snapshot.md`)
+- [x] Custom fields de contacto:
   - `fuente_registro`, `fecha_ultima_visita`, `calificacion_encuesta`, `fecha_solicitud_resena`, `autorizacion_datos`
   - `club_sellos`, `club_sellos_meta`, `club_premios_canjeados`, `club_codigo_premio`, `club_fecha_ingreso`
   - Para el dueño: `total_resenas`, `resenas_mes`, `reactivados_mes`, `ventas_medidas_mes`, `visitas_club_semana`
-- [ ] Custom values del negocio:
+- [x] Custom values del negocio:
   - Nombre comercial, enlace de reseña de Google, WhatsApp del dueño
   - Ticket promedio, visitas al año, clientes nuevos al mes
   - Nombre del club, regla del club, premio, enlace de términos
   - Oferta vigente (título, detalle, código, vigencia), modo de operación, días de inactividad
-- [ ] Tags:
+- [x] Tags:
   - `dueno`, `empleado`, `baja`
   - `rr-*` (Reputación Rescatada), `i5-*` (Impulso)
   - `club-miembro`, `club-premio-pendiente`, `club-premio-canjeado`
   - `ca-*` (CelebrAcción)
-- [ ] Pipeline "Órdenes" (solo para Modo Orden): Recibido → En proceso → Entregado.
+- [x] Pipeline "Órdenes" (solo para Modo Orden): Recibido → En proceso → Entregado.
 - [ ] Pipeline de ventas propio de MD360 "Prospectos Cliente 360" (en la sub-cuenta Mall Digital 360, separado de `Afiliado360`): Contacto → Diagnóstico agendado → Diagnóstico hecho → Propuesta → Cliente / No por ahora.
 
 **1B. Formularios, encuesta y calendario [UI]**
@@ -50,7 +50,7 @@ Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maes
 - [ ] Formulario "🎁 Canjear" (celular + PIN).
 - [ ] Encuesta de instalación (3 preguntas + regla/premio del club).
 - [ ] Página de términos del club + autorización de datos.
-- [ ] Calendario de ejemplo para Modo Cita.
+- [x] Calendario de ejemplo para Modo Cita ("Cita — Demo", 4 oct).
 
 **1C. Workflows [UI]** (orden de construcción = orden de la demo)
 1. [ ] I5-01 Ingreso por QR → WhatsApp (palabra clave) + CLUB-01 bienvenida y sello 1.
