@@ -77,6 +77,9 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
   - El negocio se indica con el custom field **"Name Of Business"** (para este repo, la opción **"Cliente 360"**).
   - Los tags `*OOS* …` significan **Out Of Service**: **no** se usan para identificar el negocio.
   - Tarea viva del lanzamiento: "Lanzamiento Cliente 360 v1" (lista 📋Importante).
+  - **Claude tiene su propio usuario en Blue: "Claudio A"** (ID `onr98842qt5jhj5qee7982i9`), el "empleado máster". Toda tarea que Sergio delegue a Claude se asigna a Claudio, **no** a Sergio.
+  - Cada hilo de Claude firma sus avances con un comentario que empieza por su nombre: **[Claude nube]**, **[Claude local]**, **[Cowork Sardes]**, etc.
+  - El historial de Blue sigue mostrando "Sergio Rey" porque los conectores usan su cuenta.
 - Proceder con criterio propio y entregar reporte al final; él pide cambios después.
 - Confrontar las ideas con argumentos (él lo pide explícitamente), no solo ejecutar.
 
