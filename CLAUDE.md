@@ -73,6 +73,10 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
 - Estructura en análisis: producto horizontal (un snapshot, 3 modos de operación: Visita / Cita / Orden) y venta vertical por nicho, uno a la vez. El tamaño define el plan.
 
 ## 8. Cómo trabajar con Sergio
+- **Blue** (org Rey Enterprises USA LLC → workspace Mall Digital 360):
+  - El negocio se indica con el custom field **"Name Of Business"** (para este repo, la opción **"Cliente 360"**).
+  - Los tags `*OOS* …` significan **Out Of Service**: **no** se usan para identificar el negocio.
+  - Tarea viva del lanzamiento: "Lanzamiento Cliente 360 v1" (lista 📋Importante).
 - Proceder con criterio propio y entregar reporte al final; él pide cambios después.
 - Confrontar las ideas con argumentos (él lo pide explícitamente), no solo ejecutar.
 
