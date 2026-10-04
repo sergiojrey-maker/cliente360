@@ -46,6 +46,13 @@
   - Los filtros quedaron dentro de cada workflow llamado, porque GHL no vuelve a unir ramas: CLUB-02 exige `sis_modulo_sellos = si` y RES-01 exige "sin tag `resena-solicitada`".
   - `fecha_reactivacion` no se calcula aquí: se resuelve en REA-01 (lote 2), a partir de `fecha_ultima_visita`.
   - "Allow re-entry" viene activado por defecto.
+- ✅ **CLUB-01 Ingreso al club** (construido a mano, 0 errores): disparadores = formulario "Ingreso al club" + mensaje que contiene "CLUB" (el disparador no acepta custom values). `sis_estado` = activo → si ya tiene `club-miembro`: "ya eres miembro" (`c360_ya_miembro`) y termina. Si no: tag `club-miembro` → `fuente_registro`=qr, `autorizacion_datos`=si, `club_fecha_ingreso`=fecha actual → `club_sellos`×0 → `club_sellos_faltan`×0+`club_meta_visitas` → bienvenida (`c360_bienvenida`) → si `club_regalo_bienvenida` no está vacío: regalo (`c360_regalo`) → llama VIS-01 (primer sello).
+  - **Pendiente:** pedir el cumpleaños (paso 6 de W1), esperando la decisión de diseño (`club_link_registro`).
+- ✅ **CLUB-04 Mis sellos** (0 errores): mensaje que contiene "MIS SELLOS" o "MIS PUNTOS" → si `sis_estado`=activo **y** tiene `club-miembro` → conteo de sellos (respuesta dentro de la ventana de 24 h, no necesita plantilla). A los que no son miembros no les responde.
+- 🟡 **CLUB-03 Canje** (en construcción, ID `911f7ae4-2e50-4101-9234-a7629b61b9d4`): If/Else "¿Canje válido?" con ramas "PIN incorrecto" (`pin_equipo` ≠ `sis_pin_equipo` → borrar PIN, hecho), "Sin premio pendiente" (no tiene `club-premio-pendiente`; vacía) y "Canje válido" (vacía).
+  - **Falta en "Sin premio":** aviso interno por SMS a `{{custom_values.negocio_whatsapp_dueno}}` y borrar el PIN.
+  - **Falta en "Canje válido":** borrar el PIN; quitar `club-premio-pendiente`; poner `club-premio-canjeado`; `club_premios_canjeados` +1; `club_sellos`×0; `club_sellos_faltan`×0+meta; mensaje al cliente (`c360_canje`).
+  - **Falta además:** el disparador "formulario Canjear".
 - ✅ **RES-02b Inconforme atendido**: trigger link "Inconforme atendido" → tag `resena-inconforme-atendido`. Trigger link creado, redirige provisionalmente a malldigital360.com.
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
