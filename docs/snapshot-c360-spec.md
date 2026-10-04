@@ -33,6 +33,7 @@
 | `negocio_horario` | Lun–Sáb 9 a. m.–8 p. m. | Respuestas automáticas |
 | `negocio_whatsapp_club` | +57 3xx… | Línea del club |
 | `negocio_dueno_nombre` | Andrés | Firma y alertas |
+| `negocio_whatsapp_dueno` | +57 3xx… | Destino de alertas y reportes al dueño |
 | `negocio_firma` | — Andrés y el equipo de El Llano | Cierre de mensajes |
 | `negocio_unidad_visita` | corte | "Tu 4.º corte", "tu próxima clase" |
 | `negocio_ticket_promedio` | 35000 | Reporte en pesos |
@@ -101,6 +102,8 @@
 - **Reactivación:** `fecha_reactivacion` (fecha = última visita + `rea_dias_inactividad`)
 - **Permisos:** `autorizacion_datos` (sí/no + fecha)
 - **Cumpleaños:** se usa el campo estándar `date_of_birth`.
+
+**Encuesta de instalación** (en el contacto del dueño): `inst_ticket`, `inst_visitas_anio`, `inst_nuevos_mes`, `inst_meta`, `inst_premio`. Claude los copia a los custom values por API.
 
 **Dueño** (un contacto con tag `dueno`): los contadores del reporte
 - `rep_resenas_total`, `rep_resenas_semana`
