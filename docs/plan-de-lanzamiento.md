@@ -62,7 +62,7 @@ Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maes
 5. [x] RR-01 Secuencia escalonada de Reputación Rescatada (Drip Mode).
 6. [x] REP-01 reporte del lunes + REP-02 cierre de mes. Los contadores son custom values y se suman con operaciones matemáticas.
 7. [x] CTRL-01 Palabras del dueño: `REPORTE`, `PAUSA`, `ACTIVAR`, `AYUDA`.
-8. [ ] CA-01 consulta al dueño (1/2/3/4) ✅ · CA-02 elección + CA-02b envío escalonado de fecha ✅ · CA-03 cumpleaños ✅ · CA-04 redención ⏳ (falta decidir el diseño).
+8. [x] CA-01 consulta al dueño (1/2/3/4) · CA-02 elección + CA-02b envío escalonado de fecha · CA-03 cumpleaños · CA-04 redención (código de oferta en el formulario Atendido).
 9. [x] GEN-01 Baja / no contactar · GEN-02 monitor interno (semana sin visitas → correo a soporte).
    - *(4 oct, Claude local)* Lote 2 construido en borrador, salvo CA-04, y se agregó RES-03 (reseña recibida). Nada está probado con celular. Detalle y decisiones en `docs/estado-snapshot.md`.
 

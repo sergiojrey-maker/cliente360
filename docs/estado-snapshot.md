@@ -171,10 +171,16 @@
   - Quita `ca-enviar`. Condición: `sis_modulo_celebraccion` = si + `sis_estado` = activo + `club-miembro` + sin `baja`.
   - Oferta (SMS provisional → plantilla `c360_ca_oferta`) con fecha, título, detalle, código y vigencia, y salida BAJA. Va en un mensaje aparte: nunca se mezcla con la solicitud de reseña.
   - **Por qué hay un paso humano:** la elección del dueño no lanza el envío sola. El detalle, el código y la vigencia los revisa MD360, y el tamaño del lote se ajusta a la calidad del número. Así se evita un envío masivo con datos vacíos.
-- ⏳ **CA-04 Redención** — no construido, falta decidir el diseño. Propuesta:
-  - agregar al formulario ✅ Atendido un campo opcional "Código de oferta";
-  - un workflow compara ese campo con `ca_oferta_codigo` → tag `ca-redimio` + `rep_redenciones_mes` +1 (dinero medido).
-  - Alternativa sin tocar el formulario: una palabra clave del empleado. Es menos confiable.
+- ✅ **CA-04 Redención de oferta** (diseño aprobado por Sergio el 4 oct):
+  - Campo de contacto nuevo `codigo_oferta` (texto, creado por API) agregado al formulario ✅ Atendido como "Código de oferta (solo si el cliente trae uno)". Es opcional.
+  - Disparador: formulario Atendido enviado. Espera 2 min para no pisar `sis_calculo` mientras VIS-01 suma la visita.
+  - If/Else "¿Trajo el código vigente?": `codigo_oferta` es `{{custom_values.ca_oferta_codigo}}` + no está vacío + no tiene `ca-redimio` → pone `ca-redimio` y suma `rep_redenciones_mes` +1 (dinero medido).
+  - CA-02b ahora quita `ca-redimio` al enviar una oferta nueva, así cada oferta se cuenta una vez por cliente.
+  - GHL no tiene acción para vaciar un campo del contacto, así que el código viejo se queda guardado. No afecta: el tag evita contarlo dos veces y no coincide con el código de una oferta nueva. Por eso **no conviene repetir un código entre fechas**.
+  - **Por verificar en la demo:**
+    - que el If/Else resuelva el merge field del custom value en la comparación;
+    - si distingue mayúsculas: si las distingue, usar códigos en mayúsculas y pedirle al empleado que los escriba igual.
+  - El paso humano de CelebrAcción (MD360 revisa antes de aplicar `ca-enviar`) queda así para la v1 (Sergio, 4 oct).
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
