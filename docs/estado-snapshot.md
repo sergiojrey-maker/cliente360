@@ -319,3 +319,14 @@
   - horario base lunes a sábado de 8:00 a 19:00; duración 45 min, intervalo 30.
   - **Ojo:** el `PUT /calendars/{id}` de GHL vuelve a sus valores por defecto los campos que no se envían (borró el horario y puso 30 min). Siempre hay que enviar el objeto completo.
 - **Pendiente:** la demo en Mall Digital 360 se cargó antes de este cambio, así que sus formularios todavía muestran "Privacy Policy". No afecta la prueba (el prospecto no ve formularios, solo WhatsApp), pero se corrige igual o al recargar el snapshot.
+
+## Noche — punto 5: instalación de un cliente
+- **`docs/instalacion-cliente.md`:** lista de 9 bloques con tiempos (≈ 2 h sin contar las esperas de Meta). Incluye los errores ya conocidos: custom values vacíos, `club_link_registro`, usuario del dueño en las notificaciones internas, QR con palabra exacta, reseñas viejas en RES-03.
+- **`herramientas/instalar-custom-values.mjs`** (Node 18+, sin dependencias):
+  - lee el token de `.env`;
+  - toma `clientes/<negocio>.json` (plantilla en `herramientas/instalacion-plantilla.json`);
+  - con `--dueno` lee las respuestas `inst_*` de la encuesta F5;
+  - pone el enlace del formulario de la sub-cuenta, deduce valores, valida y escribe solo con `--aplicar`;
+  - bloquea la maestra y MD360 salvo con `--forzar`.
+  - **Probado:** sintaxis y validación sin API. **Falta probar contra GHL:** necesita el primer cliente real o una sub-cuenta de prueba con su token.
+- `.gitignore` nuevo: `.env`, `clientes/`.
