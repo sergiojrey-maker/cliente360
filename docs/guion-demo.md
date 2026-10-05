@@ -34,7 +34,8 @@
 
 **Lo que pasa:**
 - Llega el sello 2 de 10.
-- A los 2 minutos llega la pregunta "¿cómo te fue? del 1 al 5". En la demo la espera es de 2 minutos; en un negocio real es 90 minutos o lo que se configure.
+- A los 2 minutos del ingreso llega la pregunta "¿cómo te fue? del 1 al 5". En la demo la espera es de 2 minutos; en un negocio real es 90 minutos o lo que se configure.
+- En la demo, la regla "una visita por día" está apagada para poder mostrar el sello 2 enseguida.
 
 ## 0:55 — La reseña y el cliente molesto (30 s)
 > "Respóndale con un 2, como si le hubiera ido mal."
