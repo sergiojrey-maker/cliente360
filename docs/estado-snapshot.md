@@ -266,3 +266,13 @@
   3. Revisar el nombre del blog.
   4. Decidir el footer (dirección de EE. UU. o Villavicencio).
   5. Cambiar la frase de inicio y el botón a /club, después de publicar /club (antes de eso el enlace quedaría roto).
+
+## Noche del 4 al 5 oct — punto 1: prospectos de la demo
+- **Pipeline "Prospectos Cliente 360"** creado en Mall Digital 360 con las etapas Contacto → Diagnóstico agendado → Diagnóstico hecho → Propuesta → Cliente / No por ahora. Afiliado360 no se tocó.
+- **Tag `lead-charla`** creado por API.
+- **DEMO — CLUB-01:**
+  - El paso inicial ahora pone `demo-c360` + `lead-charla`.
+  - Justo después crea o actualiza la oportunidad "{nombre} — demo club" en Prospectos → Contacto, con estado open y fuente "Demo Cliente 360 (charla / QR)".
+  - No duplica oportunidades ni las devuelve de etapa.
+  - 0 errores, sigue en borrador.
+  - Se puso al inicio (no al final del flujo) para que todo el que escriba DEMO quede como prospecto, aunque una rama corte antes.
