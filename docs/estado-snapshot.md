@@ -80,6 +80,32 @@
 4. ✅ **RES-02b borrado** (pestaña "Deleted"; GHL lo elimina del todo a los 30 días). El trigger link "Inconforme atendido" sigue existiendo sin uso: borrarlo o reutilizarlo al rediseñar el "ya lo atendí".
 5. ✅ **CLUB-01:** el disparador es "Exactly matches" CLUB / Club / club. GHL no ofrece "empieza por". **Consecuencia para la instalación:** el texto prellenado del QR (wa.me) debe ser exactamente la palabra, sin saludo.
 
+## Lote 2 (4 oct 2026, Claude local, en borrador)
+**Cambio de diseño — contadores del reporte como custom values:** un workflow que corre sobre un cliente no puede escribir en los campos del contacto del dueño. Hay que descartar `rep_*` en el contacto `dueno`. La acción **"Update custom value"** sí existe y acepta merge fields, así que los contadores viven en custom values.
+- **Creados por API:**
+  - Custom values: `rep_visitas_semana`, `rep_miembros_club`, `rep_miembros_semana`, `rep_resenas_semana`, `rep_resenas_total`, `rep_inconformes_semana`, `rep_reactivados_mes`, `rep_redenciones_mes`, `rep_mensajes_semana`, todos en 0.
+  - Campo numérico de contacto `sis_calculo` (auxiliar).
+  - Tag `club-premio-recordado`.
+- **Patrón para sumar 1:**
+  1. Math sobre `sis_calculo`: ×0, + `{{custom_values.rep_x}}`, +1.
+  2. Update custom value `rep_x` = `{{contact.sis_calculo}}`.
+- **Pendiente:** probar en la demo que la suma funcione. Si dos clientes suman al mismo tiempo, el contador puede perder una unidad; es aceptable para un reporte.
+- Los campos de contacto `rep_*` que ya existían quedan sin uso. Ojo: el selector de custom values muestra los dos con el mismo nombre; hay que elegir siempre el de "Custom Values".
+
+- ✅ **REA-01 Reactivación** (sin disparador; lo llama VIS-01):
+  - Espera **dinámica** de `{{custom_values.rea_dias_inactividad}}` días.
+  - Luego un If/Else:
+    - **"Miembro del club"** (activo + `club-miembro` + `sis_modulo_sellos`=si): mensaje con los sellos guardados (`c360_reactivacion_club`).
+    - **"Cliente"** (activo): mensaje genérico (`c360_reactivacion`).
+    - **None:** no hace nada.
+  - En ambas ramas: tag `rea-enviada` → espera de 30 días ("ventana de regreso") → quita `rea-enviada`.
+  - La oferta de regreso va en `{{custom_values.rea_oferta_regreso}}` al final del texto: si está vacía no se ve. Para la plantilla de Meta habrá que tener dos versiones, con y sin oferta, porque Meta no acepta variables vacías.
+- ✅ **VIS-01 ampliado** (después de llamar a RES-01):
+  - Saca al contacto de REA-01 y lo vuelve a meter, así el reloj de inactividad arranca de nuevo en cada visita.
+  - `rep_visitas_semana` +1.
+  - If/Else "¿Volvió tras reactivación?": si tiene `rea-enviada`, la quita, pone `rea-volvio` y suma `rep_reactivados_mes` +1 (dinero medido).
+- Ya no hace falta calcular `fecha_reactivacion`: lo reemplaza la espera dentro de REA-01.
+
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
 - ✅ **F2 Canjear**: título "🎁 Canjear premio — {{custom_values.club_nombre_completo}}", Celular + PIN, botón "Canjear", mensaje "Premio registrado 🎁".
