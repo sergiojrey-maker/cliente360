@@ -290,3 +290,8 @@
   - contadores en 0;
   - `resena_link_google` = `malldigital360.com/club`, para no pedir reseñas a no clientes (ver `decisiones-pendientes.md`).
   - **Consecuencia para las instalaciones:** después de cargar el snapshot siempre hay que llenar los custom values (lo hace el script del punto 5).
+
+## Noche — punto 3: QR, letrero y guion
+- **QR** `web/qr-demo.png` (1200 px) y `web/qr-demo.svg`, en azul marino de la marca, que abren `wa.me/573204055485?text=DEMO`. Se revisó la imagen.
+- **Letrero de mesa** `web/letrero-demo.html` (A5 vertical, para imprimir) con una vista previa en `web/letrero-demo-vista.png`. El logo es una aproximación en SVG (dos cúpulas + tres rombos); si hay archivo oficial, se reemplaza.
+- **Guion** `docs/guion-demo.md`: 2 minutos, el prospecto vive el club como cliente y después ve lo que le llega al dueño, más preguntas frecuentes.
