@@ -241,3 +241,21 @@ Por eso faltan = 0 → premio. No es solo el problema del campo vacío.
    - `club_sellos` = 0, `club_sellos_faltan` = 10, `visitas_total` = 0;
    - DND apagado.
 6. Anota la causa real en `estado-snapshot.md`. Si fue lo de los IDs copiados, revisa lo mismo en **todo** workflow que se haya importado, porque así se va a instalar a cada cliente desde el snapshot.
+
+## Revisión 7 — 5 oct, 7:00 p. m.: tercera prueba. Los sellos ya funcionan; los mensajes no salen por un problema de pago
+
+**El contacto por API (DEMO a las 18:55):** `club_sellos` = 1, `club_sellos_faltan` = 9, `visitas_total` = 1, sin `club-premio-pendiente` ✅. **La corrección de los sellos funciona.**
+
+**Por qué a Sergio no le llegó nada:** los 4 mensajes salientes quedaron `failed`, con el error de GHL:
+> "Message failed to send because there were one or more errors related to your payment method. Please reach out to your admin asap."
+
+En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de WhatsApp: saldo de la wallet de GHL, tarjeta o método de pago en Meta. **Lo tiene que resolver Sergio** (ver abajo).
+
+**Bug nuevo (para Claude local): una respuesta cualquiera cae en la rama feliz de la encuesta.**
+- A las 18:55:18, antes de la bienvenida, el sistema intentó mandar "¡Qué bueno, Sergio! 🙌 ¿Nos ayudas contándolo en Google?…".
+- Causa probable: la ejecución de DEMO — RES-01 de la prueba de las 18:13 seguía en "esperar respuesta" (Sergio no contestó esa encuesta). Tomó la palabra "DEMO" como respuesta y la mandó por la rama de 4–5 (o por "None").
+1. En RES-01, la rama feliz debe exigir respuesta = 4 o 5. Otra respuesta (texto, palabras clave como DEMO, MIS SELLOS, BAJA) **no** debe mandar el mensaje de reseña. Lo correcto es ignorarla y seguir esperando hasta el tiempo límite, o salir sin enviar nada.
+2. Revisa lo mismo en la maestra (RES-01 y RR-01, Reputación Rescatada).
+3. **Reset:** además de tags y campos, saca el contacto de todos los workflows activos (Remove from workflow / "Remove from all workflows") para que no queden esperas colgadas.
+
+**Para cuando Sergio arregle el pago:** resetea su contacto otra vez (0/10/0, tags originales, DND apagado, sin workflows activos) y avísale.
