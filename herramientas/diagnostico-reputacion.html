@@ -83,6 +83,13 @@ button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:12px 16p
 .inv-row .amt{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap;grid-row:1/3;grid-column:2;align-self:center}
 .inv-sub{display:flex;justify-content:space-between;gap:8px;padding:10px 12px;border-top:2px solid var(--line);font-weight:700}
 .inv-sub .roi{color:var(--good)}
+.extra{padding:10px 12px;border-top:1px dashed var(--line);display:grid;gap:4px;font-size:14px}
+.extra b{color:var(--brand)}
+.extra ul{margin:0;padding-left:18px;display:grid;gap:4px;color:var(--muted)}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.proj div{border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:2px}
+.proj .v{font-family:var(--display);font-weight:800;font-size:20px;font-variant-numeric:tabular-nums;color:var(--brand)}
+.proj .l{font-size:13px;color:var(--muted)}
 .grand{background:var(--navy);color:#fff;border-radius:12px;padding:16px;display:grid;gap:4px}
 .grand .v{font-family:var(--display);font-weight:900;font-size:clamp(26px,7vw,34px);font-variant-numeric:tabular-nums}
 .grand .l{color:#BFD3EE;font-size:14px}
@@ -248,6 +255,11 @@ function render(){
   const lUpsell = ingresos * P("pUpsell") * P("pUpsellMonto");
   const sub360 = lSellos + lFechas + lUpsell;
   const total = subImpulso + sub360;
+  // Proyección a 12 meses (bola de nieve)
+  const c12 = me.c + 120;
+  const r12 = (me.r * me.c + 4.8 * 120) / Math.max(c12, 1);
+  const pos12 = "#" + (1 + rows.filter(x => !x.me && ((x.r > r12) || (x.r === r12 && x.c > c12))).length) + " de " + rows.length;
+  const nichoTxt = ($("nicho").value || "opción").toLowerCase();
   const pI = num("precioImpulso"), p3 = num("precio360");
   const veces = (v, p) => p > 0 ? (v / p).toFixed(1).replace(".", ",") + "×" : "—";
   const row = (what, how, amt) => `<div class="inv-row"><span class="what">${what}</span><span class="amt">${fmt(amt)}</span><span class="how">${how}</span></div>`;
@@ -259,6 +271,19 @@ function render(){
       ${row("Clientes que vuelven (reactivación)", `≈ ${recuperados.toFixed(0)} clientes inactivos que regresan al mes, 2 visitas cada uno`, lReact)}
       ${row("Cumpleaños del club", `≈ ${(miembros/12).toFixed(0)} cumpleaños al mes × ${num("pCumple")} % que viene a usar su regalo`, lCumple)}
       <div class="inv-sub"><span>Subtotal</span><span>${fmt(subImpulso)} <span class="roi">· ${veces(subImpulso,pI)} el plan</span></span></div>
+      <div class="extra"><b>Efecto bola de nieve: lo que no cabe en esta cifra</b>
+        <div class="proj">
+          <div><span class="v">${me.c} → ${c12}</span><span class="l">Reseñas en 12 meses (≈ 10 nuevas al mes)</span></div>
+          <div><span class="v">${me.r.toFixed(1)} → ${r12.toFixed(1)} ★</span><span class="l">Calificación proyectada</span></div>
+          <div><span class="v">${pos12}</span><span class="l">Posición frente a los competidores de hoy</span></div>
+        </div>
+        <ul>
+          <li>Cada reseña suma a la anterior: más reseñas recientes = más arriba en Google Maps = más gente que lo encuentra = más clientes que reseñan.</li>
+          <li>Google y los asistentes de IA (Gemini, ChatGPT y otros) usan las reseñas para decidir qué negocio recomendar cuando alguien pregunta "¿cuál es la mejor ${nichoTxt} cerca?".</li>
+          <li>Si un cliente queda inconforme, usted se entera primero y lo atiende antes de que lo cuente en Google.</li>
+          <li>El cumpleaños hace que el cliente se sienta reconocido por su nombre: trato personal, automático.</li>
+        </ul>
+      </div>
     </div>
     <div class="inv-sec">
       <div class="inv-head"><b>Tarjeta de sellos + CelebrAcción</b><span>Se suma en el Plan 360</span></div>
@@ -266,6 +291,14 @@ function render(){
       ${row("Fechas especiales", `${num("nFechas")} fechas al mes × ${num("pFecha")} % de los miembros que compra`, lFechas)}
       ${row("Compra adicional (lleva dos, combos)", `${num("pUpsell")} % de las visitas con ${num("pUpsellMonto")} % más de ticket`, lUpsell)}
       <div class="inv-sub"><span>Subtotal</span><span>${fmt(sub360)}</span></div>
+      <div class="extra"><b>Lo que no cabe en esta cifra</b>
+        <ul>
+          <li>Un equipo comercial trabajando solo: el sistema le propone qué vender en cada fecha, usted responde con un número y él se encarga del resto.</li>
+          <li>Sus clientes lo tienen presente todo el año (sellos, fechas, cumpleaños), no solo cuando pasan por la puerta.</li>
+          <li>Pertenencia: un miembro del club con sellos acumulados se va mucho menos a la competencia. Eso es lealtad y retención.</li>
+          <li>Cada fecha queda medida: usted ve cuántos usaron la oferta y cuánto vendió.</li>
+        </ul>
+      </div>
     </div>
     <div class="grand">
       <span class="l">Total estimado al mes con el Plan 360</span>
@@ -306,6 +339,9 @@ _Subtotal Plan Impulso: ${fmt(subImpulso)}_
 • Fechas especiales: ${fmt(lFechas)}
 • Compra adicional: ${fmt(lUpsell)}
 *Total con Plan 360: ${fmt(total)} al mes (${veces(total,p3)} lo que cuesta)*
+
+📈 *Efecto bola de nieve en 12 meses:* de ${me.c} a ${c12} reseñas, de ${me.r.toFixed(1)}★ a ${r12.toFixed(1)}★ y posición ${pos12} frente a la competencia de hoy. Más reseñas = más arriba en Google Maps y más recomendado por los asistentes de IA.
+🤝 Además: clientes que se sienten parte de un club, que lo tienen presente todo el año y que se van menos a la competencia.
 
 Reseñas con garantía: 10 nuevas en 30 días.
 — Mall Digital 360 · Cliente 360™`;
