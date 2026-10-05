@@ -198,3 +198,9 @@ Revisé `d98320f`, `5b4e87f` y `b4b7106`: inicio publicado, footer, `prueba-demo
 **Prioridades (Sergio, 5 oct 5:40 p. m.):** la encuesta con 3 botones está aprobada, pero es **mejora, no urgente**: se hace cuando la demo pase limpia. Las ideas de mejora de Sergio van a una lista de mejoras, no a la cola inmediata.
 
 **Idea de mejora (nube):** el enlace de reseña de la demo lleva a `/club`, y eso desconcierta en una demostración. Propuesta: una página `/demo-resena` que imite la pantalla de Google con 5 estrellas y un texto que diga: "Aquí su cliente llega directo a dejar la reseña en el perfil de Google de su negocio". Así se ve el recorrido completo sin pedir reseñas reales de MD360. Si Sergio la aprueba, se apunta `resena_link_google` (DEMO) a esa página.
+
+**Aprobado por Sergio (5 oct): página `/demo-resena`**, para después de que la demo pase limpia. Va en la lista de mejoras, junto con la encuesta de 3 botones.
+- **Para Claude local:**
+  1. Crea la página en el funnel del club y **no la publiques sin avisar**.
+  2. Luego apunta `resena_link_google` de MD360 a esa página.
+  3. Usa la marca MD360 y no imites el logo de Google: "Así se ve la reseña en Google", con 5 estrellas, como ilustración.
