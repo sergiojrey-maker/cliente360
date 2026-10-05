@@ -70,6 +70,25 @@ button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:12px 16p
 .callout strong{color:var(--good)}
 .fine{font-size:12px;color:var(--muted)}
 .copied{font-size:14px;color:var(--good);font-weight:700}
+.invoice{display:grid;gap:14px}
+.inv-sec{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.inv-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline;padding:10px 12px;background:var(--mist);color:var(--ink)}
+:root[data-theme="dark"] .inv-head{background:#16304F;color:var(--fg)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .inv-head{background:#16304F;color:var(--fg)}}
+.inv-head b{font-family:var(--display);font-weight:800}
+.inv-head span{font-size:13px}
+.inv-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:10px 12px;border-top:1px solid var(--line)}
+.inv-row .what{font-weight:600}
+.inv-row .how{grid-column:1/2;font-size:13px;color:var(--muted)}
+.inv-row .amt{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap;grid-row:1/3;grid-column:2;align-self:center}
+.inv-sub{display:flex;justify-content:space-between;gap:8px;padding:10px 12px;border-top:2px solid var(--line);font-weight:700}
+.inv-sub .roi{color:var(--good)}
+.grand{background:var(--navy);color:#fff;border-radius:12px;padding:16px;display:grid;gap:4px}
+.grand .v{font-family:var(--display);font-weight:900;font-size:clamp(26px,7vw,34px);font-variant-numeric:tabular-nums}
+.grand .l{color:#BFD3EE;font-size:14px}
+details{border:1px dashed var(--line);border-radius:12px;padding:10px 12px}
+summary{cursor:pointer;font-weight:700;color:var(--brand)}
+details .grid2{margin-top:12px}
 textarea{position:absolute;left:-9999px}
 @media (prefers-reduced-motion:no-preference){.fill{transition:width .4s ease}}
 </style>
@@ -117,8 +136,33 @@ textarea{position:absolute;left:-9999px}
         <input id="ticket" type="number" min="0" step="1000" value="35000"></label>
       <label for="clientes">Clientes atendidos al mes
         <input id="clientes" type="number" min="0" value="400"></label>
+      <label for="nuevos">Clientes nuevos al mes
+        <input id="nuevos" type="number" min="0" value="60"></label>
+      <label for="visitas">Veces al año que vuelve un cliente
+        <input id="visitas" type="number" min="1" value="12"></label>
     </div>
-    <p class="hint">Pregúntele al dueño el ticket y los clientes al mes. Si no los sabe, use un estimado conservador.</p>
+    <p class="hint">Pregúntele al dueño estos cuatro datos. Si no los sabe, use un estimado conservador.</p>
+
+    <details>
+      <summary>Supuestos del cálculo (editables)</summary>
+      <div class="grid2">
+        <label for="pEstrella">% de ventas por cada estrella de diferencia<input id="pEstrella" type="number" step="0.5" value="5"></label>
+        <label for="pGoogle">% de clientes nuevos que llegan por Google<input id="pGoogle" type="number" step="1" value="35"></label>
+        <label for="pVisib">% más clientes de Google al acercarse al líder en reseñas<input id="pVisib" type="number" step="1" value="20"></label>
+        <label for="pRet">% de clientes nuevos que se quedan el primer año<input id="pRet" type="number" step="1" value="50"></label>
+        <label for="pPerdidos">% de clientes que dejan de venir cada mes<input id="pPerdidos" type="number" step="1" value="8"></label>
+        <label for="pRecup">% de esos que vuelven con la reactivación<input id="pRecup" type="number" step="1" value="20"></label>
+        <label for="pMiembros">% de clientes que se unen al club<input id="pMiembros" type="number" step="1" value="40"></label>
+        <label for="pFrec">% más visitas de los miembros por la tarjeta de sellos<input id="pFrec" type="number" step="1" value="10"></label>
+        <label for="pCumple">% que usa el regalo de cumpleaños<input id="pCumple" type="number" step="1" value="30"></label>
+        <label for="nFechas">Fechas especiales activadas al mes<input id="nFechas" type="number" step="0.5" value="1.5"></label>
+        <label for="pFecha">% de miembros que compra en cada fecha<input id="pFecha" type="number" step="1" value="5"></label>
+        <label for="pUpsell">% de visitas con compra adicional (lleva dos, combos)<input id="pUpsell" type="number" step="1" value="10"></label>
+        <label for="pUpsellMonto">% que sube el ticket en esas visitas<input id="pUpsellMonto" type="number" step="1" value="30"></label>
+        <label for="precioImpulso">Plan Impulso (COP/mes)<input id="precioImpulso" type="number" step="10000" value="290000"></label>
+        <label for="precio360">Plan 360 (COP/mes)<input id="precio360" type="number" step="10000" value="490000"></label>
+      </div>
+    </details>
 
     <div class="actions">
       <button type="submit" class="primary">Generar diagnóstico</button>
@@ -134,8 +178,10 @@ textarea{position:absolute;left:-9999px}
     <div class="report-body">
       <div class="rank" id="rank"></div>
       <div class="kpis" id="kpis"></div>
+      <h2>Lo que el club de clientes puede sumarle cada mes</h2>
+      <div class="invoice" id="invoice"></div>
       <div class="callout" id="callout"></div>
-      <p class="fine">Cálculo estimado y conservador, para conversar. Referencia: estudio de Michael Luca (Harvard Business School, 2011), donde una estrella más en la calificación se asoció con 5 % a 9 % más ingresos; aquí se usa el 5 %. No es una promesa de resultados.</p>
+      <p class="fine">Estimado conservador para conversar, no una promesa de resultados. Cada línea muestra cómo se calcula y los supuestos se pueden ajustar. Referencia de la línea de calificación: estudio de Michael Luca (Harvard Business School, 2011), donde una estrella más se asoció con 5 % a 9 % más ingresos; aquí se usa el 5 %.</p>
       <div class="actions">
         <button type="button" class="primary" id="copy">Copiar para WhatsApp</button>
         <span class="copied" id="copied" hidden>Copiado ✅</span>
@@ -182,16 +228,57 @@ function render(){
   const ticket = num("ticket"), clientes = num("clientes");
   const ingresos = ticket * clientes;
   const gapStars = Math.max(0, leader.r - me.r);
-  const perdida = ingresos * gapStars * 0.05; // 5% por estrella, conservador
+  const gapCount = Math.max(0, leader.c - me.c);
+  const P = id => num(id) / 100;
+  const nuevos = num("nuevos"), visitas = Math.max(1, num("visitas"));
+  const valorCliente = ticket * visitas * P("pRet");            // valor del primer año de un cliente nuevo
+  // Plan Impulso
+  const lCalif = ingresos * gapStars * P("pEstrella");
+  const brecha = leader.c > 0 ? Math.min(1, gapCount / leader.c) : 0;
+  const extraGoogle = nuevos * P("pGoogle") * P("pVisib") * brecha;
+  const lVisib = extraGoogle * valorCliente;
+  const recuperados = clientes * P("pPerdidos") * P("pRecup");
+  const lReact = recuperados * ticket * 2;
+  const miembros = clientes * P("pMiembros");
+  const lCumple = (miembros / 12) * P("pCumple") * ticket;
+  const subImpulso = lCalif + lVisib + lReact + lCumple;
+  // Plan 360 (adicional)
+  const lSellos = miembros * (ingresos / Math.max(clientes,1)) * P("pFrec");
+  const lFechas = num("nFechas") * miembros * P("pFecha") * ticket;
+  const lUpsell = ingresos * P("pUpsell") * P("pUpsellMonto");
+  const sub360 = lSellos + lFechas + lUpsell;
+  const total = subImpulso + sub360;
+  const pI = num("precioImpulso"), p3 = num("precio360");
+  const veces = (v, p) => p > 0 ? (v / p).toFixed(1).replace(".", ",") + "×" : "—";
+  const row = (what, how, amt) => `<div class="inv-row"><span class="what">${what}</span><span class="amt">${fmt(amt)}</span><span class="how">${how}</span></div>`;
+  $("invoice").innerHTML = `
+    <div class="inv-sec">
+      <div class="inv-head"><b>Impulso 5 Estrellas + club básico</b><span>Plan Impulso</span></div>
+      ${row("Mejor calificación", `${gapStars.toFixed(1)} ★ por debajo del líder × ${num("pEstrella")} % de sus ventas por estrella`, lCalif)}
+      ${row("Más visibilidad en Google Maps", `≈ ${extraGoogle.toFixed(1)} clientes nuevos más al mes por acercarse en reseñas, cada uno vale ${fmt(valorCliente)} en su primer año`, lVisib)}
+      ${row("Clientes que vuelven (reactivación)", `≈ ${recuperados.toFixed(0)} clientes inactivos que regresan al mes, 2 visitas cada uno`, lReact)}
+      ${row("Cumpleaños del club", `≈ ${(miembros/12).toFixed(0)} cumpleaños al mes × ${num("pCumple")} % que viene a usar su regalo`, lCumple)}
+      <div class="inv-sub"><span>Subtotal</span><span>${fmt(subImpulso)} <span class="roi">· ${veces(subImpulso,pI)} el plan</span></span></div>
+    </div>
+    <div class="inv-sec">
+      <div class="inv-head"><b>Tarjeta de sellos + CelebrAcción</b><span>Se suma en el Plan 360</span></div>
+      ${row("Visitas más seguidas (sellos)", `≈ ${miembros.toFixed(0)} miembros del club con ${num("pFrec")} % más visitas`, lSellos)}
+      ${row("Fechas especiales", `${num("nFechas")} fechas al mes × ${num("pFecha")} % de los miembros que compra`, lFechas)}
+      ${row("Compra adicional (lleva dos, combos)", `${num("pUpsell")} % de las visitas con ${num("pUpsellMonto")} % más de ticket`, lUpsell)}
+      <div class="inv-sub"><span>Subtotal</span><span>${fmt(sub360)}</span></div>
+    </div>
+    <div class="grand">
+      <span class="l">Total estimado al mes con el Plan 360</span>
+      <span class="v">${fmt(total)}</span>
+      <span class="l">${veces(total,p3)} lo que cuesta el Plan 360 (${fmt(p3)}/mes) · ${fmt(total*12)} al año</span>
+    </div>`;
   const target = me.r < 4.6 ? 4.6 : Math.min(4.9, Math.max(me.r + 0.1, leader.r));
   const need = reviewsToReach(me.r, me.c, target);
-  const gapCount = Math.max(0, leader.c - me.c);
   const mesesGarantia = need === Infinity ? null : Math.max(1, Math.ceil(need / 10));
 
   const kp = [];
   kp.push(`<div class="kpi"><span class="v">#${pos} de ${rows.length}</span><span class="l">Su posición frente a los ${rows.length-1} competidores</span></div>`);
   if (gapCount > 0) kp.push(`<div class="kpi"><span class="v">${gapCount}</span><span class="l">Reseñas por debajo de ${escapeHtml(leader.name)}</span></div>`);
-  if (gapStars > 0) kp.push(`<div class="kpi money"><span class="v">≈ ${fmt(perdida)}</span><span class="l">Ventas al mes que se le estarían yendo por tener ${gapStars.toFixed(1)} ★ menos que el líder</span></div>`);
   kp.push(`<div class="kpi"><span class="v">${need===Infinity?'—':need}</span><span class="l">Reseñas de 5 ★ que necesita para llegar a ${target.toFixed(1)} ★</span></div>`);
   $("kpis").innerHTML = kp.join("");
 
@@ -199,7 +286,7 @@ function render(){
   $("callout").innerHTML = need === 0 && gapCount === 0
     ? `<strong>Usted ya lidera su zona.</strong><p>El club de clientes le ayuda a mantener esa ventaja y a que sus clientes vuelvan más seguido.</p>`
     : `<strong>Lo que haría el club de clientes en su negocio</strong>
-       <p>Con el club instalado, el sistema le pide la reseña a cada cliente en el momento justo. Con nuestra garantía de 10 reseñas nuevas en 30 días, llegaría a ${target.toFixed(1)} ★ en unos <b>${meses}</b>, y además trae de vuelta a los clientes que dejaron de venir.</p>`;
+       <p>Con el club instalado, el sistema le pide la reseña a cada cliente en el momento justo. Con nuestra garantía de 10 reseñas nuevas en 30 días, llegaría a ${target.toFixed(1)} ★ en unos <b>${meses}</b>. Mientras tanto, el club trae de vuelta a los que dejaron de venir y le vende más en cada fecha.</p>`;
 
   lastText =
 `📊 *Diagnóstico de reputación — ${negocio}*
@@ -207,9 +294,20 @@ function render(){
 ${sorted.map((x,i)=>`${i+1}. ${x.me?'▶ ':''}${x.name}: ${x.r.toFixed(1)}★ (${x.c} reseñas)`).join("\n")}
 
 • Posición: #${pos} de ${rows.length}
-${gapCount>0?`• Le faltan ${gapCount} reseñas para alcanzar a ${leader.name}\n`:''}${gapStars>0?`• Estimado: ≈ ${fmt(perdida)} al mes en ventas que se estarían yendo con la competencia\n`:''}• Necesita ${need===Infinity?'—':need} reseñas de 5★ para llegar a ${target.toFixed(1)}★
+${gapCount>0?`• Le faltan ${gapCount} reseñas para alcanzar a ${leader.name}\n`:''}• Necesita ${need===Infinity?'—':need} reseñas de 5★ para llegar a ${target.toFixed(1)}★
 
-Con el club de clientes instalado, lo lograría en unos ${meses}, con garantía de 10 reseñas nuevas en 30 días.
+💰 *Lo que el club de clientes puede sumarle cada mes (estimado):*
+• Mejor calificación: ${fmt(lCalif)}
+• Más visibilidad en Google Maps: ${fmt(lVisib)}
+• Clientes que vuelven: ${fmt(lReact)}
+• Cumpleaños del club: ${fmt(lCumple)}
+_Subtotal Plan Impulso: ${fmt(subImpulso)}_
+• Visitas más seguidas (sellos): ${fmt(lSellos)}
+• Fechas especiales: ${fmt(lFechas)}
+• Compra adicional: ${fmt(lUpsell)}
+*Total con Plan 360: ${fmt(total)} al mes (${veces(total,p3)} lo que cuesta)*
+
+Reseñas con garantía: 10 nuevas en 30 días.
 — Mall Digital 360 · Cliente 360™`;
 }
 
