@@ -168,3 +168,10 @@ Revisé `d98320f`, `5b4e87f` y `b4b7106`: inicio publicado, footer, `prueba-demo
    - ponle `club_sellos` = 0, `club_sellos_faltan` = 10 y `visitas_total` = 0. Esta vez con número, no vacío;
    - borra la oportunidad "— demo club" duplicada si se crea otra.
 6. Avísale a Sergio cuando pueda repetir: "escriba DEMO de nuevo".
+
+**Prueba, continuación (17:27–17:29):**
+- Encuesta a los 2 min ✅.
+- Respondió "2": llegó la disculpa con el enlace (sin filtrado) ✅. Tag `resena-inconforme` ✅. `calificacion_respuesta` = "2" ✅. `calificacion_encuesta` (numérico) quedó vacío: revisar si algún paso lo usa (reporte, `rep_*`).
+- **MIS SELLOS** ❌: "llevas __ sellos. Te faltan __ para corte gratis". Es la misma causa: campos vacíos. Además, la plantilla debe tolerar que estén vacíos. Con la corrección de arriba queda resuelto.
+- **Alerta al dueño:** por confirmar con Sergio. Ojo: el custom value `negocio_whatsapp_dueno` de MD360 = **+573204055485 (la propia línea del club)**. Si RES-02 lo usa, la alerta se manda a sí misma y nunca llega. **Para Claude local:** en la DEMO, cámbialo a +573133165253 (celular de Sergio) y revisa a qué número envía RES-02.
+- Copy menor: "Sergio te va a contactar…" usa `negocio_dueno_nombre`. En la demo coincide con el nombre del cliente que prueba (Sergio), lo que suena raro. Propuesta: en la DEMO, `negocio_dueno_nombre` = "Andrés" (dueño ficticio de Barbería El Llano).
