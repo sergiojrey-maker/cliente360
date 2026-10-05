@@ -58,12 +58,13 @@ Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maes
 2. [x] I5-02 Solicitud de reseña tras visita (3 variantes de señal: QR, cita "asistió", etapa "Entregado") + RR-02 alerta de inconforme con botones.
 3. [x] CLUB-02 Sello (+1, máximo 1 por día, aviso "te faltan 2", premio) · CLUB-03 Canje · CLUB-04 `MIS SELLOS`.
    - *(4 oct, Claude local)* Lote 1 construido a mano en borrador, sin prueba con celular. Mensajes en "SMS provisional"; los botones de la alerta de inconforme quedan pendientes (el trigger link no identifica al cliente). Detalle en `docs/estado-snapshot.md`.
-4. [ ] REA-01 Reactivación por inactividad (con sellos guardados).
-5. [ ] RR-01 Secuencia escalonada de Reputación Rescatada (Drip Mode).
-6. [ ] REP-01 Contadores del dueño (operaciones matemáticas) + REP-02 reporte del lunes con 3 botones.
-7. [ ] CTRL-01 Palabras del dueño: `REPORTE`, `PAUSA`, `ACTIVAR`, `AYUDA`.
-8. [ ] CA-01 Consulta de oferta al dueño (1/2/3/4) · CA-02 envío escalonado de fecha · CA-03 cumpleaños · CA-04 redención.
-9. [ ] GEN-01 Baja / no contactar · GEN-02 monitor interno (aviso a Sergio si no salen mensajes en X días).
+4. [x] REA-01 Reactivación por inactividad (con sellos guardados).
+5. [x] RR-01 Secuencia escalonada de Reputación Rescatada (Drip Mode).
+6. [x] REP-01 reporte del lunes + REP-02 cierre de mes. Los contadores son custom values y se suman con operaciones matemáticas.
+7. [x] CTRL-01 Palabras del dueño: `REPORTE`, `PAUSA`, `ACTIVAR`, `AYUDA`.
+8. [ ] CA-01 consulta al dueño (1/2/3/4) ✅ · CA-02 elección + CA-02b envío escalonado de fecha ✅ · CA-03 cumpleaños ✅ · CA-04 redención ⏳ (falta decidir el diseño).
+9. [x] GEN-01 Baja / no contactar · GEN-02 monitor interno (semana sin visitas → correo a soporte).
+   - *(4 oct, Claude local)* Lote 2 construido en borrador, salvo CA-04, y se agregó RES-03 (reseña recibida). Nada está probado con celular. Detalle y decisiones en `docs/estado-snapshot.md`.
 
 **1D. Plantillas de WhatsApp [UI + Meta]** — enviar a aprobación temprano, porque Meta demora:
 - [ ] Bienvenida al club.
