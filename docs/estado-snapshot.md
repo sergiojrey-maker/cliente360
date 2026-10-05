@@ -146,6 +146,13 @@
   - Si `rep_visitas_semana` = 0, manda un correo a `{{custom_values.sis_soporte_email}}` (custom value nuevo, info@malldigital360.com) para que MD360 revise con el dueño.
   - **Cambio frente a la spec:** se mide "semana sin visitas" en vez de "3 días sin mensajes salientes". Es la señal que de verdad avisa que el negocio dejó de usar el sistema; contar todos los envíos obligaría a meter un contador en cada mensaje.
   - `rep_mensajes_semana` queda sin uso: REP-01 lo pone en cero, pero nada lo suma.
+- ✅ **RR-01 Reputación Rescatada** (clon de RES-01, 0 errores):
+  - **Disparador:** tag `rr-enviar` (creado). MD360 lo aplica por lotes con la acción masiva y Drip Mode (por ejemplo 50 cada 2 horas). Así se respeta el envío escalonado.
+  - **Condición:** activo + no tiene `resena-solicitada` + no tiene `rr-encuesta-enviada` + `sis_modulo_rescatada` = si. Son condiciones separadas, porque un "Does not include" con varios tags se cumple si falta *cualquiera* de ellos.
+  - Pone `rr-encuesta-enviada` y `resena-solicitada`.
+  - Sin espera inicial. Encuesta de primer contacto de bajo riesgo con salida BAJA (`c360_rr_encuesta`, cumple habeas data).
+  - El resto lo hereda de RES-01: 4–5 → gracias + enlace; 1–3 → RES-02 + disculpa + enlace; sin respuesta → recordatorio. Nunca se niega el enlace.
+  - **Pendiente:** la variante por correo para los contactos con `sin-whatsapp`.
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
