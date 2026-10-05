@@ -131,9 +131,16 @@
   - CLUB-01: miembros_club y miembros_semana.
   - CLUB-03: redenciones_mes.
   - RES-02: inconformes_semana.
-  - **Faltan:**
-    - `rep_resenas_*`, depende de RES-03 (disparador de reseña);
-    - `rep_mensajes_semana`, para GEN-02.
+  - **Falta:** `rep_mensajes_semana`, para GEN-02.
+- ✅ **RES-03 Reseña recibida:**
+  - Disparador "New review received" con Review Source = Google. No usa contacto.
+  - Aviso al dueño por WhatsApp interno: nombre del autor, estrellas, comentario y una invitación a responder (INSTALACIÓN: elegir usuario).
+  - Luego "Find contact" por teléfono = `{{custom_values.negocio_whatsapp_dueno}}`. En la rama "Contact found" suma `rep_resenas_total` y `rep_resenas_semana`. La math necesita un contacto en contexto; por eso se usa el del dueño.
+  - **Requisito de instalación:**
+    - conectar el Perfil de Empresa de Google en Reputation;
+    - el contacto del dueño debe existir con ese número exacto.
+  - **Por verificar:** si "New review received" también se dispara con reseñas que se importan al conectar el perfil. Si es así, el primer día contaría reseñas viejas. En ese caso hay que dejar `rep_resenas_total` en el número real después de conectar.
+  - El valor en pesos de la reputación (dinero estimado) queda para la versión con reporte por correo/página.
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
