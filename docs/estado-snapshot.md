@@ -388,3 +388,28 @@
 - **Enable branches:** apagado en todas las acciones WhatsApp, salvo en DEMO — Baja. Ahí está encendido a propósito, con el DND en las dos ramas (Delivered y Undelivered).
 - **Pendiente de la prueba:** resultados abajo cuando Sergio escriba DEMO.
 - **Ojo:** "05.02.02 Main Phone of MD360 / Send to Google" sigue publicado (no se tocó). Si se dispara con mensajes entrantes al 320, puede enviar su propio mensaje durante la demo. Revisar en los Execution logs de la prueba.
+
+## 5 oct, ~5:50 p. m. — Corrección de los sellos (Revisión 5)
+- **Causa:** la acción "Math operation" de GHL no escribe nada si el campo está vacío ("vacío × 0" sigue vacío). No se pudieron abrir los Execution logs de las 17:25 (la pestaña del navegador se congelaba). La causa se confirmó por lo que muestra la API: los campos quedaron vacíos y el If/Else tomó el vacío como "≤ 0".
+  - Pasa también con `sis_calculo`, el campo auxiliar de los contadores `rep_*`.
+- **Arreglo en DEMO — CLUB-01 (publicado):** acción nueva **"Iniciar contadores en 0"** (Update Contact Field) justo después de "Tag club-miembro". Pone `club_sellos`, `club_sellos_faltan`, `visitas_total` y `sis_calculo` en 0.
+  - Después, la math que ya existía ("Faltan = meta": ×0 + `club_meta_visitas`) sí escribe, porque el campo ya no está vacío.
+  - Ventaja: la meta sigue saliendo del custom value; no hace falta poner 10 fijo.
+- **DEMO — CLUB-02 (publicado):** la rama "Premio (0)" ahora exige además `club_sellos_faltan` **no vacío**. Un vacío nunca da premio.
+- **Custom values de MD360:**
+  - `negocio_whatsapp_dueno` = +573133165253 (antes era la propia línea del club);
+  - `negocio_dueno_nombre` = Andrés;
+  - `negocio_firma` = "— Andrés y el equipo de Barbería El Llano".
+  - La alerta de RES-02 es una notificación interna al usuario Sergio, que tiene ese celular.
+- **Reset del contacto de Sergio:**
+  - tags = solo `evento_presencial_gratis_cumaral_2026` y `lead-charla`;
+  - `club_sellos` = 0, `club_sellos_faltan` = 10, `visitas_total` = 0, `sis_calculo` = 0;
+  - `calificacion_respuesta` y `pin_equipo` vacíos;
+  - DND inactivo en todos los canales.
+- **Pendiente (hacer después):**
+  - mismo arreglo de CLUB-01 en la maestra;
+  - en VIS-01, inicializar `visitas_total` para quien llega por "Atendido" sin pasar por el club;
+  - Baja: quitar `club-miembro` y poner `baja` (DEMO y maestra);
+  - encuesta con 3 botones (`c360_encuesta_botones`, ramas 5/4/2, Mal → RES-02);
+  - respuestas del dueño con botones (CelebrAcción 1/2/3, PAUSA/ACTIVAR), solo anotado;
+  - página `/demo-resena`, si Sergio la aprueba.
