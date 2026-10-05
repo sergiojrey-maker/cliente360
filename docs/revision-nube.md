@@ -65,3 +65,10 @@ Sergio se fue a dormir. Claude nube revisa cada hora (hasta 6 veces) y deja nota
 
 **Para Sergio al despertar:** pegue en PowerShell:
 `Haz git pull, lee la Revisión 1 y 2 en docs/revision-nube.md y ejecuta los "siguientes pasos" de la Revisión 1, sin detenerte.`
+
+---
+
+## Revisión 3 — 5 oct, ~2:25 a. m. (hora Colombia)
+**Sin actividad. Revisiones suspendidas hasta que Sergio despierte.**
+- Ni commits ni cambios en GHL desde las 11:45 p. m. Maestra: 21 workflows en borrador, sin cambios.
+- Al despertar, lo que hay que hacer está en la Revisión 2.
