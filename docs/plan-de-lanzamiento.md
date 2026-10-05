@@ -172,4 +172,5 @@ La plantilla maestra queda limpia y los clientes reales siguen saliendo del snap
 - 2 ✅ — snapshot "Cliente 360 v0.1 (demo)" creado con el lote 2 ya incluido.
 - 3 ✅ — importado a Mall Digital 360 con el OK de Sergio y sin conflictos. Detalle en `estado-snapshot.md` → "Demo en Mall Digital 360".
 - 5 ✅ — lote 2 completo, CA-04 incluido.
-- Sigue 4 (plantillas a Meta) y luego `/club`.
+- 4 ✅ — 10 plantillas enviadas a Meta (4 aprobadas al instante, 6 en revisión). Detalle en `plantillas-whatsapp-demo.md`.
+- Sigue `/club` (P1, sin publicar).
