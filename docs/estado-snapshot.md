@@ -105,6 +105,23 @@
   - `rep_visitas_semana` +1.
   - If/Else "¿Volvió tras reactivación?": si tiene `rea-enviada`, la quita, pone `rea-volvio` y suma `rep_reactivados_mes` +1 (dinero medido).
 - Ya no hace falta calcular `fecha_reactivacion`: lo reemplaza la espera dentro de REA-01.
+- ✅ **REP-01 Reporte del lunes:**
+  - Disparador "Scheduler": semanal, lunes 08:00. Corre sin contacto.
+  - Envía un aviso interno por WhatsApp con los contadores (paso de INSTALACIÓN: elegir usuario dueño).
+  - Luego reinicia a 0 los contadores semanales: visitas, miembros, reseñas, inconformes y mensajes.
+  - **Falta:**
+    - un reinicio mensual de `rep_reactivados_mes` y `rep_redenciones_mes` (otro Scheduler, el día 1);
+    - el valor en pesos: GHL no puede multiplicar sin contacto, así que hoy el reporte muestra conteo + ticket promedio.
+- ✅ **CTRL-01 Palabras del dueño:**
+  - Disparador: mensaje exacto REPORTE/PAUSA/ACTIVAR/AYUDA, en mayúsculas, con inicial mayúscula o en minúsculas.
+  - Guarda el mensaje en el campo nuevo `sis_ultimo_mensaje` (texto, creado por API). "Replied message" del If/Else solo funciona después de una espera de respuesta.
+  - If/Else "¿Es el dueño?" (tag `dueno`) → If/Else "¿Qué pidió?":
+    - **Pausa:** `sis_estado`=pausa + confirmación.
+    - **Activar:** `sis_estado`=activo + confirmación.
+    - **Reporte:** números al momento.
+    - **Ayuda:** lista de palabras + número de soporte.
+  - Si escribe un cliente que no es el dueño, no pasa nada.
+  - **Ojo:** el dueño escribe a la línea del club, así que su contacto ahí debe tener el tag `dueno` (paso de instalación).
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
