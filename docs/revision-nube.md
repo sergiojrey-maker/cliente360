@@ -99,3 +99,12 @@ Sergio se fue a dormir. Claude nube revisa cada hora (hasta 6 veces) y deja nota
 4. Quitar de esa página cualquier precio en USD, mención a EE. UU. como mercado y las palabras agencia, marketing o campaña que encuentres.
 5. Footer nuevo de dos sedes (arriba).
 6. **Puedes guardar y publicar este cambio** (Sergio lo autorizó). Antes, toma captura del "antes" y guárdala o descríbela en `docs/revision-nube.md`, por si hay que revertir.
+
+**Decisiones pendientes 1–7 (`decisiones-pendientes.md`): OK de Sergio a todas las propuestas.**
+1. Términos del club con vencimiento de premio a 90 días, aviso de 30 días y datos alojados fuera de Colombia: aprobados. Falta la revisión del abogado antes del primer cliente.
+2. En la demo, `resena_link_google` sigue apuntando a `/club`: aprobado.
+3. `/club` y `/club-terminos` en vivo: aprobado, se quedan así.
+4. Arreglo del sitio (P2): hecho por Sergio.
+5. Footer de dos sedes: decidido (arriba).
+6. **Para Claude local:** envía a Meta `c360_regalo` y `c360_recordar_premio` y, cuando estén aprobadas, cámbialas a WhatsApp en DEMO — CLUB-01 y CLUB-02.
+7. Costos: se asume tarifa Marketing. La optimización con la ventana de 24 h queda para v1.1.
