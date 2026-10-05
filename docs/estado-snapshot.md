@@ -153,6 +153,28 @@
   - Sin espera inicial. Encuesta de primer contacto de bajo riesgo con salida BAJA (`c360_rr_encuesta`, cumple habeas data).
   - El resto lo hereda de RES-01: 4–5 → gracias + enlace; 1–3 → RES-02 + disculpa + enlace; sin respuesta → recordatorio. Nunca se niega el enlace.
   - **Pendiente:** la variante por correo para los contactos con `sin-whatsapp`.
+- ✅ **CA-03 Cumpleaños:**
+  - Disparador nativo "Birthday reminder" con filtro "Before no. of days" (unos días antes del cumpleaños).
+  - Condición: activo + `club-miembro` + `sis_modulo_celebraccion` = si.
+  - Regalo (SMS provisional → plantilla `c360_cumpleanos`) con `{{custom_values.club_regalo_cumpleanos}}` y salida BAJA. El regalo es por ser del club, nunca por reseña.
+  - **Por verificar en la demo:** cómo interpreta GHL "Before no. of days is at most 7 days": si dispara una sola vez o cada día de esa ventana.
+- ✅ **CA-01 Consulta al dueño:**
+  - Disparador: tag `ca-consultar` (creado). MD360 se lo pone al contacto del dueño unos 10 días antes de cada fecha, después de cargar `ca_fecha_nombre` y `ca_opcion_1..3`.
+  - Quita `ca-consultar`, pone `ca-esperando` y le pregunta al dueño: "Responda solo el número: 1) opción 1, 2) opción 2, 3) opción 3, 4) Esta vez no".
+- ✅ **CA-02 Elección del dueño** (clon de CTRL-01):
+  - Disparador: respuesta exacta 1, 2, 3 o 4.
+  - Guarda el mensaje en `sis_ultimo_mensaje`. Sigue solo si el contacto tiene **`dueno` y `ca-esperando`**, así un cliente que responda "1" a otra cosa no activa nada.
+  - Quita `ca-esperando` y manda un correo a `{{custom_values.sis_soporte_email}}` con la opción elegida y las instrucciones de lanzamiento.
+  - Opciones 1–3: `ca_oferta_titulo` = `{{custom_values.ca_opcion_N}}` + confirmación al dueño. Opción 4: confirmación de que esta vez no se envía.
+- ✅ **CA-02b Envío de fecha:**
+  - Disparador: tag `ca-enviar` (creado). MD360 lo aplica por lotes con Drip Mode a `club-miembro`, después de revisar `ca_oferta_detalle`, `ca_oferta_codigo` y `ca_oferta_vigencia`.
+  - Quita `ca-enviar`. Condición: `sis_modulo_celebraccion` = si + `sis_estado` = activo + `club-miembro` + sin `baja`.
+  - Oferta (SMS provisional → plantilla `c360_ca_oferta`) con fecha, título, detalle, código y vigencia, y salida BAJA. Va en un mensaje aparte: nunca se mezcla con la solicitud de reseña.
+  - **Por qué hay un paso humano:** la elección del dueño no lanza el envío sola. El detalle, el código y la vigencia los revisa MD360, y el tamaño del lote se ajusta a la calidad del número. Así se evita un envío masivo con datos vacíos.
+- ⏳ **CA-04 Redención** — no construido, falta decidir el diseño. Propuesta:
+  - agregar al formulario ✅ Atendido un campo opcional "Código de oferta";
+  - un workflow compara ese campo con `ca_oferta_codigo` → tag `ca-redimio` + `rep_redenciones_mes` +1 (dinero medido).
+  - Alternativa sin tocar el formulario: una palabra clave del empleado. Es menos confiable.
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
