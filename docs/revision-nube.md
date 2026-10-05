@@ -194,3 +194,7 @@ Revisé `d98320f`, `5b4e87f` y `b4b7106`: inicio publicado, footer, `prueba-demo
 **BAJA (17:32) ✅** Llegó la confirmación. Por API: `dnd` = true en todos los canales (WhatsApp, SMS, Email, Call, GMB, FB), puesto por el workflow DEMO — Baja.
 - Detalle: no se puso ningún tag `baja` y el contacto sigue con `club-miembro`. Para el reporte (miembros activos) conviene que Baja quite `club-miembro` y ponga `baja`. Anótalo para DEMO y maestra.
 - **Para el reset del contacto de Sergio:** además de lo de arriba, **apaga el DND en todos los canales**. Si no, la segunda prueba no le envía nada.
+
+**Prioridades (Sergio, 5 oct 5:40 p. m.):** la encuesta con 3 botones está aprobada, pero es **mejora, no urgente**: se hace cuando la demo pase limpia. Las ideas de mejora de Sergio van a una lista de mejoras, no a la cola inmediata.
+
+**Idea de mejora (nube):** el enlace de reseña de la demo lleva a `/club`, y eso desconcierta en una demostración. Propuesta: una página `/demo-resena` que imite la pantalla de Google con 5 estrellas y un texto que diga: "Aquí su cliente llega directo a dejar la reseña en el perfil de Google de su negocio". Así se ve el recorrido completo sin pedir reseñas reales de MD360. Si Sergio la aprueba, se apunta `resena_link_google` (DEMO) a esa página.
