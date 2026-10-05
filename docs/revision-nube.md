@@ -175,3 +175,18 @@ Revisé `d98320f`, `5b4e87f` y `b4b7106`: inicio publicado, footer, `prueba-demo
 - **MIS SELLOS** ❌: "llevas __ sellos. Te faltan __ para corte gratis". Es la misma causa: campos vacíos. Además, la plantilla debe tolerar que estén vacíos. Con la corrección de arriba queda resuelto.
 - **Alerta al dueño:** por confirmar con Sergio. Ojo: el custom value `negocio_whatsapp_dueno` de MD360 = **+573204055485 (la propia línea del club)**. Si RES-02 lo usa, la alerta se manda a sí misma y nunca llega. **Para Claude local:** en la DEMO, cámbialo a +573133165253 (celular de Sergio) y revisa a qué número envía RES-02.
 - Copy menor: "Sergio te va a contactar…" usa `negocio_dueno_nombre`. En la demo coincide con el nombre del cliente que prueba (Sergio), lo que suena raro. Propuesta: en la DEMO, `negocio_dueno_nombre` = "Andrés" (dueño ficticio de Barbería El Llano).
+
+**Pedido de Sergio: encuesta con botones, no con número escrito.** Va después de corregir los sellos. **Para Claude local:**
+1. Nueva plantilla `c360_encuesta_botones` (categoría Utility; Meta puede pasarla a Marketing):
+   - Texto: "Hola {{1}}, ¿cómo te fue hoy en {{2}}?"
+   - **3 botones de respuesta rápida:** "😀 Excelente" · "🙂 Bien" · "😕 Mal".
+   - Se usan 3 y no 5 porque WhatsApp muestra 3 botones a la vista; con 5 esconde el resto tras "Ver opciones" y se pierde la ventaja.
+2. En RES-01 (DEMO y maestra), la acción WhatsApp de la encuesta lleva **"Enable branches" encendido**, con una rama por botón:
+   - Excelente → `calificacion_encuesta` = 5;
+   - Bien → `calificacion_encuesta` = 4;
+   - Mal → `calificacion_encuesta` = 2 → RES-02 (alerta al dueño + disculpa).
+
+   Las 3 ramas reciben el enlace de reseña: sin filtrado.
+3. Mantén como respaldo la respuesta escrita (1–5) por si alguien escribe en vez de tocar.
+4. Envía la plantilla a Meta desde MD360. Mientras no esté aprobada, la DEMO sigue con la encuesta actual.
+5. Aplica la misma idea donde el dueño responde con número (aprobación de CelebrAcción 1/2/3, PAUSA/ACTIVAR). Anótalo como pendiente en `estado-snapshot.md`; no lo construyas todavía.
