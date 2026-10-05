@@ -330,3 +330,29 @@
   - bloquea la maestra y MD360 salvo con `--forzar`.
   - **Probado:** sintaxis y validación sin API. **Falta probar contra GHL:** necesita el primer cliente real o una sub-cuenta de prueba con su token.
 - `.gitignore` nuevo: `.env`, `clientes/`.
+
+## Noche — plantillas aprobadas y cambio a WhatsApp en la demo
+- **Meta aprobó las 10 plantillas de la demo (Active).** Las 6 pendientes salieron aprobadas, pero todas menos `c360_disculpa` quedaron como **Marketing**.
+- **Cambio "SMS provisional" → WhatsApp** en los workflows DEMO de Mall Digital 360. **Siguen en borrador, nada publicado:**
+  - DEMO — Baja → `c360_baja`.
+  - DEMO — CLUB-01:
+    - bienvenida → `c360_bienvenida_club`;
+    - "ya es miembro" → `c360_mis_sellos` (`c360_ya_miembro` no existe en la demo y el texto es equivalente).
+  - DEMO — CLUB-02: sello → `c360_sello`, te faltan 2 → `c360_te_faltan`, premio → `c360_premio`.
+  - DEMO — CLUB-04 → `c360_mis_sellos`.
+  - DEMO — RES-01:
+    - encuesta → `c360_encuesta`;
+    - 4–5 y "sin número" → `c360_resena`;
+    - 1–3 → `c360_disculpa`;
+    - sin respuesta → `c360_resena_recordatorio`.
+    - Se volvió a apuntar el "Esperar respuesta" a la nueva acción de WhatsApp, porque quedaba apuntando a la acción borrada.
+  - **Quedan en SMS** (sin plantilla en Meta; ver `decisiones-pendientes.md` #6):
+    - el regalo de bienvenida (CLUB-01);
+    - el recordatorio único de premio (CLUB-02).
+- **Hallazgos del builder:**
+  - **La acción WhatsApp parte el flujo en "Delivered / Undelivered"** si "Enable branches" está encendido (viene así por defecto). Los pasos que seguían quedan **solo** en "Delivered".
+    - En DEMO — Baja eso dejaba el DND solo para mensajes entregados. Se copió el DND también a "Undelivered": la baja se respeta siempre.
+    - En los demás workflows se apagó "Enable branches" y el flujo sigue lineal.
+    - **Regla para la maestra:** apagar "Enable branches" en toda acción WhatsApp que no use botones.
+  - Las variables quedan mapeadas desde la plantilla: la acción no pide nada más.
+  - Existe la acción "WhatsApp: customer service window check". Sirve para responder **sin plantilla** dentro de la ventana de 24 h (MIS SELLOS, BAJA, encuesta respondida), con mensajes de servicio que no se cobran. Es una optimización de costo para v1.1.

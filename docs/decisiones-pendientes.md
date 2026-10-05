@@ -22,3 +22,14 @@ Lista corta. Cada punto tiene una propuesta; con un "OK" o un cambio basta.
    - Sigue pendiente el borrado manual de las 5 páginas y el retiro del dominio del funnel MedSpa.
    - Los pasos están en `estado-snapshot.md`.
 5. **Footer del sitio:** ¿dirección de EE. UU. o Villavicencio + WhatsApp +57?
+6. **Dos mensajes de la demo siguen en SMS porque su plantilla no se ha enviado a Meta:**
+   - el regalo de bienvenida de CLUB-01 (`c360_regalo`);
+   - el recordatorio único de premio de CLUB-02 (`c360_recordar_premio`).
+   - MD360 no tiene línea SMS en Colombia, así que en la demo no van a llegar.
+   - Opciones:
+     - (a) usted envía las dos plantillas a Meta (textos en `plantillas-whatsapp-demo.md`, #13 y #14) y yo hago el cambio;
+     - (b) para la demo, se deja vacío `club_regalo_bienvenida` y la rama se salta. Ojo: el guion dice que llega el regalo.
+   - Propuesta: (a). Mientras tanto, en la prueba con el celular no espere esos dos mensajes.
+7. **Costo de las plantillas:** Meta pasó 9 de las 10 a **Marketing**; solo `c360_disculpa` quedó en Utilidad. Marketing cuesta más por mensaje.
+   - Para el cálculo de costos por cliente, asuma tarifa Marketing en casi todo.
+   - Se puede apelar la categoría en el administrador de WhatsApp de Meta. Es poco probable que cambie con textos que hablan de premios o del club.
