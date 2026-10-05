@@ -356,3 +356,28 @@
     - **Regla para la maestra:** apagar "Enable branches" en toda acción WhatsApp que no use botones.
   - Las variables quedan mapeadas desde la plantilla: la acción no pide nada más.
   - Existe la acción "WhatsApp: customer service window check". Sirve para responder **sin plantilla** dentro de la ventana de 24 h (MIS SELLOS, BAJA, encuesta respondida), con mensajes de servicio que no se cobran. Es una optimización de costo para v1.1.
+
+## 5 oct — Página de inicio de malldigital360.com (autorizado y publicado)
+- **Respaldo del "antes":** `docs/respaldos/inicio-antes-2026-10-05.md` + `.jpg`. En el historial de versiones de la página, **la versión #48 (29 jul 2025) es la que estaba en vivo**: se restaura con un clic.
+- **Publicado (versión #52, 5 oct ~3:00 p. m.):**
+  - Título: "Le instalamos el club de clientes de su negocio."
+  - Subtítulo: el texto aprobado.
+  - Botón principal: "Conocer el club" → `https://malldigital360.com/club`.
+  - Título de la pestaña y meta descripción (antes decía "…MedSpa").
+- **Textos corregidos en la misma página:**
+  - "en Estados Unidos" / "en EE.UU." → sin país (en el contador, en "¿Qué es Cliente360™?", en la pregunta "¿Funciona con cualquier negocio?" y en el cierre).
+  - "campañas" → "promociones" (2 lugares).
+  - "marketing" → "tecnología" en la pregunta 1 de las preguntas frecuentes.
+  - "reseñas positivas" / "reseñas de 5 estrellas" → "reseñas nuevas" / "pide la reseña a cada cliente". Así no sugiere filtrado de reseñas.
+  - "Pagas mes a mes" → permanencia mínima de 3 meses y después mes a mes, como dice el contrato.
+- **Footer global del sitio (sección global "Footer", se sincroniza en todas las páginas):**
+  - "Empresa de tecnología y automatización con IA para negocios. Atención en español e inglés."
+  - WhatsApp `{{custom_values.nmero_de_whatsapp}}` · `{{custom_values.sis_soporte_email}}` · "Villavicencio, Meta, Colombia · Florida, Estados Unidos".
+  - El botón "Contáctanos ahora" llamaba al teléfono de EE. UU.; ahora abre `{{custom_values.url_whatsapp_sin_texto}}`.
+  - Se quitaron el teléfono y la dirección de Bartow FL, que venían de los datos de la sub-cuenta.
+- **/club:** footer de dos sedes **guardado, sin pulsar Publish** (`web/club.html` actualizado).
+  - `/club-terminos`: actualizado en el repo (`web/club-terminos.html`), falta pegarlo en el funnel.
+- **Quedan para Sergio:**
+  - El contador animado dice "⭐ 10.000+ reseñas generadas" (en el código, `target = 10000`). ¿Es real? Si no, hay que bajarlo a la cifra que se pueda sustentar.
+  - El menú "Precios" sigue llevando a la página de precios en USD (es otra página del sitio, fuera de lo autorizado).
+  - Los testimonios y la lista de nichos (MedSpas primero) siguen orientados a EE. UU.; se cambian en el revamp T-701.
