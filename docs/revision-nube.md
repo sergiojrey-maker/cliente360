@@ -108,3 +108,33 @@ Sergio se fue a dormir. Claude nube revisa cada hora (hasta 6 veces) y deja nota
 5. Footer de dos sedes: decidido (arriba).
 6. **Para Claude local:** envía a Meta `c360_regalo` y `c360_recordar_premio` y, cuando estén aprobadas, cámbialas a WhatsApp en DEMO — CLUB-01 y CLUB-02.
 7. Costos: se asume tarifa Marketing. La optimización con la ventana de 24 h queda para v1.1.
+
+## Revisión 4 — 5 oct, 3:45 p. m.: autorizado publicar la demo
+
+Revisé `d98320f`, `5b4e87f` y `b4b7106`: inicio publicado, footer, `prueba-demo.md` y `kit-venta.md` bien. Sin correcciones.
+
+**Autorizado por Sergio: publicar los 7 workflows "DEMO —" en la sub-cuenta Mall Digital 360.** **Para Claude local:**
+1. **Antes de publicar**, haz el paso 0 de `docs/prueba-demo.md` por Sergio: busca su contacto con el celular personal (no el 320) y déjalo limpio:
+   - sin los tags `club-miembro`, `demo-c360`, `resena-solicitada`, `resena-inconforme`, `baja`;
+   - `club_sellos` = 0 y `club_sellos_faltan` = 0;
+   - DND apagado.
+
+   Revisa también que su usuario tenga el celular personal en My Profile.
+2. Publica en el orden de la guía:
+   1. Baja;
+   2. VIS-01;
+   3. CLUB-02;
+   4. RES-02;
+   5. RES-01;
+   6. CLUB-04;
+   7. CLUB-01, de último.
+
+   Solo los 7 "DEMO —". **No publiques nada de la maestra ni ningún otro workflow de MD360.**
+3. Después de publicar, abre cada uno y confirma que dice *Published*, que no hay acciones con error y que "Enable branches" está apagado en las acciones WhatsApp.
+4. Avísale a Sergio: "Listo, escriba DEMO al 320 405 5485 desde su celular personal". Quédate atento a los Execution logs mientras prueba.
+5. Si algo falla, despublica **solo** ese workflow, corrígelo y anota el paso y el error en `estado-snapshot.md`.
+6. Al final, commit y push con el resultado de la prueba.
+
+**Pendientes para Sergio (no bloquean la prueba):**
+- **Contador "10.000+ reseñas generadas" del inicio:** espera la cifra real de Sergio. No lo cambies todavía.
+- **Menú "Precios" → página en USD:** propuesta de la nube: que apunte a `/club` hasta el revamp. Espera su OK.
