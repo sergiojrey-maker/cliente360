@@ -85,3 +85,17 @@ Sergio se fue a dormir. Claude nube revisa cada hora (hasta 6 veces) y deja nota
 
 - Usar custom values para el WhatsApp y el correo (ya existen en MD360).
 - **Para Claude local:** aplícalo como sección global (footer). Guárdalo, pero **no publiques** cambios de páginas en vivo sin el OK de Sergio.
+
+**Hecho por Sergio (5 oct, día):**
+- Quitó el dominio del funnel MedSpa USA.
+- Borró las 5 páginas viejas del website principal.
+- Revisó `/club` y `/club-terminos` en vivo: se ven bien.
+- Revisó el nombre del blog: quedó bien.
+
+**Autorizado por Sergio: cambiar la página de inicio de malldigital360.com** (website "Cliente360™ | Sistema de Crecimiento Local Automatizado", página "Inicio"). **Para Claude local:**
+1. Título principal → **"Le instalamos el club de clientes de su negocio."**
+2. Subtítulo → *"Sus clientes se unen con un QR, ganan premios por volver y le dejan reseñas en Google. Cada lunes usted ve en su WhatsApp cuánto dinero generó. Sin computador."*
+3. Botón principal → texto **"Conocer el club"**, enlace a `/club`.
+4. Quitar de esa página cualquier precio en USD, mención a EE. UU. como mercado y las palabras agencia, marketing o campaña que encuentres.
+5. Footer nuevo de dos sedes (arriba).
+6. **Puedes guardar y publicar este cambio** (Sergio lo autorizó). Antes, toma captura del "antes" y guárdala o descríbela en `docs/revision-nube.md`, por si hay que revertir.
