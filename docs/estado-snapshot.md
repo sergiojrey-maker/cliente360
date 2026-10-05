@@ -122,6 +122,18 @@
     - **Ayuda:** lista de palabras + número de soporte.
   - Si escribe un cliente que no es el dueño, no pasa nada.
   - **Ojo:** el dueño escribe a la línea del club, así que su contacto ahí debe tener el tag `dueno` (paso de instalación).
+- ✅ **REP-02 Cierre de mes:**
+  - Scheduler mensual, día 1 a las 07:00.
+  - Envía al dueño un resumen del mes por WhatsApp interno (INSTALACIÓN: elegir usuario).
+  - Reinicia `rep_reactivados_mes` y `rep_redenciones_mes`.
+- ✅ **Contadores conectados** (math + update custom value):
+  - VIS-01: visitas_semana y reactivados_mes.
+  - CLUB-01: miembros_club y miembros_semana.
+  - CLUB-03: redenciones_mes.
+  - RES-02: inconformes_semana.
+  - **Faltan:**
+    - `rep_resenas_*`, depende de RES-03 (disparador de reseña);
+    - `rep_mensajes_semana`, para GEN-02.
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
