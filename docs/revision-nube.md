@@ -47,3 +47,21 @@ Sergio se fue a dormir. Claude nube revisa cada hora (hasta 6 veces) y deja nota
    - las 8 objeciones más probables con respuesta;
    - one-pager de la oferta (texto listo para Canva).
 5. **Blue:** marca como hechos en la tarea "Lanzamiento Cliente 360 v1" los puntos terminados (pipeline, términos, QR/guion, plantillas), con un comentario **[Claude local]**.
+
+---
+
+## Revisión 2 — 5 oct, ~12:55 a. m. (hora Colombia)
+**Nada urgente en la cuenta en vivo.**
+
+**El Claude local está detenido.** No hay commits desde las 11:45 p. m. ni cambios en GHL desde las 11:44 p. m.: lo último fue DEMO — RES-01 en MD360 y CLUB-01b en la maestra a las 11:12 p. m. Lo más probable es que haya terminado la lista de 6 puntos y cerrado su turno con un reporte, esperando instrucciones. No leyó los "siguientes pasos" de la Revisión 1, porque solo los ve si vuelve a hacer `git pull`.
+
+**Estado verificado por API:**
+- **Maestra:** 21 workflows, todos en borrador. CLUB-01b "Pedir cumpleaños" es nuevo.
+- **Mall Digital 360:**
+  - los 7 "DEMO —" siguen en borrador;
+  - ningún otro workflow cambió;
+  - Afiliado360 sigue intacto;
+  - "Prospectos Cliente 360" existe.
+
+**Para Sergio al despertar:** pegue en PowerShell:
+`Haz git pull, lee la Revisión 1 y 2 en docs/revision-nube.md y ejecuta los "siguientes pasos" de la Revisión 1, sin detenerte.`
