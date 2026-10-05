@@ -141,6 +141,11 @@
     - el contacto del dueño debe existir con ese número exacto.
   - **Por verificar:** si "New review received" también se dispara con reseñas que se importan al conectar el perfil. Si es así, el primer día contaría reseñas viejas. En ese caso hay que dejar `rep_resenas_total` en el número real después de conectar.
   - El valor en pesos de la reputación (dinero estimado) queda para la versión con reporte por correo/página.
+- ✅ **GEN-02 Monitor semanal:**
+  - Scheduler: lunes 07:30, antes de que REP-01 reinicie los contadores a las 08:00.
+  - Si `rep_visitas_semana` = 0, manda un correo a `{{custom_values.sis_soporte_email}}` (custom value nuevo, info@malldigital360.com) para que MD360 revise con el dueño.
+  - **Cambio frente a la spec:** se mide "semana sin visitas" en vez de "3 días sin mensajes salientes". Es la señal que de verdad avisa que el negocio dejó de usar el sistema; contar todos los envíos obligaría a meter un contador en cada mensaje.
+  - `rep_mensajes_semana` queda sin uso: REP-01 lo pone en cero, pero nada lo suma.
 
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
