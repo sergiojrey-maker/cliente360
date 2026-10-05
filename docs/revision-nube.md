@@ -72,3 +72,16 @@ Sergio se fue a dormir. Claude nube revisa cada hora (hasta 6 veces) y deja nota
 **Sin actividad. Revisiones suspendidas hasta que Sergio despierte.**
 - Ni commits ni cambios en GHL desde las 11:45 p. m. Maestra: 21 workflows en borrador, sin cambios.
 - Al despertar, lo que hay que hacer está en la Revisión 2.
+
+---
+
+## Decisiones de Sergio — 5 oct (día)
+**Footer del sitio (decidido):** las dos sedes, como sucursales. Texto para el footer global de malldigital360.com y de `/club`:
+
+> **Mall Digital 360** · Empresa de tecnología y automatización con IA para negocios
+> 📍 Villavicencio, Meta, Colombia · 📍 Florida, Estados Unidos
+> WhatsApp +57 320 405 5485 · info@malldigital360.com · Atención en español e inglés
+> Política de privacidad · Términos
+
+- Usar custom values para el WhatsApp y el correo (ya existen en MD360).
+- **Para Claude local:** aplícalo como sección global (footer). Guárdalo, pero **no publiques** cambios de páginas en vivo sin el OK de Sergio.
