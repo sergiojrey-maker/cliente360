@@ -182,6 +182,35 @@
     - si distingue mayúsculas: si las distingue, usar códigos en mayúsculas y pedirle al empleado que los escriba igual.
   - El paso humano de CelebrAcción (MD360 revisa antes de aplicar `ca-enviar`) queda así para la v1 (Sergio, 4 oct).
 
+## Demo en Mall Digital 360 (4 oct 2026, noche, con OK de Sergio)
+- **Snapshot** "Cliente 360 v0.1 (demo)" (nivel agencia), creado desde la maestra con todos sus activos.
+- **Cargado a MD360 solo con:**
+  - todos los custom fields y custom values de la maestra;
+  - el formulario Atendido y la encuesta Satisfacción;
+  - los 20 tags y el trigger link;
+  - 6 workflows: CLUB-01, CLUB-02, CLUB-04, VIS-01, RES-01, RES-02.
+  - El chequeo de conflictos no encontró ninguno: no se sobrescribió nada de MD360.
+- **Ajustes en MD360** (todo sigue en borrador):
+  - Los 6 workflows se renombraron con el prefijo **"DEMO —"**.
+  - **DEMO — CLUB-01:**
+    - se dispara con `DEMO` / `Demo` / `demo`;
+    - pone el tag **`demo-c360`** (creado por API);
+    - se quitó el disparador por formulario, porque el formulario de ingreso no se importó.
+  - **DEMO — VIS-01:**
+    - se quitaron el disparador por etapa de pipeline, que no existe en MD360;
+    - se quitó el de citas con "asistió", que se habría disparado con citas reales de MD360;
+    - se quitaron los dos pasos de REA-01, que no se importó.
+    - Queda solo el formulario Atendido.
+  - **DEMO — CLUB-04:** solo responde si el contacto tiene `club-miembro` **y** `demo-c360`.
+  - **DEMO — RES-02:** la alerta interna por WhatsApp va al usuario Sergio J Rey Gutierrez.
+  - **DEMO — Baja** (workflow nuevo, en vez de GEN-01): con BAJA, y solo si el contacto tiene `demo-c360`, envía la confirmación y activa el DND en todos los canales.
+  - Los 7 workflows quedan con **0 errores**.
+- **Desactivado a pedido de Sergio:** "05.02.01 Customer reply to Chat Widget / Send to Google" (pasó a borrador).
+- **Pendiente:**
+  - plantillas de Meta y cambiar los "SMS provisional" por WhatsApp;
+  - QR con el texto `DEMO`;
+  - publicar los 7 workflows cuando Sergio dé la señal para la prueba con su celular.
+
 ## Formularios y encuestas (4 oct 2026, construidos a mano)
 - ✅ **F1 Atendido**: título "✅ Atendido — {{custom_values.negocio_nombre}}", Nombre (opcional), Celular (obligatorio), PIN del equipo (campo `pin_equipo`, obligatorio), botón "Registrar visita", mensaje "Listo ✅". Sticky contact apagado (vital: el empleado lo usa desde un solo celular); "guardar progreso" apagado.
 - ✅ **F2 Canjear**: título "🎁 Canjear premio — {{custom_values.club_nombre_completo}}", Celular + PIN, botón "Canjear", mensaje "Premio registrado 🎁".

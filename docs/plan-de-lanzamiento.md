@@ -166,3 +166,10 @@ La plantilla maestra queda limpia y los clientes reales siguen saliendo del snap
 5. **Mientras Meta aprueba:** lote 2 en la maestra (REA-01, CTRL-01, REP-01, RES-03, CA-01 a CA-04, RR-01, GEN-02) + página `/club` (sin publicar).
 6. **Con las plantillas aprobadas:** cambiar los "SMS provisional" por WhatsApp en la demo → prueba completa con el celular de Sergio.
 7. **Maestra terminada** → snapshot "Cliente 360 v1" para clientes.
+
+**Avance (4 oct, noche):**
+- 1 ✅.
+- 2 ✅ — snapshot "Cliente 360 v0.1 (demo)" creado con el lote 2 ya incluido.
+- 3 ✅ — importado a Mall Digital 360 con el OK de Sergio y sin conflictos. Detalle en `estado-snapshot.md` → "Demo en Mall Digital 360".
+- 5 ✅ — lote 2 completo, CA-04 incluido.
+- Sigue 4 (plantillas a Meta) y luego `/club`.
