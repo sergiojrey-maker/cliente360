@@ -173,4 +173,5 @@ La plantilla maestra queda limpia y los clientes reales siguen saliendo del snap
 - 3 ✅ — importado a Mall Digital 360 con el OK de Sergio y sin conflictos. Detalle en `estado-snapshot.md` → "Demo en Mall Digital 360".
 - 5 ✅ — lote 2 completo, CA-04 incluido.
 - 4 ✅ — 10 plantillas enviadas a Meta (4 aprobadas al instante, 6 en revisión). Detalle en `plantillas-whatsapp-demo.md`.
-- Sigue `/club` (P1, sin publicar).
+- P1 `/club` ✅ — `web/club.html` pegado en el funnel "Club de Clientes — Cliente 360" (MD360) a ancho completo, con título y descripción SEO. Guardado **sin publicar** y sin dominio conectado; solo se ve en la vista previa privada de GHL. Para salir en vivo, Sergio conecta malldigital360.com con la ruta `/club` y publica.
+- Sigue: P2 (parche del sitio). Antes de despublicar páginas en vivo se le muestra la lista a Sergio.

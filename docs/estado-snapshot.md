@@ -250,4 +250,5 @@
 - [ ] Workflows W1–W8 y lote 2, construidos directamente en el builder (Ask AI descartado para workflows)
 - [ ] Iniciar la verificación del negocio en Meta (hoy "Not Verified")
 - [ ] Pruebas de la sección 8 de la spec
-- [ ] P1 (`/club`) y P2 (parche) en la sub-cuenta Mall Digital 360
+- [x] P1 (`/club`) pegado y guardado sin publicar (funnel iR1fdVLztLrKl5QMBw7t)
+- [ ] P2 (parche) en la sub-cuenta Mall Digital 360
