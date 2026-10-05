@@ -295,3 +295,14 @@
 - **QR** `web/qr-demo.png` (1200 px) y `web/qr-demo.svg`, en azul marino de la marca, que abren `wa.me/573204055485?text=DEMO`. Se revisó la imagen.
 - **Letrero de mesa** `web/letrero-demo.html` (A5 vertical, para imprimir) con una vista previa en `web/letrero-demo-vista.png`. El logo es una aproximación en SVG (dos cúpulas + tres rombos); si hay archivo oficial, se reemplaza.
 - **Guion** `docs/guion-demo.md`: 2 minutos, el prospecto vive el club como cliente y después ve lo que le llega al dueño, más preguntas frecuentes.
+
+## Noche — punto 4a: cumpleaños en el ingreso al club
+- Custom value nuevo **`club_link_registro`** en la maestra = enlace del formulario "Ingreso al club" (`.../widget/form/27nv6RRwCed6LN25PvV9`). **En cada instalación hay que cambiarlo**, porque el ID del formulario cambia en cada sub-cuenta.
+- **CLUB-01b Pedir cumpleaños** (borrador, 0 errores):
+  - Disparador: se agrega el tag `club-miembro` (lo pone CLUB-01).
+  - Espera 3 min, para que llegue después de la bienvenida y el sello.
+  - If/Else "¿Falta el cumpleaños?": activo + fecha de nacimiento vacía + sin `baja`.
+  - Mensaje (SMS provisional → plantilla `c360_pedir_cumple`) con `club_regalo_cumpleanos` y el enlace al formulario, más BAJA.
+  - Si la persona ya entró por el formulario con su fecha, no se le escribe.
+  - Si llena el formulario después, CLUB-01 la reconoce como "ya miembro": no hay doble registro y queda guardada la fecha de nacimiento que usa CA-03.
+- Se armó como workflow aparte y no dentro de CLUB-01, para no mover las ramas ya probadas. Funcionalmente es el paso de CLUB-01.
