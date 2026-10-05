@@ -10,7 +10,7 @@
 - Negocio de ejemplo: **Barbería El Llano** (Club Barbería El Llano, 10 sellos = un corte gratis).
 
 **Antes de usarlo con prospectos (una sola vez):**
-- Plantillas de Meta aprobadas.
+- ✅ Las 10 plantillas de Meta aprobadas (5 oct) y los workflows DEMO ya usan WhatsApp. Falta el regalo de bienvenida (ver `decisiones-pendientes.md` #6).
 - Los 7 workflows "DEMO —" publicados.
 - Prueba completa con el celular de Sergio.
 
