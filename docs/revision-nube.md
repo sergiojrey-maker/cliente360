@@ -204,3 +204,40 @@ Revisé `d98320f`, `5b4e87f` y `b4b7106`: inicio publicado, footer, `prueba-demo
   1. Crea la página en el funnel del club y **no la publiques sin avisar**.
   2. Luego apunta `resena_link_google` de MD360 a esa página.
   3. Usa la marca MD360 y no imites el logo de Google: "Así se ve la reseña en Google", con 5 estrellas, como ilustración.
+
+## Revisión 6 — 5 oct, 6:20 p. m.: segunda prueba DEMO, otra vez sale premio
+
+**Lo que llegó (18:12–18:13):** bienvenida ✅, regalo ✅ y otra vez "🎉 ¡Completaste tu tarjeta!" ❌.
+
+**Contacto por API después de la prueba:**
+
+| Campo | Valor | Debía quedar en |
+|---|---|---|
+| `club_sellos` | 0 | 1 |
+| `club_sellos_faltan` | 0 | 9 |
+| `visitas_total` | 0 | 1 |
+| `sis_calculo` | 0 | — |
+
+Tags: `club-miembro`, `demo-c360`, `resena-solicitada`, `club-premio-pendiente`.
+
+**Lectura:** el nuevo "Iniciar contadores en 0" sí funciona. Pero **ninguna Math operation escribe**:
+- "×0 + `club_meta_visitas`" dejó 0;
+- el +1 de `club_sellos` (CLUB-02) dejó 0;
+- el +1 de `visitas_total` (VIS-01) dejó 0.
+
+Por eso faltan = 0 → premio. No es solo el problema del campo vacío.
+
+**Hipótesis principal:** los workflows DEMO se copiaron o importaron desde la maestra (PF7DK8r0SiEtcVhO4Trt). Las acciones Math pueden seguir apuntando a los IDs de los campos y del custom value **de la maestra**, que en MD360 no existen. Se ven bien en pantalla, pero escriben en la nada. Las acciones creadas hoy directamente en MD360 ("Iniciar contadores en 0", If/Else) sí funcionan.
+
+**Para Claude local, en este orden:**
+1. **Evidencia primero:** abre el historial del contacto de Sergio. Puede ser en Contacto → pestaña de actividad o "Workflows/Automation" del contacto, o Execution logs de DEMO — CLUB-01, VIS-01 y CLUB-02 de las 18:12–18:13. Anota qué dice cada Math operation: ejecutada, saltada o error, y qué valor escribió. Si la pestaña de Execution logs se congela, prueba con el historial del contacto o recargando solo el workflow.
+2. **En cada Math operation de los 7 DEMO:** abre la acción, **vuelve a elegir el campo de destino y los operandos** desde la lista de MD360, y guarda.
+3. **Si una Math sigue sin escribir, reemplázala:**
+   - Faltan = meta → **Update Contact Field** `club_sellos_faltan` = `{{custom_values.club_meta_visitas}}`; si no lo acepta, `10` fijo en la DEMO.
+   - Los +1 y −1 → prueba primero con la Math recién reconfigurada. Si tampoco funciona, avísame **antes** de rediseñar.
+4. **Prueba tú mismo antes de llamar a Sergio:** usa un contacto de prueba (no el de Sergio) y dispara VIS-01 a mano, con "Add to workflow" o con el formulario ✅ Atendido. Verifica que `club_sellos` suba a 1 y `club_sellos_faltan` baje a 9. **No le pidas a Sergio otra prueba hasta que esto pase.**
+5. **Resetea a Sergio** igual que antes:
+   - tags: solo `evento_presencial_gratis_cumaral_2026` y `lead-charla`;
+   - `club_sellos` = 0, `club_sellos_faltan` = 10, `visitas_total` = 0;
+   - DND apagado.
+6. Anota la causa real en `estado-snapshot.md`. Si fue lo de los IDs copiados, revisa lo mismo en **todo** workflow que se haya importado, porque así se va a instalar a cada cliente desde el snapshot.
