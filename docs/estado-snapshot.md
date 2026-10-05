@@ -306,3 +306,16 @@
   - Si la persona ya entró por el formulario con su fecha, no se le escribe.
   - Si llena el formulario después, CLUB-01 la reconoce como "ya miembro": no hay doble registro y queda guardada la fecha de nacimiento que usa CA-03.
 - Se armó como workflow aparte y no dentro de CLUB-01, para no mover las ramas ya probadas. Funcionalmente es el paso de CLUB-01.
+
+## Noche — punto 4b: textos en inglés → español y horario (maestra)
+- **Encuestas** (Styles → Footer):
+  - botones "Go Back / Next / Submit" → **Atrás / Siguiente / Enviar** en *Satisfacción* e *Instalación Cliente 360*;
+  - mensajes de cierre ya estaban en español.
+- **Enlaces "Privacy Policy | Terms of Service"** (apuntaban a example.com):
+  - en *Satisfacción*, *Atendido*, *Canjear* e *Ingreso al club* → **"Términos y tratamiento de datos"** con enlace a `{{custom_values.club_link_terminos}}` (en los formularios se abre en ventana nueva);
+  - en *Instalación Cliente 360*, que llena el dueño, se reemplazó por: "Estos datos solo se usan para configurar el sistema de su negocio. Dudas: info@malldigital360.com".
+- **Calendario "Cita — Demo"** (por API):
+  - mensaje de confirmación y texto de consentimiento en español, con BAJA;
+  - horario base lunes a sábado de 8:00 a 19:00; duración 45 min, intervalo 30.
+  - **Ojo:** el `PUT /calendars/{id}` de GHL vuelve a sus valores por defecto los campos que no se envían (borró el horario y puso 30 min). Siempre hay que enviar el objeto completo.
+- **Pendiente:** la demo en Mall Digital 360 se cargó antes de este cambio, así que sus formularios todavía muestran "Privacy Policy". No afecta la prueba (el prospecto no ve formularios, solo WhatsApp), pero se corrige igual o al recargar el snapshot.
