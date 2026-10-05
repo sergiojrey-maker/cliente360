@@ -381,3 +381,10 @@
   - El contador animado dice "⭐ 10.000+ reseñas generadas" (en el código, `target = 10000`). ¿Es real? Si no, hay que bajarlo a la cifra que se pueda sustentar.
   - El menú "Precios" sigue llevando a la página de precios en USD (es otra página del sitio, fuera de lo autorizado).
   - Los testimonios y la lista de nichos (MedSpas primero) siguen orientados a EE. UU.; se cambian en el revamp T-701.
+
+## 5 oct, ~5:07 p. m. — Demo publicada (Revisión 4, autorizado por Sergio)
+- **Paso 0 hecho.** El usuario Sergio tiene el celular +57 313 316 5253; su contacto en MD360 es "Sergio Rey Gutiérrez". Está limpio: sin `club-miembro`, `demo-c360`, `resena-*` ni `baja`; DND inactivo; campos de sellos vacíos (CLUB-01 los pone en 0).
+- **Publicados, en orden:** DEMO — Baja → VIS-01 → CLUB-02 → RES-02 → RES-01 → CLUB-04 → CLUB-01. Confirmado por API: los 7 están `published` y ningún otro workflow de MD360 cambió.
+- **Enable branches:** apagado en todas las acciones WhatsApp, salvo en DEMO — Baja. Ahí está encendido a propósito, con el DND en las dos ramas (Delivered y Undelivered).
+- **Pendiente de la prueba:** resultados abajo cuando Sergio escriba DEMO.
+- **Ojo:** "05.02.02 Main Phone of MD360 / Send to Google" sigue publicado (no se tocó). Si se dispara con mensajes entrantes al 320, puede enviar su propio mensaje durante la demo. Revisar en los Execution logs de la prueba.
