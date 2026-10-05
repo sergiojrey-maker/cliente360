@@ -51,3 +51,43 @@ Las 10 se enviaron desde MD360 → Settings → WhatsApp → Templates. Las vari
 - CA-02b: `c360_ca_oferta`.
 
 Van en la tanda de la maestra / primer cliente.
+
+---
+
+## Tanda de la maestra / primer cliente (textos listos, 5 oct 2026)
+
+Se envían a Meta en la instalación de cada cliente, desde su línea del club (paso 4 de `docs/instalacion-cliente.md`). Siguen las mismas reglas de arriba y además:
+- **Meta no acepta variables vacías.** Por eso los mensajes con dato opcional (oferta de regreso) tienen dos versiones. El workflow elige con un If/Else: `rea_oferta_regreso` vacío o no.
+- Los mensajes de **CelebrAcción, cumpleaños y reactivación** van solos. Ninguno menciona reseñas, y la solicitud de reseña nunca menciona premios ni ofertas.
+- Todos terminan con salida BAJA, salvo la confirmación de baja.
+- Juego en **tú**. Si un negocio prefiere **usted**, se aprueba la variante cambiando solo los verbos (ver la nota al final).
+
+| # | Nombre | Categoría | Workflow | Texto (variables → custom value / campo) |
+|---|---|---|---|---|
+| 11 | `c360_pedir_cumple` | Marketing | CLUB-01b | {{1}}, una cosa más 🎂 En el {{2}} te damos {{3}} en tu cumpleaños. Si quieres recibirlo, déjanos tu fecha aquí (solo día y mes): {{4}} Si no quieres recibir mensajes, responde BAJA.<br>1=nombre · 2=`club_nombre_completo` · 3=`club_regalo_cumpleanos` · 4=`club_link_registro` |
+| 12 | `c360_ya_miembro` | Utilidad | CLUB-01 | Hola {{1}}, ya eres parte del {{2}} 🙌 Llevas {{3}} sellos. Para consultar cuando quieras, escribe MIS SELLOS.<br>1=nombre · 2=`club_nombre_completo` · 3=`club_sellos` |
+| 13 | `c360_regalo` | Marketing | CLUB-01 | Tu regalo de bienvenida al {{1}}: {{2}} 🎁 Muéstrale este mensaje al equipo en tu próxima visita. Si no quieres recibir mensajes, responde BAJA.<br>1=`club_nombre_completo` · 2=`club_regalo_bienvenida` |
+| 14 | `c360_recordar_premio` | Utilidad | CLUB-02 | Hola {{1}}, recuerda que tienes {{2}} esperándote en {{3}} 🎁 Pídelo en tu próxima visita; este mensaje es tu comprobante.<br>1=nombre · 2=`club_premio` · 3=`negocio_nombre` |
+| 15 | `c360_canje` | Utilidad | CLUB-03 | ¡Listo, {{1}}! Ya registramos tu premio del {{2}}. Tu tarjeta arranca de nuevo en 0: cada visita vuelve a sumar. ¡Gracias por venir!<br>1=nombre · 2=`club_nombre_completo` |
+| 16 | `c360_reactivacion_club` | Marketing | REA-01 (miembro, sin oferta) | Hola {{1}}, hace rato no te vemos por {{2}} 👋 Tus {{3}} sellos siguen guardados y te faltan {{4}} para {{5}}. Te esperamos cuando quieras. Si no quieres recibir mensajes, responde BAJA.<br>1=nombre · 2=`negocio_nombre` · 3=`club_sellos` · 4=`club_sellos_faltan` · 5=`club_premio_corto` |
+| 17 | `c360_reactivacion_club_oferta` | Marketing | REA-01 (miembro, con oferta) | Hola {{1}}, hace rato no te vemos por {{2}} 👋 Tus {{3}} sellos siguen guardados. Y para que vuelvas: {{4}}. Te esperamos. Si no quieres recibir mensajes, responde BAJA.<br>1=nombre · 2=`negocio_nombre` · 3=`club_sellos` · 4=`rea_oferta_regreso` |
+| 18 | `c360_reactivacion` | Marketing | REA-01 (cliente, sin oferta) | Hola {{1}}, hace rato no te vemos por {{2}} 👋 Queríamos saber cómo estás y recordarte que aquí te esperamos. Puedes escribirnos por aquí para lo que necesites. Si no quieres recibir mensajes, responde BAJA.<br>1=nombre · 2=`negocio_nombre` |
+| 19 | `c360_reactivacion_oferta` | Marketing | REA-01 (cliente, con oferta) | Hola {{1}}, hace rato no te vemos por {{2}} 👋 Para que vuelvas te tenemos esto: {{3}}. Escríbenos por aquí si quieres apartar tu espacio. Si no quieres recibir mensajes, responde BAJA.<br>1=nombre · 2=`negocio_nombre` · 3=`rea_oferta_regreso` |
+| 20 | `c360_rr_encuesta` | Utilidad | RR-01 | Hola {{1}}, te escribimos de {{2}}. Estamos mejorando la atención y queremos saber cómo te fue la última vez que viniste. Responde con un número del 1 al 5 ⭐ Si prefieres no recibir mensajes, responde BAJA.<br>1=nombre · 2=`negocio_nombre` |
+| 21 | `c360_cumpleanos` | Marketing | CA-03 | ¡Feliz cumpleaños, {{1}}! 🎂 En el {{2}} te tenemos un regalo: {{3}}. Muestra este mensaje en tu próxima visita este mes. Si no quieres recibir mensajes, responde BAJA.<br>1=nombre · 2=`club_nombre_completo` · 3=`club_regalo_cumpleanos` |
+| 22 | `c360_ca_oferta` | Marketing | CA-02b | Hola {{1}}, por {{2}} en {{3}} tenemos esto para ti: {{4}}. {{5}} Muestra el código {{6}} al pagar. Válido {{7}}. Si no quieres recibir mensajes, responde BAJA.<br>1=nombre · 2=`ca_fecha_nombre` · 3=`negocio_nombre` · 4=`ca_oferta_titulo` · 5=`ca_oferta_detalle` · 6=`ca_oferta_codigo` · 7=`ca_oferta_vigencia` |
+
+**Notas:**
+- **`c360_rr_encuesta`** es el primer mensaje a una base antigua que quizá no dio autorización clara (Ley 1581). Por eso:
+  - se presenta;
+  - dice por qué escribe;
+  - no vende nada ni pide reseña;
+  - ofrece la salida en el mismo mensaje.
+  - El enlace de reseña llega después, con la misma lógica de RES-01: a todos, sin importar la nota.
+  - Se propone como Utilidad; si Meta la pasa a Marketing, se acepta.
+- **`c360_ca_oferta`** tiene 7 variables. Si GHL la rechaza por "demasiadas variables para su largo", se quita {{5}} (detalle) y se deja en el título. Mismo arreglo que `c360_mis_sellos`.
+- **`c360_pedir_cumple`:** el enlace es el formulario "Ingreso al club" de esa sub-cuenta. CLUB-01 reconoce al miembro y solo guarda la fecha.
+- **Consulta del dueño (CA-01) y alertas:** no llevan plantilla de cliente. Van por notificación interna al usuario dueño.
+  - **Por verificar en la demo:** si el WhatsApp interno fuera de 24 h también exige plantilla aprobada. Si la exige, se agrega `c360_dueno_aviso` ("Hola {{1}}, tienes un aviso nuevo de tu sistema Cliente 360: {{2}} Responde a este mensaje si necesitas ayuda.").
+- **Nombres en la maestra vs. la demo.** En la maestra, las acciones "SMS provisional" de RES-01 y CLUB-02 dicen `c360_resena_enlace`, `c360_resena_inconforme` y `c360_faltan_2`. En Meta se aprobaron como `c360_resena`, `c360_disculpa` y `c360_te_faltan`. Los textos son los mismos; **valen los nombres de Meta.** Al cambiar a WhatsApp se elige la plantilla por su nombre de Meta.
+- **Variante "usted":** se cambian los verbos y pronombres ("te" → "le", "ven" → "venga", "responde" → "responda", "tus" → "sus"). Se aprueba con el sufijo `_u` (p. ej. `c360_cumpleanos_u`).
