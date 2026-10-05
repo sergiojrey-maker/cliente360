@@ -138,3 +138,33 @@ Revisé `d98320f`, `5b4e87f` y `b4b7106`: inicio publicado, footer, `prueba-demo
 **Pendientes para Sergio (no bloquean la prueba):**
 - **Contador "10.000+ reseñas generadas" del inicio:** espera la cifra real de Sergio. No lo cambies todavía.
 - **Menú "Precios" → página en USD:** propuesta de la nube: que apunte a `/club` hasta el revamp. Espera su OK.
+
+## Revisión 5 — 5 oct, 5:30 p. m.: primera prueba DEMO, falla en los sellos
+
+**Lo que le llegó a Sergio (17:25):**
+1. Bienvenida ✅
+2. Regalo ✅
+3. "🎉 ¡Completaste tu tarjeta! Ganaste un corte gratis" ❌ (debía ser "Sello 1 de 10")
+
+**Lo que muestra la API** (contacto `FHyh1Ky3UCIBmoE901ue`, MD360):
+- Tags: `club-miembro`, `demo-c360`, `lead-charla`, `resena-solicitada` y **`club-premio-pendiente`**.
+- `club_fecha_ingreso`, `fecha_ultima_visita`, `fecha_solicitud_resena`, `fuente_registro` y `autorizacion_datos` sí quedaron.
+- **`club_sellos`, `club_sellos_faltan` y `visitas_total` están vacíos.** No quedaron en 0 ni en 10.
+- `club_meta_visitas` = "10" existe en los custom values. No es la causa.
+
+**Causa probable:** la acción **Math operation de GHL no escribe nada cuando el campo está vacío**: "vacío × 0" queda vacío. Por eso CLUB-01 nunca dejó `club_sellos_faltan` en 10, el −1 de CLUB-02 tampoco escribió, y el If/Else "faltan ≤ 0" tomó el vacío como premio. En el paso 0 se dejaron los campos vacíos pensando que CLUB-01 los ponía en 0. Pero **todo cliente nuevo real llega con los campos vacíos**, así que esto también rompe la maestra.
+
+**Para Claude local (corregir en DEMO y en la maestra):**
+1. **CLUB-01:** reemplaza las dos operaciones matemáticas por **Update Contact Field**:
+   - `club_sellos` = `0`;
+   - `club_sellos_faltan` = `{{custom_values.club_meta_visitas}}`.
+
+   Si Update Contact Field no acepta un custom value en un campo numérico, usa `10` en la DEMO y anótalo para la maestra.
+2. **VIS-01 / CLUB-02 / canje:** antes de cada Math operation sobre `club_sellos`, `club_sellos_faltan`, `visitas_total` y `rep_*` (contacto), agrega un If/Else "campo vacío → Update Contact Field = 0" (para `faltan`, a la meta). Otra opción, si es más simple: en VIS-01, si `club_sellos_faltan` está vacío, ponerlo en la meta antes de llamar a CLUB-02.
+3. **CLUB-02:** la rama de premio exige `club_sellos_faltan` **no vacío** y ≤ 0. Que un vacío nunca dé premio.
+4. Revisa en los Execution logs de DEMO — CLUB-01 y CLUB-02 de las 17:25 si la Math dio error o "skipped", y anota la causa real en `estado-snapshot.md`.
+5. **Resetea el contacto de Sergio** para repetir la prueba:
+   - quita `club-miembro`, `demo-c360`, `resena-solicitada` y `club-premio-pendiente`;
+   - ponle `club_sellos` = 0, `club_sellos_faltan` = 10 y `visitas_total` = 0. Esta vez con número, no vacío;
+   - borra la oportunidad "— demo club" duplicada si se crea otra.
+6. Avísale a Sergio cuando pueda repetir: "escriba DEMO de nuevo".
