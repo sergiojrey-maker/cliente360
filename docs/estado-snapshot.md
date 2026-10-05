@@ -276,3 +276,17 @@
   - No duplica oportunidades ni las devuelve de etapa.
   - 0 errores, sigue en borrador.
   - Se puso al inicio (no al final del flujo) para que todo el que escriba DEMO quede como prospecto, aunque una rama corte antes.
+
+## Noche — punto 2: términos del club
+- `web/club-terminos.html`:
+  - términos del club + autorización de datos (Ley 1581 de 2012, Ley 1480 de 2011);
+  - genérico: el negocio es el Responsable y MD360 (Rey Enterprises USA LLC) el Encargado;
+  - reglas del club; los premios nunca dependen de la reseña.
+- Pegado en el funnel "Club de Clientes — Cliente 360", paso **"Términos del club"** (`malldigital360.com/club-terminos`), con título SEO. **Guardado, no publicado.**
+- `club_link_terminos` = `https://malldigital360.com/club-terminos` en la maestra y en Mall Digital 360.
+- **Hallazgo — la carga del snapshot no trae los valores:** los 58 custom values de Cliente 360 llegaron a Mall Digital 360 **vacíos**. Se llenaron por API con los datos de la demo:
+  - "Barbería El Llano", "Club Barbería El Llano", dueño Sergio, WhatsApp +573204055485;
+  - palabra `DEMO`, `resena_espera_minutos` = 2 (para que la demo en vivo vaya rápido);
+  - contadores en 0;
+  - `resena_link_google` = `malldigital360.com/club`, para no pedir reseñas a no clientes (ver `decisiones-pendientes.md`).
+  - **Consecuencia para las instalaciones:** después de cargar el snapshot siempre hay que llenar los custom values (lo hace el script del punto 5).
