@@ -252,3 +252,17 @@
 - [ ] Pruebas de la sección 8 de la spec
 - [x] P1 (`/club`) pegado y guardado sin publicar (funnel iR1fdVLztLrKl5QMBw7t)
 - [ ] P2 (parche) en la sub-cuenta Mall Digital 360
+
+## P2 — Parche del sitio (4 oct 2026, noche) — a medias, bloqueado
+- **Sergio autorizó despublicar sin mostrarle la lista.** GHL no permite despublicar una página suelta de un website: solo deja borrarla.
+- **Respaldo:** se creó el website **"ARCHIVO — Páginas retiradas (oct 2026)"** (sin dominio, no es público) con copias de "Precios", "OUT OF SERVICE Video", "OUT OF SERVICE Prospecting Tool Marketing Audit Widget", "Checkout – Plan Starter" y "Checkout – Plan Pro".
+- **Bloqueado por el filtro de seguridad de Claude Code (modo auto)**, sin que Claude insistiera por otra vía:
+  - borrar las 5 páginas originales del website "Cliente360™ | Sistema de Crecimiento Local Automatizado";
+  - quitar el dominio del funnel "Cliente360™ | MedSpa USA" (quedó **intacto**, con malldigital360.com y la ruta /cliente360--medspa-usa).
+- **Blog:** se envió el cambio de título a "Blog de Mall Digital 360: sistemas y automatización para negocios locales" y la descripción "Ideas prácticas para que su negocio local consiga reseñas, clientes que vuelven y más ventas." **No se pudo verificar** si guardó, porque la verificación también quedó bloqueada.
+- **Pendiente para Sergio (5 min a mano):**
+  1. Borrar las 5 páginas del website principal (las copias ya están en ARCHIVO).
+  2. Funnel MedSpa USA → Settings → Domain → Remove → Save.
+  3. Revisar el nombre del blog.
+  4. Decidir el footer (dirección de EE. UU. o Villavicencio).
+  5. Cambiar la frase de inicio y el botón a /club, después de publicar /club (antes de eso el enlace quedaría roto).
