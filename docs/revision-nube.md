@@ -190,3 +190,7 @@ Revisé `d98320f`, `5b4e87f` y `b4b7106`: inicio publicado, footer, `prueba-demo
 3. Mantén como respaldo la respuesta escrita (1–5) por si alguien escribe en vez de tocar.
 4. Envía la plantilla a Meta desde MD360. Mientras no esté aprobada, la DEMO sigue con la encuesta actual.
 5. Aplica la misma idea donde el dueño responde con número (aprobación de CelebrAcción 1/2/3, PAUSA/ACTIVAR). Anótalo como pendiente en `estado-snapshot.md`; no lo construyas todavía.
+
+**BAJA (17:32) ✅** Llegó la confirmación. Por API: `dnd` = true en todos los canales (WhatsApp, SMS, Email, Call, GMB, FB), puesto por el workflow DEMO — Baja.
+- Detalle: no se puso ningún tag `baja` y el contacto sigue con `club-miembro`. Para el reporte (miembros activos) conviene que Baja quite `club-miembro` y ponga `baja`. Anótalo para DEMO y maestra.
+- **Para el reset del contacto de Sergio:** además de lo de arriba, **apaga el DND en todos los canales**. Si no, la segunda prueba no le envía nada.
