@@ -99,6 +99,8 @@ node herramientas/instalar-custom-values.mjs clientes/<negocio>.json --dueno +57
 ## 6. Ajustes por cliente dentro de los workflows (15 min)
 1. **Notificaciones internas al dueño.** Abrir cada acción que diga "INSTALACIÓN: elegir usuario dueño" y cambiarla a "Particular User" = el dueño. Están en RES-02, CLUB-03, REP-01, REP-02 y RES-03.
 2. **Cambiar "SMS provisional" por WhatsApp** con la plantilla correspondiente, a medida que Meta apruebe. Se buscan por el nombre de la acción.
+   - **En cada acción WhatsApp, apagar "Enable branches"** (viene encendido). Si queda encendido, el flujo se parte en Delivered/Undelivered y los pasos siguientes solo corren si el mensaje se entregó. Ejemplo: en GEN-01 la baja (DND) no se aplicaría si el WhatsApp de confirmación falla.
+   - Método probado en la demo: agregar la acción WhatsApp debajo del SMS, apagar "Enable branches", guardar y luego borrar el SMS. Si había un "Esperar respuesta" apuntando al SMS (RES-01, RR-01), hay que volver a elegir en "Reply to" la acción nueva.
 3. Revisar que CLUB-01 se dispare con la palabra exacta de `club_palabra_ingreso`. El disparador es "Exactly matches", con tres variantes: mayúsculas, inicial mayúscula y minúsculas. Si el negocio cambió la palabra, se cambia aquí también.
 4. Interruptores: si un módulo quedó en "no", no hace falta tocar nada. Los If/Else leen `sis_modulo_*`.
 
