@@ -107,6 +107,7 @@ node herramientas/instalar-custom-values.mjs clientes/<negocio>.json --dueno +57
 ## 7. Prueba con celular y publicación (20 min)
 **Primero, con el celular de MD360 y después con el del dueño:**
 - [ ] Escribir la palabra del club a la línea → bienvenida, sello 1 y, a los 3 min, la petición de cumpleaños.
+- [ ] En el contacto: `club_sellos` = 1 y `club_sellos_faltan` = meta − 1. Si quedan en 0, falta "Save result to field" en alguna Math.
 - [ ] Formulario ✅ Atendido con PIN → sello 2. A los `resena_espera_minutos`, la encuesta 1–5. Para la prueba se baja temporalmente a 2.
 - [ ] Responder 5 → enlace de Google.
 - [ ] Responder 2 → disculpa **con** el enlace (sin filtrado de reseñas) + alerta al dueño.
@@ -147,4 +148,5 @@ node herramientas/instalar-custom-values.mjs clientes/<negocio>.json --dueno +57
 - Alertas que no llegan porque la notificación interna no tiene usuario → paso 6.1.
 - QR con un saludo antes de la palabra → CLUB-01 no se dispara → paso 8.1.
 - Contador de reseñas inflado con reseñas viejas → paso 5.4.
+- Math operation que calcula pero no escribe en el contacto → en cada acción Math, "SAVE RESULT TO FIELD" debe tener el campo destino. Revisarlo en la maestra antes de cada snapshot y comprobarlo en la prueba del paso 7 (sello 1 → faltan meta − 1).
 - `PUT /calendars/{id}` de la API borra los campos que no se envían. Si se ajusta el calendario por API, se manda el objeto completo.

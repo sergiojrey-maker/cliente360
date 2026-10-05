@@ -413,3 +413,22 @@
   - encuesta con 3 botones (`c360_encuesta_botones`, ramas 5/4/2, Mal → RES-02);
   - respuestas del dueño con botones (CelebrAcción 1/2/3, PAUSA/ACTIVAR), solo anotado;
   - página `/demo-resena`, si Sergio la aprueba.
+
+## 5 oct, ~6:35 p. m. — Causa real de los sellos y prueba propia (Revisión 6)
+- **Causa real:** la acción **Math operation** de GHL calcula, pero por defecto el resultado solo queda en la variable interna `math_operation.N.result`. Al contacto solo se escribe si se llena **"SAVE RESULT TO FIELD (optional)"**, al final del panel de la acción. En todas nuestras Math ese campo estaba vacío. El campo de arriba ("Select field") solo es el **primer operando**, no el destino.
+  - **Evidencia:** en el Execution log de DEMO — CLUB-01 se lee "Updated custom variable - math_operation.1.result : 10", pero el contacto siguió en 0.
+  - Esto corrige la lectura de la Revisión 5 ("vacío × 0"). Inicializar en 0 sigue siendo útil, pero no era la causa principal.
+- **No es por IDs importados.** Las Math de la **maestra** (PF7DK8r0SiEtcVhO4Trt) tienen el mismo vacío. Revisado en CLUB-01 "Calcular rep_miembros_club +1". Nacieron así al construirlas; el import solo copió el error.
+- **Arreglo en los DEMO de MD360** (guardados; siguen publicados): "Save result to field" en cada Math.
+  - CLUB-01: las dos `rep_*` → `sis_calculo`; "Sellos en cero" → `club_sellos`; "Faltan = meta" → `club_sellos_faltan`.
+  - CLUB-02: +1 → `club_sellos`; −1 → `club_sellos_faltan`.
+  - VIS-01: +1 → `visitas_total`; las dos `rep_*` → `sis_calculo`.
+  - RES-02: `rep_inconformes_semana` → `sis_calculo`.
+  - No hubo que reemplazar ninguna Math por Update Contact Field.
+- **Prueba propia (contacto "Prueba Claude C360", tag `prueba-claude`, solo correo, sin teléfono):**
+  - Arranque: 0/10/0. Entra a DEMO — VIS-01 con "Add to workflow".
+  - Visita 1 → `club_sellos` = 1, `club_sellos_faltan` = 9, `visitas_total` = 1, sin premio ✅.
+  - Visita 2 → 2 / 8 / 2 ✅.
+  - El contacto se queda en MD360 para futuras pruebas (no se borró).
+- **Reset de Sergio (FHyh1Ky3UCIBmoE901ue):** tags = `evento_presencial_gratis_cumaral_2026` y `lead-charla`; 0 / 10 / 0; `sis_calculo` = 0; DND apagado. Se conserva su única oportunidad "— demo club" (no hay duplicados).
+- **Pendiente en la maestra (no afecta la demo):** poner "Save result to field" en **todas** sus Math (CLUB-01, CLUB-02, CLUB-03, VIS-01, RES-02, RES-03, REP, REA, CA) antes de crear el snapshot "Cliente 360 v1". Como el error está en la maestra, cada cliente lo heredaría.
