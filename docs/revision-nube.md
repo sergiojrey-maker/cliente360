@@ -346,3 +346,24 @@ En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de
 **Autorizado por Sergio (5 oct, ~10:20 p. m.), opción (a):** Claude local carga a Mall Digital 360 **solo** el workflow CLUB-03 Canje y el formulario Canjear desde el snapshot "Cliente 360 v0.1 (demo)", sin sobrescribir ningún otro workflow, formulario ni página. Después lo ajusta, lo publica y lo prueba con "Prueba Claude C360". Si funciona, publica la línea de `/club-terminos`.
 
 **Confirmado por Sergio (5 oct, ~10:35 p. m.):** la alerta de cliente inconforme le llegó con su nombre y su número. **Alerta al dueño ✅ completa** (WhatsApp + push + tarea + teléfono).
+
+## Cierre del 5 oct (10:55 p. m.): demo completa
+
+**La demo en Mall Digital 360 está lista para prospectos.** Probado con el celular de Sergio o con el contacto de prueba:
+- DEMO → bienvenida + regalo + sello 1;
+- ✅ Atendido → sello 2;
+- encuesta → respuesta 1–3 → disculpa con enlace + alerta al dueño (WhatsApp con teléfono, push y tarea);
+- MIS SELLOS;
+- cada visita suma siempre;
+- canje con PIN (los sellos se mantienen);
+- BAJA.
+
+**Pendientes para mañana (Claude local), en orden:**
+1. Plantilla `c360_canje_v2` con el texto nuevo; corregir el SMS de canje en la maestra.
+2. Revisar en la maestra **toda** Math con "Save result to field"; replicar RES-01b, RES-01, RES-02 (re-entry, `c360_dueno_inconforme`, push, tarea con usuario dueño) y CLUB-01 (contadores en 0); comprobar el campo `club_premios_pendientes` en el mapeo.
+3. Dejar en 0 `rep_redenciones_mes` de la DEMO (subió por la prueba del canje). Lo mismo con cualquier `rep_*` inflado por las pruebas, antes de mostrar el reporte.
+4. Después: snapshot "Cliente 360 v1" desde la maestra.
+
+**Pendientes de Sergio:** verificar el negocio en Meta; probar el canje real con su celular cuando quiera.
+
+**Siguiente en el plan:** snapshot v1 → charla de Delfos y fundadores.
