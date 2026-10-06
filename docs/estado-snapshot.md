@@ -473,3 +473,29 @@
 4. Después, **una sola prueba** escribiendo DEMO. El contacto de Sergio ya está reseteado y fuera de los workflows.
 - Pendiente aparte, no urgente: verificar el negocio en Meta (Not Verified) para subir el límite y dar estabilidad.
 - Capturas tomadas en esta revisión (locales, no se suben al repo porque muestran datos de cobro): wallet, transacciones, WhatsApp → Numbers, Messaging limits, Billing de la sub-cuenta.
+
+## 5 oct, ~8:15 p. m. — La respuesta "2" no disparaba nada: causa y arreglo (Revisión 8)
+- **Evidencia (Execution log de DEMO — RES-01):**
+  - 7:49:10 p. m. sale la encuesta y empieza "wait" (Wait for reply, WhatsApp, 2 días).
+  - 7:50:10 p. m. VIS-01 intenta meterlo a RES-01 otra vez → "Skipped" (ya estaba). Eso es normal.
+  - El "2" llegó bien a las 7:50:24 p. m. (API: mensaje entrante, WhatsApp).
+  - Aun así, "wait" siguió en **Waiting** (próxima ejecución 7 oct). Nunca llegó al If/Else.
+- **Causa:** entre la encuesta (7:49:09) y el "2" (7:50:24), **otro workflow** (CLUB-02, 7:50:12) mandó "2 de 10 sellos". GHL asocia la respuesta al **último mensaje enviado**, que ya no era el de RES-01. Por eso su "Esperar respuesta" no se entera.
+  - Coincide con la prueba de las 6:55 p. m.: ahí no hubo mensaje en medio y la espera sí tomó el "DEMO".
+  - En un negocio real pasa igual: el sello del botón "Atendido" sale cerca de la encuesta.
+  - No era la rama "None" de la Revisión 7, ni la condición: "Alta" pide 4 o 5 y "Baja" 1, 2 o 3 sobre el texto de la respuesta.
+- **Arreglo (DEMO, publicado):**
+  - **Nuevo DEMO — RES-01b Respuesta a encuesta.** El disparador es **Customer replied** con tres filtros: canal WhatsApp, tiene `resena-solicitada` y **no** tiene `resena-respondida` (tag nuevo, creado por API). Así escucha **cualquier** respuesta, sin depender de cuál fue el último mensaje.
+    - Saca al contacto de RES-01: cierra la espera y el recordatorio.
+    - Después viene el mismo If/Else copiado de RES-01:
+      - Alta (4, 5): guarda la calificación, tag `resena-respondida`, `c360_resena`.
+      - Baja (1, 2, 3): guarda la calificación, tags `resena-inconforme` + `resena-respondida`, llama a RES-02 (alerta al dueño) y `c360_disculpa` con enlace.
+      - None: termina sin enviar nada.
+    - Re-entry encendido.
+  - **DEMO — RES-01:** se borró el If/Else de la rama "Contact reply", que ahora termina sin hacer nada (si no, se procesaría dos veces). "Time out" sigue mandando el recordatorio a los 2 días.
+- **Prueba propia, hasta donde GHL deja:**
+  - GHL **no permite simular un WhatsApp entrante**: la API responde `Invalid conversationProviderId`. "Test workflow" no pasa el texto de la respuesta, así que la corrida de prueba (con el contacto de Sergio, 8:04 p. m.) salió por "None" como se esperaba.
+  - Esa corrida sí confirmó que el flujo arranca y que **saca a Sergio de RES-01**.
+  - Falta un solo dato real: que "Customer replied" + "Replied message" funcionen con un "2" de verdad. CLUB-04 (MIS SELLOS) y CLUB-01 (DEMO) usan el mismo tipo de disparador y sí respondieron con otros mensajes en medio.
+- **Estado de Sergio:** tiene `resena-solicitada`, no tiene `resena-respondida` y está fuera de RES-01. Para repetir solo esta parte **basta con que escriba 2**; no hace falta reset ni encuesta nueva.
+- **Maestra (pendiente, a propósito):** se replica en RES-01 y RR-01 de la maestra cuando el "2" real de Sergio confirme el diseño. No tiene sentido copiar a la plantilla algo sin probar.
