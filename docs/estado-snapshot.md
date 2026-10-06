@@ -432,3 +432,14 @@
   - El contacto se queda en MD360 para futuras pruebas (no se borró).
 - **Reset de Sergio (FHyh1Ky3UCIBmoE901ue):** tags = `evento_presencial_gratis_cumaral_2026` y `lead-charla`; 0 / 10 / 0; `sis_calculo` = 0; DND apagado. Se conserva su única oportunidad "— demo club" (no hay duplicados).
 - **Pendiente en la maestra (no afecta la demo):** poner "Save result to field" en **todas** sus Math (CLUB-01, CLUB-02, CLUB-03, VIS-01, RES-02, RES-03, REP, REA, CA) antes de crear el snapshot "Cliente 360 v1". Como el error está en la maestra, cada cliente lo heredaría.
+
+## 5 oct, ~7:10 p. m. — RES-01: una respuesta cualquiera ya no pide la reseña (Revisión 7)
+- **Causa:** la rama "Alta (4-5)" sí exigía la respuesta 4 o 5. Pero la rama **"None"** (respuesta que no es 1–5) también enviaba "Gracias + enlace" (`c360_resena`). La ejecución de las 18:13 seguía en "Esperar respuesta". Por eso tomó el "DEMO" de la prueba siguiente como respuesta y mandó la petición de reseña.
+- **Arreglo:** se borró la acción de la rama "None". Ahora una respuesta que no sea 1–5 termina el flujo **sin enviar nada**: texto, DEMO, MIS SELLOS, BAJA, etc. Hecho en:
+  - **DEMO — RES-01** (MD360, publicado; guardado y verificado al recargar);
+  - **RES-01** de la maestra (borrador, guardado);
+  - **RR-01 Reputación Rescatada** de la maestra (borrador, guardado). Tenía el mismo error.
+- **Costo de la decisión:** quien conteste "5 estrellas" o "cinco" en vez de "5" ya no recibe el enlace por esa rama. Igual le llega el recordatorio con enlace solo si no responde nada en 2 días. Se acepta por ahora; con la encuesta de 3 botones (`c360_encuesta_botones`) este caso desaparece.
+- **Esperas colgadas:** Sergio y "Prueba Claude C360" se sacaron, por API, de los 7 workflows DEMO. En el lienzo de DEMO — RES-01 ya no aparece nadie esperando.
+- **Reset de Sergio:** tags `evento_presencial_gratis_cumaral_2026` y `lead-charla`; 0 / 10 / 0; `sis_calculo` = 0; DND apagado.
+- **Bloqueo que no es de Claude:** los mensajes de las 18:55 fallaron con "errors related to your payment method". Sergio debe revisar la wallet de GHL o el método de pago de WhatsApp/Meta antes de la próxima prueba.
