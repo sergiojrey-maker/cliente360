@@ -499,3 +499,30 @@
   - Falta un solo dato real: que "Customer replied" + "Replied message" funcionen con un "2" de verdad. CLUB-04 (MIS SELLOS) y CLUB-01 (DEMO) usan el mismo tipo de disparador y sí respondieron con otros mensajes en medio.
 - **Estado de Sergio:** tiene `resena-solicitada`, no tiene `resena-respondida` y está fuera de RES-01. Para repetir solo esta parte **basta con que escriba 2**; no hace falta reset ni encuesta nueva.
 - **Maestra (pendiente, a propósito):** se replica en RES-01 y RR-01 de la maestra cuando el "2" real de Sergio confirme el diseño. No tiene sentido copiar a la plantilla algo sin probar.
+
+## 5 oct, ~9:35 p. m. — Alerta al dueño y tarea de RES-02 (Revisión 9)
+**Causas, sacadas de los Execution logs de DEMO — RES-02:**
+1. **Re-entry apagado.** A las 9:03:07 p. m. RES-01b llamó bien a RES-02, pero salió "Skipped: Contact is already part of this workflow and can not be added again". Sergio ya había pasado por RES-02 a las 5:28 p. m. Nada de RES-02 corrió a las 9:03.
+2. **WhatsApp interno sin plantilla.** En la corrida de las 5:28: "Skipped: WhatsApp notifications without a template aren't supported right now". La notificación interna por WhatsApp exige una plantilla aprobada.
+3. **Tarea sin responsable.** "Skipped: Task cannot be created with both assigned to contact's assigned user or custom assigned user". El campo "Assign to" estaba vacío.
+4. "Guardar rep_inconformes_semana" a las 5:28: "No value to update". Era la versión anterior al arreglo de "Save result to field" y hoy ya funciona.
+
+**Arreglo (DEMO — RES-02, publicado y guardado):**
+- Settings: **Allow re-entry encendido.** Un cliente puede quedar inconforme más de una vez.
+- **Plantilla nueva `c360_dueno_inconforme`** (Utility, español; Meta la aprobó en minutos, ya **Active**):
+  > "Hola {{1}}, tu sistema Cliente 360 detectó un cliente inconforme: {{2}} calificó su visita con {{3}} de 5. Su número es {{4}}. Te recomendamos llamarlo hoy para atenderlo."
+  - {{1}} = `custom_values.negocio_dueno_nombre`, {{2}} = nombre del contacto, {{3}} = `calificacion_respuesta`, {{4}} = teléfono.
+  - Reemplaza la idea de `c360_dueno_aviso` genérica: GHL exige amarrar cada variable a un campo, así que una plantilla de texto libre no sirve.
+  - "Alerta a Sergio (WhatsApp interno)" ahora usa esa plantilla, al usuario Sergio (WhatsApp 313).
+- **Push nuevo a la app LeadConnector:** Internal notification tipo "Notification" al usuario Sergio. Al tocarla abre la conversación. Título "Cliente inconforme: {{nombre}}"; el mensaje lleva calificación y teléfono.
+- **Tarea** "Llamar a {{nombre}}": asignada a Sergio, vence en 1 día.
+
+**Prueba propia (9:32 p. m., contacto "Prueba Claude C360" con `calificacion_respuesta` = 2, metido a RES-02 por API):**
+- Todo **Executed/Success**: Activo → WhatsApp interno → +1 inconformes → guardar → tarea → push.
+- Tarea creada por API: "Llamar a Prueba Claude C360", asignada al usuario de Sergio.
+- El WhatsApp interno no queda en la conversación de un contacto, así que la entrega al 313 la confirma Sergio. A las 9:32 la plantilla quizá aún no estaba Active; a las 9:34 ya lo estaba.
+- **Para la maestra/instalación:** en RES-02 la tarea debe asignarse al usuario dueño ("INSTALACIÓN: elegir usuario dueño", paso 6.1 de `instalacion-cliente.md`), y re-entry debe estar encendido.
+
+**Contacto de Sergio listo para repetir solo esta parte:** tiene `resena-solicitada`, sin `resena-respondida` ni `resena-inconforme`, y `calificacion_respuesta` vacío. Basta con que escriba **2**.
+
+**Siguiente:** replicar RES-01b, RES-01 y RES-02 en la maestra (Revisión 9, punto 4) y después la Revisión 10 (cada visita suma).
