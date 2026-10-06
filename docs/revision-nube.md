@@ -333,3 +333,12 @@ En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de
 **Autorizado por Sergio (5 oct, 9:20 p. m.): publicar en `/club-terminos` la línea "Cada visita suma un sello, aunque tengas un premio sin reclamar."**
 - Ya está en `web/club-terminos.html`, después de la línea del vencimiento a 90 días.
 - **Para Claude local:** pégala en la página del funnel y publícala **cuando la Revisión 10 esté funcionando en la DEMO**. Si se publica antes, los términos prometerían algo que el sistema todavía no hace. Solo esa línea; nada más de la página.
+
+**Alerta al dueño (21:32–21:34), vista por Sergio con el contacto "Prueba Claude C360":**
+- WhatsApp al 313 ✅: "Hola Andrés, tu sistema Cliente 360 detectó un cliente inconforme: Prueba Claude C360 calificó su visita con 2 de 5…".
+- Notificación push de LeadConnector ✅: "Cliente inconforme: Prueba Claude C360".
+- **Bug:** el WhatsApp dice literalmente "Su número es {{contact.phone}}". El push termina en "Llámalo hoy:" sin el número. **Para Claude local:**
+  - en la plantilla del aviso, mapea esa variable al teléfono del contacto en la acción de WhatsApp (los parámetros de la plantilla, no texto con llaves);
+  - en el push, usa el merge field correcto: `{{contact.phone}}` o `{{contact.phone_raw}}`, según lo que ofrezca el selector.
+  - Prueba otra vez con el contacto de prueba. El dueño necesita el número para llamar con un toque.
+- Confirma también que se crea la tarea "Llamar a…".
