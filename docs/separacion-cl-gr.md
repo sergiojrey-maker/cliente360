@@ -62,3 +62,19 @@ Para cada uno: crear la carpeta **"CL — Cliente 360"**, moverlo allí y renomb
 - **Plantillas de WhatsApp** que empiezan con `c360_`.
 - **Contactos de prueba:** "Prueba Claude C360" y el contacto de Sergio en la demo.
 - **Páginas:** `/club` y `/club-terminos`, y el inicio de malldigital360.com.
+
+## Archivo de workflows viejos (aprobado por Sergio, 6 oct, ~1 p. m.)
+GHL no tiene "archivar" para workflows. **Archivar** aquí quiere decir:
+- crear la carpeta **"ARCHIVO — 2025 (no usar)"**;
+- mover allí los workflows;
+- poner el prefijo **"ARCHIVO — "** en el nombre;
+- dejarlos en **borrador**. **No borrar nada.**
+
+**Para Claude local:**
+1. Archivar estos dos (borradores de mayo 2025, versión vieja de Reputación Rescatada):
+   - "1.1 Reputación Rescatada™ (Recuperación de reseñas) | Pedir reseña por WhatsApp" (`19027c54-3550-46d7-8650-6266dfbe8835`);
+   - "1.2 Reputación Rescatada™ (Recuperación de reseñas) | Remover de workflow si cliquea en trigger link de encuesta 1 al 5" (`bc4a88a2-913f-4847-863b-5eda805d80e7`).
+2. **No** archivar "Recipe - Email Drip Sequence | … Programa de Afiliados Cliente360™ para MedSpas" ni "Nuevo Afiliado360™ …": son del programa **Afiliado360**, que se conserva intacto. Si Sergio quiere archivarlos, lo dirá aparte.
+3. Confirmar que siguen en borrador. Anotar en `estado-snapshot.md`, commit y push.
+
+**Greco:** tampoco toca la carpeta "ARCHIVO — 2025 (no usar)".
