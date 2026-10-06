@@ -301,3 +301,7 @@ En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de
    Deja las dos si se puede.
 3. La tarea "Llamar a {{contact.first_name}} — cliente inconforme" asignada al usuario Sergio, para que la vea en la app.
 4. Con eso, replica RES-01b y los cambios en la **maestra** (RES-01, RR-01): el "2" real confirmó el diseño.
+
+**MIS SELLOS (21:07) ✅:** "llevas 2 sellos. Te faltan 8 para corte gratis". Coincide con el contacto (2/8).
+
+**Estado de la demo:** DEMO ✅ · regalo ✅ · sello 1 ✅ · Atendido → sello 2 ✅ · encuesta ✅ · respuesta 2 → disculpa ✅ · MIS SELLOS ✅ · BAJA ✅ (probada a las 17:32). **Solo falta la alerta al dueño (RES-02).**
