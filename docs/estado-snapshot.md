@@ -443,3 +443,33 @@
 - **Esperas colgadas:** Sergio y "Prueba Claude C360" se sacaron, por API, de los 7 workflows DEMO. En el lienzo de DEMO — RES-01 ya no aparece nadie esperando.
 - **Reset de Sergio:** tags `evento_presencial_gratis_cumaral_2026` y `lead-charla`; 0 / 10 / 0; `sis_calculo` = 0; DND apagado.
 - **Bloqueo que no es de Claude:** los mensajes de las 18:55 fallaron con "errors related to your payment method". Sergio debe revisar la wallet de GHL o el método de pago de WhatsApp/Meta antes de la próxima prueba.
+
+## 5 oct, ~7:40 p. m. — WhatsApp de la demo fallan por "payment method": diagnóstico (sin pagar ni recargar nada)
+**Qué se revisó y qué se vio:**
+1. **Agencia → Billing → Wallet & Transactions:** saldo **USD 66.40**. Recarga automática **activa** (USD 100 cuando baja de USD 10). Último cobro a la tarjeta (Mastercard …9859) aprobado el 2 oct. Los únicos rechazados son dos de USD 2,970 del 22 y 24 jul (el plan anual que no pasó), nada en octubre. **No hay saldo bloqueado.**
+2. **Transacciones de octubre:** los WhatsApp de MD360 se cobraron normal a la wallet de la agencia hasta las **6:15:31 p. m.** (USD 0.0125 por marketing). A las **6:55:16 p. m.** está el mensaje entrante "DEMO" (USD 0) y **después ningún cobro saliente**. GHL nunca cobró los mensajes fallidos.
+3. **Sub-cuenta MD360 → Settings → WhatsApp:**
+   - Número: 320 405 5485, Coexistence, **Connected**. Account status **Approved**. Marketing messages **Enabled**. Límite actual: 2.000 conversaciones/24 h.
+   - Sin avisos de cobro ni de uso pausado.
+   - Meta business verification: **Not Verified**. Limita el volumen, no causa este error.
+   - La calidad aparece como "None" en GHL; Sergio la ve "High" en Meta.
+4. **Sub-cuenta → Billing:** "Payment Method Not Added".
+   - **Agencia → Sub-accounts → MD360 → Rebilling:** **no activado**. Por eso la sub-cuenta sin tarjeta **no** es la causa: el uso se carga a la agencia.
+5. **Los 5 mensajes fallidos (6:55–6:57 p. m.)**, leídos por API: cada uno tiene `wamid` de Meta. Es decir, **GHL sí los entregó a Meta y fue Meta quien los rechazó** después, con el texto "Message failed to send because there were one or more errors related to your payment method".
+   - Ese texto corresponde al error de Meta **131042 (Business eligibility payment issue)**: la cuenta de WhatsApp Business (WABA) no tiene, en ese momento, un método de pago válido o activo.
+
+**Conclusión:** no es la wallet de GHL ni la sub-cuenta. El rechazo viene del **cobro de Meta a la WABA del 320**, aunque el número se vea Connected y con calidad alta. Entre las 6:15 y las 6:55 p. m. algo cambió en la línea de crédito o en el método de pago de esa WABA.
+
+**Qué hacer (Sergio, porque pide login de Meta o soporte):**
+1. **Meta Business Suite → WhatsApp Manager → la cuenta del 320 → Configuración de pagos (Payment settings / Payment methods).**
+   - Revisar que la **línea de crédito de LeadConnector** siga **adjunta y activa** para esa WABA.
+   - Revisar que no haya un aviso "Payment issue", límite de gasto alcanzado o moneda distinta.
+   - Si la línea aparece desconectada, no se puede adjuntar desde Meta: es GHL quien la comparte (paso 3).
+2. **Business Settings → Cuentas → Cuentas de WhatsApp → la WABA → Métodos de pago:** mismo chequeo.
+3. Si todo se ve bien en Meta: **ticket a soporte de GHL (WhatsApp/LeadConnector).**
+   - Datos para el ticket: error 131042, sub-cuenta `WZYaJ8M4dqpvhdM2gpip`, número +57 320 405 5485, hora 5 oct 6:55 p. m. (Bogotá).
+   - Un `wamid` de ejemplo: `wamid.HBgMNTczMTMzMTY1MjUzFQIAERgUQ0U1RDY0MDcyMjk0QzhEQzQ3ODYA`.
+   - Pedir que **vuelvan a compartir la línea de crédito** con la WABA.
+4. Después, **una sola prueba** escribiendo DEMO. El contacto de Sergio ya está reseteado y fuera de los workflows.
+- Pendiente aparte, no urgente: verificar el negocio en Meta (Not Verified) para subir el límite y dar estabilidad.
+- Capturas tomadas en esta revisión (locales, no se suben al repo porque muestran datos de cobro): wallet, transacciones, WhatsApp → Numbers, Messaging limits, Billing de la sub-cuenta.
