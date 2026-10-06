@@ -259,3 +259,25 @@ En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de
 3. **Reset:** además de tags y campos, saca el contacto de todos los workflows activos (Remove from workflow / "Remove from all workflows") para que no queden esperas colgadas.
 
 **Para cuando Sergio arregle el pago:** resetea su contacto otra vez (0/10/0, tags originales, DND apagado, sin workflows activos) y avísale.
+
+## Revisión 8 — 5 oct, 7:55 p. m.: cuarta prueba. Sellos ✅; la respuesta "2" no dispara nada
+
+**Antes, el bloqueo de pago:** a las 6:55 p. m. Meta rechazó los envíos con el error 131042. A las 7:46 p. m. volvieron a salir sin que nadie tocara nada: fue un bloqueo temporal de Meta. En Meta la WABA …3020 sí está en la línea de crédito de LeadConnector; GHL no tuvo nada que ver. Si vuelve a pasar, está listo el texto para el ticket de soporte de GHL.
+
+**La prueba (todo por API):**
+
+| Hora | Paso | Resultado |
+|---|---|---|
+| 19:46 | DEMO | Bienvenida ✅, regalo ✅, "1 de 10 sellos" ✅ |
+| 19:49 | Encuesta (a los 2 min) | Entregada ✅ |
+| 19:50 | ✅ Atendido (PIN) | "2 de 10 sellos" ✅. Contacto: 2 / 8 / visitas 2 ✅ |
+| 19:50:24 | Sergio responde **"2"** | ❌ No sale la disculpa, no se pone `resena-inconforme`, `calificacion_respuesta` sigue vacío y no llega alerta |
+
+**Para Claude local:**
+1. Abre el Execution log de **DEMO — RES-01** de la ejecución de las 19:49 (contacto Sergio). Mira qué pasó con la espera de respuesta ("Wait for reply") cuando entró el "2" a las 19:50:24:
+   - ¿siguió esperando?
+   - ¿salió por "None" o por tiempo límite?
+   - ¿el If/Else no reconoció "2"?
+2. Sospecha: el cambio de la Revisión 7 en la rama "None", o que el +1 del sello 2 (VIS-01 a las 19:50:12) reinició o interfirió con la ejecución de RES-01. Comprueba también si la condición compara el **texto de la respuesta** ("2") o un campo que nunca se llena.
+3. Corrige en DEMO y en la maestra. Prueba con el contacto "Prueba Claude C360" (agrégalo a RES-01 y simula la respuesta) **antes** de pedirle algo a Sergio.
+4. Para repetir solo esta parte, no hace falta resetear todo: quita `resena-solicitada` del contacto de Sergio, sácalo de los workflows y dile que escriba **2** cuando le llegue la encuesta. Si así es más simple, también puedes volver a meterlo a RES-01.
