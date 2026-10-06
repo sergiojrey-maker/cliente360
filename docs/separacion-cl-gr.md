@@ -74,7 +74,11 @@ GHL no tiene "archivar" para workflows. **Archivar** aquí quiere decir:
 1. Archivar estos dos (borradores de mayo 2025, versión vieja de Reputación Rescatada):
    - "1.1 Reputación Rescatada™ (Recuperación de reseñas) | Pedir reseña por WhatsApp" (`19027c54-3550-46d7-8650-6266dfbe8835`);
    - "1.2 Reputación Rescatada™ (Recuperación de reseñas) | Remover de workflow si cliquea en trigger link de encuesta 1 al 5" (`bc4a88a2-913f-4847-863b-5eda805d80e7`).
-2. **No** archivar "Recipe - Email Drip Sequence | … Programa de Afiliados Cliente360™ para MedSpas" ni "Nuevo Afiliado360™ …": son del programa **Afiliado360**, que se conserva intacto. Si Sergio quiere archivarlos, lo dirá aparte.
+2. **También archivar** (Sergio lo pidió el 6 oct, "para que sepamos que están ahí"), con el prefijo **"ARCHIVO — Afiliado360 — "**:
+   - "Recipe - Email Drip Sequence | Secuencia de correos – Programa de Afiliados Cliente360™ para MedSpas" (`a47a2c61-127f-4e6c-893e-167dd05294d8`);
+   - "Nuevo Afiliado360™ Formulario de registro submitted" (`872dee90-a92a-493b-aad8-73a9496f61c8`).
+
+   Los dos son borradores y siguen en borrador. **El pipeline Afiliado360 no se toca**, ni los workflows publicados de afiliados ("Workflow A/B — Afiliados…", "Soporte al Afiliado360™…").
 3. Confirmar que siguen en borrador. Anotar en `estado-snapshot.md`, commit y push.
 
 **Greco:** tampoco toca la carpeta "ARCHIVO — 2025 (no usar)".
