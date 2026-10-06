@@ -35,6 +35,7 @@ Para cada uno: crear la carpeta **"CL — Cliente 360"**, moverlo allí y renomb
   - `club_*`, `rep_*`, `inst_*`, `sis_*`, `visitas_total`, `calificacion_*`, `fecha_*`, `fuente_registro`, `autorizacion_datos`, `pin_equipo`, `resena_estado`, `codigo_oferta`;
   - y el campo del formulario de satisfacción "¿Algo que podamos mejorar?".
 - **No cambiar el nombre ni la clave de ningún campo.**
+- **Hecho el 6 oct de otra forma:** `eqNRaYAjTG7AMhLYWFZU` es "Additional Info", una carpeta de sistema de GHL que no se puede renombrar. Se creó la carpeta "CL — Cliente 360" (`xRZNOXY1lGxpOQvsQdS6`) y los campos se movieron allí. "¿Cuál describe mejor tu perfil?" se quedó en "Additional Info". Detalle en `estado-snapshot.md`.
 
 **6. Custom values** (Settings → Custom Values):
 - Crear la carpeta **"CL — Cliente 360"** y mover allí los que empiezan con `negocio_`, `club_`, `resena_`, `rea_`, `ca_`, `rep_`, `sis_`.

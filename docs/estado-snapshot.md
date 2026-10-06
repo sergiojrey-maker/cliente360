@@ -594,3 +594,52 @@
 - plantilla `c360_canje_v2`;
 - corregir el SMS de canje en la maestra;
 - Sergio puede probar el canje real con su celular usando el formulario Canjear (PIN 3600) cuando tenga un premio pendiente.
+
+## 6 oct, ~12:45 p. m. — Separación CL / GR en Mall Digital 360 (`docs/separacion-cl-gr.md`) — [Claude local]
+Solo en MD360 (`WZYaJ8M4dqpvhdM2gpip`). La maestra no se tocó. No se cambió ningún tag ni ninguna clave de custom value o custom field.
+
+**1. Workflows:**
+- Carpeta **"CL — Cliente 360"** creada (`9f678838-d8ac-4027-a184-a6a756730c51`).
+- Los 9 "DEMO — …" se movieron allí y se renombraron con el prefijo "CL — ": Baja, CLUB-01, CLUB-02, CLUB-03, CLUB-04, RES-01, RES-01b, RES-02 y VIS-01.
+- Los 9 siguen **published** (comprobado por API).
+- No se tocaron 05.02.01, 05.02.02, Afiliado360 ni los demás.
+- Hay borradores viejos de 2025 con "Cliente360" o "Reputación Rescatada" en el nombre (por ejemplo "1.1 Reputación Rescatada™ …" y la secuencia de afiliados de MedSpas). No son del sistema actual y se dejaron como estaban. Sergio decide si se marcan, se archivan o se borran.
+
+**2. Formularios:**
+- **"CL — Atendido"**, **"CL — Canjear"** y la encuesta **"CL — Satisfacción"** quedaron renombrados (verificado por API).
+- "Ingreso al club" no existe en MD360.
+- Disparadores revisados en el builder, sin guardar cambios:
+  - VIS-01 → "Form is: CL — Atendido";
+  - CLUB-03 → "CL — Canjear".
+  - El disparador va por ID y muestra el nombre nuevo.
+- Ningún DEMO se dispara con la encuesta Satisfacción: RES-01b usa "Customer replied" y RES-02 no tiene disparador.
+
+**3. Pipeline:**
+- "Prospectos Cliente 360" → **"CL — Prospectos Cliente 360"** (ID `seVQSO03RSS6qBi0kCy6`, sin cambio).
+- La acción de oportunidad de CLUB-01 ya muestra "CL — Prospectos Cliente 360 → Contacto".
+- Afiliado360 no se tocó.
+
+**4. Calendario — no aplica:** "Cita — Demo" (`rB07UBPC6ys6jJ41noJw`) existe solo en la maestra, no en MD360. "Demo – Mall Digital 360" (slug `demo-cliente360`) es el calendario de demos de ventas de antes y no se renombró.
+
+**5. Custom fields — cambio de método:**
+- La carpeta `eqNRaYAjTG7AMhLYWFZU` es **"Additional Info", una carpeta de sistema de GHL que no se puede renombrar** (no tiene lápiz ni papelera).
+- En su lugar se creó la carpeta de contacto **"CL — Cliente 360"** (`xRZNOXY1lGxpOQvsQdS6`) y se movieron a ella:
+  - los 34 campos de Cliente 360;
+  - "¿Algo que podamos mejorar? (opcional)", que estaba en "Survey | Survey 0".
+- "¿Cuál describe mejor tu perfil?" se quedó en "Additional Info", así que ya no está mezclado.
+- Verificado por API: 35 campos en la carpeta nueva, con los mismos IDs, nombres y claves.
+- **Para el snapshot/maestra:** si se quiere la misma carpeta allá, hay que repetir este paso. Mover un campo no cambia su clave.
+
+**6. Custom values:**
+- Carpeta **"CL — Cliente 360"** creada (`eg8xf7bCxiVkStdoLtAx`).
+- Se movieron a ella los **59** que empiezan con `negocio_`, `club_`, `resena_`, `rea_`, `ca_`, `rep_` y `sis_`, sin renombrarlos.
+- Los 12 anteriores siguen en la raíz y los 4 de "Go High Level Affiliate Program" en su carpeta.
+- Verificado por API.
+
+**7. Tags:** sin cambios.
+
+**8. Prueba de humo (12:46 p. m.) ✅:**
+- "Prueba Claude C360" (`A8StjQZCtITJrOSqWipB`) se metió por API a CL — DEMO — VIS-01.
+- `club_sellos` 1 → **2**, `club_sellos_faltan` 9 → 8, `visitas_total` 4 → 5, `fecha_ultima_visita` = 2026-10-06.
+- VIS-01 → CLUB-02 siguen funcionando después de los cambios.
+- Efecto en la demo: el contacto queda en 2 sellos / faltan 8, y `sis_calculo` = 8 (contador auxiliar).
