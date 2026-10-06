@@ -305,3 +305,27 @@ En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de
 **MIS SELLOS (21:07) ✅:** "llevas 2 sellos. Te faltan 8 para corte gratis". Coincide con el contacto (2/8).
 
 **Estado de la demo:** DEMO ✅ · regalo ✅ · sello 1 ✅ · Atendido → sello 2 ✅ · encuesta ✅ · respuesta 2 → disculpa ✅ · MIS SELLOS ✅ · BAJA ✅ (probada a las 17:32). **Solo falta la alerta al dueño (RES-02).**
+
+## Revisión 10 — 5 oct, 9:15 p. m.: "cada visita suma, siempre" (aprobado por Sergio)
+
+**Decisión:** las visitas de un cliente con premio sin cobrar **sí suman** a la tarjeta siguiente. Antes no sumaban, y el cliente sentía que "perdía" sellos.
+
+**Diseño (actualizado en `snapshot-c360-spec.md`, CLUB-02 y CLUB-03):**
+1. **CLUB-02, al completar la tarjeta** (faltan llega a 0):
+   - mensaje de premio, tag `club-premio-pendiente` y campo nuevo **`club_premios_pendientes` +1** (numérico; créalo por API);
+   - **tarjeta nueva en el acto:** `club_sellos` = 0, `club_sellos_faltan` = meta.
+2. **CLUB-02, visita con premio pendiente:** suma el sello normal ("X de 10 ✅"). La **primera** vez que pasa, envía además el recordatorio único (`c360_recordar_premio`, tag `club-premio-recordado`). Se quita la regla "mientras haya premio pendiente no suma sellos".
+3. **CLUB-03 Canje:** **ya no reinicia los sellos.**
+   - Valida el PIN y que tenga premio pendiente;
+   - `club_premios_pendientes` −1; si queda en 0, quita `club-premio-pendiente` y `club-premio-recordado`;
+   - `club_premios_canjeados` +1, redención +1 y mensaje `c360_canje`.
+4. **Caso raro:** si completa otra tarjeta sin cobrar la primera, quedan 2 pendientes. El mensaje de premio puede decir "tienes {{contact.club_premios_pendientes}} premios esperándote". No hace falta más lógica.
+5. **Términos del club** (`web/club-terminos.html`): agrega "Cada visita suma un sello, aunque tengas un premio sin reclamar." Va en el repo; pegarlo en vivo requiere el OK de Sergio.
+6. Aplica en **DEMO y maestra**. "Save result to field" en cada Math nueva.
+7. **Probar el canje con el contacto "Prueba Claude C360":**
+   - ponle `club_sellos_faltan` = 1 y dispara VIS-01 → premio, tarjeta nueva 0/10, pendientes 1;
+   - otra visita → 1/9, recordatorio;
+   - envía el formulario 🎁 Canjear con PIN → pendientes 0, sellos siguen en 1/9.
+   - Anota el resultado.
+
+**Orden:** primero la alerta al dueño (Revisión 9), después esto.
