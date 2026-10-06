@@ -564,3 +564,33 @@
   - cambiar el SMS provisional por `c360_canje`, si Meta la aprobó;
   - publicarlo y probar el paso 7: formulario Canjear con PIN 3600 → pendientes 0, tags fuera, sellos siguen en 1/9.
 - **`/club-terminos` no se publicó todavía:** la condición era "cuando la Revisión 10 esté funcionando en la DEMO", y falta el canje.
+
+## 5 oct, ~10:45 p. m. — Canje en la DEMO y `/club-terminos` publicado (con OK de Sergio)
+**Carga autorizada por Sergio:** solo el workflow CLUB-03 Canje y el formulario Canjear, desde "Cliente 360 v0.1 (demo)" a Mall Digital 360.
+- Activos marcados: Forms 1/3 (Canjear) y Workflow 1/20 (CLUB-03). Nada más.
+- Chequeo de conflictos: **"No conflicts found"**; no se sobrescribió nada.
+- Después de la carga, los 9 DEMO siguen con la misma versión y fecha (comprobado por API).
+
+**Ajustes en "DEMO — CLUB-03 Canje" (publicado):**
+- Renombrado con el prefijo DEMO.
+- **El campo nuevo llegó con el ID de la maestra** (`NYDW7QlCRQ5zIV3cQdO6`), porque `club_premios_pendientes` se creó por API en cada sub-cuenta y no viaja en el mapeo del snapshot. Se corrigió a mano en "Premios pendientes −1" (campo y "save result") y en el If/Else "¿Le quedan premios?". **Para la instalación:** revisar estas dos acciones en cada cliente, o crear el campo antes y cargarlo desde el snapshot.
+- Mensaje al cliente: el texto anterior decía "Tu tarjeta nueva ya empezó", que ya no es cierto. Ahora: "Listo, {{nombre}}: ya registramos tu premio del {{club}} 🎁 Tus sellos siguen sumando: llevas {{club_sellos}}. ¡Gracias por venir! … responde BAJA". Sigue como SMS provisional.
+  - **Ojo:** la plantilla `c360_canje` dice "Tu tarjeta arranca de nuevo en 0" y ya no sirve. Hay que crear `c360_canje_v2` con el texto nuevo (pendiente) y corregir el mismo SMS en la maestra.
+- Aviso "canje sin premio": el WhatsApp interno exige plantilla y no hay ninguna para esto. Pasó a **push de la app** (Notification) al usuario Sergio, y al tocarlo abre la conversación.
+- Re-entry ya venía encendido.
+
+**Prueba propia (contacto "Prueba Claude C360"; estaba en 1/9, 1 pendiente, con ambos tags):**
+- El contacto no tiene celular, así que no se llenó el formulario. Se simuló igual que con VIS-01: `pin_equipo` = 3600 por API y luego "add to workflow".
+- **Canje válido (10:40 p. m.):** `club_premios_pendientes` 1 → **0**, `club_premios_canjeados` → 1, se quitaron `club-premio-pendiente` y `club-premio-recordado`, se puso `club-premio-canjeado`, se borró el PIN. **Sellos siguen en 1 / faltan 9** ✅. El SMS salió "Skipped" (sin teléfono).
+- **PIN incorrecto (1111):** rama "PIN incorrecto" → borra el PIN y termina ✅.
+- No se probó "sin premio" para no mandarle a Sergio un push de prueba. La rama es la misma de antes, solo cambió el tipo de aviso.
+- Efecto en la demo: `rep_redenciones_mes` subió en 1 por la prueba.
+
+**Revisión 10 funcionando en la DEMO → `/club-terminos` publicado:**
+- En el funnel "Club de Clientes — Cliente 360", paso "Términos del club", se agregó **solo** la línea "Cada visita suma un sello, aunque tengas un premio sin reclamar.", justo después de la del vencimiento a 90 días. Después se guardó y se publicó.
+- Verificado en vivo en `malldigital360.com/club-terminos`.
+
+**Pendiente:**
+- plantilla `c360_canje_v2`;
+- corregir el SMS de canje en la maestra;
+- Sergio puede probar el canje real con su celular usando el formulario Canjear (PIN 3600) cuando tenga un premio pendiente.
