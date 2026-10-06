@@ -281,3 +281,23 @@ En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de
 2. Sospecha: el cambio de la Revisión 7 en la rama "None", o que el +1 del sello 2 (VIS-01 a las 19:50:12) reinició o interfirió con la ejecución de RES-01. Comprueba también si la condición compara el **texto de la respuesta** ("2") o un campo que nunca se llena.
 3. Corrige en DEMO y en la maestra. Prueba con el contacto "Prueba Claude C360" (agrégalo a RES-01 y simula la respuesta) **antes** de pedirle algo a Sergio.
 4. Para repetir solo esta parte, no hace falta resetear todo: quita `resena-solicitada` del contacto de Sergio, sácalo de los workflows y dile que escriba **2** cuando le llegue la encuesta. Si así es más simple, también puedes volver a meterlo a RES-01.
+
+## Revisión 9 — 5 oct, 9:05 p. m.: el "2" real funciona (RES-01b ✅); falta la alerta al dueño
+
+**Prueba real (21:03):** Sergio escribió "2" y recibió la disculpa con enlace ("Andrés te va a contactar…") ✅.
+
+**Por API:**
+- Tags `resena-inconforme` y `resena-respondida` ✅.
+- `calificacion_respuesta` = "2" ✅.
+- **Tareas del contacto: ninguna** ❌. No se creó la tarea "Llamar a…" que debía poner RES-02.
+- La alerta al dueño queda por confirmar con Sergio (app LeadConnector o WhatsApp al 313).
+
+**Para Claude local:**
+1. Execution log de **DEMO — RES-02** de las ~21:03: ¿RES-01b lo llamó? ¿Qué pasó con la notificación interna y con "Add task"?
+2. La alerta al dueño debe llegarle **sin que tenga que abrir nada**. En orden de preferencia:
+   - (a) WhatsApp al 313 con la plantilla `c360_dueno_aviso`, porque fuera de 24 h la notificación interna por WhatsApp puede fallar;
+   - (b) notificación push de la app LeadConnector, con un "Internal notification" tipo App.
+
+   Deja las dos si se puede.
+3. La tarea "Llamar a {{contact.first_name}} — cliente inconforme" asignada al usuario Sergio, para que la vea en la app.
+4. Con eso, replica RES-01b y los cambios en la **maestra** (RES-01, RR-01): el "2" real confirmó el diseño.
