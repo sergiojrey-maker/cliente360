@@ -344,3 +344,5 @@ En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de
 - Confirma también que se crea la tarea "Llamar a…".
 
 **Autorizado por Sergio (5 oct, ~10:20 p. m.), opción (a):** Claude local carga a Mall Digital 360 **solo** el workflow CLUB-03 Canje y el formulario Canjear desde el snapshot "Cliente 360 v0.1 (demo)", sin sobrescribir ningún otro workflow, formulario ni página. Después lo ajusta, lo publica y lo prueba con "Prueba Claude C360". Si funciona, publica la línea de `/club-terminos`.
+
+**Confirmado por Sergio (5 oct, ~10:35 p. m.):** la alerta de cliente inconforme le llegó con su nombre y su número. **Alerta al dueño ✅ completa** (WhatsApp + push + tarea + teléfono).
