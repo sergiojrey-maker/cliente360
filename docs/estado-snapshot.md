@@ -643,3 +643,14 @@ Solo en MD360 (`WZYaJ8M4dqpvhdM2gpip`). La maestra no se tocó. No se cambió ni
 - `club_sellos` 1 → **2**, `club_sellos_faltan` 9 → 8, `visitas_total` 4 → 5, `fecha_ultima_visita` = 2026-10-06.
 - VIS-01 → CLUB-02 siguen funcionando después de los cambios.
 - Efecto en la demo: el contacto queda en 2 sellos / faltan 8, y `sis_calculo` = 8 (contador auxiliar).
+
+## 6 oct, ~1:05 p. m. — Archivo de workflows viejos en MD360 — [Claude local]
+- Carpeta **"ARCHIVO — 2025 (no usar)"** creada (`1ada96e7-2772-4f79-8c12-874e8eac0d54`).
+- Se movieron a ella y se renombraron estos 4 (no se borró nada):
+  - `19027c54…` → "ARCHIVO — 1.1 Reputación Rescatada™ (Recuperación de reseñas) | Pedir reseña por WhatsApp";
+  - `bc4a88a2…` → "ARCHIVO — 1.2 Reputación Rescatada™ (Recuperación de reseñas) | Remover de workflow si cliquea en trigger link de encuesta 1 al 5";
+  - `872dee90…` → "ARCHIVO — Afiliado360 — Nuevo Afiliado360™ Formulario de registro submitted";
+  - `a47a2c61…` → "ARCHIVO — Afiliado360 — Recipe - Email Drip Sequence | Secuencia de correos – Programa de Afiliados Cliente360™ para MedSpas".
+- Los 4 siguen en **draft** (verificado en la UI y por API).
+- No se tocaron el pipeline Afiliado360, "Workflow A/B — Afiliados…" (siguen publicados), "Soporte al Afiliado360™…" ni la carpeta "1. ReputaciónRescatada360™".
+- **Ojo, para Sergio:** el 1.1 muestra **215 contactos "Active enrolled"** aunque está en borrador desde mayo 2025. Un borrador no ejecuta pasos, así que esos contactos están detenidos ahí. No se sacaron porque no estaba pedido. Si se vuelve a publicar por error, retomarían el envío de reseñas viejo; lo prudente es sacarlos del workflow (no es borrar).
