@@ -526,3 +526,41 @@
 **Contacto de Sergio listo para repetir solo esta parte:** tiene `resena-solicitada`, sin `resena-respondida` ni `resena-inconforme`, y `calificacion_respuesta` vacío. Basta con que escriba **2**.
 
 **Siguiente:** replicar RES-01b, RES-01 y RES-02 en la maestra (Revisión 9, punto 4) y después la Revisión 10 (cada visita suma).
+
+## 5 oct, ~10:15 p. m. — Nota 9c (teléfono en la alerta) y Revisión 10 (cada visita suma)
+**9c — `{{contact.phone}}` literal en la alerta:**
+- **Causa:** el contacto "Prueba Claude C360" **no tiene teléfono** (solo correo; confirmado por API). Con la variable vacía, GHL deja el texto de la variable en la plantilla de WhatsApp y el push termina en "Llámalo hoy:" sin número. El mapeo de la plantilla `c360_dueno_inconforme` ({{4}} = teléfono del contacto) y el merge field del push están bien.
+- **Con un contacto con teléfono sí funciona:** RES-02 corrió con el contacto de Sergio y creó la tarea "Llamar a Sergio Rey Gutiérrez" (asignada, vence el 6 oct). **Falta que Sergio confirme** que el WhatsApp y el push de esa corrida muestran su número.
+- No se le puso teléfono al contacto de prueba a propósito: cualquier número que se invente recibiría los WhatsApp de las pruebas.
+
+**Revisión 10 — DEMO — CLUB-02 Sello (publicado y guardado):**
+- Rama **Activo** = (`sis_estado` activo **y** `sis_modulo_sellos` si) **y** (no tiene `club-premio-pendiente` **o** ya tiene `club-premio-recordado`). Así, con premio pendiente ya recordado, la visita suma normal.
+- Rama **Premio pendiente** (primera visita con premio sin canjear): recordatorio único (sigue como SMS provisional hasta que Meta apruebe `c360_recordar_premio`) → tag `club-premio-recordado` → **Go to "#1 club_sellos +1"**: la visita también suma.
+- Rama **Premio (0)**: tag `club-premio-pendiente` → mensaje de premio → **`club_premios_pendientes` +1** → **tarjeta nueva:** `club_sellos` ×0 → `club_sellos_faltan` ×0 + `{{custom_values.club_meta_visitas}}`. Las tres con "Save result to field".
+
+**Prueba propia en DEMO (contacto "Prueba Claude C360", VIS-01 por API):**
+1. Puesto en 9 sellos / falta 1 → visita (9:59 p. m.) → **premio**: `club_sellos` = 0, `club_sellos_faltan` = 10, `club_premios_pendientes` = 1, tag `club-premio-pendiente` ✅.
+   - Dato útil: Math +1 sobre un campo **vacío** da 1. No hace falta inicializar `club_premios_pendientes` en CLUB-01.
+2. Otra visita (10:00 p. m.) → rama Premio pendiente → recordatorio → tag `club-premio-recordado` → Go to → **1 sello / faltan 9** ✅.
+- Los WhatsApp al contacto salen "Skipped" porque no tiene teléfono; lo que se prueba son los campos y las ramas.
+- El contacto queda así (1/9, 1 pendiente, con ambos tags) para la prueba del canje.
+
+**Maestra (borrador, guardado):**
+- **CLUB-02:** los mismos cambios de la DEMO, más "Save result to field" en `#1 club_sellos +1` y `#2 club_sellos_faltan -1`, que estaban vacíos.
+- **CLUB-03 Canje, rama "Canje válido":** borrar PIN → **`club_premios_pendientes` −1** → tag `club-premio-canjeado` → `club_premios_canjeados` +1 → `rep_redenciones_mes` (+1 vía `sis_calculo`) → mensaje `c360_canje` → If/Else **"¿Le quedan premios?"**: si `club_premios_pendientes` ≤ 0 quita `club-premio-pendiente` y `club-premio-recordado`; si no, termina.
+  - **Se quitaron "Sellos en cero" y "Faltan = meta":** el canje ya no reinicia la tarjeta.
+  - "Save result to field" puesto en las Math de canjeados (→ `club_premios_canjeados`) y redenciones (→ `sis_calculo`).
+  - Si un contacto antiguo tiene el tag sin el campo, −1 sobre vacío da −1 y entra igual a "≤ 0": se limpian los tags.
+
+**Bloqueado — canje en la DEMO:**
+- Mall Digital 360 **no tiene CLUB-03 ni el formulario "Canjear"**: la carga del 4 oct solo llevó 6 workflows y los formularios Atendido y Satisfacción.
+- Se refrescó el snapshot "Cliente 360 v0.1 (demo)" con la maestra. Eso fue **antes** de los cambios de CLUB-02 en la maestra; CLUB-03 sí quedó con la versión nueva.
+- **Cargar ese snapshot a MD360 lo bloqueó el control de permisos de esta sesión**, porque escribe en una sub-cuenta compartida. **Necesita el OK de Sergio:**
+  - (a) Sergio autoriza y Claude carga **solo** CLUB-03 y el formulario Canjear (sin pisar los DEMO ya ajustados); o
+  - (b) Sergio lo carga él mismo: Agency → Account Snapshots → "Cliente 360 v0.1 (demo)" → cargar a Mall Digital 360 → marcar solo el workflow CLUB-03 Canje y el formulario Canjear.
+- Después de cargarlo, en MD360 hay que:
+  - renombrarlo "DEMO — CLUB-03 Canje";
+  - elegir el usuario Sergio en el aviso interno de "Sin premio pendiente";
+  - cambiar el SMS provisional por `c360_canje`, si Meta la aprobó;
+  - publicarlo y probar el paso 7: formulario Canjear con PIN 3600 → pendientes 0, tags fuera, sellos siguen en 1/9.
+- **`/club-terminos` no se publicó todavía:** la condición era "cuando la Revisión 10 esté funcionando en la DEMO", y falta el canje.
