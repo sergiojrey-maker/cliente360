@@ -329,3 +329,7 @@ En las pruebas de las 17:25 y las 18:13 sí salían. Algo cambió en el cobro de
    - Anota el resultado.
 
 **Orden:** primero la alerta al dueño (Revisión 9), después esto.
+
+**Autorizado por Sergio (5 oct, 9:20 p. m.): publicar en `/club-terminos` la línea "Cada visita suma un sello, aunque tengas un premio sin reclamar."**
+- Ya está en `web/club-terminos.html`, después de la línea del vencimiento a 90 días.
+- **Para Claude local:** pégala en la página del funnel y publícala **cuando la Revisión 10 esté funcionando en la DEMO**. Si se publica antes, los términos prometerían algo que el sistema todavía no hace. Solo esa línea; nada más de la página.
