@@ -753,3 +753,15 @@ Solo en MD360. **Fase 1 sin terminar.** Lo hecho:
 5. Igual para los pasos 5 a 7 (borrar el pipeline Eventos, calendarios, workflows y tags viejas): necesitan que Sergio los haga o que autorice la acción en el control de permisos de Claude Code.
 
 **Sin empezar:** campos de oportunidad "Solución" y "Plan" (paso 4), pipeline "GoHighLevel" (paso 9) y la fase 2 de Turnotec (solo lectura).
+
+### 11 oct 2026, ~6:30 p. m. — [Claude local] Paso 4 cerrado (Sergio autorizó los borrados)
+- **Etapas de "Mall Digital 360":** se borraron las 8 vacías (Nuevo Cliente | Afiliado, Pendiente por Partner, Partner Asignado, Trabajo Completado, Trabajo en Revisión, Trabajo Aprobado, Comisión Pendiente, Ofrecer Upgrade). Guardado: el pipeline quedó con **14 etapas**.
+- **Pendiente para Sergio (10 s, a mano):** subir "Contactado" (posición 6) a la posición 2. El control del navegador de Claude no puede arrastrar filas: GHL no da otro modo de reordenar etapas.
+- **DEMO — CLUB-01:** la acción "Create opportunity" ahora apunta a **Mall Digital 360 → Nuevo prospecto**. Nombre de la acción: "Oportunidad en Mall Digital 360 → Nuevo prospecto". Guardado, sigue **publicado**.
+  - **Prueba con "Prueba Claude C360": OK.** Se creó la oportunidad `BRNxXmAkzybxt4Ql5A4m` en `qp3DYlyeDDaUsDt5a5YV` / `c62421cf` (Nuevo prospecto), fuente "Demo Cliente 360 (charla / QR)".
+- **Pipelines borrados** (vacíos, verificado por API antes): "CL — Prospectos Cliente 360" y "GR — High Ticket DFY · DWY". Quedan 4 pipelines: Afiliado360, Eventos, Mall Digital 360 y GHL Affiliate Program – Clase Semanal.
+  - Los borradores de Greco ("Prospección — 01/02/03", "Outbound — …") apuntaban a etapas del pipeline GR: hay que reapuntarlos a "Mall Digital 360" antes de publicarlos.
+- **Campos de oportunidad:**
+  - Nuevo **"Solución"** (`opportunity.solucin`, multi): WhatsApp widget, Sitio web (mejora), Sitio web (nuevo), Cliente 360, Turnotec, Proyecto a la medida (high ticket).
+  - **"Plan"**: se reutilizó "GR Plan" (clave `opportunity.gr_plan`, sin cambios) y se le agregaron Arranque, Plan Impulso y Plan 360 a las opciones existentes.
+  - Sin "GR" en el nombre (las claves no cambian): Oferta, Montaje COP, Mensualidad COP, Contrato firmado y Fecha inicio servicio.
