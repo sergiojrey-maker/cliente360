@@ -198,3 +198,37 @@ Afiliado360 conserva el suyo.
    - Antes de borrar un workflow publicado, revisar que nada lo use.
    - **No tocar:** Afiliado360, la vertical GHL (A, B, D, Club, `ghl-*`), 05.0x (Meta y Google), "Form en home del website", "sergio-rey.com…".
 8. Anotar todo en `estado-snapshot.md`. Commit y push.
+
+## Vertical GoHighLevel: también un solo pipeline (decidido por Sergio, 11 oct)
+Un pipeline recoge todo:
+- quien se afilia a GHL con el enlace de Sergio;
+- quien entra al **club de pago**;
+- quien **compra snapshots**.
+
+Se **reutiliza** "GHL Affiliate Program – Clase Semanal" (`Bm0i41qMCgojM6n23Kay`), renombrado **"GoHighLevel"**.
+- Las etapas que ya existen **se renombran sin borrarlas**, así conservan su ID y los workflows A, B y D siguen funcionando.
+
+**Etapas propuestas:**
+1. **Registrado** (clase o lead): existe
+2. **Asistió**: existe
+3. **Interesado / respondió**: nueva
+4. **Inició trial**: existe
+5. **Pagó / verificado** (afiliado verificado con el enlace, club pagado o snapshot pagado): existe, hoy se llama "Afiliado verificado"
+6. **Onboarding / entrega** (acceso al club, instalación del snapshot): nueva
+7. **Activo: pedir reseña**: nueva
+8. **Pedir referidos**: nueva
+9. **Completado**: nueva
+
+**Campo de oportunidad "Producto GHL"** (multi): Afiliado con enlace · Club de pago · Snapshot.
+- Baja, pago fallido o "no por ahora" → estado *Lost*, más las tags `ghl-club-*`.
+
+**Para Claude local (fase 1, punto 9):**
+- renombrar el pipeline y las etapas existentes;
+- agregar las nuevas en ese orden;
+- crear el campo "Producto GHL";
+- revisar que los workflows A, B, D y los "Club GHL" sigan apuntando a las etapas correctas.
+
+**Resultado en Mall Digital 360: 3 pipelines.**
+1. "Mall Digital 360" (vertical de soluciones)
+2. "GoHighLevel" (vertical GHL)
+3. "Afiliado360" (vendedores de Cliente 360 / Turnotec), que se conserva para más adelante
