@@ -688,3 +688,31 @@ Solo en MD360. **Fase 1 sin terminar.** Lo hecho:
   - calendarios GR, pipeline GR y tags `gr-*` / `ht-`.
 
 **Pasos 4 a 9:** sin empezar.
+
+## 11 oct, ~5:30 p. m. — Fase 1, segundo avance — [Claude local]
+**Carpetas (cierra los pasos 2 y 3 en carpetas):**
+- Custom values: "CL — Cliente 360" → **"Cliente 360"** y "GR Demos" → **"Demos"**.
+- Custom fields: "GR Oportunidad" → **"Oportunidad"**.
+- Ya no queda ninguna carpeta con CL o GR (workflows, campos ni valores).
+
+**Custom values:**
+- Quité "GR — ", "GR " o "CL " del **nombre** de 25 custom values, por API (`update-custom-value`).
+- Las claves `{{ custom_values.gr_… }}` **no cambiaron** y conservan su carpeta (verificado en la respuesta de cada PUT). Nada que las use se rompe.
+- Ejemplos: "Oferta principal", "Precio pagina montaje", "Link cita virtual", "NIT MD360", "Club URL checkout".
+
+**Tags (38, por API `update-tag`, el ID no cambia):**
+- **`pros-`:** lead, respondio, calificado, demo-agendado, demo-noshow, propuesta, cliente, cliente-recurrente, origen-outbound/referido/web, nicho-estetica, lote-1-martes-13, toque-1/2/3, seg-a/b/c, nurture, nurture-12m, no-fit, no-contactar.
+- **`wa-`:** `gr-wa-widget` → `wa-interes`, `gr-oferta-whatsapp` → `wa-oferta`, `gr-lote-1-wa` → `wa-lote-1`.
+- **`web-`:** `gr-sitio-web` → `web-interes`, `gr-oferta-pagina` → `web-oferta`, `gr-revamp` → `web-revamp`, `gr-lote-1-web` → `web-lote-1`.
+- **High ticket (tabla del doc):** `ht-high-ticket`, `ht-dfy`, `ht-dwy`, `ht-classo`, `pros-captacion`, `pros-origen-redes`, `pros-smat-vva`, `prueba-sistema`.
+- **GHL actualiza solo las referencias dentro de los workflows:** los 5 workflows de Greco marcaron "Last updated" a la hora del renombre, y en "Outbound — WhatsApp integral" la acción ya muestra `pros-toque-1`. No hizo falta volver a elegirlas.
+
+**Workflows de Greco (siguen en borrador):**
+- "Outbound — Página moderna" y "Outbound — WhatsApp integral".
+- "Prospección — 01 Lead aplicación → pipeline", "Prospección — 02 Confirmación demo + reminders" y "Prospección — 03 Demo no-show nurture".
+
+**Formulario:** "GR — Aplicación Sitio Web DFY" → **"Aplicación Sitio Web DFY"**.
+
+**Pendiente:**
+- "CL Acceso Club" y "CL Baja Club": el otro hilo los siguió editando (v7 a las 21:53 y 21:59 UTC).
+- Pasos 4 a 9.
