@@ -716,3 +716,40 @@ Solo en MD360. **Fase 1 sin terminar.** Lo hecho:
 **Pendiente:**
 - "CL Acceso Club" y "CL Baja Club": el otro hilo los siguió editando (v7 a las 21:53 y 21:59 UTC).
 - Pasos 4 a 9.
+
+## 11 oct, ~5:50 p. m. — Fase 1, paso 4 (pipeline único) a medias: borrados bloqueados — [Claude local]
+**Oportunidades fusionadas en "Mall Digital 360" (`qp3DYlyeDDaUsDt5a5YV`), por API (`update-opportunity`):**
+- 21 de "GR — High Ticket DFY · DWY":
+  - 20 de "Lead nuevo" → **Nuevo prospecto** (lote SmartLeads de estética, "Página moderna" y "WhatsApp integral");
+  - 1 de "Demo no-show" → **No asistió (no-show)** (Enhanced Lifestyle Healthcare).
+- 1 de "CL — Prospectos Cliente 360" ("Sergio Rey Gutiérrez — demo club"): Contacto → **Nuevo prospecto**.
+- Conservan valor, responsable, fuente y campos de oportunidad (montaje, mensual, modalidad, oferta). Verificado en cada respuesta.
+- "CL — Prospectos" y "GR — High Ticket" **quedaron vacíos**, pero **no se borraron** (ver abajo).
+
+**Etapas de "Mall Digital 360" renombradas en la UI, guardadas y verificadas por API (los IDs no cambian):**
+
+| Antes | Ahora |
+|---|---|
+| Nuevo Prospecto | Nuevo prospecto |
+| Prospecto Caliente | Respondió / interesado |
+| Demo Agendado | Diagnóstico o demo agendado |
+| Demo NO SHOW | No asistió (no-show) |
+| Demo Atendido | Diagnóstico hecho |
+| Trial | Contactado |
+| Cotización Enviada | Propuesta enviada |
+| Pago recibido | Pago recibido |
+| Onboarding Agendado | Setup agendado |
+| NO SHOW Onboarding | Instalación en curso |
+| Onboarding Asistido | Entrenamiento |
+| Pedir Reseña | Activo: pedir reseña |
+| Pedir Referidos | Pedir referidos |
+| Completado / Cerrado | Completado |
+
+**Bloqueado: el control de permisos de esta sesión ("Modify Shared Resources") no dejó borrar la etapa "Ofrecer Upgrade"**, y después tampoco dejó seguir usando la página. Me detuve; **no se intentó otra vía**. Queda para que Sergio decida:
+1. **Borrar 8 etapas vacías** de "Mall Digital 360": Nuevo Cliente | Afiliado, Pendiente por Partner, Partner Asignado, Trabajo Completado, Trabajo en Revisión, Trabajo Aprobado, Comisión Pendiente, Ofrecer Upgrade.
+2. **Subir "Contactado"** (hoy en la posición 6) a la posición 2, justo después de "Nuevo prospecto".
+3. **Reapuntar la acción de oportunidad de "DEMO — CLUB-01"** a "Mall Digital 360 → Nuevo prospecto" (hoy crea la oportunidad en "CL — Prospectos Cliente 360 → Contacto"). **Hay que hacerlo antes de borrar "CL — Prospectos"; si no, la demo se rompe.** Después, probar con "Prueba Claude C360".
+4. **Borrar los pipelines vacíos** "CL — Prospectos Cliente 360" y "GR — High Ticket DFY · DWY". Ojo: los workflows de prospección de Greco (borradores "Prospección — 01/02/03" y "Outbound — …") apuntan a etapas del pipeline GR. Hay que reapuntarlos a "Mall Digital 360" antes de publicarlos.
+5. Igual para los pasos 5 a 7 (borrar el pipeline Eventos, calendarios, workflows y tags viejas): necesitan que Sergio los haga o que autorice la acción en el control de permisos de Claude Code.
+
+**Sin empezar:** campos de oportunidad "Solución" y "Plan" (paso 4), pipeline "GoHighLevel" (paso 9) y la fase 2 de Turnotec (solo lectura).
