@@ -765,3 +765,21 @@ Solo en MD360. **Fase 1 sin terminar.** Lo hecho:
   - Nuevo **"Solución"** (`opportunity.solucin`, multi): WhatsApp widget, Sitio web (mejora), Sitio web (nuevo), Cliente 360, Turnotec, Proyecto a la medida (high ticket).
   - **"Plan"**: se reutilizó "GR Plan" (clave `opportunity.gr_plan`, sin cambios) y se le agregaron Arranque, Plan Impulso y Plan 360 a las opciones existentes.
   - Sin "GR" en el nombre (las claves no cambian): Oferta, Montaje COP, Mensualidad COP, Contrato firmado y Fecha inicio servicio.
+
+### 11 oct 2026, ~6:40 p. m. — [Claude local] Pasos 5 y 6
+**Paso 5 (Eventos):**
+- "02.01 Nuevo Registro a evento presencial Cumaral 2026" quedó **en borrador** y se llama "OOS — 02.01 …".
+- **Pipeline "Eventos" borrado**, con sus 3 oportunidades del taller del 20 jun 2026 (Andrea Vélez, Drissthey Células y Sergio). Los contactos y su tag `evento_presencial_gratis_cumaral_2026` se conservan.
+- La página eventos.malldigital360.com/taller-gratis-cumaral sigue publicada, pero ya no crea oportunidades. Si Sergio quiere, la despublica.
+
+**Paso 6 (calendarios):**
+- **Renombrados (sin "GR"):**
+  - "Diagnóstico virtual 30 min" (`euX6yqNoXod1EsS7jLHY`);
+  - "Visita al negocio 45 min" (`3jLeLs8R0RzcqwdKQNb9`);
+  - "Setup / instalación" (`3QdjmsNMziT6fEtx64Td`, antes "Onboarding – Mall Digital 360"). No tenía a nadie asignado y GHL no dejaba guardar, así que se le asignó a Sergio con Google Meet.
+- En los dos primeros también se quitó "GR ·" del título del evento. Los slugs (`gr-cita-virtual-diagnostico`, `gr-visita-negocio-villavicencio`) **no se cambiaron**: los enlaces ya enviados siguen funcionando.
+- **Lección: el PUT de calendarios por API resetea los campos que no se mandan.** Al renombrar se borraron el horario de "Diagnóstico" y la duración de 45 min de "Visita". Se restauraron enseguida a los valores originales, verificado en la respuesta de la API. En adelante, los calendarios se editan desde la UI.
+- **OOS:** "OOS — Diagnóstico High Ticket" (antes "GR — …") y "OOS — Calendario Personal Sergio Rey" (inactivo).
+- **Grupo** "CL - Consultorías Sergio Rey" → "Consultorías Sergio Rey" (la URL del grupo `cl-consultorias-sergio-rey` no se cambió).
+- **Borrados** (sin citas futuras, verificado por API): calendarios personales de John Rojas, Ana Duarte y Martin Pinzon, y RETO 5 DÍAS.
+- **No se marcaron OOS** "Consultoría Gratis con Sergio Rey", "Free Consultation with Sergio Rey" ni "Demo – Mall Digital 360". Los tres están activos, y el nombre del calendario se ve en la página pública de agenda (posiblemente desde sergio-rey.com o malldigital360.com). Ponerles "OOS — " lo mostraría a los visitantes. **Sergio decide:** desactivarlos o dejarlos.
