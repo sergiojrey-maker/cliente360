@@ -251,3 +251,23 @@ Los proyectos grandes (licitaciones o desarrollos a la medida de USD 10.000, 20.
 
   Si alguna tiene un uso distinto en los workflows de Greco, renómbrala según ese uso y anótalo.
 - **Calendario "GR — Diagnóstico High Ticket":** se integra al calendario único "Diagnóstico virtual 30 min" (no hace falta uno aparte). Queda OOS.
+
+## Autorización total (Sergio, 11 oct)
+"Simplificar por completo." Creso (Claude nube y Claude local) **puede borrar** en Mall Digital 360:
+- tags;
+- custom fields de contacto y de oportunidad;
+- custom values;
+- calendarios, pipelines, workflows y formularios.
+
+Lo que haga falta para que quede **solo**:
+1. **Vertical GoHighLevel:** afiliados con el enlace de Sergio, club de pago, snapshots y otros activos digitales. **Un pipeline.**
+2. **Vertical Mall Digital 360:** WhatsApp widget, sitios web, Cliente 360 (club), Turnotec y high ticket. **Un pipeline.** Afiliado360 (vendedores que cobran comisión) se conserva dentro de esta vertical.
+
+**Se mantiene intacto en todo caso:**
+- la demo del club, con sus workflows, tags, custom values y campos;
+- 05.0x de Meta y Google;
+- el WhatsApp conectado.
+
+Antes de borrar algo que esté **publicado** o en uso, se revisa que nada en vivo dependa de ello.
+
+**Borradas por API (nube, 11 oct), tags sin uso actual:** `added_todas_campanas_marketing`, `brickell`, `brickell 1.1`, `campaña_reputacion_rescatada`, `cliente reto 5`, `coral gables`, `couldn't find caller name`, `english_market`, `fuera_de_usa`, `mensajes_variable1_reputacionrescatada`, `mensajes_variable2_reputacionrescatada`, `name via lookup`, `nuevos 1`, `out`, `spam likely`, `subsector_medspa`, `user:13218886518`, `voice_ai_couldn't_find_caller_name`.
