@@ -47,10 +47,33 @@ Se reutiliza todo lo de Cliente 360 (encuesta, reseña, alerta al dueño, club, 
 
 **Custom values nuevos (`turno_`):** `turno_palabra`, `turno_punto_atencion`, `turno_minutos_noshow`, `turno_mensaje_bienvenida`, `turno_sedes`.
 
-**Por definir con Sergio:**
-- número de turno visible;
-- "hay N personas antes de ti", que en GHL requiere un contador;
-- varias sedes en una sub-cuenta.
+## Versiones
+- **v1 (hoy, Goal Bridge):** lista de espera, aviso "ya es su turno", reseña. **No muestra número de turno** ni cuántas personas hay antes.
+- **v2 (la que construimos, decidido por Sergio el 11 oct):** **número de turno** + **"hay N personas antes de usted"**.
+- **Varias sedes en una sub-cuenta:** pendiente. Se analiza cuando llegue otro caso como el de Goal Bridge (dos sedes). Por ahora v2 asume **una sede por sub-cuenta**.
+
+### Cómo funciona el número de turno en v2
+GHL no tiene un contador global nativo. Se usan **dos custom values del negocio**, que se actualizan desde el workflow con la API de GHL (acción *Custom Code* o *Webhook* con el token de Private Integration de la sub-cuenta):
+- `turno_ultimo_entregado`: el último número que se dio.
+- `turno_ultimo_llamado`: el último número que se llamó.
+
+1. **Llegada:**
+   - `turno_ultimo_entregado` + 1 → se guarda en el campo del contacto **`turno_numero`**;
+   - **personas antes** = `turno_numero` − `turno_ultimo_llamado` − 1 (mínimo 0) → campo `turno_personas_antes`;
+   - WhatsApp: "Hola {{nombre}}, su turno en {{negocio}} es el **#{{turno_numero}}**. Hay **{{turno_personas_antes}}** personas antes de usted. Le escribimos cuando sea su turno."
+2. **Llamar (📣):** `turno_ultimo_llamado` = `turno_numero` del cliente llamado → WhatsApp "Turno #{{turno_numero}}: ya es su turno, pase a {{turno_punto_atencion}}".
+3. **Reinicio diario:** un workflow programado a la hora de apertura (`turno_hora_apertura`) pone los dos contadores en 0.
+4. **Limitaciones aceptadas:**
+   - "Personas antes" es una **estimación**: no descuenta a quien no se presentó.
+   - Si dos personas llegan en el mismo segundo podrían recibir el mismo número; en un negocio pequeño es poco probable.
+   - Mejora v2.1: aviso "faltan 2 turnos" a quien está por pasar.
+
+**Custom values nuevos:** `turno_ultimo_entregado`, `turno_ultimo_llamado`, `turno_hora_apertura`.
+**Campos de contacto nuevos:** `turno_numero`, `turno_personas_antes`, `turno_fecha`.
+
+**Antes de construir, probar:**
+- que la acción Custom Code o Webhook de la sub-cuenta pueda leer y escribir custom values con el token;
+- si no se puede, alternativa: un contacto "Sistema — Turnos" que guarde los contadores en sus campos, actualizado con la API.
 
 ## Demo en Mall Digital 360
 Igual que la demo del club:
