@@ -146,3 +146,55 @@ Afiliado360 conserva el suyo.
 - **Clase de GHL:** Sergio cree que la maneja en la sub-cuenta "Sergio Rey". **Verificado por API:** en "Sergio Rey" están los pipelines "Entrenamiento Corporativo", "Delfos · Escenarios" y "Jim Rohn · Bitácora", y **no** está el de la clase GHL.
   - El pipeline "GHL Affiliate Program – Clase Semanal" y los workflows **publicados** A (registro), B (recordatorios semanales) y D (reseña post-clase) están en **Mall Digital 360**, junto con las tags `ghl-afiliados-*` y su categoría.
   - **Pendiente:** Sergio decide si se mueven a "Sergio Rey" o se conservan aquí.
+
+## Decisiones (11 oct, tercera parte): dos verticales en Mall Digital 360
+1. **Vertical Mall Digital 360** (escalera de valor): WhatsApp widget → sitio web → Cliente 360 / Turnotec. **Un solo pipeline** ("Mall Digital 360").
+   - **Afiliado360** pertenece a **esta** vertical: personas, negocios o vendedores que venden Cliente 360 o Turnotec y ganan comisión.
+   - Se conserva con su pipeline y su calendario de soporte; se activa más adelante.
+   - **No tiene nada que ver con la afiliación de GoHighLevel.**
+2. **Vertical GoHighLevel:**
+   - afiliados con el enlace de Sergio;
+   - **club de pago** para quienes usan GHL con otro proveedor;
+   - venta de snapshots.
+
+   Se conservan el pipeline "GHL Affiliate Program – Clase Semanal", los workflows A, B, D y los "Club" (sin prefijo CL), y las tags `ghl-*`.
+3. **Se acaba "CL" y "GR" en todo.**
+
+**Hecho por API (11 oct, nube):** tags renombradas a la vertical GHL. Son del club GHL y de la verificación de afiliado **GHL**, no de Afiliado360:
+
+| Antes | Ahora |
+|---|---|
+| `cl-club-activo` | `ghl-club-activo` |
+| `cl-club-cancelado` | `ghl-club-cancelado` |
+| `cl-club-pago-fallido` | `ghl-club-pago-fallido` |
+| `cl-afiliado-pendiente` | `ghl-afiliado-pendiente` |
+| `cl-afiliado-rechazado` | `ghl-afiliado-rechazado` |
+| `cl-afiliado-verificado` | `ghl-afiliado-verificado` |
+| `cl-sin-ghl-afiliado` | `ghl-sin-ghl-afiliado` |
+
+**Para Claude local:** en los borradores "CL Acceso Club", "CL Baja Club" y "CL Entrega Club":
+- quita "CL" del nombre (quedan "Club GHL — Acceso / Baja / Entrega");
+- **vuelve a elegir las tags nuevas `ghl-*`** en cada acción y condición, porque el cambio de nombre por API puede no actualizar las referencias dentro del workflow;
+- déjalos en borrador.
+
+## Tareas para Claude local (fase 1: simplificación). Orden
+1. **Club GHL:** lo de arriba.
+2. **Quitar prefijos CL:**
+   - workflows "CL — DEMO — …" → "DEMO — …";
+   - formularios "CL — Atendido / Canjear / Satisfacción" → sin "CL — ";
+   - carpetas "CL — Cliente 360" (workflows, custom fields, custom values) → "Cliente 360";
+   - comprobar que los 9 DEMO siguen publicados.
+3. **Quitar prefijos GR** de pipeline, calendarios, workflows y tags de Greco. Los workflows GR están en borrador.
+   - Tags `gr-*` → grupos de la vertical: `pros-` (lead, respondió, calificado, demo-agendado, demo-noshow, propuesta, cliente, origen-*, nicho-*, lote-*, toque-*, seg-*, nurture*, no-fit, no-contactar), `wa-` (wa-widget, oferta-whatsapp, lote-1-wa), `web-` (sitio-web, oferta-pagina, revamp, lote-1-web).
+   - Las de high ticket (`gr dfy`, `gr dwy`, `gr high ticket`, `gr classo`, `gr captacion`, `gr redes`, `gr-smat-vva`, `gr-prueba-sistema`): **preguntarle a Sergio** antes; pueden ser de otra línea.
+4. **Pipeline único "Mall Digital 360"** (`qp3DYlyeDDaUsDt5a5YV`):
+   - dejar las 14 etapas del plan v1;
+   - mover las oportunidades de "CL — Prospectos Cliente 360" y "GR — High Ticket" con el mapa de etapas, y después borrar esos dos pipelines;
+   - reapuntar la acción de oportunidad de DEMO — CLUB-01 a "Mall Digital 360 → Nuevo prospecto" y probar con "Prueba Claude C360";
+   - crear los campos de oportunidad "Solución" (multi) y "Plan".
+5. **Eventos:** despublicar "02.01 Nuevo Registro a evento presencial Cumaral 2026" y ponerle prefijo "OOS — "; borrar el pipeline "Eventos".
+6. **Calendarios:** según el plan v1, punto C.
+7. **Limpieza:** puntos D y E del plan v1.
+   - Antes de borrar un workflow publicado, revisar que nada lo use.
+   - **No tocar:** Afiliado360, la vertical GHL (A, B, D, Club, `ghl-*`), 05.0x (Meta y Google), "Form en home del website", "sergio-rey.com…".
+8. Anotar todo en `estado-snapshot.md`. Commit y push.
