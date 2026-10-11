@@ -139,3 +139,10 @@ Afiliado360 conserva el suyo.
 - pipeline "GHL Affiliate Program – Clase Semanal" y sus workflows A, B, D (Tiro);
 - workflows en borrador "CL Acceso/Baja/Entrega Club" y tags `cl-club-*` / `cl-afiliado-*` (creados el 10 oct por otro hilo);
 - cuál de las dos sub-cuentas "Goal Bridge Group" está en uso.
+
+## Decisiones (11 oct, segunda parte)
+- **Pipeline "Eventos": se elimina.** Antes se despublica y pasa a OOS el workflow "02.01 Nuevo Registro a evento presencial Cumaral 2026", que lo alimenta, y se borran las oportunidades que tenga.
+- **Afiliado360: se conserva.** No se activa todavía, pero se va a usar.
+- **Clase de GHL:** Sergio cree que la maneja en la sub-cuenta "Sergio Rey". **Verificado por API:** en "Sergio Rey" están los pipelines "Entrenamiento Corporativo", "Delfos · Escenarios" y "Jim Rohn · Bitácora", y **no** está el de la clase GHL.
+  - El pipeline "GHL Affiliate Program – Clase Semanal" y los workflows **publicados** A (registro), B (recordatorios semanales) y D (reseña post-clase) están en **Mall Digital 360**, junto con las tags `ghl-afiliados-*` y su categoría.
+  - **Pendiente:** Sergio decide si se mueven a "Sergio Rey" o se conservan aquí.
