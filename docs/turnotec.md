@@ -82,3 +82,17 @@ Igual que la demo del club:
 - **Atendido** → encuesta → reseña.
 
 Workflows "DEMO — TURNO-0x". Se construye después de la fase 1.
+
+## Regla de operación (Sergio, 11 oct): todo desde el celular
+Los empleados **no tienen que entrar a un computador**. Pueden, si quieren, pero todo se debe poder hacer desde el celular: WhatsApp, correo o la app LeadConnector.
+
+| Acción del empleado | Cómo, desde el celular |
+|---|---|
+| Ver quién está esperando | App LeadConnector → Oportunidades → pipeline "Turnos", etapa **En espera**, ordenada por número |
+| **📣 Llamar** al siguiente | En la app, mover la tarjeta a **Llamado**. Dispara el WhatsApp "ya es su turno" y actualiza `turno_ultimo_llamado` |
+| Marcar atendido | Mover a **Atendido** (dispara reseña y sello) |
+| Enterarse de que llegó alguien | Push de la app: "Nuevo turno #23: Ana" |
+
+- Se descartan el formulario con PIN para llamar y la palabra por WhatsApp desde el número del empleado: GHL no puede buscar un contacto por número de turno dentro de un workflow.
+- Mover la tarjeta en la app es lo más rápido y no requiere entrenamiento.
+- Probar en la demo que mover la tarjeta desde la app del celular dispara el workflow igual que desde el computador.
