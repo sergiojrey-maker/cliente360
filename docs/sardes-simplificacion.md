@@ -85,5 +85,57 @@ Así un solo pipeline sirve para las cuatro soluciones.
 
 Los personales de ex usuarios y los viejos pasan a OOS o se borran.
 
-## Pendiente de decisión de Sergio
-Ver la respuesta en el chat del 11 oct.
+
+## Decisiones de Sergio (11 oct)
+1. **La demo del club no se toca.** Workflows, formularios, tags `club-*`, `resena-*`, `rea-*`, `ca-*`, `demo-c360`, `baja`, `prueba-claude`, custom values y fields del club: se quedan como están. Son el sistema Cliente 360.
+2. **Afiliado360 se conserva** (pipeline, calendario de soporte y workflows). Es otro escenario: vendedores o clientes que nos refieren y cobran comisión.
+3. **Se elimina la separación CL / GR.**
+   - Ningún nombre lleva "CL" ni "GR".
+   - Internamente es "Creso / Sardes", pero eso **no** va en pipelines, tags ni nombres.
+   - Queda un solo sistema.
+
+## Plan de ejecución v1 (falta el OK final de Sergio a la lista)
+**A. Pipeline único "Mall Digital 360"** (se reutiliza el existente `qp3DYlyeDDaUsDt5a5YV`).
+- Etapas nuevas: las 14 de arriba.
+- Las etapas viejas de partners y comisiones (Pendiente por Partner, Partner Asignado, Trabajo en Revisión/Aprobado, Comisión Pendiente, Ofrecer Upgrade, Trial, Nuevo Cliente | Afiliado) se eliminan o se mapean.
+- Las oportunidades que haya en ellas pasan a la etapa equivalente antes de borrar nada.
+- **Se fusionan ahí:**
+  - "CL — Prospectos Cliente 360": Contacto → Nuevo prospecto, Diagnóstico agendado/hecho → igual, Propuesta → Propuesta enviada, Cliente → Pago recibido, No por ahora → Lost;
+  - "GR — High Ticket DFY · DWY", con su mapa de etapas.
+  - Después, esos dos pipelines se borran.
+- Campos de oportunidad nuevos:
+  - **Solución** (multi): WhatsApp widget · Sitio web (mejora) · Sitio web (nuevo) · Cliente 360 · Turnotec;
+  - **Plan**.
+- La acción de oportunidad del workflow DEMO — CLUB-01 se reapunta a "Mall Digital 360 → Nuevo prospecto". **Único cambio que toca la demo**, y es obligatorio, porque su pipeline actual desaparece.
+
+**B. Quitar prefijos.**
+- Workflows "CL — DEMO — …" → "DEMO — …".
+- Formularios "CL — Atendido / Canjear / Satisfacción" → sin "CL — ".
+- Carpetas "CL — Cliente 360" → "Cliente 360".
+- Calendarios, workflows y tags de Greco: sin "GR". Por ejemplo:
+  - `gr-lead` → `pros-lead`, `gr-wa-widget` → `wa-interes`, `gr-sitio-web` → `web-interes`;
+  - mapa completo al ejecutar.
+- Los workflows GR están en **borrador**, así que renombrar tags no rompe nada en vivo.
+
+**C. Calendarios.** Quedan 3:
+1. **Diagnóstico virtual 30 min** (hoy "GR · Cita virtual").
+2. **Visita al negocio 45 min** (hoy "GR · Visita al negocio").
+3. **Setup / instalación** (hoy "Onboarding – Mall Digital 360").
+
+Afiliado360 conserva el suyo.
+- **Se borran** los personales de Ana, Martin y John, y RETO 5 DÍAS.
+- **OOS:** Consultoría Gratis ES/EN, Calendario Personal Sergio, "GR — Diagnóstico High Ticket" y Demo – Mall Digital 360, salvo que Sergio diga otra cosa.
+
+**D. Workflows viejos:**
+- borradores de 2023–2025 (Online Reputation, RETO 5 DÍAS, ASIGNACION *, New Workflow…) → **borrar**;
+- publicados viejos (PRE MARKETING ANA/DAVID/MARTIN, Lead No-Show Meeting, Reagenda…) → revisar si algo los usa; si no, despublicar y **OOS**.
+
+**E. Tags viejas sin uso** (brickell, coral gables, premarketing*, nuevos 1, out, spam likely, user:13218886518, couldn't find caller name…) → **borrar**. Las del club, Afiliado360 y afiliados GHL se quedan.
+
+**F. Turnotec:** grupo `turno` reservado. Se construye cuando toque, como modo "Turno" del snapshot.
+
+**Pendiente de respuesta:**
+- pipeline "Eventos";
+- pipeline "GHL Affiliate Program – Clase Semanal" y sus workflows A, B, D (Tiro);
+- workflows en borrador "CL Acceso/Baja/Entrega Club" y tags `cl-club-*` / `cl-afiliado-*` (creados el 10 oct por otro hilo);
+- cuál de las dos sub-cuentas "Goal Bridge Group" está en uso.
