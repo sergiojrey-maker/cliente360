@@ -101,3 +101,10 @@ Especificación: `docs/snapshot-c360-spec.md`. Regla: **cero texto fijo**. Todo 
 - **Web:** ahora solo la página mínima del club (`/club`) y un parche al sitio actual (quitar precios USD y textos de agencia).
 - **Revamp completo de malldigital360.com:** tarea Blue T-701, **del 16 nov al 13 dic 2026**. Muestra todas las soluciones de MD360 (microapps, revamp de sitios web profesionales, etc.) con **Cliente 360™ como producto insignia**. Arranca después del lanzamiento y de 2 semanas de pilotos, para salir con casos reales.
 - **Contrato:** borrador en `docs/contrato-cliente360.md` (permanencia mínima de 3 meses: se prioriza la calidad del cliente sobre la cantidad). Pendiente de revisión de abogado y de pasarlo a la plantilla de GHL Documents & Contracts.
+
+## 11. Autorizaciones vigentes de Sergio (no volver a preguntar)
+- **Mall Digital 360 (sub-cuenta `WZYaJ8M4dqpvhdM2gpip`): simplificación total autorizada (11 oct 2026).** Se puede borrar o renombrar tags, custom fields, custom values, calendarios, pipelines, workflows y formularios para dejar solo dos verticales: **Mall Digital 360** (WhatsApp widget, web, Cliente 360, Turnotec, high ticket; Afiliado360 se conserva) y **GoHighLevel** (afiliados con enlace, club de pago, snapshots).
+  - Plan y decisiones en `docs/sardes-simplificacion.md`.
+  - Solo hay que revisar, antes de borrar, que nada publicado o en uso dependa de ello.
+- Internamente el proyecto se llama **Sardes** y el empleado **Creso**. Ningún nombre del sistema lleva "CL", "GR" ni "Creso".
+- **Sí se pregunta a Sergio:** pagos, cambios en Meta/WhatsApp (número, verificación), mensajes masivos a contactos reales, cualquier cosa en sub-cuentas de clientes (Goal Bridge y otros: solo lectura) y publicar páginas nuevas en vivo.
