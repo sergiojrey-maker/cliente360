@@ -30,6 +30,44 @@ En el snapshot evergreen es el **modo de operación "Turno"**, al lado de Visita
 - Funciona por **SMS y correo** (EE. UU.).
 - La otra sub-cuenta "Goal Bridge Group" (`m4Xo1m3EL4QrbAzQQAiC`, Kissimmee) no tiene workflows: es solo para responder reseñas.
 
+### Cómo funciona hoy (fase 2, leído el 11 oct en Chrome por Claude local; solo lectura, no se guardó nada)
+**Llegada: encuesta "Winter Garden: Lista de Espera"** (`yStPKzuDlbnNLPzJj8bi`). Hay versión en inglés: "🌺Winter Garden: Waiting List".
+- **Primera pantalla:** "Escoja todos los servicios requeridos": Corporación / Inmigración / Taxes-Impuestos / Otros servicios (selección múltiple).
+- **Pantallas siguientes:** datos del cliente y la pregunta "¿Con quién le gustaría hacer el trámite?", que se ve en las ramas del workflow 1. No se avanzó en la encuesta para no crear un registro.
+- **Supuesto (no verificado):** el QR de recepción abre esta encuesta.
+
+**Workflow 1. "Winter Garden — 1. Nuevo Cliente en Lista de Espera"** (publicado, v28):
+1. **Disparador:** *Survey submitted*, encuesta = "Winter Garden: Lista de Espera".
+2. Add Tag.
+3. **SMS** al cliente (plantilla "Winter Garden - SMS - Cliente Confirmación en Lista de Espera"): "{{contact.first_name}}, ya estás en la lista de espera. Recibirá otro mensaje cuando sea su turno."
+4. **Email** al cliente con la misma confirmación.
+5. **If/Else por agente preferido** ("¿Con quién le gustaría hacer el trámite?"): 10 ramas con nombre de empleado más "No tengo preferencia" y "None".
+   - Cada rama hace **Assign to [empleado]** y luego **Create/Update Opportunity** en el pipeline **Winter Garden**, etapa **Waiting List**.
+   - "No tengo preferencia" y "None" solo crean la oportunidad, sin asignar.
+6. No hay número de turno ni conteo de personas antes. Es la v1 descrita abajo.
+
+**Workflow 2. "Winter Garden 2. Cliente, YA es su turno"** (publicado, v13):
+1. **Disparador:** *Pipeline stage changed*, pipeline Winter Garden, etapa **In-office assistance**, tag = `espanol`. La versión en inglés es otro workflow con otra tag.
+2. **SMS** al cliente: "{{contact.first_name}}, ya es su turno, le atenderá {{user.first_name}}. Atte: {{custom_values.goal_bridge_group__winter_garden}}".
+3. **Email** "YA es su turno".
+4. **Internal notification** (push de la app) al usuario asignado. Título: "Por favor atender a {{user.full_name}}". Mensaje: "{{user.first_name}}, por favor atender a {{contact.full_name}}."
+
+**Cómo "llama" el turno el empleado:** mueve la tarjeta de la oportunidad de **Waiting List** a **In-office assistance**, en el tablero del pipeline (computador o app LeadConnector). No hay botón ni formulario. Coincide con la regla "todo desde el celular" de este doc.
+
+**Workflow "Winter Garden — Send Google Review Request via SMS and Email"** (publicado, v16):
+1. **Disparador:** *Opportunity status changed* a **Won**, en el pipeline Winter Garden.
+2. Espera de 1 minuto.
+3. **Send Review Request via SMS** (la acción nativa de reseñas de GHL).
+4. Espera de 60 minutos.
+5. **Send Review Request via email**.
+- El empleado marca la oportunidad como **Won** cuando termina la atención, y eso dispara la reseña.
+
+**Lecciones para el snapshot:**
+- El modelo "mover la tarjeta = llamar" ya funciona en un cliente real. v2 solo le agrega el número de turno y el conteo de personas antes.
+- La reseña se dispara con "Won". En Cliente 360 la señal equivalente es "Atendido" (VIS-01). Se puede usar "Won" o la etapa **Atendido**, pero no las dos, para no pedir la reseña dos veces.
+- La asignación por agente preferido (rama por empleado) sirve para negocios con varios profesionales (barberías, consultorios). En el snapshot conviene sacarla de un campo, no de 10 ramas fijas.
+- Goal Bridge usa SMS y correo (EE. UU.). Para Colombia hay que cambiar a WhatsApp con plantillas `c360_turno_*` aprobadas.
+
 **Para Claude local (fase 2, solo lectura, no tocar nada en Goal Bridge, es un cliente en vivo):**
 - abrir en Chrome los workflows de Winter Garden 1, 2 y Review;
 - documentar aquí el disparador de cada uno (¿formulario?, ¿etapa del pipeline?), los mensajes, las esperas y qué hace el empleado para "llamar" el turno;
