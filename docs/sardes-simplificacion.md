@@ -232,3 +232,22 @@ Se **reutiliza** "GHL Affiliate Program – Clase Semanal" (`Bm0i41qMCgojM6n23Ka
 1. "Mall Digital 360" (vertical de soluciones)
 2. "GoHighLevel" (vertical GHL)
 3. "Afiliado360" (vendedores de Cliente 360 / Turnotec), que se conserva para más adelante
+
+## High ticket (decidido por Sergio, 11 oct)
+Los proyectos grandes (licitaciones o desarrollos a la medida de USD 10.000, 20.000 o 100.000) son parte de la **vertical Mall Digital 360**: el último escalón de la escalera de valor. Van en el mismo pipeline "Mall Digital 360".
+- **Campo "Solución":** se agrega la opción **"Proyecto a la medida (high ticket)"**.
+- **Tags de Greco "high ticket", para Claude local** (fase 1, punto 3). Se quita "gr" y se agrupan con el prefijo **`ht-`**:
+
+| Antes | Ahora |
+|---|---|
+| `gr high ticket` | `ht-high-ticket` |
+| `gr dfy` | `ht-dfy` |
+| `gr dwy` | `ht-dwy` |
+| `gr classo` | `ht-classo` |
+| `gr captacion` | `pros-captacion` |
+| `gr redes` | `pros-origen-redes` |
+| `gr-smat-vva` | `pros-smat-vva` |
+| `gr-prueba-sistema` | `prueba-sistema` |
+
+  Si alguna tiene un uso distinto en los workflows de Greco, renómbrala según ese uso y anótalo.
+- **Calendario "GR — Diagnóstico High Ticket":** se integra al calendario único "Diagnóstico virtual 30 min" (no hace falta uno aparte). Queda OOS.
