@@ -654,3 +654,37 @@ Solo en MD360 (`WZYaJ8M4dqpvhdM2gpip`). La maestra no se tocó. No se cambió ni
 - Los 4 siguen en **draft** (verificado en la UI y por API).
 - No se tocaron el pipeline Afiliado360, "Workflow A/B — Afiliados…" (siguen publicados), "Soporte al Afiliado360™…" ni la carpeta "1. ReputaciónRescatada360™".
 - **Ojo, para Sergio:** el 1.1 muestra **215 contactos "Active enrolled"** aunque está en borrador desde mayo 2025. Un borrador no ejecuta pasos, así que esos contactos están detenidos ahí. No se sacaron porque no estaba pedido. Si se vuelve a publicar por error, retomarían el envío de reseñas viejo; lo prudente es sacarlos del workflow (no es borrar).
+
+## 11 oct, ~4:40 p. m. — Fase 1 de `sardes-simplificacion.md`, avance parcial — [Claude local]
+Solo en MD360. **Fase 1 sin terminar.** Lo hecho:
+
+**1. Club GHL:**
+- **"Club GHL — Entrega"** (antes "CL Entrega Club (pago)"):
+  - renombrado;
+  - tags revisadas y vueltas a elegir: If/Else → `ghl-club-activo` (acción renombrada "Contact has tag ghl-club-activo"), Add Tag → `ghl-club-activo`, Remove → `ghl-club-cancelado` + `ghl-club-pago-fallido`;
+  - sigue en **draft**.
+  - El cambio de nombre por API ya se veía reflejado en las acciones. Solo el nombre visible del If/Else seguía diciendo "cl-club-activo".
+- **"CL Acceso Club" y "CL Baja Club": pendientes.**
+  - Otro hilo los estaba editando a la vez (versiones 6 a las 21:19 y 21:20–21:22 UTC; Acceso tiene un paso nuevo "Course grant offer").
+  - Mi guardado en Acceso falló con "Your version is outdated" y descarté esos cambios para no pisar al otro hilo.
+  - El disparador de Acceso ya muestra `ghl-afiliado-verificado` (lo cambió el otro hilo), pero su nombre y el "Add tag: cl-club-activo" siguen con "cl".
+  - Retomar cuando el otro hilo termine.
+- El disparador de Entrega filtra por el producto **"GR Club GHL Latino"** (Payments). El producto no se renombró: es de pagos.
+
+**2. Prefijos CL quitados:**
+- Los 9 workflows ahora son "DEMO — …": Baja, CLUB-01…04, RES-01, RES-01b, RES-02, VIS-01. Los 9 siguen **published** (API).
+- Formularios **"Atendido"** y **"Canjear"**, y la encuesta **"Satisfacción"** (API).
+- Carpeta de workflows → **"Cliente 360"**.
+- Carpeta de custom fields `xRZNOXY1lGxpOQvsQdS6` → **"Cliente 360"**.
+- **Falta:** la carpeta de custom values `eg8xf7bCxiVkStdoLtAx` (sigue "CL — Cliente 360").
+
+**3. Prefijos GR (empezado):**
+- Carpeta de workflows "GR Club GHL Latino" → **"Club GHL Latino"**.
+- Carpetas de custom fields "GR — High Ticket" → **"High Ticket"**, "GR Prospección" → **"Prospección"**.
+- **Falta:**
+  - carpeta de campos "GR Oportunidad";
+  - workflows "GR · Outbound…" y "GR — 01/02/03";
+  - formulario "GR — Aplicación Sitio Web DFY";
+  - calendarios GR, pipeline GR y tags `gr-*` / `ht-`.
+
+**Pasos 4 a 9:** sin empezar.
