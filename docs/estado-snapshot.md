@@ -783,3 +783,23 @@ Solo en MD360. **Fase 1 sin terminar.** Lo hecho:
 - **Grupo** "CL - Consultorías Sergio Rey" → "Consultorías Sergio Rey" (la URL del grupo `cl-consultorias-sergio-rey` no se cambió).
 - **Borrados** (sin citas futuras, verificado por API): calendarios personales de John Rojas, Ana Duarte y Martin Pinzon, y RETO 5 DÍAS.
 - **No se marcaron OOS** "Consultoría Gratis con Sergio Rey", "Free Consultation with Sergio Rey" ni "Demo – Mall Digital 360". Los tres están activos, y el nombre del calendario se ve en la página pública de agenda (posiblemente desde sergio-rey.com o malldigital360.com). Ponerles "OOS — " lo mostraría a los visitantes. **Sergio decide:** desactivarlos o dejarlos.
+
+### 11 oct 2026, ~7:10 p. m. — [Claude local] Paso 7: workflows
+**Borrados (32 borradores viejos; GHL los guarda 30 días en la pestaña "Deleted" por si hay que recuperar alguno):**
+- Online Reputation Management ×9 (1, 1.1, 2 a 8);
+- RETO 5 DÍAS ×4 (INICIO, RETO 5 DIAS, 1.1, 1.1 FORMULARIO ENVIADO);
+- ASIGNACION ANA, DAVID y MARTIN;
+- "New Workflow : 1754958941840";
+- 3.1 a 3.4 (encuesta, envío a FULL base, DND PARAR/EMPEZAR);
+- 1. New Lead Nurture, 2. Appointment Confirmation + Reminders, 4. New Sale - Send Review Request, 5. Long-Term Nurture y 6. Stale Leads;
+- los 8 "🚧Out of Service🚧" (31, 33, 35, 37, 39, 41, 43, 47).
+
+**En borrador y con "OOS — ":** PRE MARKETING ANA, DAVID y MARTIN, Lead No-Show Meeting (y Onboarding), Reagenda - exit all workflows (y Onboarding). Ninguno tenía inscritos activos.
+
+**Verificado por API después:** siguen publicados los 9 DEMO, los 05.01.0x, 05.02.02, 05.02.03, Workflow A/B/D, "Form en home del website" y "Nueva Encuesta Aplicante Experto GHL".
+
+**No se tocaron** (no estaban en la lista del plan): "15. Facebook Lead Form…", "19. Free Marketing Audit…", "Appt No Show on Demo Calendar", "NO SHOW - Sergio Rey's Personal Calendar" y las 4 "Recipe - Appointment Confirmation". Si Sergio quiere, se borran en la próxima pasada.
+
+**Para Sergio:** "FB Group GHL Español - Email Nurture 365" está en **borrador con 156 inscritos activos** (contactos detenidos dentro). Es de la vertical GHL y no se tocó: hay que publicarlo o sacarlos.
+
+**Carpetas** que quedaron vacías o casi vacías ("RETO 5 DIAS", "PRE MARKETING", subcarpetas de "99. Fuera de Servicio"): pendiente revisarlas y borrarlas.
