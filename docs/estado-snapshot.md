@@ -803,3 +803,29 @@ Solo en MD360. **Fase 1 sin terminar.** Lo hecho:
 **Para Sergio:** "FB Group GHL Español - Email Nurture 365" está en **borrador con 156 inscritos activos** (contactos detenidos dentro). Es de la vertical GHL y no se tocó: hay que publicarlo o sacarlos.
 
 **Carpetas** que quedaron vacías o casi vacías ("RETO 5 DIAS", "PRE MARKETING", subcarpetas de "99. Fuera de Servicio"): pendiente revisarlas y borrarlas.
+
+### 11 oct 2026, ~7:20 p. m. — [Claude local] Cierre de la fase 1 (tags, Club GHL, pipeline GoHighLevel, prueba de humo)
+- **Tags borradas:** `premarketingana`, `premarketingdavid` y `premarketingmartin` (solo las usaban los workflows que quedaron OOS).
+  - `spam` **no se borró**: puede estar marcando contactos o usarla "Form en home". Sergio decide.
+- **Club GHL — Acceso (afiliado verificado)** y **Club GHL — Baja (pago fallido o cancelado)**: renombrados, siguen **en borrador**.
+  - Las tags ya eran `ghl-*`. Se corrigieron los nombres visibles que decían "cl-…" o "GR …" (disparadores y acciones).
+  - **Pendiente del otro hilo:** al disparador "Suscripción cancelada o impaga" de Baja le falta elegir el *Status* en el filtro. No se tocó.
+  - **Pendiente para Sergio:** el grupo de la comunidad (Memberships) se llama "GR Club GHL Latino". Lo ven los miembros, así que se deja para que Sergio decida el nombre.
+- **Pipeline "GoHighLevel"** (`Bm0i41qMCgojM6n23Kay`, antes "GHL Affiliate Program – Clase Semanal"):
+  - "Afiliado verificado" → "Pagó / verificado" (mismo ID `4e0bc2a9`);
+  - nuevas: Interesado / respondió, Onboarding / entrega, Activo: pedir reseña, Pedir referidos y Completado;
+  - las etapas viejas conservan su ID, así que A, B y D siguen apuntando bien;
+  - **Pendiente para Sergio (a mano):** subir "Interesado / respondió" a la posición 3, entre "Asistió" e "Inició trial".
+- **Campo de oportunidad "Producto GHL"** (`opportunity.producto_ghl`, multi): Afiliado con enlace, Club de pago, Snapshot.
+- **Resultado:** 3 pipelines en MD360: Afiliado360, Mall Digital 360 y GoHighLevel.
+- **Prueba de humo final:**
+  - "Prueba Claude C360" → DEMO — VIS-01: `club_sellos` 2 → **3**, `club_sellos_faltan` 8 → 7. **OK.**
+  - CLUB-01 → oportunidad en Mall Digital 360 / Nuevo prospecto. **OK** (ver arriba).
+
+**Lo que queda de la fase 1, todo a mano o por decidir:**
+1. Reordenar etapas: "Contactado" a la posición 2 en "Mall Digital 360" e "Interesado / respondió" a la posición 3 en "GoHighLevel".
+2. Calendarios activos "Consultoría Gratis", "Free Consultation" y "Demo – Mall Digital 360": desactivar o dejar.
+3. Tag `spam`, grupo "GR Club GHL Latino" y el filtro de Baja.
+4. "FB Group GHL Español - Email Nurture 365": en borrador con 156 inscritos activos.
+5. Carpetas de workflows vacías y los borradores viejos que no estaban en la lista.
+6. Reapuntar los borradores de Greco ("Prospección — 0x", "Outbound — …") al pipeline "Mall Digital 360" antes de publicarlos.
