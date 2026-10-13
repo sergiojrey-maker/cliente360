@@ -2,6 +2,7 @@
 
 Contexto de trabajo para Claude Code. Fuente original: `docs/traspaso-cowork-2026-10-03.md` (traspaso desde Cowork, 3 oct 2026). Este archivo es la versión viva: si algo cambia, se actualiza aquí.
 Estrategia de producto en discusión: `docs/estrategia-3-soluciones.md`.
+Maestra lista para el primer cliente (snapshot "Cliente 360 v1"): `docs/maestra-v1.md`.
 
 ## 1. Identidad — reglas que aplican a TODO lo que se genere
 - **Sergio Rey**, fundador único de **Mall Digital 360** (Villavicencio, Meta, Colombia). Bilingüe español-inglés: destacarlo en textos de posicionamiento.
