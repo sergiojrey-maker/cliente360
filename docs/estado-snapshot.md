@@ -841,3 +841,16 @@ Según `docs/maestra-v1.md`:
 1. **`c360_canje_v2`: no se creó.** El permiso automático de esta sesión bloqueó el envío de la plantilla a Meta (cuenta como cambio en WhatsApp). Borrador descartado, nada enviado. **Pendiente para Sergio:** crearla en Settings → WhatsApp → Templates (Utility, español) con el texto del doc. Cuando quede Active, cambiar en **DEMO — CLUB-03 Canje** el SMS provisional por WhatsApp `c360_canje_v2` ("Enable branches" apagado). Ese cambio quedó sin hacer.
 2. **DEMO — Baja (v7):** tenía DND en las dos ramas (Delivered/Undelivered), pero **no** quitaba `club-miembro` ni ponía `baja`. Se agregaron "Quitar club-miembro" y "Poner baja" en la rama Demo, **antes** del WhatsApp `c360_baja`, así aplican a las dos ramas. Guardado; sigue publicado.
 3. Comprobado por API: los 9 DEMO siguen publicados.
+
+## 13 oct 2026 — [Claude local] Maestra v1, parte B (avance parcial, maestra `PF7DK8r0SiEtcVhO4Trt`)
+Todo en borrador, guardado en el builder:
+- **B1 "Save result to field" en las Math:**
+  - **CLUB-01:** las 4 Math (#4 `rep_miembros_club` y #3 `rep_miembros_semana` → `sis_calculo`; #2 "Sellos en cero" → `club_sellos`; #1 "Faltan = meta" → `club_sellos_faltan`).
+  - **VIS-01:** #1 `visitas_total` → `visitas_total`; #2 `rep_visitas_semana` y #3 `rep_reactivados_mes` → `sis_calculo`.
+  - **RES-03:** #2 `rep_resenas_semana` y #1 `rep_resenas_total` → `sis_calculo`.
+  - **CA-04:** `rep_redenciones_mes` → `sis_calculo`.
+  - **REP-01, REP-02 y REA-01 no tienen Math** (solo "Update custom value" / mensajes): nada que cambiar, su versión no sube.
+- **B2 CLUB-01:** nueva acción **"Iniciar contadores en 0"** (Update contact field) justo después del tag `club-miembro`: `club_sellos`, `club_sellos_faltan`, `visitas_total` y `sis_calculo` = 0.
+- **1 sello por día (VIS-01 de la maestra):** existe. La rama "Inválida" de "¿Visita válida?" incluye `fecha_ultima_visita` **is Today**, y la rama válida pone `fecha_ultima_visita = hoy` antes de sumar. Falta probarlo (prueba de humo) y revisar DEMO — VIS-01.
+- **Pendiente de la parte B:** RES-02 (Math, re-entry, push, tarea, nota de plantilla), RES-01b nuevo, RES-01 y RR-01 (quitar If/Else de "Contact reply"), CLUB-03, GEN-01, revisar "Enable branches" y Math en los demás workflows, prueba de humo.
+- **Bloqueo:** el builder de workflows en Chrome se congela seguido (el iframe deja de responder, capturas en blanco, clics perdidos). Cada cambio toma varios reintentos.
