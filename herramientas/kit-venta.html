@@ -77,32 +77,127 @@ details.obj .body{padding:0 16px 16px;display:grid;gap:10px}
 .guarantee h3{color:#7FE0AE}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--deep);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;font-size:15px}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+/* Nuevas piezas: demo con QR, mensajes y cierre */
+.qrwrap{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:center}
+.qr{background:#fff;border-radius:12px;padding:8px;width:132px;height:132px}
+.qr svg{display:block;width:100%;height:100%}
+.big{font:900 28px/1.05 var(--display);color:var(--brand);letter-spacing:.02em}
+.num{font:700 17px var(--body);font-variant-numeric:tabular-nums;user-select:all}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:16px}
+.kv dt{font-weight:700;color:var(--muted)}
+.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.msg{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:8px}
+.msg .when{font:700 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+.msg pre{margin:0;white-space:pre-wrap;font:16px/1.45 var(--body);background:var(--bg);border-radius:10px;padding:10px 12px}
+.chip{display:inline-block;font:700 12px var(--body);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 9px;background:var(--hl);color:var(--hl-ink)}
+ol.steps{margin:0;padding-left:22px;display:grid;gap:10px}
+ol.steps li{padding-left:4px}
+.links{display:grid;gap:8px}
+.links a{display:flex;justify-content:space-between;gap:12px;align-items:center;text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-weight:700}
+.links a span{font-weight:400;color:var(--muted);font-size:14px}
+@media (max-width:420px){.qrwrap{grid-template-columns:1fr}.qr{width:180px;height:180px}}
 </style>
 
 <header class="top"><div class="in">
   <span class="eyebrow">Mall Digital 360 · Cliente 360™</span>
   <h1>Kit de venta</h1>
-  <p class="lead">Para la cita con el dueño: del "me interesa" a la firma.</p>
+  <p class="lead">Todo lo que Sergio necesita para vender: en persona, por videollamada y por WhatsApp.</p>
 </div></header>
 
 <nav class="tabs" aria-label="Secciones"><div class="in" role="tablist">
-  <button role="tab" id="t-diag" aria-controls="p-diag" aria-selected="true">Diagnóstico</button>
+  <button role="tab" id="t-demo" aria-controls="p-demo" aria-selected="true">Demo</button>
+  <button role="tab" id="t-diag" aria-controls="p-diag" aria-selected="false">Diagnóstico</button>
+  <button role="tab" id="t-msg" aria-controls="p-msg" aria-selected="false">Mensajes</button>
   <button role="tab" id="t-obj" aria-controls="p-obj" aria-selected="false">Objeciones</button>
-  <button role="tab" id="t-one" aria-controls="p-one" aria-selected="false">One-pager</button>
+  <button role="tab" id="t-cierre" aria-controls="p-cierre" aria-selected="false">Cierre</button>
+  <button role="tab" id="t-mat" aria-controls="p-mat" aria-selected="false">Material</button>
 </div></nav>
 
 <main class="wrap">
 
-<!-- DIAGNÓSTICO -->
-<section class="panel" id="p-diag" role="tabpanel" aria-labelledby="t-diag">
+<!-- DEMO -->
+<section class="panel" id="p-demo" role="tabpanel" aria-labelledby="t-demo">
   <div class="open">
     <span class="eyebrow" style="color:var(--accent-ink)">Siempre se abre con</span>
     <q>Le instalo el club de clientes de su negocio.</q>
-    <p class="muted" style="font-size:15px">Se habla de sistema, club e instalación. Al dueño se le trata de usted.</p>
+    <p class="muted" style="font-size:15px">En vez de explicarlo, el dueño lo vive como cliente en 2 minutos.</p>
   </div>
 
+  <div class="box">
+    <div class="qrwrap">
+      <div class="qr" role="img" aria-label="Código QR que abre WhatsApp con la palabra DEMO"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path fill="#FFFFFF" d="M0 0h29v29H0z"/><path stroke="#14315A" d="M0 0.5h7m2 0h1m4 0h1m2 0h2m1 0h1m1 0h7M0 1.5h1m5 0h1m1 0h1m2 0h1m1 0h1m4 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h1m1 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m3 0h4m2 0h4m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m2 0h3m2 0h2m2 0h1m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h3m2 0h7m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 7.5h1m5 0h1m1 0h4M0 8.5h1m1 0h1m1 0h1m1 0h1m2 0h2m1 0h1m3 0h1m1 0h1m5 0h1m2 0h1M0 9.5h5m2 0h1m1 0h2m2 0h1m1 0h2m1 0h2m1 0h2m2 0h1m2 0h1M0 10.5h1m2 0h2m1 0h1m3 0h2m2 0h3m1 0h2m1 0h4m1 0h3M2 11.5h2m1 0h1m1 0h2m3 0h3m1 0h3m1 0h1m3 0h1m2 0h1M6 12.5h1m3 0h3m1 0h3m5 0h1m2 0h1m1 0h2M1 13.5h1m2 0h1m2 0h4m3 0h2m2 0h1m1 0h3m2 0h1m2 0h1M0 14.5h4m1 0h2m1 0h2m1 0h1m1 0h1m2 0h2m3 0h1m3 0h1m1 0h2M2 15.5h1m2 0h1m1 0h2m3 0h1m2 0h1m1 0h1m4 0h1m1 0h2m1 0h1M0 16.5h1m1 0h1m3 0h1m3 0h1m5 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2M2 17.5h4m3 0h1m1 0h1m1 0h1m1 0h2m1 0h2m3 0h1m1 0h2m1 0h1M0 18.5h1m2 0h1m2 0h6m2 0h2m6 0h3m2 0h2M1 19.5h1m7 0h1m1 0h1m1 0h2m2 0h2m2 0h1m1 0h1m1 0h1m1 0h1M0 20.5h1m1 0h3m1 0h2m1 0h1m4 0h1m3 0h1m1 0h5M8 21.5h3m3 0h3m3 0h1m3 0h1m1 0h3M0 22.5h7m2 0h2m1 0h2m3 0h1m1 0h2m1 0h1m1 0h2m1 0h2M0 23.5h1m5 0h1m3 0h3m4 0h4m3 0h2m1 0h2M0 24.5h1m1 0h3m1 0h1m1 0h1m1 0h2m8 0h5m2 0h1M0 25.5h1m1 0h3m1 0h1m3 0h2m3 0h4m2 0h1m1 0h2m1 0h2M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h1m3 0h2m1 0h1m1 0h3m2 0h1M0 27.5h1m5 0h1m2 0h2m1 0h4m1 0h2m1 0h2m2 0h1m2 0h1M0 28.5h7m1 0h1m1 0h2m1 0h2m3 0h1m1 0h1m2 0h3m1 0h2"/></svg></div>
+      <div style="display:grid;gap:6px;min-width:0">
+        <span class="tag" style="font:700 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">El prospecto escanea o escribe</span>
+        <span class="big">DEMO</span>
+        <span class="num">+57 320 405 5485</span>
+        <div class="row">
+          <button class="copy" type="button" data-copy="https://wa.me/573204055485?text=DEMO">Copiar enlace</button>
+          <a class="copy" style="text-decoration:none" href="https://wa.me/573204055485?text=DEMO" target="_blank" rel="noopener">Abrir WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <p class="muted" style="font-size:15px">Negocio de ejemplo: <b>Barbería El Llano</b>. 10 sellos = un corte gratis. Para una videollamada, mande el enlace por el chat.</p>
+  </div>
+
+  <h2>La demo · 2 minutos</h2>
+  <div class="box" style="padding-block:4px">
+    <ol class="timeline">
+      <li><span class="min">0:00</span><div class="step"><h3>Escanea y entra al club</h3>
+        <p class="say">"En vez de contárselo, mejor lo vive como si fuera su cliente. Escanee esto."</p>
+        <p class="muted">Le llega la bienvenida con el sello 1 de 10, con su nombre y la opción de responder BAJA.</p></div></li>
+      <li><span class="min">0:15</span><div class="step"><h3>Usted marca "Atendido"</h3>
+        <p>Abra el formulario <b>Atendido</b>, ponga el celular del prospecto y el PIN <b>3600</b>.</p>
+        <p class="say">"Su empleado toca un solo botón: 'Atendido'."</p>
+        <p class="muted">Llega el sello 2. A los 2 minutos llega la encuesta del 1 al 5. En la demo se pueden dar varios sellos el mismo día para mostrarlo rápido; en un negocio real es 1 por día.</p></div></li>
+      <li><span class="min">0:55</span><div class="step"><h3>Responde con un 2</h3>
+        <p class="say">"Respóndale con un 2, como si le hubiera ido mal."</p>
+        <p class="muted">El prospecto recibe una disculpa con el enlace para opinar (a nadie se le niega). A usted le llega la alerta con su nombre y su teléfono.</p></div></li>
+      <li><span class="min">1:25</span><div class="step"><h3>Lo que ve el dueño</h3>
+        <p class="say">"Usted no usa el computador. Cada lunes le llega a su WhatsApp cuántas visitas hubo, cuántas reseñas nuevas y cuántos clientes volvieron, con su valor en pesos."</p>
+        <p class="muted">Si hay tiempo: que escriba <b>MIS SELLOS</b>.</p></div></li>
+      <li><span class="min">1:50</span><div class="step"><h3>Pasar al diagnóstico</h3>
+        <p class="say">"Eso se lo dejo funcionando en su negocio, con su nombre y su premio. Hagamos un diagnóstico de 20 minutos. ¿Mañana o el jueves?"</p></div></li>
+    </ol>
+  </div>
+
+  <div class="links">
+    <a href="https://api.leadconnectorhq.com/widget/form/x7uUZwsRMWCYoazIVnn5" target="_blank" rel="noopener">✅ Formulario Atendido <span>PIN 3600</span></a>
+    <a href="https://api.leadconnectorhq.com/widget/form/ORb7Xh71qDxlhqJcBJaq" target="_blank" rel="noopener">🎁 Formulario Canjear <span>PIN 3600</span></a>
+  </div>
+
+  <div class="box">
+    <h3>Palabras que el prospecto puede escribir</h3>
+    <dl class="kv">
+      <dt>DEMO</dt><dd>Entra al club de ejemplo.</dd>
+      <dt>MIS SELLOS</dt><dd>Ve cuántos sellos lleva.</dd>
+      <dt>1 a 5</dt><dd>Responde la encuesta (con 1–3 se dispara la alerta al dueño).</dd>
+      <dt>BAJA</dt><dd>Deja de recibir mensajes.</dd>
+    </dl>
+    <p class="muted" style="font-size:15px">Cada persona que prueba la demo queda sola en el pipeline <b>Mall Digital 360 → Nuevo prospecto</b>.</p>
+  </div>
+
+  <div class="never">
+    <h3>Antes de una sala grande</h3>
+    <p>Mientras Meta no verifique el negocio, el 320 tiene un límite diario bajo de mensajes que inicia la empresa. Úsela uno a uno o con grupos pequeños. Una charla con toda la sala escaneando, después de la verificación.</p>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="panel" id="p-diag" role="tabpanel" aria-labelledby="t-diag" hidden>
   <div class="row">
     <a class="btn primary" href="https://claude.ai/artifact/JoVaUVB74srduEtLecz5cS" target="_blank" rel="noopener">Abrir la calculadora</a>
+  </div>
+
+  <div class="box">
+    <h3>Cómo agendarlo</h3>
+    <div class="links">
+      <a href="https://citas.malldigital360.com/widget/booking/euX6yqNoXod1EsS7jLHY" target="_blank" rel="noopener">Diagnóstico virtual <span>30 min · videollamada</span></a>
+      <a href="https://citas.malldigital360.com/widget/booking/3jLeLs8R0RzcqwdKQNb9" target="_blank" rel="noopener">Visita al negocio <span>45 min · presencial</span></a>
+    </div>
+    <div class="row">
+      <button class="copy" type="button" data-copy="https://citas.malldigital360.com/widget/booking/euX6yqNoXod1EsS7jLHY">Copiar enlace virtual</button>
+      <button class="copy" type="button" data-copy="https://citas.malldigital360.com/widget/booking/3jLeLs8R0RzcqwdKQNb9">Copiar enlace visita</button>
+    </div>
   </div>
 
   <div class="box">
@@ -115,6 +210,7 @@ details.obj .body{padding:0 16px 16px;display:grid;gap:10px}
   </div>
 
   <h2>La cita · 20 minutos</h2>
+  <p class="muted" style="font-size:15px">Igual en persona o por videollamada: por video, comparta la pantalla con Google Maps y la calculadora.</p>
   <div class="box" style="padding-block:4px">
     <ol class="timeline">
       <li><span class="min">0–2</span><div class="step"><h3>Apertura y permiso</h3>
@@ -125,7 +221,7 @@ details.obj .body{padding:0 16px 16px;display:grid;gap:10px}
         <p class="say">"¿Cuánto gasta en promedio un cliente por visita? ¿Cuántos clientes atiende al mes? ¿Cuántos nuevos? ¿Cada cuánto vuelve un cliente fiel?"</p></div></li>
       <li><span class="min">11–14</span><div class="step"><h3>El resultado</h3><p class="muted">Leer solo 3 líneas: dinero medible al mes, dinero estimado (reputación) y retorno frente al plan.</p>
         <p class="say">"Estos son pesos que hoy se le están yendo."</p></div></li>
-      <li><span class="min">14–17</span><div class="step"><h3>Cómo funciona, en 1 minuto</h3><p class="muted">Si no vivió la demo, que escriba DEMO al 320 405 5485.</p>
+      <li><span class="min">14–17</span><div class="step"><h3>Cómo funciona, en 1 minuto</h3><p class="muted">Si no vivió la demo, que escriba DEMO al 320 405 5485 (pestaña Demo).</p>
         <p class="say">"Lo que usted probó en su celular, con su nombre y su premio. Usted no toca un computador: cada lunes le llega el reporte a su WhatsApp."</p></div></li>
       <li><span class="min">17–19</span><div class="step"><h3>Propuesta</h3>
         <p>Recomendar <b>un</b> plan según la calculadora (normalmente el Plan 360). Mencionar la <b>Garantía 10 Reseñas</b> y, si aplica, el precio fundador: quedan <span class="ph">N</span> cupos de 3.</p></div></li>
@@ -138,8 +234,8 @@ details.obj .body{padding:0 16px 16px;display:grid;gap:10px}
   <div class="box">
     <h3>Después de la cita</h3>
     <ul class="clean">
-      <li>Mover la oportunidad en <b>Prospectos Cliente 360</b> a "Diagnóstico hecho" o "Propuesta".</li>
-      <li>Enviar por WhatsApp la captura de la calculadora y el one-pager.</li>
+      <li>En la app, mover la oportunidad en <b>Mall Digital 360</b> a "Diagnóstico hecho" o "Propuesta enviada".</li>
+      <li>Enviar por WhatsApp la captura de la calculadora y el one-pager (pestaña Mensajes, "Propuesta").</li>
     </ul>
   </div>
 
@@ -147,6 +243,12 @@ details.obj .body{padding:0 16px 16px;display:grid;gap:10px}
     <h3>Filtro: no vender a la fuerza</h3>
     <p>Si atiende menos de ~150 clientes al mes o el precio le duele: <b>ruta de capacitación</b> (charla Delfos + guía para pedir reseñas a mano). Queda como prospecto.</p>
   </div>
+</section>
+
+<!-- MENSAJES -->
+<section class="panel" id="p-msg" role="tabpanel" aria-labelledby="t-msg" hidden>
+  <p class="muted">Mensajes listos para venta digital. Los corchetes se cambian antes de enviar. Se mandan desde su WhatsApp personal o la app, uno a uno.</p>
+  <div id="msgs" style="display:grid;gap:12px"></div>
 </section>
 
 <!-- OBJECIONES -->
@@ -165,9 +267,40 @@ details.obj .body{padding:0 16px 16px;display:grid;gap:10px}
   </div>
 </section>
 
-<!-- ONE-PAGER -->
-<section class="panel" id="p-one" role="tabpanel" aria-labelledby="t-one" hidden>
-  <p class="muted">Así se ve el texto del one-pager. Para enviarlo, copie el texto o mande la versión de Canva.</p>
+<!-- CIERRE -->
+<section class="panel" id="p-cierre" role="tabpanel" aria-labelledby="t-cierre" hidden>
+  <p class="muted">Cuando el dueño dice que sí. Lo suyo son los pasos marcados <span class="chip">Sergio</span>; lo demás lo hace Claude.</p>
+  <div class="box">
+    <ol class="steps">
+      <li><span class="chip">Sergio</span> Confirmar <b>plan</b> (Impulso o 360), si es <b>fundador</b> y la fecha de arranque. Mover la oportunidad a "Pago recibido" cuando pague.</li>
+      <li><b>Contrato:</b> se genera desde la oportunidad en GHL ("Contrato — Cliente 360™ (Colombia)") y el dueño firma desde el celular. Mientras el abogado lo revisa, avíseme y lo preparo para ese cliente.</li>
+      <li><span class="chip">Sergio</span> <b>Pago (por ahora, a mano):</b> Arranque al firmar y mensualidad cada mes por transferencia, Nequi o enlace de pago a su cuenta en Colombia. Usted emite la factura electrónica DIAN.</li>
+      <li><span class="chip">Sergio</span> Pedirle al dueño por WhatsApp (mensaje "Datos de instalación" en Mensajes):
+        <ul class="clean" style="margin-top:6px">
+          <li>nombre del negocio como lo dicen sus clientes, dirección, horario y enlace de Google Maps;</li>
+          <li>el nombre con que firma y el premio del club;</li>
+          <li>un número para la <b>línea del club</b> (nunca su número principal);</li>
+          <li>acceso a su perfil de Google (invitar a info@malldigital360.com);</li>
+          <li>su base de clientes en Excel, si la tiene.</li>
+        </ul></li>
+      <li>Antes de instalar: <b>línea base</b>. Captura de Google con reseñas y calificación del día de la firma.</li>
+      <li><b>Instalación en 7 días</b> desde el snapshot "Cliente 360 v1". Al final le entregamos al dueño la tarjeta "Cómo manejar su Club" y el QR impreso.</li>
+      <li>Día 30: se mide la Garantía 10 Reseñas. Fundadores: se graba el testimonio.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- MATERIAL -->
+<section class="panel" id="p-mat" role="tabpanel" aria-labelledby="t-mat" hidden>
+  <h2>Diseños en Canva</h2>
+  <div class="links">
+    <a href="https://canva.link/y7ur2fekvghswdd" target="_blank" rel="noopener">Presentación de venta <span>8 diapositivas</span></a>
+    <a href="https://canva.link/a86aapz1vsfxlgi" target="_blank" rel="noopener">One-pager <span>A4 · WhatsApp o impreso</span></a>
+    <a href="https://canva.link/owvsusfzd8lrcdn" target="_blank" rel="noopener">Tarjeta "Cómo manejar su Club" <span>A5 · para el cliente</span></a>
+  </div>
+  <p class="muted" style="font-size:15px">Las presentaciones de Cliente360™ de 2025 (MedSpa, Babel, Perfect Webinar) tienen precios en USD y otro enfoque: no usarlas.</p>
+
+  <h2>Texto del one-pager</h2>
   <div class="box" style="gap:14px">
     <h2 style="margin:0;font-size:24px">Le instalamos el club de clientes de su negocio.</h2>
     <p>Sus clientes se unen con un QR, ganan premios por volver y le dejan reseñas en Google. Cada lunes usted ve en su WhatsApp cuánto dinero generó. Sin computador.</p>
@@ -179,13 +312,6 @@ details.obj .body{padding:0 16px 16px;display:grid;gap:10px}
       <li><b>Ventas en fechas especiales:</b> cumpleaños y fechas del año, con la oferta que usted aprueba por WhatsApp.</li>
       <li><b>Reporte del lunes en pesos:</b> reseñas, visitas, clientes recuperados y ventas medidas.</li>
     </ul>
-
-    <h3>Cómo se instala</h3>
-    <ol class="clean">
-      <li>Diagnóstico de 20 minutos.</li>
-      <li>Instalación en 7 días. Lo suyo son 30 minutos por WhatsApp.</li>
-      <li>Su equipo usa un solo botón: "✅ Atendido".</li>
-    </ol>
 
     <h3>Planes (Colombia)</h3>
     <div class="plans">
@@ -199,13 +325,20 @@ details.obj .body{padding:0 16px 16px;display:grid;gap:10px}
       <h3>Garantía 10 Reseñas</h3>
       <p>Si en sus primeros 30 días no recibe al menos 10 reseñas nuevas en Google, el mes siguiente no lo paga.</p>
     </div>
-
-    <p class="muted" style="font-size:14px">Mall Digital 360 · Empresa de tecnología y automatización con IA para negocios<br>Villavicencio, Meta, Colombia · Florida, Estados Unidos · Atención en español e inglés<br>WhatsApp +57 320 405 5485 · info@malldigital360.com · malldigital360.com/club</p>
   </div>
   <button class="btn primary" id="copy-one" type="button">Copiar texto para WhatsApp</button>
+
   <div class="box">
-    <h3>Precio fundador (solo con pilotos)</h3>
-    <p>50 % los primeros 3 meses y el Arranque a mitad de precio. Solo 3 cupos.</p>
+    <h3>Precio fundador (solo 3 pilotos)</h3>
+    <p>50 % los primeros 3 meses y el Arranque a mitad de precio, a cambio de un testimonio en video y los datos de antes y después. La Garantía 10 Reseñas también aplica.</p>
+  </div>
+
+  <div class="box">
+    <h3>Para imprimir</h3>
+    <ul class="clean">
+      <li>Letrero de mesa con el QR de la demo (A5): en el repositorio, <code>web/letrero-demo.html</code>.</li>
+      <li>Tarjetas de presentación de MD360: tarea de Blue del 16 oct.</li>
+    </ul>
   </div>
 </section>
 </main>
@@ -222,18 +355,61 @@ const OBJ=[
  ["¿Y si después quiero cancelar?","La permanencia mínima es de 3 meses, que es lo que el sistema necesita para mostrar resultados; después es mes a mes. Su base de clientes es suya: si se va, se la entregamos.",""],
  ["Déjeme pensarlo / hablarlo con mi socio.","Claro. ¿Qué es lo que necesita pensar: el precio, el tiempo o si funciona en su negocio? Le propongo algo: le dejo apartado el precio fundador hasta el [día] y ese día lo llamo 10 minutos. ¿Le sirve a las [hora]?","Antes de la propuesta, responda a lo que diga que necesita pensar."]
 ];
+const MSG=[
+ ["Primer contacto · red propia o referido","WhatsApp",`Hola [nombre], ¿cómo está? Soy Sergio Rey, de Mall Digital 360. [Quien lo refirió] me habló de [negocio].
+
+Le instalo el club de clientes a negocios como el suyo: sus clientes ganan premios por volver y le dejan reseñas en Google, y usted ve cada lunes en su WhatsApp cuánto generó.
+
+¿Le muestro en 2 minutos cómo lo vive su cliente? Basta con que escriba DEMO a este enlace: https://wa.me/573204055485?text=DEMO`],
+ ["Después de probar la demo","WhatsApp · mismo día",`[Nombre], gracias por probar el club. Eso mismo queda funcionando en [negocio], con su nombre y su premio.
+
+Le propongo un diagnóstico de 20 minutos: le muestro cuántas reseñas tiene frente a sus 3 competidores y cuánto le está costando en pesos. ¿Le queda mejor [día] a las [hora] o [día] a las [hora]?`],
+ ["Agendar por enlace","WhatsApp",`Aquí puede escoger la hora que le quede mejor para el diagnóstico (30 min, por videollamada): https://citas.malldigital360.com/widget/booking/euX6yqNoXod1EsS7jLHY
+
+Si prefiere que vaya a su negocio: https://citas.malldigital360.com/widget/booking/3jLeLs8R0RzcqwdKQNb9`],
+ ["Propuesta después del diagnóstico","WhatsApp · ese mismo día",`[Nombre], le dejo el resumen de hoy:
+
+• Hoy: [X] reseñas ([Y] ⭐). El líder de su zona: [Z].
+• Lo que el club le puede generar: [valor medible] al mes, más [valor estimado] en reputación.
+• Plan recomendado: [Plan 360], COP [490.000] al mes + Arranque COP [790.000].
+• Garantía: si en 30 días no le llegan 10 reseñas nuevas, el mes siguiente no lo paga.
+
+[Si aplica: Como cliente fundador, tiene 50 % los primeros 3 meses y el Arranque a mitad de precio.]
+
+Le adjunto el one-pager. ¿Arrancamos esta semana?`],
+ ["Seguimiento a las 48 horas","WhatsApp",`Hola [nombre]. ¿Pudo revisar la propuesta del club para [negocio]? Si le surgió alguna duda, se la resuelvo en 5 minutos por aquí o por llamada.`],
+ ["El día acordado (\"lo pienso\")","WhatsApp",`[Nombre], como quedamos, le escribo hoy. Le tengo apartado el precio fundador hasta hoy. ¿Le llamo 10 minutos a las [hora] para cerrar las dudas?`],
+ ["Datos de instalación (ya dijo que sí)","WhatsApp",`¡Bienvenido al club, [nombre]! Para dejarlo funcionando en 7 días necesito:
+
+1. Nombre del negocio como lo dicen sus clientes, dirección, horario y su enlace de Google Maps.
+2. El nombre con que firma los mensajes y el premio del club (por ejemplo, un servicio gratis a las 10 visitas).
+3. Un número para la línea del club (no su número principal).
+4. Acceso a su perfil de Google: invite a info@malldigital360.com como administrador.
+5. Si tiene su base de clientes en Excel, envíemela.
+
+Con eso, lo demás lo hacemos nosotros.`],
+ ["Correo de propuesta","Correo",`Asunto: Club de clientes para [negocio] — resumen del diagnóstico
+
+Hola [nombre]:
+
+Gracias por el tiempo de hoy. Este es el resumen:
+
+- Su perfil en Google hoy: [X] reseñas, [Y] estrellas. El líder de su zona: [Z] reseñas.
+- Lo que el club le puede generar: [valor medible] al mes en clientes que vuelven y fechas especiales, más [valor estimado] en reputación.
+- Plan recomendado: [Plan 360], COP [490.000] al mes, más el Arranque de COP [790.000] (pago único).
+- Garantía 10 Reseñas: si en sus primeros 30 días no recibe al menos 10 reseñas nuevas, el mes siguiente no lo paga.
+
+La instalación toma 7 días y la hacemos nosotros. Usted no usa el computador: todo le llega a su WhatsApp.
+
+¿Arrancamos esta semana?
+
+Sergio Rey
+Mall Digital 360 · WhatsApp +57 320 405 5485 · malldigital360.com/club`],
+ ["LinkedIn · empresas con varias sedes","LinkedIn",`Hola [nombre], vi que [empresa] tiene [N] sedes en [ciudad]. Instalo en negocios como el suyo un club de clientes por WhatsApp: más reseñas en Google, clientes que vuelven y un reporte semanal en pesos. ¿Le interesa verlo en 2 minutos?`],
+ ["Pedir referidos (cliente activo, desde el mes 2)","WhatsApp",`[Nombre], me alegra ver los resultados del club en [negocio]: [N] reseñas nuevas este mes. ¿Conoce a otro dueño de negocio al que le pueda servir lo mismo? Si me pasa su contacto, le escribo de su parte.`]
+];
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
 const mark=s=>esc(s).replace(/\[(.+?)\]/g,'<span class="ph">$1</span>');
-const box=document.getElementById("objs");
-OBJ.forEach(([q,a,t],i)=>{
-  const d=document.createElement("details");d.className="obj";
-  d.innerHTML=`<summary><span class="n">${i+1}</span><span>"${esc(q)}"</span><span class="chev" aria-hidden="true">›</span></summary>
-  <div class="body"><p class="answer">"${mark(a)}"</p>${t?`<p class="tip">${esc(t)}</p>`:""}
-  <button class="copy" type="button">Copiar respuesta</button></div>`;
-  d.querySelector(".copy").addEventListener("click",()=>copy(a));
-  box.appendChild(d);
-});
-
 const toast=document.getElementById("toast");let tt;
 function say(m){toast.textContent=m;toast.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toast.hidden=true,1800)}
 function copy(text){
@@ -241,6 +417,23 @@ function copy(text){
     try{document.execCommand("copy");say("Copiado")}catch(e){say("Mantenga presionado para copiar")}ta.remove()};
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>say("Copiado"),fallback)}else fallback();
 }
+const obox=document.getElementById("objs");
+OBJ.forEach(([q,a,t],i)=>{
+  const d=document.createElement("details");d.className="obj";
+  d.innerHTML=`<summary><span class="n">${i+1}</span><span>"${esc(q)}"</span><span class="chev" aria-hidden="true">›</span></summary>
+  <div class="body"><p class="answer">"${mark(a)}"</p>${t?`<p class="tip">${esc(t)}</p>`:""}
+  <button class="copy" type="button">Copiar respuesta</button></div>`;
+  d.querySelector(".copy").addEventListener("click",()=>copy(a));
+  obox.appendChild(d);
+});
+const mbox=document.getElementById("msgs");
+MSG.forEach(([title,ch,text])=>{
+  const d=document.createElement("div");d.className="msg";
+  d.innerHTML=`<span class="when">${esc(ch)}</span><h3>${esc(title)}</h3><pre>${mark(text)}</pre><button class="copy" type="button">Copiar mensaje</button>`;
+  d.querySelector(".copy").addEventListener("click",()=>copy(text));
+  mbox.appendChild(d);
+});
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>copy(b.dataset.copy)));
 
 const ONE=`*Le instalamos el club de clientes de su negocio.*
 Sus clientes se unen con un QR, ganan premios por volver y le dejan reseñas en Google. Cada lunes usted ve en su WhatsApp cuánto dinero generó. Sin computador.
@@ -259,6 +452,8 @@ Permanencia mínima: 3 meses. Pago anual: 2 meses gratis.
 
 ✅ *Garantía 10 Reseñas:* si en sus primeros 30 días no recibe al menos 10 reseñas nuevas en Google, el mes siguiente no lo paga.
 
+Pruebe el club: escriba DEMO a https://wa.me/573204055485?text=DEMO
+
 Mall Digital 360 · malldigital360.com/club · WhatsApp +57 320 405 5485`;
 document.getElementById("copy-one").addEventListener("click",()=>copy(ONE));
 
@@ -266,7 +461,7 @@ const tabs=[...document.querySelectorAll('[role="tab"]')];
 function show(id){tabs.forEach(b=>{const on=b.id===id;b.setAttribute("aria-selected",on);document.getElementById(b.getAttribute("aria-controls")).hidden=!on});
   try{localStorage.setItem("kv-tab",id)}catch(e){} window.scrollTo(0,0)}
 tabs.forEach(b=>b.addEventListener("click",()=>show(b.id)));
-const map={diagnostico:"t-diag",objeciones:"t-obj",onepager:"t-one"};
+const map={demo:"t-demo",diagnostico:"t-diag",mensajes:"t-msg",objeciones:"t-obj",cierre:"t-cierre",material:"t-mat"};
 let start=map[location.hash.slice(1)];
 if(!start){try{start=localStorage.getItem("kv-tab")}catch(e){}}
 if(start&&document.getElementById(start))show(start);

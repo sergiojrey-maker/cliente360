@@ -54,7 +54,7 @@
 ## 1:50 — Cierre (10 s)
 > "Eso que acaba de vivir se lo dejo funcionando en su negocio, con su nombre y su premio. Hagamos un diagnóstico de 20 minutos: le muestro cuántas reseñas tiene frente a sus 3 competidores y cuánto le está costando en pesos. ¿Le queda bien mañana o el jueves?"
 
-*(El prospecto ya quedó en el pipeline **Prospectos Cliente 360 → Contacto** con el tag `lead-charla`. Si agenda, se pasa a "Diagnóstico agendado".)*
+*(El prospecto ya quedó en el pipeline **Mall Digital 360 → Nuevo prospecto** con el tag `lead-charla`. Si agenda, se pasa a "Diagnóstico o demo agendado".)*
 
 ---
 

@@ -1,5 +1,16 @@
 # Kit de venta — Cliente 360™
 
+**Versión para el celular (la que usa Sergio):** artefacto "Kit de Venta Cliente 360", https://claude.ai/artifact/TtLX1ogJnjoahZYLqBvKv9 (fuente: `herramientas/kit-venta.html`). Pestañas: Demo · Diagnóstico · Mensajes · Objeciones · Cierre · Material. Este documento es la fuente de texto; si cambia algo, se cambian los dos.
+
+## Enlaces de la demo y del material (13 oct 2026)
+- Demo: QR `web/qr-demo.png` o escribir **DEMO** a https://wa.me/573204055485?text=DEMO (+57 320 405 5485).
+- Formulario Atendido: https://api.leadconnectorhq.com/widget/form/x7uUZwsRMWCYoazIVnn5 · Canjear: https://api.leadconnectorhq.com/widget/form/ORb7Xh71qDxlhqJcBJaq · PIN de la demo: 3600.
+- Agenda: diagnóstico virtual https://citas.malldigital360.com/widget/booking/euX6yqNoXod1EsS7jLHY · visita https://citas.malldigital360.com/widget/booking/3jLeLs8R0RzcqwdKQNb9
+- Calculadora: https://claude.ai/artifact/JoVaUVB74srduEtLecz5cS
+- Canva: presentación https://canva.link/y7ur2fekvghswdd · one-pager https://canva.link/a86aapz1vsfxlgi · tarjeta "Cómo manejar su Club" https://canva.link/owvsusfzd8lrcdn
+- Contrato: `docs/contrato-cliente360.md` (v2, pendiente de abogado); plantilla en GHL según `docs/kit-venta-ghl.md`.
+- Mensajes para venta digital (WhatsApp, correo, LinkedIn): en el artefacto, pestaña Mensajes.
+
 **Para qué:** pasar de "me interesa" (charla, QR de la demo, referido) a un cliente firmado.
 
 **Las 3 piezas:**
@@ -37,7 +48,7 @@
 | 19–20 | **Cierre** | "¿Arrancamos esta semana? La instalación toma 7 días y la mayor parte la hacemos nosotros. Lo suyo son 30 minutos por WhatsApp." Si duda: agendar seguimiento con fecha, nunca "lo pienso y le aviso". |
 
 **Después:**
-- Mover la oportunidad en **Prospectos Cliente 360** a "Diagnóstico hecho" o "Propuesta".
+- Mover la oportunidad en **Mall Digital 360** a "Diagnóstico hecho" o "Propuesta enviada".
 - Enviar por WhatsApp la captura del resultado de la calculadora y el one-pager.
 
 **Filtro (no vender a la fuerza):** si el negocio atiende menos de ~150 clientes al mes o el precio le duele, se le ofrece la **ruta de capacitación** (charla Delfos + guía para pedir reseñas a mano) y queda como prospecto.

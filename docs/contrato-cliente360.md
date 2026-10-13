@@ -1,12 +1,12 @@
-# Acuerdo de servicio — Cliente 360™ (borrador v1 para revisión legal)
+# Acuerdo de instalación y uso — Cliente 360™ (borrador v2 para revisión legal)
 
-*Borrador preparado el 4 oct 2026. **Debe revisarlo un abogado colombiano antes de usarlo.** Pensado para firmarse electrónicamente con **Documents & Contracts de GoHighLevel**: los campos entre `{{ }}` se llenan solos con los datos del contacto y de la oportunidad.*
+*Borrador v1: 4 oct 2026. v2: 13 oct 2026 (entidad colombiana, factura DIAN y pago manual, según la decisión del 13 oct). **Debe revisarlo un abogado colombiano antes de usarlo.** Pensado para firmarse electrónicamente con **Documents & Contracts de GoHighLevel**: los campos entre `{{ }}` se llenan solos con los datos del contacto y de la oportunidad.*
 
 ---
 
-**ACUERDO DE SERVICIO CLIENTE 360™**
+**ACUERDO DE INSTALACIÓN Y USO DEL SISTEMA CLIENTE 360™**
 
-Entre **Mall Digital 360** (en adelante "MD360"), representada por Sergio Rey, y **{{contact.company_name}}**, identificado con NIT/C.C. **{{contact.nit}}**, representado por **{{contact.name}}** (en adelante "EL NEGOCIO"), se acuerda lo siguiente:
+Entre **Sergio Julián Rey Gutiérrez**, persona natural, NIT 80887776-4, que opera con el nombre comercial **MALL DIGITAL 360**, con domicilio en Villavicencio (Meta) (en adelante "MD360"), y **{{contact.company_name}}**, identificado con NIT/C.C. **{{contact.nit}}**, representado por **{{contact.name}}** (en adelante "EL NEGOCIO"), se acuerda lo siguiente:
 
 ### 1. Qué se instala
 MD360 instala y mantiene en EL NEGOCIO el sistema **Cliente 360™ ("el Club de Clientes")**, según el plan elegido:
@@ -22,7 +22,7 @@ Además, el **Arranque** (pago único): instalación, conexión de la línea del
 - **Arranque:** COP {{opportunity.arranque}}, pagadero a la firma.
 - **Mensualidad:** COP {{opportunity.mensualidad}}, pagada cada mes por el medio de pago acordado (enlace de pago, transferencia o débito automático cuando esté disponible), contra factura electrónica.
 - **Mensajes de WhatsApp:** el plan incluye {{opportunity.mensajes_incluidos}} mensajes de plantilla al mes. Los adicionales se cobran como recarga, previo aviso.
-- La factura se emite según la normativa vigente.
+- MD360 emite **factura electrónica** (DIAN) por cada pago.
 - **Si un pago no se recibe:** MD360 avisa y da 5 días hábiles. Pasado ese plazo puede **pausar** los envíos hasta que se ponga al día. Los datos no se borran.
 
 ### 3. Permanencia mínima: 3 meses
@@ -53,7 +53,7 @@ Además, el **Arranque** (pago único): instalación, conexión de la línea del
 5. Atender a los clientes inconformes que el sistema le alerte.
 
 ### 7. Datos personales (Ley 1581 de 2012)
-- **EL NEGOCIO es el responsable** de los datos de sus clientes. **MD360 actúa como encargado** y solo los usa para prestar este servicio.
+- **EL NEGOCIO es el responsable** de los datos de sus clientes. **MD360 actúa como encargado** y solo los usa para operar el sistema instalado.
 - EL NEGOCIO declara que cuenta con autorización para tratar los datos de su base existente o que la obtendrá. Todo registro nuevo por QR o formulario incluye la autorización del titular.
 - MD360 no vende, cede ni usa los datos para fines propios. Aplica medidas razonables de seguridad.
 - **La base de datos es de EL NEGOCIO.** Al terminar el acuerdo, MD360 se la entrega en Excel/CSV dentro de los 15 días siguientes, si la pide, y después la elimina de la plataforma.
@@ -84,6 +84,6 @@ Fecha: {{date}}
 - **Revisar con abogado:**
   - la cláusula de permanencia y la penalidad por salida anticipada;
   - el rol responsable/encargado de datos;
-  - qué entidad firma (Colombia o la LLC), según se decida la facturación.
+  - la entidad que firma: decidido el 13 oct, Sergio Julián Rey Gutiérrez como persona natural en Colombia (factura DIAN y cobro en Colombia).
 - **Para usarlo en GHL:** crear la plantilla en *Payments → Documents & Contracts* y los campos de oportunidad `arranque`, `mensualidad`, `mensajes_incluidos` y `meta_garantia`. Así cada contrato sale con un clic desde la oportunidad del prospecto.
 - **Adaptación:** el plazo mínimo de 3 meses ya está reflejado en la oferta (`oferta-cliente360-v1.md`).
