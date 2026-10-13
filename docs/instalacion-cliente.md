@@ -24,7 +24,7 @@ Reputación Rescatada (carga de la base antigua) va aparte, cuando el resto ya f
 ---
 
 ## 0. Antes de la cita (10 min)
-1. Contrato firmado y primer cobro en Stripe (ver `docs/oferta-cliente360-v1.md`).
+1. Contrato firmado y primer pago recibido (carril manual en Colombia; Stripe suspendido desde el 13 oct) (ver `docs/oferta-cliente360-v1.md`).
 2. Enviar al dueño el enlace de la encuesta **"Instalación Cliente 360"** de la sub-cuenta MD360. Toma 2 minutos: ticket promedio, visitas al año, clientes nuevos al mes, visitas para el premio y premio.
 3. Pedirle por WhatsApp:
    - nombre del negocio como lo dicen sus clientes y un emoji;

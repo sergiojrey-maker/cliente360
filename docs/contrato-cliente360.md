@@ -20,7 +20,7 @@ Además, el **Arranque** (pago único): instalación, conexión de la línea del
 
 ### 2. Valor y forma de pago
 - **Arranque:** COP {{opportunity.arranque}}, pagadero a la firma.
-- **Mensualidad:** COP {{opportunity.mensualidad}}, cobrada automáticamente cada mes con la tarjeta que EL NEGOCIO registre (pasarela Stripe) o por el medio alterno acordado.
+- **Mensualidad:** COP {{opportunity.mensualidad}}, pagada cada mes por el medio de pago acordado (enlace de pago, transferencia o débito automático cuando esté disponible), contra factura electrónica.
 - **Mensajes de WhatsApp:** el plan incluye {{opportunity.mensajes_incluidos}} mensajes de plantilla al mes. Los adicionales se cobran como recarga, previo aviso.
 - La factura se emite según la normativa vigente.
 - **Si un pago no se recibe:** MD360 avisa y da 5 días hábiles. Pasado ese plazo puede **pausar** los envíos hasta que se ponga al día. Los datos no se borran.
@@ -63,7 +63,7 @@ La configuración, automatizaciones, plantillas y metodología de Cliente 360™
 
 ### 9. Límites de responsabilidad
 - MD360 no garantiza una posición específica en Google ni un nivel de ventas: estos dependen también del servicio de EL NEGOCIO y del mercado. Lo único que se garantiza es lo de la cláusula 4.
-- MD360 no responde por cambios, caídas o bloqueos de plataformas de terceros (Google, Meta/WhatsApp, GoHighLevel, Stripe), pero ayudará a resolverlos.
+- MD360 no responde por cambios, caídas o bloqueos de plataformas de terceros (Google, Meta/WhatsApp, GoHighLevel, pasarelas de pago), pero ayudará a resolverlos.
 - La responsabilidad total de MD360 no supera lo pagado por EL NEGOCIO en los últimos 3 meses.
 
 ### 10. Condiciones de fundador (si aplica)

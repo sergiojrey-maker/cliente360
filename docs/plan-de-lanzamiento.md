@@ -20,7 +20,7 @@ Leyenda: **[API]** se puede hacer por API o conector de GHL (Claude lo puede eje
 
 ## Fase 0 — Cerrar pendientes (semana 1)
 - [x] [S] Confirmar las 2 decisiones abiertas de la oferta: Arranque a 50 % para fundadores y garantía para fundadores. *(Confirmado el 4 oct.)*
-- [ ] [S] Contador: ¿se factura desde Rey Enterprises USA LLC (Stripe) o desde el RUT colombiano? ¿Qué pasa con la factura electrónica DIAN y las retenciones?
+- [x] [S] Contador: decidido el 13 oct. En Colombia se factura por la DIAN desde Colombia y el cobro va en Colombia; Stripe (LLC) suspendido para Colombia.
 - [ ] [S] Fecha de la próxima charla de Delfos (es el deadline de la demo).
 - [ ] [C] Verificar la tarifa de Meta para plantillas en Colombia y ajustar el precio de la recarga de mensajes.
 
@@ -94,7 +94,7 @@ Se construye en una **sub-cuenta plantilla nueva ("Cliente 360 — Snapshot Maes
 - [ ] [S] Revisión de abogado del contrato + plantilla en GHL Documents & Contracts.
 - [ ] [C] Términos del club + texto de autorización de datos.
 - [ ] [C] Tarjeta "Cómo manejar su sistema" y diseño del QR/NFC del club, con la marca MD360 (Canva).
-- [ ] [S] Productos y precios en Stripe (COP, suscripciones) + link de pago manual (Bold o Mercado Pago).
+- [ ] [S] Cobro en Colombia sin Stripe: carril manual con recordatorio (link de pago Bold o Mercado Pago, Nequi o transferencia) y buscar una alternativa colombiana de cobro automático.
 - [ ] [C+UI] **Página mínima del club** (1 sola página en GHL, builder tradicional, p. ej. `malldigital360.com/club`):
   - "Le instalo el club de clientes de su negocio" + cómo funciona en 3 pasos.
   - Video o capturas de la demo.
