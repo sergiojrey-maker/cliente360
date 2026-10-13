@@ -52,6 +52,8 @@ Historial y causas de cada arreglo: `docs/estado-snapshot.md`, revisiones 5 a 10
    - Ponerlo en 9 sellos → visita → premio: `club_premios_pendientes` = 1, tarjeta nueva.
    - Canje con `pin_equipo` = PIN de la maestra → pendientes 0, sellos se conservan.
    - Como la maestra está en borrador, usar "Test workflow" con el contacto; anotar qué se pudo probar y qué no.
+   - **1 sello por día** (pendiente del checklist de Blue, Fase 1): en las pruebas de la demo del 5 oct, dos visitas del mismo día sumaron dos sellos. Revisar el If/Else "Inválida" (`fecha_ultima_visita` es hoy) en **VIS-01 de la maestra** y en **DEMO — VIS-01**: anotar si existe y si funciona. En la maestra debe bloquear la segunda visita del día. En la demo puede quedar apagado a propósito (para que el prospecto pruebe varias veces), pero hay que anotarlo.
+   - **Trigger links en WhatsApp** (pendiente del checklist de Blue, Fase 1): probar en la DEMO si un trigger link dentro de una plantilla de WhatsApp registra el clic del contacto (Sergio abre el enlace en su celular; luego se revisa por API si el contacto recibió la acción). Anotar el resultado: decide si los botones del dueño van por enlaces o por palabras clave.
    - Borrar el contacto de prueba al final para que **no viaje en el snapshot**, y dejar los custom values `rep_*` en 0.
 
 ## Parte C — Snapshot
