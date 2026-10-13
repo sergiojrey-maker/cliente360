@@ -829,3 +829,9 @@ Solo en MD360. **Fase 1 sin terminar.** Lo hecho:
 4. "FB Group GHL Español - Email Nurture 365": en borrador con 156 inscritos activos.
 5. Carpetas de workflows vacías y los borradores viejos que no estaban en la lista.
 6. Reapuntar los borradores de Greco ("Prospección — 0x", "Outbound — …") al pipeline "Mall Digital 360" antes de publicarlos.
+
+## 13 oct 2026 — [Claude nube] Contadores del reporte de la demo en 0
+A pedido de Sergio, por API (`update-custom-value`), para mostrar la demo a prospectos sin datos de prueba:
+- `rep_visitas_semana` 9 → 0, `rep_inconformes_semana` 2 → 0, `rep_redenciones_mes` 1 → 0, `rep_miembros_semana` 2 → 0, `rep_miembros_club` 2 → 0.
+- Los demás `rep_*` ya estaban en 0.
+- No se tocaron contactos: "Prueba Claude C360" conserva sus sellos (3) y las tags del club.
