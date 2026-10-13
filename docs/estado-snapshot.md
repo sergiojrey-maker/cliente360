@@ -835,3 +835,9 @@ A pedido de Sergio, por API (`update-custom-value`), para mostrar la demo a pros
 - `rep_visitas_semana` 9 → 0, `rep_inconformes_semana` 2 → 0, `rep_redenciones_mes` 1 → 0, `rep_miembros_semana` 2 → 0, `rep_miembros_club` 2 → 0.
 - Los demás `rep_*` ya estaban en 0.
 - No se tocaron contactos: "Prueba Claude C360" conserva sus sellos (3) y las tags del club.
+
+## 13 oct 2026 — [Claude local] Maestra v1, parte A (DEMO en MD360)
+Según `docs/maestra-v1.md`:
+1. **`c360_canje_v2`: no se creó.** El permiso automático de esta sesión bloqueó el envío de la plantilla a Meta (cuenta como cambio en WhatsApp). Borrador descartado, nada enviado. **Pendiente para Sergio:** crearla en Settings → WhatsApp → Templates (Utility, español) con el texto del doc. Cuando quede Active, cambiar en **DEMO — CLUB-03 Canje** el SMS provisional por WhatsApp `c360_canje_v2` ("Enable branches" apagado). Ese cambio quedó sin hacer.
+2. **DEMO — Baja (v7):** tenía DND en las dos ramas (Delivered/Undelivered), pero **no** quitaba `club-miembro` ni ponía `baja`. Se agregaron "Quitar club-miembro" y "Poner baja" en la rama Demo, **antes** del WhatsApp `c360_baja`, así aplican a las dos ramas. Guardado; sigue publicado.
+3. Comprobado por API: los 9 DEMO siguen publicados.
