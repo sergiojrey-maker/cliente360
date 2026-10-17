@@ -119,11 +119,16 @@
 - Las preguntas de los clientes llegan a Conversaciones en la misma app.
 - Más adelante, sobre los mismos contactos: reseñas en Google, club de lealtad y recordatorios a quien dejó de venir (Cliente 360).
 
-### Pendiente con Bola Verde (Sergio)
-- Horario real.
-- Precio por hora (día y noche), y si se cobra al reservar o en la cancha.
-- Superficie y luz nocturna de cada cancha.
-- Reglas de cancelación.
-- Dirección, logo, fotos, Instagram y WhatsApp del club.
+### Datos de Bola Verde
 
-Con eso se cambian los textos y el horario. Por ahora la página usa textos editables.
+**Confirmados por Sergio (17 oct):**
+- **Precio por hora:** COP 30.000 hasta las 4:00 p. m. y COP 40.000 después de las 4:00 p. m.
+- **Pago:** en la cancha, no al reservar. Puede cambiar más adelante; si se cobra al reservar, se conecta el cobro al calendario.
+- **Superficie:** polvo de ladrillo (arcilla), las tres canchas.
+- **Luz:** iluminación completa en las tres canchas; se juega igual de día y de noche.
+- **Cancelación:** gratis por ahora. Puede cambiar.
+- **Elección de cancha:** el jugador escoge Cancha 1, 2 o 3, salvo que los empleados del club pidan otra cosa.
+
+**Llegan del perfil de Google (Sergio los comparte):** horario, dirección, logo, fotos e Instagram.
+
+Con eso se cambian los textos, el horario de los calendarios y las fotos de la página.
