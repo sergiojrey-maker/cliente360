@@ -130,6 +130,19 @@
 - **Horario:** todos los días de 6:00 a. m. a 10:00 p. m., según el perfil de Google. Ya es el horario de los calendarios.
 - **Elección de cancha:** el jugador escoge Cancha 1, 2 o 3, salvo que los empleados del club pidan otra cosa.
 
-**Llegan del perfil de Google (Sergio los comparte):** dirección, logo, fotos e Instagram.
+- **Perfil de Google (captura del 17 oct):**
+  - nombre "Canchas de Tenis Bola Verde";
+  - 4,6 estrellas con 5 reseñas;
+  - categoría principal "Sports school" (escuela deportiva);
+  - dirección: LT 8 A con Remansos del Bosque, Villavicencio, Meta, sobre la Calle 1 (vía 40);
+  - abierto hasta las 10:00 p. m.
+- **Para la página:**
+  - la dirección exacta y el botón "Cómo llegar" con el enlace del perfil de Google;
+  - la foto del perfil (cancha de arcilla con malla de sombra) como referencia del estilo, hasta tener las fotos reales.
+- **Para la conversación de venta, después de las reservas:**
+  - Con 5 reseñas el perfil se ve débil frente a quien busca "canchas de tenis Villavicencio". Es la entrada natural de Impulso 5 Estrellas: cada reserva cumplida genera una solicitud de reseña.
+  - Revisar con el dueño la categoría: "Sports school" describe la academia, no las canchas. Conviene agregar "Tennis court" o "Club de tenis" como categoría adicional, sin quitar la principal.
+
+**Llegan de Sergio:** logo, fotos e Instagram.
 
 Con eso se cambian los textos, el horario de los calendarios y las fotos de la página.
