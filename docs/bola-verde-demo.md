@@ -143,6 +143,8 @@
   - Con 5 reseñas el perfil se ve débil frente a quien busca "canchas de tenis Villavicencio". Es la entrada natural de Impulso 5 Estrellas: cada reserva cumplida genera una solicitud de reseña.
   - Revisar con el dueño la categoría: "Sports school" describe la academia, no las canchas. Conviene agregar "Tennis court" o "Club de tenis" como categoría adicional, sin quitar la principal.
 
-**Llegan de Sergio:** logo, fotos e Instagram.
+- **Instagram:** https://www.instagram.com/canchasdetenis_bolaverde/ (para el pie de la página y el botón "Síganos").
+
+**Llegan de Sergio:** logo, fotos y el WhatsApp del club (para el botón de la academia).
 
 Con eso se cambian los textos, el horario de los calendarios y las fotos de la página.
