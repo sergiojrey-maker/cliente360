@@ -3,6 +3,7 @@
 Contexto de trabajo para Claude Code. Fuente original: `docs/traspaso-cowork-2026-10-03.md` (traspaso desde Cowork, 3 oct 2026). Este archivo es la versión viva: si algo cambia, se actualiza aquí.
 Estrategia de producto en discusión: `docs/estrategia-3-soluciones.md`.
 Maestra lista para el primer cliente (snapshot "Cliente 360 v1"): `docs/maestra-v1.md`.
+Demo de reservas para Bola Verde (tenis) y reparación de la demo de WhatsApp tras el nuevo portafolio de Meta: `docs/bola-verde-demo.md`.
 
 ## 1. Identidad — reglas que aplican a TODO lo que se genere
 - **Sergio Rey**, fundador único de **Mall Digital 360** (Villavicencio, Meta, Colombia). Bilingüe español-inglés: destacarlo en textos de posicionamiento.
@@ -79,7 +80,8 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
   - Los tags `*OOS* …` significan **Out Of Service**: **no** se usan para identificar el negocio.
   - Tarea viva del lanzamiento: "Lanzamiento Cliente 360 v1" (lista 📋Importante).
   - **Claude tiene su propio usuario en Blue: "Claudio A"** (ID `onr98842qt5jhj5qee7982i9`), el "empleado máster". Toda tarea que Sergio delegue a Claude se asigna a Claudio, **no** a Sergio.
-  - Cada hilo de Claude firma sus avances con un comentario que empieza por su nombre: **[Claude nube]**, **[Claude local]**, **[Cowork Sardes]**, etc.
+  - **Desde el 17 oct 2026, el asistente se llama "Claudio" en todo** (Sergio: "a partir de ahora todo es Claudio"). Se distingue por negocio o lugar: Claudio para Mall Digital 360, Claudio para Sergio Rey, etc.
+  - Cada hilo firma sus avances con un comentario que empieza por su nombre: **[Claudio nube]**, **[Claudio local]**, **[Claudio · Sergio Rey]**, etc. Las firmas anteriores ([Claude nube], [Claude local], [Cowork Sardes]) quedan en el historial.
   - El historial de Blue sigue mostrando "Sergio Rey" porque los conectores usan su cuenta.
 - Proceder con criterio propio y entregar reporte al final; él pide cambios después.
 - Confrontar las ideas con argumentos (él lo pide explícitamente), no solo ejecutar.
