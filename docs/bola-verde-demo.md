@@ -146,7 +146,7 @@
 - **Instagram:** https://www.instagram.com/canchasdetenis_bolaverde/ (para el pie de la página y el botón "Síganos").
 
 - **WhatsApp del club:** +57 314 439 2772 (https://wa.me/573144392772). Va en el botón de la academia y en "Contacto". **No** se usa para los envíos de la demo, que salen del 320 405 5485.
-- **Logo (compartido por Sergio el 17 oct):** un cachicamo (armadillo llanero) enrollado como pelota de tenis, con raquetas cruzadas y cintas "CANCHAS DE TENIS" / "BOLA VERDE". Colores: verde bosque, verde lima y amarillo. Sergio lo sube a Media de Mall Digital 360 como `bola-verde-logo` para que Claudio local lo use en la página.
+- **Logo (compartido por Sergio el 17 oct):** un cachicamo (armadillo llanero) enrollado como pelota de tenis, con raquetas cruzadas y cintas "CANCHAS DE TENIS" / "BOLA VERDE". Colores: verde bosque, verde lima y amarillo. Ya está en Media de Mall Digital 360 como `bola-verde-logo.jpg` (1024×1024; verificado por API el 17 oct): https://assets.cdn.filesafe.space/WZYaJ8M4dqpvhdM2gpip/media/6ad3e3d0436f78fefb657449.jpg . Usarlo también como imagen del grupo de calendarios y en el encabezado de los correos.
 
 **Llegan de Sergio:** fotos reales de las canchas y de la academia.
 
