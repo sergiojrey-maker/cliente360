@@ -854,3 +854,43 @@ Todo en borrador, guardado en el builder:
 - **1 sello por día (VIS-01 de la maestra):** existe. La rama "Inválida" de "¿Visita válida?" incluye `fecha_ultima_visita` **is Today**, y la rama válida pone `fecha_ultima_visita = hoy` antes de sumar. Falta probarlo (prueba de humo) y revisar DEMO — VIS-01.
 - **Pendiente de la parte B:** RES-02 (Math, re-entry, push, tarea, nota de plantilla), RES-01b nuevo, RES-01 y RR-01 (quitar If/Else de "Contact reply"), CLUB-03, GEN-01, revisar "Enable branches" y Math en los demás workflows, prueba de humo.
 - **Bloqueo:** el builder de workflows en Chrome se congela seguido (el iframe deja de responder, capturas en blanco, clics perdidos). Cada cambio toma varios reintentos.
+
+## 17 oct 2026 — [Claudio local] Bola Verde, parte 1 (plantillas de WhatsApp en el portafolio verificado)
+Según `docs/bola-verde-demo.md`. **Avance parcial: plantillas hechas; workflows, prueba con celular y parte 2 pendientes.**
+
+**Estado al inicio:** Settings → WhatsApp → Templates estaba **vacío** (0 plantillas). Número 320 405 5485 Connected, Meta business verification Verified, calidad Green, Marketing messages Enabled.
+
+**Creadas y enviadas a Meta (14 de 14, español, desde MD360):**
+
+| Plantilla | Categoría pedida → actual | Estado a las ~4:55 p. m. |
+|---|---|---|
+| `c360_bienvenida_club` | Marketing | Active |
+| `c360_sello` | Utilidad → **Marketing** | Active |
+| `c360_te_faltan` | Utilidad → **Marketing** | Active |
+| `c360_premio` | Utilidad → **Marketing** | Active |
+| `c360_mis_sellos` | Utilidad → **Marketing** | Active |
+| `c360_encuesta` | Utilidad → **Marketing** | Active |
+| `c360_resena` | Utilidad → **Marketing** | Active |
+| `c360_disculpa` | Utilidad | Active |
+| `c360_resena_recordatorio` | Utilidad → **Marketing** | Active |
+| `c360_baja` | Utilidad → **Marketing** | Active |
+| `c360_dueno_inconforme` | Utilidad | **Pending** |
+| `c360_canje_v2` | Utilidad | **Pending** |
+| `bv_reserva_confirmada` | Utilidad | Active |
+| `bv_recordatorio_reserva` | Utilidad | **Pending** |
+
+- Meta pasó 8 a Marketing; se aceptan (decisión del 11 oct). Cuestan más por mensaje.
+- Textos y variables: los de `docs/plantillas-whatsapp-demo.md`, `estado-snapshot.md` (Revisión 9) y `maestra-v1.md` parte A. Mismos mapeos que la vez anterior (custom values `club_*`, `negocio_*`, `resena_link_google`; campos `club_sellos`, `club_sellos_faltan`, `calificacion_respuesta`; nombre y teléfono del contacto).
+- **Un error mío, corregido:** `c360_sello` salió primero en inglés (US) porque el selector de idioma no tomó. La borré (estaba Pending, sin uso) y la recreé en español.
+
+**Dos ajustes en las plantillas de Bola Verde (distintos del doc):**
+1. **Fecha y hora van en dos variables.** GHL ofrece `Appointment → Start Date` y `Start Time` por separado (y `Start Date Time` solo para Service Booking/Rental/Event). Quedó "📅 {{3}} a las {{4}}" (`appointment.only_start_date` y `appointment.only_start_time`). En `bv_reserva_confirmada` el enlace pasó a **{{5}}**.
+2. **Botones sin emojis.** GHL rechazó "✅ Confirmo" / "❌ No puedo ir" ("Buttons can't have any variable, newlines, emojis or formatting characters"). Quedaron **"Confirmo"** y **"No puedo ir"**. Al armar el workflow de respuesta, filtrar por esos textos.
+
+**Custom value nuevo (por API):** `bv_link_reserva` (`Dz3zJ8VEe117L03Oy8ku`) = `https://malldigital360.com/demo-bola-verde`. Es el enlace de la variable de la plantilla; **actualizar cuando la página esté publicada**. Ojo: el selector de variables de GHL carga la lista al abrir la página, así que un custom value creado después no aparece hasta recargar.
+
+**Pendiente (no hecho):**
+- Cuando `c360_dueno_inconforme`, `c360_canje_v2` y `bv_recordatorio_reserva` queden Active: revisar en Templates.
+- **Paso 3:** volver a elegir la plantilla en las acciones de WhatsApp de los 8 DEMO (CLUB-01, CLUB-02, CLUB-03, CLUB-04, RES-01, RES-01b, RES-02, Baja). No se tocó ninguno; siguen publicados y sin cambios. IDs: ver `get-workflow` por API.
+- **Paso 4:** prueba completa con el celular de Sergio (`docs/guion-demo.md`).
+- **Parte 2:** página de Bola Verde (AI Studio), calendarios en la página, los dos workflows de reserva/recordatorio/respuesta, prueba con invitado.
