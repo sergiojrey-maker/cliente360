@@ -74,10 +74,10 @@
    - **Formulario de reserva:** en los 3 calendarios, el campo **Teléfono (WhatsApp)** debe ser **obligatorio**, con indicativo +57 por defecto.
    - **Invitar a otros:** los tres calendarios ya permiten agregar invitados (guestType `collect_detail`). Quien reserva escribe el correo de sus compañeros en el mismo formulario, y a ellos también les llega la invitación. Revisar en el widget que aparezca "Agregar invitados". Por WhatsApp, quien reserva reenvía la confirmación o el enlace de reserva.
    - **Plantillas de WhatsApp (categoría Utilidad, español):**
-     - `bv_reserva_confirmada`: "Hola {{1}}, su reserva en Bola Verde quedó confirmada ✅ 🎾 {{2}} · 📅 {{3}}. ¿Juega con alguien más? Reenvíele este mensaje o compártale el enlace para que reserve: {{4}}. Si necesita cambiar o cancelar, responda a este mensaje. Si no desea recibir mensajes, responda BAJA."
-       - Variables: nombre, cancha, fecha y hora, enlace de la página.
-     - `bv_recordatorio_reserva`: "Hola {{1}}, le recordamos su reserva de mañana en Bola Verde: 🎾 {{2}} · 📅 {{3}}. ¿Nos confirma su asistencia?"
-       - Botones de respuesta rápida: **"✅ Confirmo"** y **"❌ No puedo ir"**.
+     - `bv_reserva_confirmada`: "Hola {{1}}, su reserva en Bola Verde quedó confirmada ✅ 🎾 {{2}} · 📅 {{3}} a las {{4}}. ¿Juega con alguien más? Reenvíele este mensaje o compártale el enlace para que reserve: {{5}}. Si necesita cambiar o cancelar, responda a este mensaje. Si no desea recibir mensajes, responda BAJA."
+       - Variables: nombre, cancha, fecha (`appointment.only_start_date`), hora (`appointment.only_start_time`) y enlace (custom value `bv_link_reserva`).
+     - `bv_recordatorio_reserva`: "Hola {{1}}, le recordamos su reserva de mañana en Bola Verde: 🎾 {{2}} · 📅 {{3}} a las {{4}}. ¿Nos confirma su asistencia?"
+       - Botones de respuesta rápida: **"Confirmo"** y **"No puedo ir"** (GHL no acepta emojis en botones).
    - **Workflow "DEMO — Bola Verde · Reserva de cancha"** (WhatsApp + correo):
      - **Disparador:** *Customer booked appointment*, filtrado a los 3 calendarios de Bola Verde.
      - **WhatsApp 1, al instante:** plantilla `bv_reserva_confirmada`. Va antes del correo y en el mismo momento.
@@ -95,10 +95,10 @@
      - **Remitente del correo:** el dominio de correo verificado de MD360. Para el cliente real se usa el dominio del club.
      - **Número de WhatsApp:** en la demo, el 320 405 5485. Para el cliente real, la línea del club.
    - **Workflow "DEMO — Bola Verde · Respuesta al recordatorio"** (el jugador maneja su reserva sin llamar):
-     - **"✅ Confirmo":**
+     - **"Confirmo":**
        - cambiar la cita a *Confirmed*;
        - responder "¡Perfecto, lo esperamos!".
-     - **"❌ No puedo ir":**
+     - **"No puedo ir":**
        - cambiar la cita a *Cancelled*, para que la cancha quede libre en el calendario;
        - responder "Listo, liberamos su cancha. Puede reservar otra hora aquí: [enlace]";
        - enviar un push al club: "Se liberó {{appointment.calendar_name}} · {{appointment.start_time}}".
