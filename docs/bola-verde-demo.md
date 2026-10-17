@@ -56,7 +56,7 @@
 **Configuración de los tres calendarios:**
 - Tipo *event*, es decir, sin persona asignada: la cancha es el recurso.
 - Turnos de 60 minutos, con opción de 90 o 120.
-- Todos los días de 6:00 a. m. a 10:00 p. m. Es provisional, hasta tener el horario real.
+- Todos los días de 6:00 a. m. a 10:00 p. m. Es el horario real del perfil de Google (confirmado el 17 oct). El último turno de 60 minutos empieza a las 9:00 p. m.
 - Reserva con mínimo 1 hora de anticipación y hasta 14 días adelante.
 - Confirmación automática; el cliente puede reprogramar y cancelar.
 - Casilla de autorización de datos (Ley 1581) en español.
@@ -127,8 +127,9 @@
 - **Superficie:** polvo de ladrillo (arcilla), las tres canchas.
 - **Luz:** iluminación completa en las tres canchas; se juega igual de día y de noche.
 - **Cancelación:** gratis por ahora. Puede cambiar.
+- **Horario:** todos los días de 6:00 a. m. a 10:00 p. m., según el perfil de Google. Ya es el horario de los calendarios.
 - **Elección de cancha:** el jugador escoge Cancha 1, 2 o 3, salvo que los empleados del club pidan otra cosa.
 
-**Llegan del perfil de Google (Sergio los comparte):** horario, dirección, logo, fotos e Instagram.
+**Llegan del perfil de Google (Sergio los comparte):** dirección, logo, fotos e Instagram.
 
 Con eso se cambian los textos, el horario de los calendarios y las fotos de la página.
