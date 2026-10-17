@@ -15,7 +15,7 @@
    - **Demo:** `c360_bienvenida_club`, `c360_sello`, `c360_te_faltan`, `c360_premio`, `c360_mis_sellos`, `c360_encuesta`, `c360_resena`, `c360_disculpa`, `c360_resena_recordatorio`, `c360_baja`.
    - **Alerta al dueño:** `c360_dueno_inconforme`, con el texto de `docs/estado-snapshot.md`, Revisión 9.
    - **Canje:** `c360_canje_v2`, con el texto de `docs/maestra-v1.md`, parte A. Reemplaza a `c360_canje`.
-   - **Bola Verde (parte 2):** `bv_reserva_confirmada` y `bv_recordatorio_reserva`. Los textos están abajo.
+   - **Bola Verde (parte 2):** `bv_reserva_confirmada` y `bv_recordatorio_reserva`, con los textos de la parte 2, paso 5.
    - **Categoría:** Utilidad, salvo `c360_bienvenida_club`, que va como Marketing. Si Meta las pasa a Marketing, se acepta (decisión del 11 oct).
 3. **Cuando estén Active**, volver a elegir la plantilla en cada acción de WhatsApp. "Enable branches" queda apagado.
 
@@ -69,24 +69,43 @@
 
 3. **Insertar el calendario** en la sección "Reservar": elemento *Calendar* → el grupo de Bola Verde, o los tres widgets en pestañas.
 4. **No usar el dominio principal ni publicar como página definitiva.** Es una demo: dejarla en la URL de vista previa del funnel o en `/demo-bola-verde`. Publicar en vivo una página nueva necesita el OK de Sergio, y él ya lo dio para esta demo, pero solo como demo.
-5. **Correo de confirmación, invitados y recordatorio.**
-   - **Invitar a otros:** los tres calendarios ya permiten agregar invitados (guestType `collect_detail`). Quien reserva escribe el correo de sus compañeros en el mismo formulario, y a ellos también les llega la invitación. Revisar en el widget que aparezca "Agregar invitados".
-   - **Workflow "DEMO — Bola Verde · Reserva de cancha"** (correo; WhatsApp después):
+5. **Confirmación, invitados y recordatorio: WhatsApp primero, correo de respaldo.**
+   *Decisión de Sergio (17 oct): el canal principal es WhatsApp, de ida y vuelta, y el correo va como respaldo. Los dos canales se quedan. El correo se puede probar hoy mismo; los pasos de WhatsApp salen apenas Meta apruebe las dos plantillas de abajo.*
+   - **Formulario de reserva:** en los 3 calendarios, el campo **Teléfono (WhatsApp)** debe ser **obligatorio**, con indicativo +57 por defecto.
+   - **Invitar a otros:** los tres calendarios ya permiten agregar invitados (guestType `collect_detail`). Quien reserva escribe el correo de sus compañeros en el mismo formulario, y a ellos también les llega la invitación. Revisar en el widget que aparezca "Agregar invitados". Por WhatsApp, quien reserva reenvía la confirmación o el enlace de reserva.
+   - **Plantillas de WhatsApp (categoría Utilidad, español):**
+     - `bv_reserva_confirmada`: "Hola {{1}}, su reserva en Bola Verde quedó confirmada ✅ 🎾 {{2}} · 📅 {{3}}. ¿Juega con alguien más? Reenvíele este mensaje o compártale el enlace para que reserve: {{4}}. Si necesita cambiar o cancelar, responda a este mensaje. Si no desea recibir mensajes, responda BAJA."
+       - Variables: nombre, cancha, fecha y hora, enlace de la página.
+     - `bv_recordatorio_reserva`: "Hola {{1}}, le recordamos su reserva de mañana en Bola Verde: 🎾 {{2}} · 📅 {{3}}. ¿Nos confirma su asistencia?"
+       - Botones de respuesta rápida: **"✅ Confirmo"** y **"❌ No puedo ir"**.
+   - **Workflow "DEMO — Bola Verde · Reserva de cancha"** (WhatsApp + correo):
      - **Disparador:** *Customer booked appointment*, filtrado a los 3 calendarios de Bola Verde.
+     - **WhatsApp 1, al instante:** plantilla `bv_reserva_confirmada`. Va antes del correo y en el mismo momento.
      - **Correo 1, al instante — confirmación:**
        - Asunto: "Su cancha en Bola Verde está reservada 🎾".
        - Texto: "Hola {{contact.first_name}}, su reserva quedó confirmada: {{appointment.calendar_name}}, {{appointment.start_time}}. ¿Juega con alguien más? Reenvíe este correo o compártale el enlace de reserva para que se una: [enlace de la página]. Si necesita cambiar o cancelar, use el enlace de su invitación de calendario o responda a este correo. ¡Nos vemos en la cancha!"
        - Botones: "Agregar a mi calendario" y "Invitar por WhatsApp", con el enlace `https://wa.me/?text=` y el texto "Reservé cancha en Bola Verde el [fecha]. ¿Te unes? [enlace]".
      - **Push** a la app LeadConnector del usuario Sergio: "Nueva reserva: {{contact.name}} · {{appointment.calendar_name}} · {{appointment.start_time}}".
      - **Espera** hasta 24 horas antes de la cita. Si la reserva es para dentro de menos de 24 horas, saltar el recordatorio.
-     - **Correo 2 — recordatorio:**
-       - Asunto: "Mañana juega en Bola Verde".
-       - Texto: "Hola {{contact.first_name}}, le recordamos su reserva de mañana: {{appointment.calendar_name}}, {{appointment.start_time}}. Si no puede venir, avísenos respondiendo este correo para liberar la cancha."
-     - **WhatsApp:** cuando estén aprobadas las plantillas `bv_reserva_confirmada` y `bv_recordatorio_reserva`, se agregan junto a los correos.
-     - **Remitente:** el dominio de correo verificado de MD360. Para el cliente real se usa el dominio del club.
-   - Dejar el workflow publicado solo para la demo.
+     - **Recordatorio, 24 horas antes, por los dos canales:**
+       - **WhatsApp 2:** plantilla `bv_recordatorio_reserva`.
+       - **Correo 2:**
+         - Asunto: "Mañana juega en Bola Verde".
+         - Texto: "Hola {{contact.first_name}}, le recordamos su reserva de mañana: {{appointment.calendar_name}}, {{appointment.start_time}}. Si no puede venir, avísenos respondiendo este correo para liberar la cancha."
+     - **Remitente del correo:** el dominio de correo verificado de MD360. Para el cliente real se usa el dominio del club.
+     - **Número de WhatsApp:** en la demo, el 320 405 5485. Para el cliente real, la línea del club.
+   - **Workflow "DEMO — Bola Verde · Respuesta al recordatorio"** (el jugador maneja su reserva sin llamar):
+     - **"✅ Confirmo":**
+       - cambiar la cita a *Confirmed*;
+       - responder "¡Perfecto, lo esperamos!".
+     - **"❌ No puedo ir":**
+       - cambiar la cita a *Cancelled*, para que la cancha quede libre en el calendario;
+       - responder "Listo, liberamos su cancha. Puede reservar otra hora aquí: [enlace]";
+       - enviar un push al club: "Se liberó {{appointment.calendar_name}} · {{appointment.start_time}}".
+   - **Ida y vuelta:** cualquier respuesta del jugador, por WhatsApp o por correo, entra a **Conversaciones** en la app LeadConnector. Como el jugador escribió, se abre la ventana de 24 h y el club le contesta con texto libre, sin plantilla.
+   - Dejar los dos workflows publicados solo para la demo.
 6. **Prueba:** reservar desde el celular la Cancha 2 para mañana, con un invitado (otro correo de Sergio). Comprobar que:
-   - llegan los dos correos de confirmación, el del que reservó y el del invitado;
+   - llegan el WhatsApp de confirmación (si la plantilla ya está aprobada) y los dos correos, el del que reservó y el del invitado;
    - llega el push y se ve la cita en la app LeadConnector;
    - el recordatorio queda programado para 24 horas antes, en el registro del workflow;
    - se puede cancelar desde la app.
