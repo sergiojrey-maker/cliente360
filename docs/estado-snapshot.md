@@ -954,3 +954,19 @@ Total en el portafolio: 16 plantillas.
 - **Teléfono (WhatsApp) obligatorio en los 3 calendarios: pendiente.** El formulario por defecto no lo exige y no hay un formulario propio con teléfono obligatorio; hay que crear uno ("Reserva cancha") y asignarlo a los tres. Sin teléfono el WhatsApp no sale (el correo sí).
 - **Prueba con invitado (Cancha 2, mañana, segundo correo): pendiente** hasta publicar los workflows.
 - Remitente del correo y "Test Emails" (sergio.j.rey@gmail.com) puestos solo para poder guardar; no envían nada.
+
+## 18 oct 2026 — [Claudio nube] Prueba de la demo con el celular de Sergio (tras el cambio de portafolio de Meta)
+| Paso | Resultado |
+|---|---|
+| DEMO al 320 405 5485 | ✅ Llegó "llevas 2 sellos, te faltan 8 para un corte gratis" (Sergio ya era miembro por pruebas anteriores) |
+| ✅ Atendido (PIN 3600) | ✅ Sello 3 |
+| Encuesta | ⏭️ No llegó, como se esperaba: se envía una sola vez por cliente y ya le había llegado en una prueba anterior |
+| MIS SELLOS | ✅ "3 sellos, faltan 7" |
+| Canje | ⏭️ Sin probar: necesita 10 sellos |
+| BAJA | ✅ Llegó la confirmación |
+
+**Conclusión:** las plantillas nuevas salen bien en CLUB-01/VIS-01, CLUB-02, CLUB-04 y Baja.
+**Falta probar** (requiere reiniciar el contacto de Sergio: quitar DND/BAJA, quitar tags `club-miembro`, `resena-solicitada`, `club-premio-pendiente` y `club-premio-recordado`, y dejar `club_sellos` en 0):
+- bienvenida y regalo (`c360_bienvenida_club`, `c360_regalo`);
+- encuesta → responder 2 → disculpa y alerta a Sergio (`c360_encuesta`, `c360_disculpa`, `c360_dueno_inconforme`);
+- canje (`c360_canje_v2`): dejarlo en 9 sellos para completar el premio con un Atendido.
