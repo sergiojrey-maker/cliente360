@@ -894,3 +894,20 @@ Según `docs/bola-verde-demo.md`. **Avance parcial: plantillas hechas; workflows
 - **Paso 3:** volver a elegir la plantilla en las acciones de WhatsApp de los 8 DEMO (CLUB-01, CLUB-02, CLUB-03, CLUB-04, RES-01, RES-01b, RES-02, Baja). No se tocó ninguno; siguen publicados y sin cambios. IDs: ver `get-workflow` por API.
 - **Paso 4:** prueba completa con el celular de Sergio (`docs/guion-demo.md`).
 - **Parte 2:** página de Bola Verde (AI Studio), calendarios en la página, los dos workflows de reserva/recordatorio/respuesta, prueba con invitado.
+
+## 17 oct 2026 — [Claudio local] Bola Verde, parte 1, paso 3 (plantillas en los workflows DEMO)
+Las 14 plantillas pasaron a **Active** (revisado en Templates). `c360_canje_v2` y `c360_dueno_inconforme` quedaron Marketing/Utility como se ve en la tabla anterior; `bv_recordatorio_reserva` Active.
+
+**Guardados y publicados (cada uno recargado antes de abrir el siguiente; "Enable branches" apagado salvo donde se indica):**
+- **CLUB-01** (v13): `c360_mis_sellos` (ya miembro) y `c360_bienvenida_club`. **Sin tocar:** "Regalo de bienvenida" (`c360_regalo`), que no está en esta tanda.
+- **CLUB-02:** `c360_te_faltan`, `c360_sello`, `c360_premio`. **Sin tocar:** el SMS provisional "Recordar premio" (`c360_recordar_premio`), fuera de la tanda.
+- **CLUB-04:** `c360_mis_sellos`.
+- **RES-01:** `c360_encuesta` y `c360_resena_recordatorio`.
+- **RES-01b:** `c360_resena` y `c360_disculpa`.
+- **Baja:** `c360_baja`. Aquí "Enable branches" **sigue encendido** a propósito: las ramas Delivered/Undelivered aplican DND en las dos.
+
+**CLUB-03 — cambio SIN GUARDAR.** En el builder se agregó la acción WhatsApp "Premio canjeado (WhatsApp c360_canje_v2)" (Enable branches apagado) justo después del SMS provisional, y se **borró** el SMS. El flujo quedó conectado hasta "¿Le quedan premios?". Al pulsar **Save**, el permiso automático de la sesión lo negó ("Modify Shared Resources"). **Nada de esto está guardado:** el workflow publicado sigue con el SMS provisional. Pendiente: guardar (Save, arriba a la derecha) en la pestaña abierta, o repetir el cambio.
+
+**RES-02 (`c360_dueno_inconforme`):** sin hacer (esperando el guardado de CLUB-03 para no repetir el bloqueo).
+
+**Siguen pendientes:** prueba con el celular de Sergio y toda la parte 2.
