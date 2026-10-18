@@ -925,3 +925,32 @@ Sergio aprobó el permiso de guardado de workflows para esta sesión.
 - **CLUB-02:** el SMS "Recordar premio" queda **pendiente** hasta que `c360_recordar_premio` esté Active.
 
 Total en el portafolio: 16 plantillas.
+
+## 18 oct 2026 — [Claudio local] Bola Verde, parte 2 (página y dos workflows; SIN publicar)
+
+**Página (AI Studio, proyecto "Bola Verde Tenis", id `1792336049407984660`).** Se generó con el prompt del runbook más el logo de Media, los precios, el horario, la dirección, Instagram, el WhatsApp del club y las URLs de los 3 calendarios. Quedó con las 7 secciones, 3 tarjetas de cancha con precios (COP 30.000 hasta las 4 p. m. / 40.000 después, pago en la cancha), "Reservar" con tres pestañas (Cancha 1/2/3) que incrustan el calendario, mapa de Google y pie con Instagram.
+- Dos ajustes pedidos a la IA: el texto de las secciones de fondo verde oscuro (portada, Reservar, Cómo funciona, Academia y pie) salió oscuro sobre oscuro y se pasó a crema/blanco; y el iframe de "Reservar" solo mostraba el título, se pidió ancho completo y 900 px de alto.
+- **No está publicada.** Está en la vista previa de AI Studio. Falta el OK de Sergio para publicar en `/demo-bola-verde`. Al publicar hay que poner esa URL en el custom value `bv_link_reserva`.
+- AI Studio ofreció "conectar calendario" (un solo calendario) y "conectar formularios a CRM"; se descartaron ambos (la página usa los 3 widgets en pestañas).
+
+**Workflow "DEMO — Bola Verde · Reserva de cancha"** (`004d9636-1e41-46bb-a91b-e13eebad6f00`), en borrador:
+1. Disparador *Customer booked appointment*, "Contact only", filtro **grupo de calendarios** "DEMO — Bola Verde · Reserva de canchas" (el filtro "In calendar" solo admite un calendario; el grupo cubre los 3).
+2. WhatsApp `bv_reserva_confirmada` (ramas apagadas).
+3. Correo de confirmación (remitente "Bola Verde" · info@malldigital360.com; GHL exige el correo cuando hay nombre).
+4. Notificación push a Sergio.
+5. Espera "hasta la cita, 1 día antes"; si la cita es en menos de 24 h, salta las comunicaciones.
+6. WhatsApp `bv_recordatorio_reserva` (ramas apagadas; las respuestas las maneja el otro workflow).
+7. Correo de recordatorio.
+
+**Workflow "DEMO — Bola Verde · Respuesta al recordatorio"** (`767383cc-946c-4784-b424-251623b7efb8`), en borrador:
+- Disparador *Customer replied*, canal WhatsApp. If/else por "Replied message" que contiene "Confirmo" / "No puedo".
+- Confirmo: cita → *confirmed* y respuesta "¡Perfecto, lo esperamos!" con botón "Cómo llegar".
+- No puedo ir: cita → *Cancelled* (cancha libre), push al club y respuesta con botón "Reservar otra hora" (`bv_link_reserva`).
+- Las respuestas van como mensaje interactivo "Visit Website Button", porque GHL no ofrece texto libre en WhatsApp dentro de un workflow; sirve porque el jugador acaba de escribir (ventana de 24 h abierta).
+
+**Desviaciones y pendientes:**
+- Variables de cita: se usan `{{calendar.name}}`, `{{appointment.only_start_date}}` y `{{appointment.only_start_time}}` (las del runbook, `appointment.calendar_name` y `start_time`, no las ofrece el selector). Verificar en la prueba que se rellenan.
+- Los correos llevan el enlace "Invitar por WhatsApp" como URL en texto, no como botón.
+- **Teléfono (WhatsApp) obligatorio en los 3 calendarios: pendiente.** El formulario por defecto no lo exige y no hay un formulario propio con teléfono obligatorio; hay que crear uno ("Reserva cancha") y asignarlo a los tres. Sin teléfono el WhatsApp no sale (el correo sí).
+- **Prueba con invitado (Cancha 2, mañana, segundo correo): pendiente** hasta publicar los workflows.
+- Remitente del correo y "Test Emails" (sergio.j.rey@gmail.com) puestos solo para poder guardar; no envían nada.
