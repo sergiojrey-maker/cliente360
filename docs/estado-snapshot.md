@@ -970,3 +970,12 @@ Total en el portafolio: 16 plantillas.
 - bienvenida y regalo (`c360_bienvenida_club`, `c360_regalo`);
 - encuesta → responder 2 → disculpa y alerta a Sergio (`c360_encuesta`, `c360_disculpa`, `c360_dueno_inconforme`);
 - canje (`c360_canje_v2`): dejarlo en 9 sellos para completar el premio con un Atendido.
+
+## 18 oct 2026 — [Claudio local] Reinicio del contacto de prueba (paso 0 de `docs/prueba-demo.md`)
+
+Contacto "Sergio Rey Gutiérrez", +57 313 316 5253 (id `FHyh1Ky3UCIBmoE901ue`), en Mall Digital 360. Hecho por API:
+- **DND apagado** en todos los canales (la BAJA lo había activado desde el workflow "DEMO — Baja").
+- **Tags quitados:** `demo-c360`, `resena-solicitada` y `baja`. Los demás (`club-miembro`, `resena-inconforme`, `club-premio-pendiente`, `club-premio-recordado`) ya no estaban. Se conservaron `evento_presencial_gratis_cumaral_2026` y `lead-charla`.
+- **Campos:** `club_sellos` = 0, `club_sellos_faltan` = 0, `calificacion_respuesta` vacío.
+- **Usuario Sergio** (Settings → My Profile): tiene el celular +57 313 316 5253, que es donde llega la alerta de inconforme (RES-02).
+- **Pendiente tras su prueba:** poner `club_sellos` = 9 y `club_sellos_faltan` = 1 para que un solo "Atendido" complete el premio y se pueda probar el canje con el PIN 3600.
