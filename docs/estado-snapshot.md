@@ -911,3 +911,17 @@ Las 14 plantillas pasaron a **Active** (revisado en Templates). `c360_canje_v2` 
 **RES-02 (`c360_dueno_inconforme`):** sin hacer (esperando el guardado de CLUB-03 para no repetir el bloqueo).
 
 **Siguen pendientes:** prueba con el celular de Sergio y toda la parte 2.
+
+## 18 oct 2026 — [Claudio local] Bola Verde, parte 1, paso 4 (CLUB-03, RES-02 y plantillas del regalo y del recordatorio)
+
+Sergio aprobó el permiso de guardado de workflows para esta sesión.
+
+- **CLUB-03:** `c360_canje_v2` quedó guardado (al reabrir el builder, la acción "Premio canjeado (WhatsApp c360_canje_v2)" ya estaba y el SMS provisional ya no). Sigue publicado.
+- **RES-02:** la acción "Alerta a Sergio (WhatsApp interno)" es una *Internal notification* de tipo WhatsApp a Sergio; se le eligió la plantilla `c360_dueno_inconforme` (Active) y se guardó. Sigue publicado. Esta acción solo ofrece una lista de plantillas y no un editor de variables: el mapeo vive en la plantilla.
+- **Plantillas nuevas** (filas 13 y 14 de `docs/plantillas-whatsapp-demo.md`), en español y con las variables mapeadas:
+  - `c360_regalo` (Marketing): `{{1}}` club_nombre_completo, `{{2}}` club_regalo_bienvenida. **Active** a los pocos segundos.
+  - `c360_recordar_premio` (Utilidad): `{{1}}` contact.first_name, `{{2}}` club_premio, `{{3}}` negocio_nombre. **Pending** en Meta al cerrar este bloque.
+- **CLUB-01:** la acción "Regalo de bienvenida" ahora usa `c360_regalo`. Guardado y publicado.
+- **CLUB-02:** el SMS "Recordar premio" queda **pendiente** hasta que `c360_recordar_premio` esté Active.
+
+Total en el portafolio: 16 plantillas.
