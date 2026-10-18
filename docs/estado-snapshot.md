@@ -1000,3 +1000,6 @@ Con el OK de Sergio:
 - `bv_link_reserva` actualizado a esa URL. Ojo: el correo de confirmación trae también un enlace "Invitar por WhatsApp" con la URL vieja `malldigital360.com/demo-bola-verde` escrita a mano; hay que cambiarla por la nueva.
 - **Sigue pendiente:** teléfono obligatorio en los 3 calendarios (formulario propio) y la prueba con invitado (Cancha 2, mañana, segundo correo; después borrar la cita).
 - Contacto de prueba de Sergio dejado en `club_sellos` 9 / `club_sellos_faltan` 1 para probar el canje con el PIN 3600.
+
+## 18 oct 2026 — [Claudio local] Contacto de prueba de Sergio reiniciado (11:42 h, hora del equipo)
+Siguiendo "Reiniciar el contacto de prueba de Sergio" de `docs/prueba-demo.md` (pasos 1 a 7): DND apagado en todos los canales; tags quitados (`demo-c360`, `club-miembro`, `resena-solicitada`, `resena-inconforme`, y también `resena-respondida` y `club-premio-canjeado`, que había dejado la prueba anterior); `club_sellos` = 0, `club_sellos_faltan` = 0, `calificacion_respuesta` vacío; contacto sacado de RES-01, RES-01b, CLUB-01, CLUB-02 y VIS-01; usuario Sergio con celular +57 313 316 5253. Paso 8 (9 sellos) solo si Sergio pide mostrar el canje, después de su DEMO.
