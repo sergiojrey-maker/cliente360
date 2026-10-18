@@ -71,3 +71,15 @@ En la demo, el enlace de reseña apunta a `malldigital360.com/club` a propósito
 - **Si algo falló:** despublique solo ese workflow y escriba el paso y el error en Blue. Claude local lo corrige.
 
 **Pendiente que no afecta esta prueba:** `c360_recordar_premio` sigue en revisión de Meta. Solo se usa cuando alguien ya ganó el premio y vuelve antes de canjearlo (rama de CLUB-02). Cuando Meta la apruebe, se cambia.
+
+## Reiniciar el contacto de prueba de Sergio (cada vez que vaya a mostrar la demo en su propio celular)
+*Agregado el 18 oct 2026. Lo hace Claudio local (o Claudio nube por API). Toma 2 minutos.*
+1. En Mall Digital 360 → Contactos, buscar el contacto del celular personal de Sergio.
+2. **Apagar el DND** en todos los canales (lo prende la BAJA).
+3. **Quitar los tags:** `club-miembro`, `demo-c360`, `resena-solicitada`, `resena-inconforme`, `baja`, `club-premio-pendiente`, `club-premio-recordado`.
+4. **Campos:** `club_sellos` = 0, `club_sellos_faltan` = 0, `calificacion_respuesta` vacío.
+5. **Sacarlo de los workflows DEMO** en los que siga activo (por ejemplo, una espera de RES-01), para que no le lleguen mensajes viejos.
+6. Revisar que el usuario Sergio (Settings → My Profile) tenga su celular, para que le llegue la alerta de inconforme.
+7. Avisar a Sergio: "Listo, escriba DEMO".
+8. **Solo si Sergio quiere mostrar el canje:** después de que escriba DEMO, poner `club_sellos` = 9 y `club_sellos_faltan` = 1. Con un Atendido completa el premio. No hacerlo antes del DEMO, porque CLUB-01 pone los sellos en 0 al ingresar.
+9. Anotar en `docs/estado-snapshot.md` que se reinició (fecha y hora).
