@@ -991,3 +991,12 @@ Contacto "Sergio Rey Gutiérrez", +57 313 316 5253 (id `FHyh1Ky3UCIBmoE901ue`), 
 
 Con la primera prueba (Atendido, MIS SELLOS, BAJA), **todo el recorrido del guion funciona con el portafolio verificado de Meta**. La demo queda lista para prospectos reales.
 Único pendiente: `c360_recordar_premio` en CLUB-02 (sigue el SMS provisional hasta que Meta la apruebe). Solo aplica a quien vuelve con un premio sin canjear y no afecta la demo.
+
+## 18 oct 2026 — [Claudio local] Bola Verde, parte 2: publicado como demo
+
+Con el OK de Sergio:
+- **Publicados** los dos workflows: "DEMO — Bola Verde · Reserva de cancha" y "DEMO — Bola Verde · Respuesta al recordatorio".
+- **Página publicada** en AI Studio, solo en la URL de demo: https://bola-verde-tenis.vibepreview.app (no se usó dominio propio).
+- `bv_link_reserva` actualizado a esa URL. Ojo: el correo de confirmación trae también un enlace "Invitar por WhatsApp" con la URL vieja `malldigital360.com/demo-bola-verde` escrita a mano; hay que cambiarla por la nueva.
+- **Sigue pendiente:** teléfono obligatorio en los 3 calendarios (formulario propio) y la prueba con invitado (Cancha 2, mañana, segundo correo; después borrar la cita).
+- Contacto de prueba de Sergio dejado en `club_sellos` 9 / `club_sellos_faltan` 1 para probar el canje con el PIN 3600.
