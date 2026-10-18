@@ -1011,3 +1011,10 @@ Siguiendo "Reiniciar el contacto de prueba de Sergio" de `docs/prueba-demo.md` (
 3. **Prueba con invitado (Cancha 2, lun. 19 oct, 3:00–4:00 p. m.):** reserva hecha por el widget con el contacto de prueba de Sergio (+57 313 316 5253, churrus21@gmail.com) y un invitado (sergio.j.rey@gmail.com). Resultado en "Execution logs": WhatsApp `bv_reserva_confirmada` ✅ Success, correo de confirmación ✅, push a Sergio ✅, espera programada para hoy 3:00 p. m. (24 h antes de la cita). La pantalla final del widget mostró el mensaje de confirmación.
    - **Pendiente de ojo humano:** que a Sergio le hayan llegado el WhatsApp, el correo y la invitación del calendario (a ambos correos), y que las variables de cancha, fecha y hora aparezcan rellenas. El recordatorio llegará hoy a las 3:00 p. m.
    - **Cita de prueba sin borrar todavía:** se deja hasta que llegue el recordatorio y se pruebe "Confirmo" / "No puedo ir". Después se borra.
+
+## 18 oct 2026 — [Claudio nube] Bola Verde: revisión de Sergio en su celular
+- ✅ WhatsApp de confirmación `bv_reserva_confirmada`, con cancha, fecha y hora bien llenas.
+- ✅ Correo de confirmación (churrus21@gmail.com) e invitación al invitado (sergio.j.rey@gmail.com).
+- ✅ Recordatorio `bv_recordatorio_reserva` con los botones "Confirmo" / "No puedo ir".
+- ✅ Página https://bola-verde-tenis.vibepreview.app: Sergio la aprueba ("la veo excelente").
+- Pendiente: tocar "No puedo ir" para probar "DEMO — Bola Verde · Respuesta al recordatorio" y después borrar la cita de prueba (Cancha 2, lun. 19 oct, 3:00 p. m.).
