@@ -13,6 +13,7 @@
 1. **Settings → WhatsApp:** anotar qué plantillas aparecen hoy y en qué estado. Si están todas, saltar al paso 3.
 2. **Crear y enviar a aprobación** las que falten. Mismo nombre, idioma español y el texto exacto de `docs/plantillas-whatsapp-demo.md`:
    - **Demo:** `c360_bienvenida_club`, `c360_sello`, `c360_te_faltan`, `c360_premio`, `c360_mis_sellos`, `c360_encuesta`, `c360_resena`, `c360_disculpa`, `c360_resena_recordatorio`, `c360_baja`.
+   - **Faltaban en la primera lista (agregadas el 17 oct, 7:50 p. m.):** `c360_regalo` (CLUB-01, Marketing) y `c360_recordar_premio` (CLUB-02, Utilidad), con el texto de `docs/plantillas-whatsapp-demo.md`, filas 13 y 14. Sin `c360_regalo`, el regalo de bienvenida de la demo no sale.
    - **Alerta al dueño:** `c360_dueno_inconforme`, con el texto de `docs/estado-snapshot.md`, Revisión 9.
    - **Canje:** `c360_canje_v2`, con el texto de `docs/maestra-v1.md`, parte A. Reemplaza a `c360_canje`.
    - **Bola Verde (parte 2):** `bv_reserva_confirmada` y `bv_recordatorio_reserva`, con los textos de la parte 2, paso 5.
@@ -21,8 +22,8 @@
 
    | Workflow | Plantillas |
    |---|---|
-   | DEMO — CLUB-01 | `c360_bienvenida_club` y `c360_mis_sellos` (ya miembro) |
-   | DEMO — CLUB-02 | `c360_sello`, `c360_te_faltan` y `c360_premio` |
+   | DEMO — CLUB-01 | `c360_bienvenida_club`, `c360_regalo` y `c360_mis_sellos` (ya miembro) |
+   | DEMO — CLUB-02 | `c360_sello`, `c360_te_faltan`, `c360_premio` y `c360_recordar_premio` (en lugar del SMS provisional) |
    | DEMO — CLUB-03 | `c360_canje_v2`, en lugar del SMS provisional |
    | DEMO — CLUB-04 | `c360_mis_sellos` |
    | DEMO — RES-01 | `c360_encuesta` y `c360_resena_recordatorio` |
