@@ -979,3 +979,15 @@ Contacto "Sergio Rey Gutiérrez", +57 313 316 5253 (id `FHyh1Ky3UCIBmoE901ue`), 
 - **Campos:** `club_sellos` = 0, `club_sellos_faltan` = 0, `calificacion_respuesta` vacío.
 - **Usuario Sergio** (Settings → My Profile): tiene el celular +57 313 316 5253, que es donde llega la alerta de inconforme (RES-02).
 - **Pendiente tras su prueba:** poner `club_sellos` = 9 y `club_sellos_faltan` = 1 para que un solo "Atendido" complete el premio y se pueda probar el canje con el PIN 3600.
+
+## 18 oct 2026 — [Claudio nube] Segunda prueba con el celular de Sergio (contacto reiniciado): demo completa ✅
+| Paso | Plantilla | Resultado |
+|---|---|---|
+| DEMO | `c360_bienvenida_club`, `c360_regalo` | ✅ Bienvenida y regalo |
+| Encuesta (2 min) | `c360_encuesta` | ✅ |
+| Respuesta 2 | `c360_disculpa` + `c360_dueno_inconforme` | ✅ Disculpa con enlace de Google y alerta a Sergio |
+| Atendido con 9 sellos | `c360_premio` | ✅ Premio completo |
+| Canje (PIN 3600) | `c360_canje_v2` | ✅ Confirmación |
+
+Con la primera prueba (Atendido, MIS SELLOS, BAJA), **todo el recorrido del guion funciona con el portafolio verificado de Meta**. La demo queda lista para prospectos reales.
+Único pendiente: `c360_recordar_premio` en CLUB-02 (sigue el SMS provisional hasta que Meta la apruebe). Solo aplica a quien vuelve con un premio sin canjear y no afecta la demo.
