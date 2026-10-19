@@ -103,6 +103,14 @@ node herramientas/instalar-custom-values.mjs clientes/<negocio>.json --dueno +57
    - Método probado en la demo: agregar la acción WhatsApp debajo del SMS, apagar "Enable branches", guardar y luego borrar el SMS. Si había un "Esperar respuesta" apuntando al SMS (RES-01, RR-01), hay que volver a elegir en "Reply to" la acción nueva.
 3. Revisar que CLUB-01 se dispare con la palabra exacta de `club_palabra_ingreso`. El disparador es "Exactly matches", con tres variantes: mayúsculas, inicial mayúscula y minúsculas. Si el negocio cambió la palabra, se cambia aquí también.
 4. Interruptores: si un módulo quedó en "no", no hace falta tocar nada. Los If/Else leen `sis_modulo_*`.
+5. **`club_premios_pendientes` (CLUB-03).** El snapshot trae el campo con el ID de la maestra. Abrir en CLUB-03 las acciones "Premios pendientes −1" y "¿Le quedan premios?" y volver a elegir el campo `club_premios_pendientes` de la sub-cuenta nueva (o crear el campo antes de cargar el snapshot). Sin esto el canje no descuenta el premio.
+6. **Elegir plantilla y usuario en las acciones con nota "INSTALACIÓN"** (la maestra no tiene WhatsApp conectado, por eso vienen sin plantilla):
+   - **CLUB-03:** SMS provisional "Premio canjeado" → WhatsApp `c360_canje_v2` (variables: nombre, `club_nombre_completo`, `club_sellos`). Reemplaza a la vieja `c360_canje`, que ya no se usa.
+   - **RES-02:** WhatsApp interno → `c360_dueno_inconforme` ({{1}} `negocio_dueno_nombre`, {{2}} nombre, {{3}} `calificacion_respuesta`, {{4}} teléfono). La **tarea** "Llamar a…" → asignarla al usuario dueño.
+   - **CLUB-02:** SMS provisional "Recordar premio" → `c360_recordar_premio`.
+   - **RES-01b:** los dos WhatsApp → `c360_resena` (calificación 4–5) y `c360_disculpa` (1–3, siempre con el enlace de reseña). Además, abrir "Sacar de RES-01" y "Llamar RES-02" y confirmar que apuntan a los workflows de la sub-cuenta nueva.
+   - **CLUB-01:** si el negocio da regalo de bienvenida, elegir `c360_regalo` en esa acción (usa `club_regalo_bienvenida`).
+7. **RES-01b responde a las encuestas.** RES-01 y RR-01 ya no interpretan la respuesta del cliente (su rama "Contact reply" termina sin hacer nada): lo hace RES-01b, que se dispara con "Customer replied" por WhatsApp si el contacto tiene `resena-solicitada` y no tiene `resena-respondida`. RR-01 también pone `resena-solicitada`, así que lo cubre. Debe quedar **publicado** junto con RES-01.
 
 ## 7. Prueba con celular y publicación (20 min)
 **Primero, con el celular de MD360 y después con el del dueño:**
@@ -117,7 +125,7 @@ node herramientas/instalar-custom-values.mjs clientes/<negocio>.json --dueno +57
 
 **Si todo pasó:**
 - Devolver `resena_espera_minutos` a su valor.
-- Publicar los workflows en este orden: GEN-01, CLUB-01, CLUB-01b, VIS-01, CLUB-02, CLUB-03, CLUB-04, RES-01, RES-02, RES-03, CTRL-01, REP-01, REP-02, GEN-02, REA-01. Después CA-01 a CA-04 si el plan los incluye.
+- Publicar los workflows en este orden: GEN-01, CLUB-01, CLUB-01b, VIS-01, CLUB-02, CLUB-03, CLUB-04, RES-02, RES-01, RES-01b, RES-03, CTRL-01, REP-01, REP-02, GEN-02, REA-01. Después CA-01 a CA-04 si el plan los incluye.
 - **RR-01 no se publica todavía** (va en el paso 9).
 - Borrar los contactos de prueba o marcarlos `prueba`.
 
@@ -149,4 +157,7 @@ node herramientas/instalar-custom-values.mjs clientes/<negocio>.json --dueno +57
 - QR con un saludo antes de la palabra → CLUB-01 no se dispara → paso 8.1.
 - Contador de reseñas inflado con reseñas viejas → paso 5.4.
 - Math operation que calcula pero no escribe en el contacto → en cada acción Math, "SAVE RESULT TO FIELD" debe tener el campo destino. Revisarlo en la maestra antes de cada snapshot y comprobarlo en la prueba del paso 7 (sello 1 → faltan meta − 1).
+- Cliente que responde la encuesta y no pasa nada (o pasa dos veces) → la respuesta la maneja solo RES-01b; ver paso 6.7.
+- Canje que no baja `club_premios_pendientes` → paso 6.5.
+- Al copiar un workflow entre sub-cuentas ("Copiar a la subcuenta") se pierden las referencias a otros workflows, a campos y a plantillas: hay que volver a elegirlas (así se creó RES-01b en la maestra).
 - `PUT /calendars/{id}` de la API borra los campos que no se envían. Si se ajusta el calendario por API, se manda el objeto completo.
