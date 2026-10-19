@@ -1020,3 +1020,8 @@ Siguiendo "Reiniciar el contacto de prueba de Sergio" de `docs/prueba-demo.md` (
 - ✅ "No puedo ir": le llegó el mensaje a Sergio y la cita quedó **cancelled** (verificado por API el 19 oct). Con eso el workflow "DEMO — Bola Verde · Respuesta al recordatorio" queda probado.
 - ✅ Cita de prueba `kHLV3iShmRWPTQlS6W4a` (Cancha 2, lun. 19 oct, 3:00 p. m.) **borrada por API** por Claudio nube.
 - **Demo de Bola Verde completa y probada.**
+
+## 19 oct 2026 — [Claudio local] Bola Verde: prueba de "No puedo ir"
+Sergio tocó "No puedo ir" en el recordatorio (19 oct, 1:58 p. m.). Registro de "DEMO — Bola Verde · Respuesta al recordatorio": condición "Replied message contains Confirmo" = false; rama **"No puedo ir" = cumplida**; "Cita cancelada (cancha libre)" **Ejecutado**; "Push al club: cancha liberada" **Ejecutado**; "Respuesta: cancha liberada" **Ejecutado** (mensaje con el botón "Reservar otra hora"); fin del workflow.
+- **Cita de prueba (Cancha 2, lun. 19 oct, 3:00 p. m.):** ya no aparece. La API de citas no devuelve ninguna para el contacto de Sergio, y las pestañas "Cancelled" y "All" de la lista de citas no la mostraron al buscar "Cancha 2". No hay una cita activa que borrar: la cancelación la sacó del calendario (la cancha quedó libre). Si en la lista de Cancelled apareciera después, se borra a mano.
+- Lo que le llegó a Sergio al celular lo confirma él.
