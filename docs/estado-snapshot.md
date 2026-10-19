@@ -1017,4 +1017,6 @@ Siguiendo "Reiniciar el contacto de prueba de Sergio" de `docs/prueba-demo.md` (
 - ✅ Correo de confirmación (churrus21@gmail.com) e invitación al invitado (sergio.j.rey@gmail.com).
 - ✅ Recordatorio `bv_recordatorio_reserva` con los botones "Confirmo" / "No puedo ir".
 - ✅ Página https://bola-verde-tenis.vibepreview.app: Sergio la aprueba ("la veo excelente").
-- Pendiente: tocar "No puedo ir" para probar "DEMO — Bola Verde · Respuesta al recordatorio" y después borrar la cita de prueba (Cancha 2, lun. 19 oct, 3:00 p. m.).
+- ✅ "No puedo ir": le llegó el mensaje a Sergio y la cita quedó **cancelled** (verificado por API el 19 oct). Con eso el workflow "DEMO — Bola Verde · Respuesta al recordatorio" queda probado.
+- ✅ Cita de prueba `kHLV3iShmRWPTQlS6W4a` (Cancha 2, lun. 19 oct, 3:00 p. m.) **borrada por API** por Claudio nube.
+- **Demo de Bola Verde completa y probada.**
