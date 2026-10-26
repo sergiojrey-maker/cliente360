@@ -1,8 +1,31 @@
-# Auditoría de una cuenta de GoHighLevel de un cliente en Florida (solo lectura)
+# Auditoría de la cuenta de GoHighLevel de Serv Florida (solo lectura)
 
 *Pedido por Sergio el 26 oct 2026. La ejecuta **Claudio local** con el Chrome de Sergio y la revisa **Claudio nube**. El cliente ya dio su consentimiento y agregó a Sergio como personal; Sergio le pide el rol **Admin** mientras dura la auditoría. Informe en **español**.*
 
-**Pendiente de Sergio antes de empezar:** nombre del negocio, a qué se dedica y objetivo de la auditoría. Mientras tanto, el objetivo por defecto es encontrar qué tiene, qué no usa, qué está roto y qué le falta para responder, convertir y recuperar clientes.
+## Contexto (reunión del 26 oct 2026 con Jairo Rubiano, Laura y Paola)
+- **Negocio:** Serv Florida. Dos líneas: **impuestos y seguros**, y **notaría y envíos**. Cuenta de GoHighLevel propia (no es de la marca blanca de MD360).
+- **Cómo trabajan hoy:** usan el CRM para la base de datos y los calendarios, y casi nada más ("menos del 1 %"). Atienden a los clientes uno a uno y a mano. Parte del proceso sigue en Excel o en papel.
+- **Dolores:**
+  - dos números de WhatsApp (uno por línea de negocio) **no están conectados** al CRM, así que no hay automatización ni bandeja compartida;
+  - mensajes de Instagram, Facebook y Google sin respuesta fuera del horario de oficina;
+  - las citas se atrasan porque los clientes llegan sin los documentos;
+  - pidieron una encuesta poscita, tuvo poca respuesta y Laura la apagó.
+- **Reputación:** unas **400 reseñas en Google**, todas pedidas en persona. Quieren pedirlas automáticamente después de la cita, sin volver a pedírsela a quien ya dejó reseña, y responder cada reseña.
+- **Urgencia:** la **temporada de seguros médicos empieza la próxima semana** (inscripción abierta, desde el 1 de noviembre). Quieren pipelines y calendarios listos antes.
+- **Objetivo de la auditoría:** diagnóstico de punto de partida para proponer un plan de acción, priorizando lo que debe estar listo para la temporada de seguros.
+
+## Preguntas que la auditoría debe responder
+1. **WhatsApp:** ¿hay algo conectado o a medio conectar (WhatsApp de GHL, LC Phone, integración de terceros)? ¿Los dos números son de la app WhatsApp Business en celulares? ¿La cuenta admite dos números de WhatsApp en la misma sub-cuenta, o habría que separarlos? (Verificar en la interfaz; no asumir.) ¿Conviene coexistence para seguir usando la app en el celular?
+2. **SMS:** estado del **A2P 10DLC**. Sin aprobación no se puede usar SMS para recordatorios ni para pedir reseñas.
+3. **Agenda:** ¿cuántos calendarios hay, por servicio o por persona? ¿Tienen recordatorios? ¿Se puede pedir la lista de documentos antes de la cita (formulario con carga de archivos)?
+4. **Seguros:** ¿hay pipeline de seguros? ¿Qué etapas faltan para la temporada?
+5. **Reputación:** ¿Google Business Profile está conectado? ¿Se puede marcar a quien ya dejó reseña, con tag o campo, para no volver a pedírsela? ¿Está disponible la respuesta automática a reseñas (con IA)?
+6. **IA:** ¿Conversation AI o Voice AI están disponibles en su plan? ¿Están apagados?
+7. **Redes:** ¿Facebook, Instagram y Google Business Profile están conectados a Conversations?
+
+## Riesgos que hay que señalar en el informe
+- **Documentos sensibles:** los papeles de impuestos y seguros traen datos como el número de seguro social. Antes de recomendar que los suban por un formulario, revisar dónde quedan guardados y quién los ve. Proponer una forma segura (y lo mínimo necesario).
+- **Consentimiento para mensajes en EE. UU.:** el SMS y el WhatsApp necesitan consentimiento del cliente (TCPA y 10DLC). Revisar si los formularios lo piden.
 
 ## Reglas
 1. **Solo lectura.** No guardar, publicar, activar, desactivar, borrar ni enviar nada. No pulsar "Test workflow", "Send", "Publish" ni "Save". Si una pantalla pide guardar al salir, salir **sin guardar**.
@@ -76,6 +99,8 @@ Archivo: `docs/auditorias/<negocio>-<fecha>.md`. Estructura:
 3. **Qué tiene pero no usa** (pagado y apagado).
 4. **Qué está roto o es un riesgo**, por ejemplo A2P sin aprobar, correo sin dominio propio, workflows con error o llamadas perdidas sin respuesta.
 5. **Qué le falta** para responder rápido, agendar, recordar, pedir reseñas y recuperar clientes inactivos.
+   - Respuesta a cada una de las 7 preguntas de arriba.
+   - Sección aparte: **"Listo para la temporada de seguros"**, con lo mínimo que debe quedar antes del 1 de noviembre.
 6. **Plan de acción priorizado:** tabla con prioridad (alta / media / baja), qué hacer, impacto esperado y esfuerzo (horas).
 7. **No revisado (permisos)**, si aplica.
 
