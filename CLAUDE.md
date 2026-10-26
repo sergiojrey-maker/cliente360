@@ -85,7 +85,7 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
   - El historial de Blue sigue mostrando "Sergio Rey" porque los conectores usan su cuenta.
 - Proceder con criterio propio y entregar reporte al final; él pide cambios después.
 - Confrontar las ideas con argumentos (él lo pide explícitamente), no solo ejecutar.
-- **Idioma de las conversaciones con Sergio (desde el 11 oct 2026): inglés primero, español como segundo idioma.** Lo que se construye para clientes (mensajes, páginas, plantillas, documentos de venta) sigue en español.
+- **Idioma de las conversaciones con Sergio: español (decidido el 26 oct 2026; reemplaza la regla del 11 oct de inglés primero).** Lo que se construye para clientes sigue en español; para clientes de EE. UU., en el idioma del cliente.
 
 ## 9. Snapshot "evergreen"
 **Arquitectura confirmada (4 oct):** la **plantilla maestra** es "Cliente 360 — Snapshot Maestro" (de ahí se duplica a cada cliente). La **demo** para dueños de negocio y el **CRM comercial** viven en la sub-cuenta **Mall Digital 360**, con el WhatsApp 320 405 5485 ya conectado y los activos de demo aislados. Detalle en `docs/estado-snapshot.md`.
