@@ -80,8 +80,8 @@ Sistema instalado (nunca "servicio de reseñas") para negocios locales: más res
   - Los tags `*OOS* …` significan **Out Of Service**: **no** se usan para identificar el negocio.
   - Tarea viva del lanzamiento: "Lanzamiento Cliente 360 v1" (lista 📋Importante).
   - **Claude tiene su propio usuario en Blue: "Claudio A"** (ID `onr98842qt5jhj5qee7982i9`), el "empleado máster". Toda tarea que Sergio delegue a Claude se asigna a Claudio, **no** a Sergio.
-  - **Desde el 17 oct 2026, el asistente se llama "Claudio" en todo** (Sergio: "a partir de ahora todo es Claudio"). Se distingue por negocio o lugar: Claudio para Mall Digital 360, Claudio para Sergio Rey, etc.
-  - Cada hilo firma sus avances con un comentario que empieza por su nombre: **[Claudio nube]**, **[Claudio local]**, **[Claudio · Sergio Rey]**, etc. Las firmas anteriores ([Claude nube], [Claude local], [Cowork Sardes]) quedan en el historial.
+  - **Nombre del asistente (decidido el 27 oct 2026; reemplaza "Claudio" del 17 oct): "Claude".** Se distingue por lugar: **Claude nube** (esta sesión) y **Claude local** (Claude Code en el PC de Sergio, con Chrome). Ya no se usa "Claudio" en nada nuevo. El usuario de Blue sigue siendo "Claudio A" (ID `onr98842qt5jhj5qee7982i9`) porque así existe en Blue.
+  - Cada hilo firma sus avances con **[Claude nube]** o **[Claude local]**. Las firmas anteriores ([Claudio nube], [Claudio local], [Cowork Sardes]) quedan en el historial.
   - El historial de Blue sigue mostrando "Sergio Rey" porque los conectores usan su cuenta.
 - Proceder con criterio propio y entregar reporte al final; él pide cambios después.
 - Confrontar las ideas con argumentos (él lo pide explícitamente), no solo ejecutar.
