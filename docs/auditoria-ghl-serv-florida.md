@@ -12,9 +12,22 @@
   - pidieron una encuesta poscita, tuvo poca respuesta y Laura la apagó.
 - **Reputación:** unas **400 reseñas en Google**, todas pedidas en persona. Quieren pedirlas automáticamente después de la cita, sin volver a pedírsela a quien ya dejó reseña, y responder cada reseña.
 - **Urgencia:** la **temporada de seguros médicos empieza la próxima semana** (inscripción abierta, desde el 1 de noviembre). Quieren pipelines y calendarios listos antes.
+- **Apuntes de Sergio (26 oct):**
+  - **Equipo:** 7 personas. **Dueños: Jairo y Laura.** Una meta central es **liberar tiempo de Jairo**.
+  - **WhatsApp 1:** impuestos y seguros, la línea con temporadas. **WhatsApp 2:** notaría, envíos de carga y el resto de servicios.
+  - **SMS:** dicen que **ya tienen A2P 10DLC** aprobado. Verificar el estado y el caso de uso registrado (si cubre marketing o solo mensajes de servicio).
+  - **Lo que quieren:**
+    - automatizar el WhatsApp;
+    - optimizar pipelines y calendarios;
+    - conectar todas las redes sociales y automatizar las publicaciones;
+    - **formulario previo a la cita** (impuestos y seguros) con la información clave, para que la cita en la oficina sea más rápida;
+    - **IA recepcionista para teléfono y chat**;
+    - **envíos de SMS y correo** por fechas límite legales (por ejemplo, impuestos e inscripción de seguros), cumpleaños, fechas nacionales y fechas internacionales;
+    - **reportes**.
 - **Objetivo de la auditoría:** diagnóstico de punto de partida para proponer un plan de acción, priorizando lo que debe estar listo para la temporada de seguros.
 
 ## Preguntas que la auditoría debe responder
+*(Las preguntas 1 a 7 salen de la reunión; las 8 a 12, de los apuntes de Sergio.)*
 1. **WhatsApp:** ¿hay algo conectado o a medio conectar (WhatsApp de GHL, LC Phone, integración de terceros)? ¿Los dos números son de la app WhatsApp Business en celulares? ¿La cuenta admite dos números de WhatsApp en la misma sub-cuenta, o habría que separarlos? (Verificar en la interfaz; no asumir.) ¿Conviene coexistence para seguir usando la app en el celular?
 2. **SMS:** estado del **A2P 10DLC**. Sin aprobación no se puede usar SMS para recordatorios ni para pedir reseñas.
 3. **Agenda:** ¿cuántos calendarios hay, por servicio o por persona? ¿Tienen recordatorios? ¿Se puede pedir la lista de documentos antes de la cita (formulario con carga de archivos)?
@@ -22,6 +35,12 @@
 5. **Reputación:** ¿Google Business Profile está conectado? ¿Se puede marcar a quien ya dejó reseña, con tag o campo, para no volver a pedírsela? ¿Está disponible la respuesta automática a reseñas (con IA)?
 6. **IA:** ¿Conversation AI o Voice AI están disponibles en su plan? ¿Están apagados?
 7. **Redes:** ¿Facebook, Instagram y Google Business Profile están conectados a Conversations?
+
+8. **Envíos por fechas:** ¿existe el campo de fecha de cumpleaños y cuántos contactos lo tienen lleno? ¿Hay dominio de correo propio y autenticado? ¿Qué envíos masivos se han hecho y con qué resultado?
+9. **IA recepcionista:** ¿el plan incluye Voice AI (teléfono) y Conversation AI (chat)? ¿Qué números de teléfono tiene la cuenta, y desvían las llamadas al CRM?
+10. **Redes:** ¿el Social Planner está en uso? ¿Qué cuentas están conectadas?
+11. **Reportes:** ¿qué dashboards existen? ¿Tienen fuentes de lead, atribución y reportes de citas?
+12. **Equipo:** los 7 usuarios con sus roles. ¿Cada uno tiene la app LeadConnector y ve sus conversaciones y citas?
 
 ## Riesgos que hay que señalar en el informe
 - **Documentos sensibles:** los papeles de impuestos y seguros traen datos como el número de seguro social. Antes de recomendar que los suban por un formulario, revisar dónde quedan guardados y quién los ve. Proponer una forma segura (y lo mínimo necesario).
@@ -99,7 +118,8 @@ Archivo: `docs/auditorias/<negocio>-<fecha>.md`. Estructura:
 3. **Qué tiene pero no usa** (pagado y apagado).
 4. **Qué está roto o es un riesgo**, por ejemplo A2P sin aprobar, correo sin dominio propio, workflows con error o llamadas perdidas sin respuesta.
 5. **Qué le falta** para responder rápido, agendar, recordar, pedir reseñas y recuperar clientes inactivos.
-   - Respuesta a cada una de las 7 preguntas de arriba.
+   - Respuesta a cada una de las 12 preguntas de arriba.
+   - Calendario de fechas clave del año para los envíos: impuestos, seguros, festivos de EE. UU. e internacionales. Verificar cada fecha en fuentes oficiales; no escribirla de memoria.
    - Sección aparte: **"Listo para la temporada de seguros"**, con lo mínimo que debe quedar antes del 1 de noviembre.
 6. **Plan de acción priorizado:** tabla con prioridad (alta / media / baja), qué hacer, impacto esperado y esfuerzo (horas).
 7. **No revisado (permisos)**, si aplica.
