@@ -32,3 +32,18 @@
 > Al terminar cada bloque, actualiza docs/plan-de-lanzamiento.md y la tarea "Lanzamiento Cliente 360 v1" en Blue, haz commit y push a la rama claude/trusting-tesla-no7f7o, y dame un reporte corto.
 
 Documentación: [instalación](https://code.claude.com/docs/en/setup.md) · [Chrome](https://code.claude.com/docs/en/chrome.md) · [de la nube al computador (teleport)](https://code.claude.com/docs/en/claude-code-on-the-web.md#from-cloud-to-terminal)
+
+## Notas del 27 oct 2026 (Claude local en el PC de Sergio)
+- **"claude no se reconoce" en PowerShell:** la carpeta `C:\Users\churr\.local\bin` no estaba en el PATH del usuario. Se agregó de forma permanente con:
+  ```
+  $p = [Environment]::GetEnvironmentVariable("Path","User")
+  [Environment]::SetEnvironmentVariable("Path", "$p;C:\Users\churr\.local\bin", "User")
+  ```
+  y se reabrió PowerShell. Versión en ese momento: 2.1.311.
+- **Regla:** lo que empieza por `claude …` va en PowerShell; lo que empieza por `/` va dentro de Claude.
+- **Marky** quedó instalado como plugin para el usuario (funciona en cualquier carpeta), con estos dos comandos desde PowerShell:
+  - `claude plugin marketplace add Marky-Team/marky-skills`
+  - `claude plugin install marky@marky-skills`
+
+  Después se inició sesión con `/mcp` → marky. Estado: **connected**. En Claude nube el conector de Marky sigue fallando (404).
+- **Windsor (plan gratis):** permite 1 cuenta conectada; con 2 (Google Ads de Green Alliance y GA4) deja de entregar datos. Recomendado: desconectar GA4 o pasar a un plan pago.
